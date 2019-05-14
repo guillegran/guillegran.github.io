@@ -2,3 +2,12 @@ theme: jekyll-theme-minimal
 
 title: Guillermo Gallego Sánchez
 description: Mathematics student at Universidad Complutense de Madrid
+
+
+# Social media
+twitter_username: guillegran
+twitter_image: http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png
+facebook_app_id:
+facebook_image:
+google_analytics:
+comments: false

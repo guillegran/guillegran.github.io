@@ -1,13 +1,9 @@
-theme: jekyll-theme-minimal
+name: Solar Theme
+url: http://example.org
+description: A stylish blog using the Solarized color palette
 
-title: Guillermo Gallego Sánchez
-description: Mathematics student at Universidad Complutense de Madrid
+permalink: /:year/:month/:day/:title/
+paginate: 10
 
-
-# Social media
-twitter_username: guillegran
-twitter_image: http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png
-facebook_app_id:
-facebook_image:
-google_analytics:
-comments: false
+gems: [jekyll-paginate]
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']

@@ -72,7 +72,7 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 
 	+ **Abstract**: This piece of work is an introduction to the theory of Integrable and Superintegrable Systems in Classical Mechanics. More precisely, we study the Tremblay--Turbiner--Winternitz Hamiltonian, proving its superintegrability, treating it in several coordinate systems and discussing its generalization to constant curvature spaces.
 
-	+ [Text](https://github.com/guillegran/TFGFisica/raw/master/TFGguillermo.pdf) (in Spanish)
+	+ [Text](https://github.com/guillegran/TFGFisica/raw/master/TFGGuillermo.pdf) (in Spanish)
 	 
 	+ [Slides](https://github.com/guillegran/TFGFisica/raw/master/presentacion/ttw.pdf) (in Spanish)
 
@@ -82,7 +82,7 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 + Mini-course on *Symplectic Geometry in Classical Mechanics*. 9-13 July 2018. More info (link)
 
 ### Lecture notes
-+ [Notes](files/fibrados.pdf) on Principal Bundles (in Spanish). [Slides](files/presentacion.pdf) (in Spanish)
++ [Notes](files/fibrados.pdf) on Principal Bundles (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)
 
 + Notes on Hodge Theory (in Spanish). [File 1](files/hodge.pdf), [File 2](files/Picard.pdf)
 

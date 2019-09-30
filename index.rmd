@@ -1,10 +1,20 @@
 ---
 title: Guillermo Gallego
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
 ---
 
 guillegallegosanchez@gmail.com
 
 ### About me
+
+# ![](guitarra.jpg){#id .class width=50% height=50%}
+
+<br>
+
 I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), under the supervision of Oscar García-Prada (ICMAT).
 
 ### Research interests
@@ -42,7 +52,9 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 
 	+ **Mathematical Subject Classification**: 14D20, 14D21, 14H60
 	  
-	+ Dissertation (link). Presentation (link).
+	+ [Dissertation](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf)
+	 
+	+ [Presentation](files/spectral.pdf)
 
 + **Mathematics Bachelor's Thesis**: *Introduction to Symplectic Geometry and Integrable Systems*. Advisor: Jesús M. Ruiz
 

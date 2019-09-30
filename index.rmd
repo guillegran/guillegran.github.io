@@ -15,7 +15,7 @@ guillegallegosanchez@gmail.com
 
 <br>
 
-I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), under the supervision of Oscar García-Prada (ICMAT).
+I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), under the supervision of [Oscar García-Prada](https://www.icmat.es/miembros/garcia-prada/) (ICMAT).
 
 ### Research interests
 + Complex and algebraic geometry
@@ -52,9 +52,9 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 
 	+ **Mathematical Subject Classification**: 14D20, 14D21, 14H60
 	  
-	+ [Dissertation](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf)
+	+ [Text](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf)
 	 
-	+ [Presentation](files/spectral.pdf)
+	+ [Slides](files/spectral.pdf)
 
 + **Mathematics Bachelor's Thesis**: *Introduction to Symplectic Geometry and Integrable Systems*. Advisor: Jesús M. Ruiz
 
@@ -64,13 +64,17 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 
 	+ **Mathematical Subject Classification**: 37J05, 37J35, 53D05, 58A05, 70H05
 
-	+ Dissertation (in Spanish) (link). Presentation (in Spanish) (link).
+	+ [Text](https://github.com/guillegran/TFGMates/raw/master/guillermoTFG.pdf) (in Spanish)
+	 
+	+ [Slides](files/simplectica.pdf) (in Spanish)
 
 + **Physics Bachelor's Thesis**: *Superintegrable models: The Tremblay--Turbiner--Winternitz Hamiltonian*. Advisor: Miguel A. Rodríguez
 
 	+ **Abstract**: This piece of work is an introduction to the theory of Integrable and Superintegrable Systems in Classical Mechanics. More precisely, we study the Tremblay--Turbiner--Winternitz Hamiltonian, proving its superintegrability, treating it in several coordinate systems and discussing its generalization to constant curvature spaces.
 
-	+ Dissertation (in Spanish) (link). Presentation (in Spanish) (link).
+	+ [Text](https://github.com/guillegran/TFGFisica/raw/master/TFGguillermo.pdf) (in Spanish)
+	 
+	+ [Slides](https://github.com/guillegran/TFGFisica/raw/master/presentacion/ttw.pdf) (in Spanish)
 
 ### Teaching
 + *Data Science* Bootcamp at NEOLAND School. Summer 2019. More info (link)
@@ -78,19 +82,17 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 + Mini-course on *Symplectic Geometry in Classical Mechanics*. 9-13 July 2018. More info (link)
 
 ### Lecture notes
-+ Notes on Principal Bundles (in Spanish) (link). Presentation (in Spanish) (link)
++ [Notes](files/fibrados.pdf) on Principal Bundles (in Spanish). [Slides](files/presentacion.pdf) (in Spanish)
 
-+ Notes on Hodge Theory (in Spanish) (link1, link2)
++ Notes on Hodge Theory (in Spanish). [File 1](files/hodge.pdf), [File 2](files/Picard.pdf)
 
-+ Introduction to Schemes, with Raúl González (in Spanish) (link)
++ [Notes](https://github.com/guillegran/ToAl/raw/master/toal.pdf) on Algebraic Topology (under construction, in Spanish) 
 
-+ Algebraic Topology (under construction, in Spanish) (link)
-
-+ Smooth Manifolds (under construction, in Spanish) (link)
++ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on Smooth Manifolds (under construction, in Spanish) (link)
 
 ### Talks
-+ Classification of Compact Surfaces. Dedekind's Army Seminar. 28 February 2018. (video, in Spanish)
++ Classification of Compact Surfaces. Dedekind's Army Seminar. 28 February 2018. [Link](https://dedekindsarmy.github.io/surfaces.html), [Video](https://www.youtube.com/watch?v=coeSyMiKp2Q) (in Spanish)
 
-+ Debunking some myths about $\pi$. Faculty of Mathematics. 14 March 2018. (video, in Spanish)
++ Debunking some myths about $\pi$. Faculty of Mathematics. 14 March 2018. [Video](https://www.youtube.com/watch?v=GmFzqwl_38c#t=1h29m40s) (in Spanish)
 
-+ Symplectic Geometry. Dedekind's Army Seminar. 22 February 2017. (presentation, in Spanish)
++ Symplectic Geometry. Dedekind's Army Seminar. 22 February 2017. [Link](https://dedekindsarmy.github.io/symplectic-manifolds.html), [Slides](files/charlasimplectica.pdf)

@@ -2,4 +2,83 @@
 title: Guillermo Gallego
 ---
 
-Hola
+guillegallegosanchez@gmail.com
+
+### About me
+I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), under the supervision of Oscar García-Prada (ICMAT).
+
+### Research interests
++ Complex and algebraic geometry
+
++ Higgs bundles
+
++ Nonabelian Hodge theory
+
++ Moduli spaces of vector bundles with additional structure
+
++ Infinite-dimensional symplectic geometry and momentum maps
+
++ Group representation theory
+
++ Gauge theory
+
++ Integrable systems
+
+### Education
++ Master's Degree in *Teacher Training*. UCM. Year 2019-2020
+
++ Master's Degree in *Advanced Mathematics*. UCM. Year 2018-2019
+
++ Bachelor's Degree in *Mathematics*. UCM. 2013-2018
+
++ Bachelor's Degree in *Physics*. UCM. 2013-2018
+
+### Master's and Bachelor's theses
++ **Master's Thesis**: *Higgs bundles twisted by a vector bundle*. Advisor: Oscar García-Prada
+
+	+ **Abstract**: In this dissertation we explore a generalization of the theory of Higgs bundles over compact Riemann surfaces, in which the canonical line bundle is replaced by a vector bundle of arbitrary rank. This kind of situation appears naturally in the study of supersymmetric gauge theories. From the mathematical point of view, we study several topics: analogous of Hitchin's equations, stability, Hitchin--Kobayashi correspondence and a generalization of the spectral curve.
+
+	+ **Keywords**: *Moduli space, vector bundle, Higgs bundle, Hitchin's equations, Hitchin--Kobayashi correspondence, Hitchin fibration, spectral curve*
+
+	+ **Mathematical Subject Classification**: 14D20, 14D21, 14H60
+	  
+	+ Dissertation (link). Presentation (link).
+
++ **Mathematics Bachelor's Thesis**: *Introduction to Symplectic Geometry and Integrable Systems*. Advisor: Jesús M. Ruiz
+
+	+ **Abstract**: The main goal of this work is to prove the Arnold--Liouville theorem, which gives a sufficient condition for a Hamiltonian mechanical system to be integrable by quadratures. To that end we define and develop the concepts involved in the theorem, giving some elementary notions of Symplectic Geometry and its application to Classical Mechanics.
+
+	+ **Keywords**: *Symplectic Geometry*, *Integrable Systems*, *Arnold--Liouville theorem*, *Hamiltonian flows*, *Hamilton's equations*, *Lie derivative*, *time-dependent vector fields*
+
+	+ **Mathematical Subject Classification**: 37J05, 37J35, 53D05, 58A05, 70H05
+
+	+ Dissertation (in Spanish) (link). Presentation (in Spanish) (link).
+
++ **Physics Bachelor's Thesis**: *Superintegrable models: The Tremblay--Turbiner--Winternitz Hamiltonian*. Advisor: Miguel A. Rodríguez
+
+	+ **Abstract**: This piece of work is an introduction to the theory of Integrable and Superintegrable Systems in Classical Mechanics. More precisely, we study the Tremblay--Turbiner--Winternitz Hamiltonian, proving its superintegrability, treating it in several coordinate systems and discussing its generalization to constant curvature spaces.
+
+	+ Dissertation (in Spanish) (link). Presentation (in Spanish) (link).
+
+### Teaching
++ *Data Science* Bootcamp at NEOLAND School. Summer 2019. More info (link)
+
++ Mini-course on *Symplectic Geometry in Classical Mechanics*. 9-13 July 2018. More info (link)
+
+### Lecture notes
++ Notes on Principal Bundles (in Spanish) (link). Presentation (in Spanish) (link)
+
++ Notes on Hodge Theory (in Spanish) (link1, link2)
+
++ Introduction to Schemes, with Raúl González (in Spanish) (link)
+
++ Algebraic Topology (under construction, in Spanish) (link)
+
++ Smooth Manifolds (under construction, in Spanish) (link)
+
+### Talks
++ Classification of Compact Surfaces. Dedekind's Army Seminar. 28 February 2018. (video, in Spanish)
+
++ Debunking some myths about $\pi$. Faculty of Mathematics. 14 March 2018. (video, in Spanish)
+
++ Symplectic Geometry. Dedekind's Army Seminar. 22 February 2017. (presentation, in Spanish)

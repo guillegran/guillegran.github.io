@@ -1,0 +1,79 @@
+---
+title: Data Science Bootcamp
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+During the Summer of 2019 I taught a bootcamp on Data Science at NEOLAND (link) with the following **contents**:
+
+**1. Mathematical foundations**. Basic notions of Probability and Statistics. Elementary Linear Algebra. Multivariable Calculus.
+
+**2. Practical programming**. Introduction to Python. Numpy. Pandas. Input/Output libraries. Introduction to R.
+
+**3. Data Visualization**. Matplotlib. Seaborn.
+
+**4. Data Mining**. Twitter API. Scrapping. Machine Learning. Scikit-Learn. Linear Regression. Logistic Regression. Naive Bayes. K Nearest Neighbours. Singular Value Decomposition and Principal Component Analysis. Support Vector Machines. K Means. Trees. Ensemble Learning. Natural Language Processing. Sentiment analysis. Deep Learning. Neural nets. TensorFlow. Keras.
+
+**5. Database Systems**. MySQL. SQLite3. MongoDB.
+
+**6. Final project** 
+
+Here are some useful **references**:
+
++ [*Hands-On Machine Learning with Scikit-Learn and TensorFlow*](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/), by Aurélien Géron. Also check out the [Machine Learning Notebooks](https://github.com/ageron/handson-ml) associated to this fantastic book.
+
++ [Kaggle](https://www.kaggle.com). The biggest Data Science platform. This is the best place to get [datasets](https://www.kaggle.com/datasets), take part in [competitions](https://www.kaggle.com/competitions) and study online [courses](https://www.kaggle.com/learn).
+
++ [William Chen's answer to How can I become a data scientist?](https://www.quora.com/How-can-I-become-a-data-scientist-1/answers/4451343) In this Quora post, William Chen offers a great guide, full of references to online resources. Highly recommended reading.
+
+Here is some **material** that I developed for the course (in Spanish):
+
++ [Notes](files/neoland/apuntes_calculo.pdf) on Multivariable Calculus
+
++ [Exercises](files/neoland/ejercicios_clase3.pdf) on Multivariable Calculus
+
++ [Introductory notes](files/neoland/dbs.pdf) on databases
+
++ [Slides](files/neoland/sqlmongo.pdf) on relational and non-relational databases
+
++ SQL in Python Database [Mini-Project](files/neoland/cutrerecords.py) 
+
++ [Notebook](files/neoland/teoria_sqlpython.html) on SQL in Python ([Jupyter File](files/neoland/teoria_sqlpython.ipynb))
+
++ [Notebook](files/neoland/teoria_pymongo.html) on MongoDB in Python ([Jupyter File](files/neoland/teoria_pymongo.ipynb))
+
++ Introduction to Machine Learning [Notebook](files/neoland/MLintroduccion.html) ([Jupyter File](files/neoland/MLintroduccion.ipynb))
+
++ [Notes](files/neoland/notacionmodelizacion.pdf) about notation in modelization problems
+
++ [Notes](files/neoland/claselogreg.pdf) on Logistic Regression and classification problems
+
++ [Notebook](files/neoland/teoriaLogReg.html) on Logistic Regression ([Jupyter File](files/neoland/teoriaLogReg.ipynb))
+
++ [Notes](files/neoland/naivebayes.pdf) on Naive Bayes
+
++ [Notebook](files/neoland/NaiveBayes.html) on Naive Bayes ([Jupyter File](files/neoland/NaiveBayes.ipynb))
+
++ [Notes](files/neoland/KNN.pdf) on the K Nearest Neighbours classifier 
+
++ [Notebook](files/neoland/TeoriaKNN.html) on the K Nearest Neighbours classifier ([Jupyter File](files/neoland/TeoriaKNN.ipynb))
+
++ [Notes](files/neoland/teoriasvm.pdf) on Support Vector Machines
+
++ [Notebook](files/neoland/SVM_teoria.html) on Support Vector Machines ([Jupyter File](files/neoland/SVM_teoria.ipynb))
+
++ [Notes](files/neoland/ensemble.pdf) on Ensemble Learning
+
++ [Notebook](files/neoland/ensemblelearning_teoria.html) on Ensemble Learning ([Jupyter File](files/neoland/SVM_teoria.ipynb))
+
++ [Notes](files/neoland/kmeans.pdf) on the K Means Clustering algorithm
+
++ [Notebook](files/neoland/teoria_KMeans.html) on the K Means Clustering algorithm ([Jupyter File](files/neoland/teoria_KMeans.ipynb))
+
++ [Notebook](files/neoland/teoria_NLP.html) on Natural Language Processing and Sentiment Analysis ([Jupyter File](files/neoland/teoria_NLP.ipynb))
+
+<br>
+[Take me home](https://guillegran.github.io)

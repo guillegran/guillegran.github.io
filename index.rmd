@@ -77,7 +77,7 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 	+ [Slides](https://github.com/guillegran/TFGFisica/raw/master/presentacion/ttw.pdf) (in Spanish)
 
 ### Teaching
-+ *Data Science* Bootcamp at NEOLAND School. Summer 2019. More info (link)
++ *Data Science* Bootcamp at NEOLAND School. Summer 2019. [More info](neoland.html)
 
 + Mini-course on *Symplectic Geometry in Classical Mechanics*. 9-13 July 2018. More info (link)
 

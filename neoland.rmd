@@ -7,7 +7,7 @@ output:
     theme: readable
 ---
 
-During the Summer of 2019 I taught a bootcamp on Data Science at NEOLAND (link) with the following **contents**:
+During the Summer of 2019 I taught a bootcamp of 432 hours on Data Science at [NEOLAND](https://www.neoland.es) with the following **contents**:
 
 **1. Mathematical foundations**. Basic notions of Probability and Statistics. Elementary Linear Algebra. Multivariable Calculus.
 
@@ -43,7 +43,7 @@ Here is some **material** that I developed for the course (in Spanish):
 
 + [Notebook](files/neoland/teoria_sqlpython.html) on SQL in Python ([Jupyter File](files/neoland/teoria_sqlpython.ipynb))
 
-+ [Notebook](files/neoland/teoria_pymongo.html) on MongoDB in Python ([Jupyter File](files/neoland/teoria_pymongo.ipynb))
++ [Notebook](files/neoland/teoría_pymongo.html) on MongoDB in Python ([Jupyter File](files/neoland/teoría_pymongo.ipynb))
 
 + Introduction to Machine Learning [Notebook](files/neoland/MLintroduccion.html) ([Jupyter File](files/neoland/MLintroduccion.ipynb))
 
@@ -53,13 +53,13 @@ Here is some **material** that I developed for the course (in Spanish):
 
 + [Notebook](files/neoland/teoriaLogReg.html) on Logistic Regression ([Jupyter File](files/neoland/teoriaLogReg.ipynb))
 
-+ [Notes](files/neoland/naivebayes.pdf) on Naive Bayes
++ [Notes](files/neoland/naivebayes.pdf) on the Naive Bayes classifier
 
-+ [Notebook](files/neoland/NaiveBayes.html) on Naive Bayes ([Jupyter File](files/neoland/NaiveBayes.ipynb))
++ [Notebook](files/neoland/NaiveBayes.html) on the Naive Bayes classifier ([Jupyter File](files/neoland/NaiveBayes.ipynb))
 
-+ [Notes](files/neoland/KNN.pdf) on the K Nearest Neighbours classifier 
++ [Notes](files/neoland/KNN.pdf) on the K Nearest Neighbours algorithm
 
-+ [Notebook](files/neoland/TeoriaKNN.html) on the K Nearest Neighbours classifier ([Jupyter File](files/neoland/TeoriaKNN.ipynb))
++ [Notebook](files/neoland/TeoriaKNN.html) on the K Nearest Neighbours algorithm ([Jupyter File](files/neoland/TeoriaKNN.ipynb))
 
 + [Notes](files/neoland/teoriasvm.pdf) on Support Vector Machines
 

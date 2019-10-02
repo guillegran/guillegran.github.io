@@ -15,7 +15,7 @@ guillegallegosanchez@gmail.com
 
 <br>
 
-I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), under the supervision of [Oscar García-Prada](https://www.icmat.es/miembros/garcia-prada/) (ICMAT).
+I am a PhD student of Mathematics at [Universidad Complutense de Madrid](https://www.ucm.es) (UCM), under the supervision of [Oscar García-Prada](https://www.icmat.es/miembros/garcia-prada/) at [Instituto de Ciencias Matemáticas](https://www.icmat.es) (ICMAT).
 
 ### Research interests
 + Complex and algebraic geometry
@@ -77,22 +77,22 @@ I am a PhD student of Mathematics at Universidad Complutense de Madrid (UCM), un
 	+ [Slides](https://github.com/guillegran/TFGFisica/raw/master/presentacion/ttw.pdf) (in Spanish)
 
 ### Teaching
-+ *Data Science* Bootcamp at NEOLAND School. Summer 2019. [More info](neoland.html)
++ *Data Science* Bootcamp at [NEOLAND](https://www.neoland.es/data-science-bootcamp). Summer 2019. [More info](neoland.html)
 
-+ Mini-course on *Symplectic Geometry in Classical Mechanics*. 9-13 July 2018. More info (link)
++ Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](semf.org.es/escueladeverano/). 9-13 July 2018. More info (link)
 
 ### Lecture notes
-+ [Notes](files/fibrados.pdf) on Principal Bundles (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)
++ [Notes](files/fibrados.pdf) on *Principal Bundles* (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)
 
-+ Notes on Hodge Theory (in Spanish). [File 1](files/hodge.pdf), [File 2](files/Picard.pdf)
++ Notes on *Hodge Theory* (in Spanish). [File 1](files/hodge.pdf), [File 2](files/Picard.pdf)
 
-+ [Notes](https://github.com/guillegran/ToAl/raw/master/toal.pdf) on Algebraic Topology (under construction, in Spanish) 
++ [Notes](https://github.com/guillegran/ToAl/raw/master/toal.pdf) on *Algebraic Topology* (under construction, in Spanish) 
 
-+ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on Smooth Manifolds (under construction, in Spanish) (link)
++ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on *Smooth Manifolds* (under construction, in Spanish) (link)
 
 ### Talks
-+ Classification of Compact Surfaces. Dedekind's Army Seminar. 28 February 2018. [Link](https://dedekindsarmy.github.io/surfaces.html), [Video](https://www.youtube.com/watch?v=coeSyMiKp2Q) (in Spanish)
++ *Classification of Compact Surfaces*. Dedekind's Army Seminar. 28 February 2018. [Link](https://dedekindsarmy.github.io/surfaces.html), [Video](https://www.youtube.com/watch?v=coeSyMiKp2Q) (in Spanish)
 
-+ Debunking some myths about $\pi$. Faculty of Mathematics. 14 March 2018. [Video](https://www.youtube.com/watch?v=GmFzqwl_38c#t=1h29m40s) (in Spanish)
++ *Debunking some myths about* $\pi$. Faculty of Mathematics. 14 March 2018. [Video](https://www.youtube.com/watch?v=GmFzqwl_38c#t=1h29m40s) (in Spanish)
 
-+ Symplectic Geometry. Dedekind's Army Seminar. 22 February 2017. [Link](https://dedekindsarmy.github.io/symplectic-manifolds.html), [Slides](files/charlasimplectica.pdf)
++ *Symplectic Geometry*. Dedekind's Army Seminar. 22 February 2017. [Link](https://dedekindsarmy.github.io/symplectic-manifolds.html), [Slides](files/charlasimplectica.pdf) (in Spanish)

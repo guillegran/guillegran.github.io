@@ -79,7 +79,7 @@ I am a PhD student of Mathematics at [Universidad Complutense de Madrid](https:/
 ### Teaching
 + *Data Science* Bootcamp at [NEOLAND](https://www.neoland.es/data-science-bootcamp). Summer 2019. [More info](neoland.html)
 
-+ Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](semf.org.es/escueladeverano/). 9-13 July 2018. More info (link)
++ Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](semf.org.es/escueladeverano/). 9-13 July 2018. [More info](valencia.html)
 
 ### Lecture notes
 + [Notes](files/fibrados.pdf) on *Principal Bundles* (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)
@@ -88,7 +88,7 @@ I am a PhD student of Mathematics at [Universidad Complutense de Madrid](https:/
 
 + [Notes](https://github.com/guillegran/ToAl/raw/master/toal.pdf) on *Algebraic Topology* (under construction, in Spanish) 
 
-+ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on *Smooth Manifolds* (under construction, in Spanish) (link)
++ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on *Smooth Manifolds* (under construction, in Spanish)
 
 ### Talks
 + *Classification of Compact Surfaces*. Dedekind's Army Seminar. 28 February 2018. [Link](https://dedekindsarmy.github.io/surfaces.html), [Video](https://www.youtube.com/watch?v=coeSyMiKp2Q) (in Spanish)

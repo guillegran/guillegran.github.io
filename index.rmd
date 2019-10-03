@@ -79,7 +79,7 @@ I am a PhD student of Mathematics at [Universidad Complutense de Madrid](https:/
 ### Teaching
 + *Data Science* Bootcamp at [NEOLAND](https://www.neoland.es/data-science-bootcamp). Summer 2019. [More info](neoland.html)
 
-+ Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](semf.org.es/escueladeverano/). 9-13 July 2018. [More info](valencia.html)
++ Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](http://www.semf.org.es/escueladeverano/). 9-13 July 2018. [More info](valencia.html)
 
 ### Lecture notes
 + [Notes](files/fibrados.pdf) on *Principal Bundles* (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)

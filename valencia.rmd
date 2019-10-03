@@ -1,0 +1,39 @@
+---
+title: Symplectic Geometry in Classical Mechanics
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+During the 9, 10 and 11 of July 2018 I taught three lessons on Symplectic Geometry in Classical Mechanics at the [SEMF Summer School](http://www.semf.org.es/escueladeverano/), organized in the Burjassot Campus at Universitat de València with the following **contents**:
+
+**Lesson 1**. *Classical Mechanics on manifolds*. We start studying the Newtonian formalism and end at the Symplectic Geometry formulation, passing through the Lagrangian Formalism. We study a practical example by constructing the configuration space on a Riemannian manifold and the phase space in its tangent bundle.
+
+**Lesson 2**. *Foundations of Symplectic Geometry*. In this class we introduce the basic concepts of symplectic geometry: the Darboux theorem, symplectic and Hamiltonian fields and the Poisson bracket. We see how the concepts of Hamiltonian mechanics appear in a natural way in the symplectic context. Finally, we introduce the Noether theorem in its symplectic version and we will study concrete examples.
+
+**Lesson 3**. *The theorem of Arnold-Liouville*. In this class we give a proof of the theorem of Arnold-Liouville and construct the action-angle variables for general systems. After that, we will study the case of harmonic oscillators and introduce conditionally periodic motion.
+
+Here are some **references**:
+
++ V.I. Arnold. *Mathematical Methods of Classical Mechanics*. Springer-Verlag, 1989.
+
++ H. Goldstein, C.P. Poole, and J.L. Safko. *Classical Mechanics*. Pearson Education India, 2011.
+
++ L.D. Landau and E.M. Lifshitz. *Curso de física teórica (vol. 1): Mecánica*. Reverté, 1985.
+
++ M. Spivak. *Physics for Mathematicians: Mechanics I*. Publish or Perish, 2010.
+
+These are the **lecture notes** that I developed for the course (in Spanish):
+
++ [Lesson 1](files/valencia/leccion1.pdf)
+
++ [Lesson 2](files/valencia/leccion2.pdf)
+
++ [Lesson 3](files/valencia/leccion3.pdf)
+
++ All lessons together in a single [PDF file](files/valencia/valencia.pdf)
+
+<br>
+[Take me home](https://guillegran.github.io)

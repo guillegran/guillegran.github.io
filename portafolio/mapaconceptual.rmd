@@ -1,0 +1,12 @@
+---
+title: Paradigmas del aprendizaje
+output:
+  html_document: 
+    theme: readable
+---
+
+![](conductismo.png)
+
+![](cognitivismo.png)
+
+Fuente: Calatayud, M. L. *La enseñanza y el aprendizaje en la situación educativa*. (Material de clase)

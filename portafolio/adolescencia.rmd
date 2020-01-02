@@ -1,0 +1,31 @@
+---
+title: Adolescencia
+output:
+  html_document: 
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+A continuación presento una breve reflexión que escribí hace un tiempo acerca de las diversas ideas que yo tenía sobre lo que es la adolescencia.
+
+### ¿Qué es para mí un adolescente?
+
+El Diccionario de la Real Academia Española define [adolescencia](https://dle.rae.es/adolescencia) como el «período de la vida que sigue a la niñez y precede a la juventud». Sin embargo, como sucede con la mayoría de las definiciones del diccionario, esta definición sirve para salir del paso y formarse una idea de a qué refiere el término, pero no da una noción profunda de éste. Para empezar, se refiere a una determinada etapa de la vida en relación con otras etapas pero, ¿cuáles son estas otras etapas? ¿Están éstas a su vez bien definidas?
+
+La [Wikipedia](https://en.wikipedia.org/wiki/Adolescence) da una definición ligeramente más elaborada, refiriéndose también al desarrollo fisiológico y psicológico, y establece una relación con otro concepto, biológicamente bien definido, la pubertad. Esto ya indica que a la hora de tratar la misma idea de adolescencia nos encontramos ante un todo complejo, en el que se cruzan distintas disciplinas, no reducibles las unas a las otras, como son la biología, la psicología, la sociología o la antropología.
+
+En esta línea, Martín Criado (2002) critica la noción sociológica de juventud, indicando cómo muchos autores la reducen a un concepto biológico o cronológico, cuando en realidad esta supuesta unidad de la juventud se diluye ante unas acuciantes diferencias de clase. Es por esto que Martín Criado propone una sociología de los grupos de edad que entienda éstos como formando parte de la lucha de clases, de modo que no cabría hablar de «una juventud», sino de «juventudes» distintas y enfrentadas entre sí. Igualmente, a pesar de encontrarnos en un mundo globalizado, no es igual ni comparable la situación de [Mars Aguirre](https://www.youtube.com/watch?v=ecG6onfG-zs), una youtuber mexicana de clase acomodada que dejó la preparatoria (el equivalente al Bachillerato español) para dedicarse a sus proyectos personales, que la de los [niños soldado](https://www.unicef.es/ninos-soldado) de Sudán del Sur.
+
+Siguiendo entonces las ideas de [Gustavo Bueno](nodulo.org/ec/2013/n141p02.htm), entiendo que es razonable dar una «definición funcional» de la adolescencia. Esto es, es preciso entender que la adolescencia es un concepto «paramétrico» que depende de una serie de variables como pueden ser la época histórica, la etnia o racialización, el país o la clase social. Será distinto entonces considerar la adolescencia en los parámetros de «La Mars» (actualidad, blanca, México, clase acomodada) que los de un adolescente de etnia gitana en España que acompaña a su familia en la venta ambulante (actualidad, gitano, España, clase obrera o lumpenproletariado).
+
+**Referencia**:
+
+Martín Criado, E. (2002). Juventud. *Diccionario Crítico de Ciencias Sociales*, Pub. Electrónica, Universidad Complutense de Madrid

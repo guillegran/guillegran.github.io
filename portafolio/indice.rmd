@@ -1,0 +1,18 @@
+---
+title: Índice de contenidos
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+# Módulo I: Fundamentos del desarrollo y del aprendizaje humano
+
++ [Adolescencia. ¿Qué es para mi un adolescente?](adolescencia.html)
+
++ [Infografía con las características más importantes de la etapa adolescente.](infografia_adolescencia.png)
+
+# Módulo II: Aprender y enseñar en la Educación Secundaria
+
++ [Mapa conceptual sobre los distintos paradigmas del aprendizaje (conductismo frente a cognitivismo)](mapaconceptual.html)

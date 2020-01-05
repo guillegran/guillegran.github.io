@@ -7,12 +7,20 @@ output:
     theme: readable
 ---
 
-# Módulo I: Fundamentos del desarrollo y del aprendizaje humano
+## Módulo I: Fundamentos del desarrollo y del aprendizaje humano
 
 + [Adolescencia. ¿Qué es para mi un adolescente?](adolescencia.html)
 
 + [Infografía con las características más importantes de la etapa adolescente.](infografia_adolescencia.png)
 
-# Módulo II: Aprender y enseñar en la Educación Secundaria
+## Módulo II: Aprender y enseñar en la Educación Secundaria
 
 + [Mapa conceptual sobre los distintos paradigmas del aprendizaje (conductismo frente a cognitivismo)](mapaconceptual.html)
+
++ [Diversidad de género y orientación sexual. El colectivo LGTB](lgtb.html)
+
++ [¿Qué es el TDAH?](tdah.html)
+
+## Módulo III: Psicología de la instrucción
+
++ [Educación para todos en la sociedad de la información. Profesores youtubers](youtubers.html)

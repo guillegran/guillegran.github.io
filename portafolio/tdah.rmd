@@ -1,0 +1,26 @@
+---
+title: ¿Qué es el TDAH?
+output:
+  html_document: 
+    toc: true
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+El transtorno por déficit de atención con hiperactividad (TDAH, o ADHD, por sus siglas en inglés) es un transtorno mental caracterizado por la dificultad en prestar atención, la actividad excesiva y el comportamiento impulsivo (más del esperado para la edad del individuo). En el ámbito escolar este trastorno tiene especial relevancia, en tanto que es una de las causas a las que se suele achacar el bajo rendimiento escolar.
+
+El tratamiento del TDAH se basa principalmente en terapias conductuales y farmacológicas. Los tratamientos farmacológicos consisten básicamente en el suministro de psicoestimulantes, entre los que hay anfetamínicos, xánticos y no anfetamínicos. Los fármacos más comunes para este tratamiento en Estados Unidos son el metilfenidato y la d,l-anfetamina, los tan polémicos Ritalin y Adderall. En cuanto a las pautas psicopedagógicas para el tratamiento del TDAH se incluyen la alternación de actividades en el pupitre con actividades más dinámicas, transmitirles calma y no privarlos de la actividad física. 
+
+Existe cierta polémica en torno al TDAH. Ciertos autores, como [Marino Pérez Álvarez](http://www.youtube.com/watch?v=x6Ses9TG3YQ) consideran que el TDAH carece de entidad clínica. En su libro junto con García de Vinuesa y González Pardo (2014) defienden que el diagnóstico de este trastorno no se da en base a biomarcadores sino en base a la valoración de ciertos ítems indicados en el DSM-IV-R, a veces redundantes, por parte de adultos (padres y profesores) y a veces de manera bastante subjetiva. Con esto no se quiere decir que los niños diagnosticados con TDAH no tengan problemas reales, sino que sus problemas tienen otros condicionantes contextuales, que se ven encubiertos por el diagnóstico y para los cuales el tratamiento psicofarmacológico puede resultar inútil, cuando no perjudicial.
+
+**Referencia:**
+García de Vinuesa, F., González Pardo, H. y Pérez Álvarez, M. (2014). *Volviendo a la normalidad. La invención del TDAH y del trastorno bipolar infantil.* Madrid, España: Alianza Editorial
+

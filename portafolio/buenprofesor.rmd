@@ -1,0 +1,52 @@
+---
+title: Las características de los buenos profesores. ¿Las tengo yo?
+output:
+  html_document: 
+    toc: true
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+Como ya he comentado en el texto sobre [buenos y malos profesores](profesalumnos.html), la pregunta de qué es un buen o un mal profesor carece de sentido si no se especifican los objetivos del proceso de enseñanza y la plataforma desde la que se mira esta pregunta. Ahora bien, asumiendo que hay diversos artículos y estudios que enumeran algunas características genéricas que se supone que debería tener un buen profesor, vamos a hacer una breve enumeración de algunas de éstas y haré un autoanálisis sobre si dispongo o no de estas características.
+
+Concretamente, el artículo del que se han tomado las siguientes características es [éste](http://www.greatschools.org/gk/articles/what-makes-a-great-teacher/).
+Algunas características de los buenos profesores:
+
+1. Tener altas expectativas de todos los estudiantes.
+
+2. Tener unos objetivos claros y planeados.
+
+3. Ser preparados y organizados.
+
+4. Involucrar a los estudiantes y hacer que vean los problemas desde varios puntos de vista.
+
+5. Formar fuertes relaciones humanas y mostrar que se preocupan por ellos como personas.
+
+6. Dominar la asignatura.
+
+7. Comunicarse frecuentemente con los padres.
+
+A continuación voy a evaluar si considero que reúno alguna de estas características:
+
+1. Creo que suelo tener bastantes expectativas con la mayoría de los estudiantes, ya que creo que los resultados no depende tanto de que uno sea "listo" o "tonto", sino de la cantidad de interés y dedicación de uno invierte. Así, creo que todos los estudiantes son sobradamente aptos para entender y dominar los contenidos que les enseño.
+
+2. Tiendo a prepararme las clases bastante, fijándome a qué quiero llegar y cuánto quiero contar exactamente.
+
+3. En la línea de lo anterior, si el tiempo lo permite, intento prepararme al máximo las clases, para lo que una buena organización de los materiales ayuda enormemente.
+
+4. Intento involucrar bastante a los estudiantes, aunque creo no tengo una naturalidad especial/capacidad de persuasión/don de gentes para embaucarles y animarles a una participación activa, así que trato de configurar las clases de modo que pueda incluir algún tiempo de participación de los estudiantes (poniéndoles ejercicios en clase, etc.). Por otra parte, creo que un conocimiento profundo de las materias a enseñar consiste también en saber ver los problemas desde diferentes puntos de vista.
+
+5. Soy una persona amigable, aunque tal vez no tenga las mejores habilidades sociales, y a lo mejor no soy el profesor que mejor pueda caerle a los alumnos. En cualquier caso, creo que en la mayoría de los casos conozco o intento interesarme por el entorno y las motivaciones de mis alumnos.
+
+6. Esto depende de la asignatura a enseñar, pero en cualquier caso, siempre intento estudiar con bastante antelación la materia que voy a enseñar.
+
+7. En línea con lo anterior, teniendo en cuenta que no soy la persona más sociable del mundo, tal vez mis habilidades no sean las mejores para una comunicación óptima con los padres.
+

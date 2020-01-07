@@ -24,3 +24,7 @@ output:
 ## Módulo III: Psicología de la instrucción
 
 + [Educación para todos en la sociedad de la información. Profesores youtubers](youtubers.html)
+
++ [Buenos y malos profesores y buenos y malos alumnos](profesalumnos.html)
+
++ [Las características de los buenos profesores. ¿Las tengo yo?](buenprofesor.html)

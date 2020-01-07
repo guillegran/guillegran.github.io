@@ -1,0 +1,33 @@
+---
+title: Buenos y malos profesores y buenos y malos alumnos
+output:
+  html_document: 
+    toc: true
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+## ¿Qué determina que un profesor sea bueno o malo?
+A mi juicio, la labor de un profesor puede compararse a una función matemática. La $x$, la variable independiente, está determinada por el estudiante o el grupo de estudiantes, mientras que la variable dependiente $y=f(x)$ vendría determinada por la relación del estudiante con el docente. Es decir, no cabe considerar que exista una metodología única de la enseñanza, sino que esta dependerá de los alumnos, de su nivel de conocimientos, de su contexto socio-cultural, de la asignatura a enseñar y de los objetivos de ésta, de los medios disponibles, etc. Esto se debe a que la pedagogía no es una *ciencia exacta* como lo podrían ser las matemáticas o la química, sino que es más bien una técnica o un conjunto de técnicas, perfeccionadas normalmente con la experiencia y el conocimiento profundo y dominio práctico de la materia a impartir.
+
+Así, considero que un buen profesor no puede ser aquel que carezca de alguno de los requisitos necesarios para realizar esta técnica docente. Es decir, será un mal profesor el que sea incapaz de comunicarse o el que no tenga un dominio suficiente de su asignatura. Por otra parte, a mi juicio, será capaz de transmitir un conocimiento de manera eficaz aquel que tenga la capacidad de "ser un ejemplo a seguir", ya que si el profesor es capaz de realizar la construcción del conocimiento, de forma que los alumnos puedan imitarlo, estos a su vez estarán construyendo el conocimiento que se quiere enseñar.
+
+Para tratar de ir a aspectos más profundos es necesario, por lo dicho antes, considerar situaciones concretas, y evaluar en éstas cómo debería ser un profesor. Por ejemplo, si yo quiero obtener el carnet de conducir y considero válido el criterio por el cual alguien que haya aprobado el carnet de conducir, en condiciones normales, no debería suponer un peligro para su seguridad y la de sus conciudadanos (en tanto que ha superado esa prueba) y teniendo en cuenta que las clases de conducir y los derechos de examen tienen un coste económico elevado para el alumno, consideraría que para mí el mejor profesor sería con el que pudiera aprobar con el mínimo número de clases y en el mínimo número de intentos. Una situación similar sería la de un alumno que se apunta a clases particulares de Matemáticas en verano para recuperar los exámenes de septiembre. Otro ejemplo distinto es el de un estudiante de Segundo de Bachillerato que quiere hacer la carrera de Filología Inglesa y no tiene gran interés en las matemáticas, o mi propia situación en la asignatura de Plasmas y Procesos Atómicos en quinto de carrera. Tanto para mí como para ese hipotético estudiante de Bachillerato, el mejor profesor es el que nos aprueba con *el mínimo esfuerzo*. 
+
+Tengamos en cuenta que hasta ahora estamos considerando exclusivamente el criterio de "bueno" o "malo", *para el alumno*. Sin embargo, podríamos tomar otros puntos de vista. ¿Quién considerará el dueño de una academia que es un *buen profesor*? Pues, asumiendo que los móviles del dueño de la academia son los económicos, que es lo habitual, el mejor profesor será el que le haga ganar más dinero. En este caso es fácil advertir que no necesariamente "se aprende más" con el profesor que hace ganar más dinero a la academia, sino que puede ser, por ejemplo, un profesor que tenga contacto con otro profesor de un cierto instituto, que le dé acceso a los exámenes que pone y le envíe alumnos. 
+
+La pregunta puede llegar incluso a tener tintes políticos en el contexto de un profesor de instituto. ¿Qué profesor es mejor, el que enseña $x$ a todo el mundo, o el que enseña $5x$ a unos pocos, $2x$ a la mayoría, y $0$ a dos o tres? ¿Cuánto debe enseñar un profesor a la mayoría? ¿Y si a la mayoría no le interesa tu asignatura y la va a dejar al año siguiente?
+
+## ¿Qué es un alumno bueno o malo?
+De forma similar se podría responder a la pregunta de cuándo un alumno es "bueno" o es "malo". ¿Bueno para quién? Para el profesor; depende del profesor pero, por lo general, el que sea obediente y trabajador, pero no pelota, a menos que al profesor le guste que le hagan la pelota. Para los padres; el que aproveche al máximo la educación que ellos le proporcionan con tanto esfuezo. ¿Y para él mismo? Pues depende de sus intereses. Si te encierras a estudiar toda tu adolescencia, a lo mejor te conviertes en un tipo brillante en ciertas materias pero con nulas habilidades sociales, ahora bien, esa es una forma de ser tan válida como cualquier otra. 
+
+## Conclusiones
+En conclusión, considero que la pregunta sobre qué hace "bueno" o "malo" a un alumno o a un profesor es capciosa, ya que cualquier respuesta concreta que se dé puede ser considerada incorrecta en un cierto contexto. Ser buen o mal profesor o ser buen o mal alumno depende completamente de la situación concreta y de las coordenadas desde las que se mire.

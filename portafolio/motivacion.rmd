@@ -1,0 +1,50 @@
+---
+title: Motivación y expectativas del alumnado
+output:
+  html_document: 
+    toc: true
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+En clase hemos realizado una actividad sobre [Motivación](Motivacion.pdf). Se nos dan varias respuestas de estudiantes a la pregunta sobre cuáles creen que son las razones por las que han obtenido los resultados que han obtenido en sus asignaturas. Se pide clasificar estos testimonios según la clasificación de Weiner atendiendo a los componentes de locus, estabilidad y controlabilidad. A continuación presentamos la clasificación que hemos hecho
+
++ Estable
+
+	+ Locus de control interno
+
+		+ Controlable: Marcos 1, Raúl 1
+
+		+ Incontrolable: Andrea 2, Laura 2
+
+	+ Locus de control externo
+
+		+ Controlable: Laura 1, María 1
+
+		+ Incontrolable: Andrea 1, Marcos 2, Raúl 2
+
++ Inestable
+
+	+ Locus de control interno
+
+		+ Controlable: Alex 2
+
+		+ Incontrolable: Alex 1
+
+	+ Locus de control externo
+
+		+ Controlable:
+
+		+ Incontrolable: María 2
+
+Se pregunta también que qué recomendaciones y pautas daríamos a Valeria (la profesora) para ayudar a los alumnos a modificar las atribuciones inadecuadas de los ejercicios anteriores. A mí me parece que sería positivo tratar de mantener este tipo de "autoexploraciones" constantes en el tiempo, para ver si en situaciones distintas los alumnos responderían de forma similar. Convendría también hacer un análisis más exhaustivo y ver si los alumnos tienen concepciones similares respecto de los resultados de las demás asignaturas de las que no han hablado. Sería interesante que los alumnos pusieran en común entre ellos sus razones, para que puedan comparar sus resultados y tal vez ayudarse a mejorar.
+
+Finalmente se pregunta qué aspectos del rol del profesor son los más importantes para la motivación del alumnado. La respuesta a esta pregunta entiendo que depende realmente del alumno concreto, ya que el alumnado no es un conjunto heterogéneo con los mismos intereses. Ahora bien, pueden ser muy valiosos en el profesor la empatía con el alumnado, el conocimiento de sus intereses (qué aficiones tienen) y también un buen conocimiento de la asignatura, para poder hallar un enfoque o aplicación de la materia que pueda resultarles interesante.

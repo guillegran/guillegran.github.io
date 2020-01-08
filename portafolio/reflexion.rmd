@@ -1,0 +1,140 @@
+---
+title: Análisis y reflexión de las aportaciones. Autoevaluación
+output:
+  html_document: 
+    toc: true
+    theme: readable
+---
+
+<style>
+body {
+text-align: justify
+}
+p {
+text-indent: 4rem;
+}
+</style>
+
+## Evaluación sobre la materia y el grupo de aula
+
+1. *¿Qué valoración tienes sobre los contenidos propuestos?*
+
+Me parece una selección correcta de temas, teniendo en cuenta que los objetivos de la asignatura son tratar los aspectos psicológicos de la educación secundaria, centrándose en el aprendizaje y en el desarrollo de la personalidad.
+
+2. *Tanto las presentaciones como las infografías suministradas, ¿han resultado útiles para facilitar el desarrollo y seguimiento de la formación durante el proceso de aprendizaje?*
+
+Sí, pues para un alumnado no formado técnicamente en psicología, como nosotros, nos es mucho más "digerible" la información así expuesta y resumida que acudir a artículos científicos o a referencias originales inabarcables en un curso de estas características.
+
+3. *¿Qué material (bibliográfico, en la Red...) has consultado para ampliar o complementar la información de los contenidos presentados en el aula?*
+
+He consultado varios artículos en periódicos y revistas y, sobre todo, la Wikipedia en inglés que, aunque no siempre es una referencia fiable, suele tener buenos artículos de introducción y con buenas referencias para ciertos temas.
+
+4. *¿Cómo ha funcionado el grupo de aula?*
+
+Hemos sido un grupo muy participativo y hemos discutido una gran variedad de temas, aunque creo que a veces por enfrascarnos demasiado y todos querer aportar nuestra visión de los diferentes asuntos no se ha avanzado mucho en los contenidos.
+
+5. *¿Ha fomentado el aprendizaje de contenidos?*
+
+La alta participación de los compañeros a ayudado a discutir y afianzar nuestras posiciones sobre los contenidos, y también a motivar y a entender por qué estos contenidos son necesarios, aunque no necesariamente a la asimilación formal de estos contenidos.
+
+6. *¿Qué valoración tienes sobre la docente?*
+
+Es una buena profesora que además ha sido considerada en hacer amena la clase con uno de los peores horarios posibles (viernes a primera hora de la tarde). Ha sido capaz de hacer que nos replanteemos muchos de nuestros puntos de vista y ha sabido escuchar nuestras dudas, quejas y comentarios. Por hacer una pequeña crítica constructiva, hubiera sido positivo tal vez más intervención de la profesora en la moderación de los debates y aportaciones, de forma que se respetaran mejor los turnos de palabra y también que los debates no ocuparan todo el tiempo de clase.
+
+7. *Señala 3 aspectos positivos de la formación recibida:*
+
+	1. El carácter participativo de las clases.
+
+	2. La variedad de recursos (infografías, vídeos, recursos web...).
+
+	3. El valor de los contenidos de cara a la práctica.
+
+8. *Señala 3 aspectos para mejorar de la formación recibida:*
+
+	1. Sería positivo dedicar algo más de tiempo a explicar los contenidos, aunque esto restara parte del tiempo para discutir sobre ellos.
+
+	2. Teniendo en cuenta el poco recorrido y los escasos conocimientos previos del alumnado en temas psicológicos y pedagógicos, convendría tener algo de trasfondo histórico y filosófico de las ideas que se enseñan en clase y también contrastarlas con los distintos modelos educativos que han existido y existen en España y en otros países.
+
+	3. Sería interesante haber visto en clase algunas de estas ideas aplicadas a experiencias prácticas en nuestra especialidad, Matemáticas.
+
+## Autoevaluación
+
+9. *¿Qué sabía sobre los distintos contenidos de la asignatura?*
+
+Muy poco. Nunca había cursado una asignatura de psicología. Tan sólo estaba familiarizado con ciertas ideas del conductismo por haberlo estudiado en filosofía de Bachillerato y de haber leído *Un mundo feliz*. El resto de mis conocimientos de psicología se reducen a algunas lecturas que había hecho sobre teoría de la percepción y a conversaciones con mi hermana, que es psicóloga.
+
+10. *¿Qué sé ahora?*
+
+Ahora conozco las distintas teorías que hay sobre el aprendizaje, conozco las características psicológicas de la adolescencia y algunas metodologías y modelos pedagógicos distintintos a los tradicionales. También hemos aprendido ciertas herramientas para clasificar respuestas y comportamientos del alumnado, como la clasificación de Weiner.
+
+11. *¿Qué información interesante he descubierto?*
+
+Aspectos sobre la atención y la motivación del alumnado y las metodologías activas.
+
+12. *Personalmente, ¿qué es lo más importante que he aprendido?*
+
+Que la psicología ofrece herramientas para clasificar y entender de forma sistemática los comportamientos y las respuestas de los alumnos, que de otra forma me serían invisibles o descartaría como algo superficial o circunstancial.
+
+13. *¿Cómo lo he aprendido?*
+
+Creo que con todo lo que he hecho en la asignatura. Es la idea principal que he extraído de las exposiciones de la profesora, de las discusiones en clase y de las lecturas.
+
+14. *¿Cuáles han sido las mejores ideas?*
+
+Como ya he dicho, la posibilidad de sistematizar algunos comportamientos de los alumnos.
+
+15. *¿Cuáles han sido los mejores logros conseguidos?*
+
+Para mí el mejor logro ha sido obtener cierta formación en un tema del que era un completo ignorante.
+
+16. *¿Cuáles han sido las dificultades encontradas?*
+
+La abrumadora cantidad de recursos, y que la búsqueda de información en Internet muchas veces se entremezcla con artículos de opinión e informaciones contradictorias.
+
+17. *¿Cómo las he conseguido superar?*
+
+Tratando de cribar la información, acudiendo a fuentes que he considerado fiables y valiéndome también de los recursos que nos ha dado la profesora.
+
+18. *¿Qué crees que has dejado de aprender?*
+
+Me hubiera gustado saber más sobre el trasfondo filosófico de las distintas teorías del aprendizaje y sobre su origen y aceptación históricos.
+
+19. *Cosas que hemos hecho entre todos:*
+
+Hemos creado un ambiente en el que se pueden discutir muchos temas con educación y respeto.
+
+20. *Cosas que he hecho yo personalmente:*
+
+He intentado a veces aportar ciertas opiniones ligeramente disonantes con las que defendían el resto de mis compañeros de forma general, intentando así jugar el papel de "abogado del diablo", para tratar de analizar y confrontar todos los puntos de vista.
+
+21. *Cosas importantes que voy a recordar:*
+
+Todavía no sé lo que voy a recordar, lo sabré en un futuro. En cualquier caso, para mí ha sido provechoso contrastar los diferentes puntos de vista que teníamos sobre la adolescencia y sobre la enseñanza, en general.
+
+22. *Cuál ha sido mi actitud:*
+
+Creo que ha sido positiva e interesada aunque a veces escéptica y otras aburrida, debido al nefasto horario.
+
+23. *¿Cuál ha sido mi nivel de participación e implicación?*
+
+Creo que he participado mucho en todas las discusiones y actividades que hemos hecho.
+
+24. *¿He sido exigente conmigo mismo en las actividades realizadas en el curso?*
+
+Creo que me he exigido lo suficiente, dentro de mis limitaciones temporales, aunque a lo mejor podría haberme exigido más.
+
+25. *¿Cómo estimarías tu trabajo y esfuerzo personal en estas sesiones formativas?*
+
+Creo que he hecho una cantidad de trabajo suficiente para seguir el curso y participar activamente en él.
+
+26. *¿Cómo valoraría el interes y actitud mostrado del 1 al 10?*
+
+8
+
+27. *¿Qué calificación darías a tu desempeño en una expresión numérica del 1 al 10?*
+
+7
+
+28. *¿Algo más que quieras añadir?*
+
+Ha sido una experiencia positiva, y quiero dar las gracias a la profesora y a mis compañeros por hacerla posible.

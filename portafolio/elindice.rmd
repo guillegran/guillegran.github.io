@@ -6,12 +6,13 @@ output:
     toc_float: true
     theme: readable
 ---
++ [Portada](portada.html)
 
 + [Sobre mí](aboutme.html)
 
 ## Módulo I: Fundamentos del desarrollo y del aprendizaje humano
 
-+ [Adolescencia. ¿Qué es para mi un adolescente?](adolescencia.html)
++ [Adolescencia. ¿Qué es para mí un adolescente?](adolescencia.html)
 
 + [Infografía con las características más importantes de la etapa adolescente.](infografia_adolescencia.png)
 

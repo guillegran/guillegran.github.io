@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Guillermo Gallego" />
+  <title>A first idea of the cohomology of sheaves</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">A first idea of the cohomology of sheaves</h1>
+<h2 class="author">Guillermo Gallego</h2>
+</div>
+<p>In this first entry I want to give a first notion of the cohomology of sheaves through Čech cohomology and try to show how cohomology appears in a natural way when studying sheaves.</p>
+<p>First, let us recall what was the definition of a sheaf. We start with a topological space <span class="math inline">\(X\)</span> and consider the category <span class="math inline">\(\mathrm{Op}(X)\)</span> whose objects are open subsets <span class="math inline">\(U\subset X\)</span> and whose morphisms are given by set inclusions <span class="math inline">\(U\hookrightarrow V\)</span>. This is a particular example of a <em>site</em>, a category endowed with a <em>Grothendieck topology</em>. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category <span class="math inline">\(\mathrm{Op}(X)\)</span>.</p>
+<h4 id="definition-1.">Definition 1.</h4>
+<p>A <em>presheaf</em> is a contravariant functor <span class="math inline">\(\mathcal{F}:\mathrm{Op}(X) \rightarrow \mathrm{Set}\)</span>.<br />
+More generally, if <span class="math inline">\(\mathcal{C}\)</span> is a subcategory of <span class="math inline">\(\mathrm{Set}\)</span> (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor <span class="math inline">\(\mathrm{Op}(X) \rightarrow \mathcal{C}\)</span> is a <span class="math inline">\(\mathcal{C}\)</span>-valued presheaf. For example, we speak of a sheaf of topological spaces, a sheaf of groups, a sheaf of modules, etc.</p>
+<p>Let us stop for a second and try to unravel the meaning of this definition. A presheaf is giving, for any open subset <span class="math inline">\(U\subset X\)</span> a set <span class="math inline">\(\mathcal{F}(U)\)</span> associated to it and, for any inclusion <span class="math inline">\(V\hookrightarrow U\)</span> a <em>restriction morphism</em> <span class="math inline">\(r^U_V: \mathcal{F}(U) \rightarrow \mathcal{F}(V)\)</span>.</p>
+<p>The most important example of presheaf is the <em>presheaf of continuous functions</em>. If <span class="math inline">\(X\)</span> is a topological space and <span class="math inline">\(Y\)</span> is another topological space, we define the presheaf <span class="math inline">\(\mathcal{C}_X(-,Y)\)</span> on <span class="math inline">\(X\)</span> given by <span class="math display">\[\mathcal{C}_X (U,Y) = \left\{ \text{Continuous maps } U\rightarrow Y \right\}.\]</span> The restriction morphisms of this presheaf are given, precisely, by restrictions <span class="math display">\[\begin{aligned}
+  r^U_V :\mathcal{C}_X(U,Y)&amp;\longrightarrow \mathcal{C}_X(V,Y)\\ 
+    f &amp;\longmapsto f|_V. 
+  \end{aligned}\]</span></p>
+<p>However, this presheaf has some extra good properties that we would like to have in general. The first property is known as <em>locality</em>, this means that if we cover any open subset <span class="math inline">\(U\subset X\)</span> by open sets, <span class="math inline">\(U=\bigcup_{i\in I} U_i\)</span> and <span class="math inline">\(s,t: U \rightarrow Y\)</span> are two functions that coincide on all of the <span class="math inline">\(U_i\)</span>, that is <span class="math inline">\(s|_{U_i}=t|_{U_i}\)</span> for every <span class="math inline">\(i\in I\)</span>, then <span class="math inline">\(s=t\)</span>. The second property is known as <em>gluing</em>: if for every <span class="math inline">\(i \in I\)</span> we define some <span class="math inline">\(f_i:U_i \rightarrow Y\)</span> in such a way that they agree on the overlaps, that is <span class="math inline">\(f_i|_{U_i\cap U_j} = f_j|_{U_i \cap U_j}\)</span>, then there is some function <span class="math inline">\(f:U \rightarrow Y\)</span> such that <span class="math inline">\(f|_{U_i} =f_i\)</span>. These two properties can be gathered in just one if we just add to the gluing condition that the obtained <span class="math inline">\(f\)</span> is unique. Thus, we define:</p>
+<h4 id="definition-2.">Definition 2.</h4>
+<p>A presheaf <span class="math inline">\(\mathcal{F}\)</span> is a sheaf if, for every open subset <span class="math inline">\(U\subset X\)</span>, given an open covering <span class="math inline">\(U=\bigcup_{i\in I} U_i\)</span> and a collection of elements <span class="math inline">\(s_i \in \mathcal{F}(U_i)\)</span> for every <span class="math inline">\(i\in I\)</span> such that, for every <span class="math inline">\(i,j \in I\)</span>, <span class="math display">\[s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j},\]</span> there exists a unique <span class="math inline">\(s\in \mathcal{F}(U)\)</span> such that <span class="math inline">\(s_i=s|_{U_i}\)</span> for every <span class="math inline">\(i\in I\)</span>.</p>
+</body>
+</html>

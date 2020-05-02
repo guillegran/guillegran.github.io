@@ -17,6 +17,8 @@ guillegallegosanchez@gmail.com
 
 I am a PhD student of Mathematics at [Universidad Complutense de Madrid](https://www.ucm.es) (UCM), under the supervision of [Oscar García-Prada](https://www.icmat.es/miembros/garcia-prada/) at [Instituto de Ciencias Matemáticas](https://www.icmat.es) (ICMAT).
 
+Here you can read [my math blog](blog/indice.html).
+
 ### Research interests
 + Complex and algebraic geometry
 

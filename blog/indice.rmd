@@ -1,0 +1,11 @@
+---
+title: My math blog <font size="3">(looking for a better name)</font>
+output:
+  html_document: 
+    theme: readable
+---
+By [Guillermo Gallego](https://guillegran.github.io)
+
++ May 2, 2020. [A first idea of the cohomology of sheaves](CechCohomology/cohomology.html) ([PDF version](CechCohomology/cohomology.pdf))
+
+

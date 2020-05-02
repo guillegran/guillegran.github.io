@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Guillermo Gallego" />
+  <title>A first idea of the cohomology of sheaves</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script type="text/javascript">/*<![CDATA[*/
+  /*
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode =
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].value);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n")
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/")
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].value!="italic" &&
+                   node.attributes[j].value!="" &&
+                   node.attributes[j].value!="inherit" &&
+                   node.attributes[j].value!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].value+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">A first idea of the cohomology of sheaves</h1>
+<h2 class="author">Guillermo Gallego</h2>
+</div>
+<p>In this first entry I want to give a first notion of the cohomology of sheaves through Čech cohomology and try to show how cohomology appears in a natural way when studying sheaves.</p>
+<p>First, let us recall what was the definition of a sheaf. We start with a topological space <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> and consider the category <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="normal"><mi>O</mi><mi>p</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathrm{Op}(X)</annotation></semantics></math> whose objects are open subsets <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subset X</annotation></semantics></math> and whose morphisms are given by set inclusions <span class="math inline">$U\hookrightarrow V$</span>. This is a particular example of a <em>site</em>, a category endowed with a <em>Grothendieck topology</em>. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="normal"><mi>O</mi><mi>p</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathrm{Op}(X)</annotation></semantics></math>.</p>
+<h4 id="definition-1.">Definition 1.</h4>
+<p>A <em>presheaf</em> is a contravariant functor <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo>:</mo><mstyle mathvariant="normal"><mi>O</mi><mi>p</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo accent="false">→</mo><mstyle mathvariant="normal"><mi>S</mi><mi>e</mi><mi>t</mi></mstyle></mrow><annotation encoding="application/x-tex">\mathcal{F}:\mathrm{Op}(X) \rightarrow \mathrm{Set}</annotation></semantics></math>.<br />
+More generally, if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math> is a subcategory of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="normal"><mi>S</mi><mi>e</mi><mi>t</mi></mstyle><annotation encoding="application/x-tex">\mathrm{Set}</annotation></semantics></math> (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="normal"><mi>O</mi><mi>p</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>X</mi><mo stretchy="false" form="postfix">)</mo><mo accent="false">→</mo><mstyle mathvariant="script"><mi>𝒞</mi></mstyle></mrow><annotation encoding="application/x-tex">\mathrm{Op}(X) \rightarrow \mathcal{C}</annotation></semantics></math> is a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><annotation encoding="application/x-tex">\mathcal{C}</annotation></semantics></math>-valued presheaf. For example, we speak of a sheaf of topological spaces, a sheaf of groups, a sheaf of modules, etc.</p>
+<p>Let us stop for a second and try to unravel the meaning of this definition. A presheaf is giving, for any open subset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subset X</annotation></semantics></math> a set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{F}(U)</annotation></semantics></math> associated to it and, for any inclusion <span class="math inline">$V\hookrightarrow U$</span> a <em>restriction morphism</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>r</mi><mi>V</mi><mi>U</mi></msubsup><mo>:</mo><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo><mo accent="false">→</mo><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">r^U_V: \mathcal{F}(U) \rightarrow \mathcal{F}(V)</annotation></semantics></math>.</p>
+<p>The most important example of presheaf is the <em>presheaf of continuous functions</em>. If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> is a topological space and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> is another topological space, we define the presheaf <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{C}_X(-,Y)</annotation></semantics></math> on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> given by <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mrow><mtext mathvariant="normal">Continuous maps </mtext><mspace width="0.333em"></mspace></mrow><mi>U</mi><mo accent="false">→</mo><mi>Y</mi><mo stretchy="true" form="postfix">}</mo></mrow><mo>.</mo></mrow><annotation encoding="application/x-tex">\mathcal{C}_X (U,Y) = \left\{ \text{Continuous maps } U\rightarrow Y \right\}.</annotation></semantics></math> The restriction morphisms of this presheaf are given, precisely, by restrictions <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msubsup><mi>r</mi><mi>V</mi><mi>U</mi></msubsup><mo>:</mo><msub><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left"><mo accent="false">→</mo><msub><mstyle mathvariant="script"><mi>𝒞</mi></mstyle><mi>X</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi></mtd><mtd columnalign="left"><mo accent="false">↦</mo><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><mi>V</mi></msub><mo>.</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+  r^U_V :\mathcal{C}_X(U,Y)&amp;\longrightarrow \mathcal{C}_X(V,Y)\\ 
+    f &amp;\longmapsto f|_V. 
+  \end{aligned}</annotation></semantics></math></p>
+<p>However, this presheaf has some extra good properties that we would like to have in general. The first property is known as <em>locality</em>, this means that if we cover any open subset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subset X</annotation></semantics></math> by open sets, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub><msub><mi>U</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">U=\bigcup_{i\in I} U_i</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>t</mi><mo>:</mo><mi>U</mi><mo accent="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">s,t: U \rightarrow Y</annotation></semantics></math> are two functions that coincide on all of the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>i</mi></msub><annotation encoding="application/x-tex">U_i</annotation></semantics></math>, that is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>i</mi></msub></msub><mo>=</mo><mi>t</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>i</mi></msub></msub></mrow><annotation encoding="application/x-tex">s|_{U_i}=t|_{U_i}</annotation></semantics></math> for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i\in I</annotation></semantics></math>, then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s=t</annotation></semantics></math>. The second property is known as <em>gluing</em>: if for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i \in I</annotation></semantics></math> we define some <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>:</mo><msub><mi>U</mi><mi>i</mi></msub><mo accent="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f_i:U_i \rightarrow Y</annotation></semantics></math> in such a way that they agree on the overlaps, that is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>U</mi><mi>j</mi></msub></mrow></msub><mo>=</mo><msub><mi>f</mi><mi>j</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>U</mi><mi>j</mi></msub></mrow></msub></mrow><annotation encoding="application/x-tex">f_i|_{U_i\cap U_j} = f_j|_{U_i \cap U_j}</annotation></semantics></math>, then there is some function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>U</mi><mo accent="false">→</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">f:U \rightarrow Y</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>i</mi></msub></msub><mo>=</mo><msub><mi>f</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">f|_{U_i} =f_i</annotation></semantics></math>. These two properties can be gathered in just one if we just add to the gluing condition that the obtained <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> is unique. Thus, we define:</p>
+<h4 id="definition-2.">Definition 2.</h4>
+<p>A presheaf <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><annotation encoding="application/x-tex">\mathcal{F}</annotation></semantics></math> is a sheaf if, for every open subset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">U\subset X</annotation></semantics></math>, given an open covering <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub><msub><mi>U</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">U=\bigcup_{i\in I} U_i</annotation></semantics></math> and a collection of elements <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>∈</mo><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo stretchy="false" form="prefix">(</mo><msub><mi>U</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s_i \in \mathcal{F}(U_i)</annotation></semantics></math> for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i\in I</annotation></semantics></math> such that, for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i,j \in I</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>U</mi><mi>j</mi></msub></mrow></msub><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub><msub><mo stretchy="false" form="prefix">|</mo><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>U</mi><mi>j</mi></msub></mrow></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j},</annotation></semantics></math> there exists a unique <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>∈</mo><mstyle mathvariant="script"><mi>ℱ</mi></mstyle><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s\in \mathcal{F}(U)</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>=</mo><mi>s</mi><msub><mo stretchy="false" form="prefix">|</mo><msub><mi>U</mi><mi>i</mi></msub></msub></mrow><annotation encoding="application/x-tex">s_i=s|_{U_i}</annotation></semantics></math> for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i\in I</annotation></semantics></math>.</p>
+</body>
+</html>

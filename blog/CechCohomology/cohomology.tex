@@ -24,7 +24,7 @@ First, let us recall what was the definition of a sheaf. We start with a topolog
 \ \\ 
 \textbf{Definition 1.} A \emph{presheaf} is a contravariant functor $\mathcal{F}:\mathrm{Op}(X) \rightarrow \mathrm{Set}$. \\
 
-More generally, if $\mathcal{C}$ is a subcategory of $\mathrm{Set}$ (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor $\mathrm{Op}(X) \rightarrow \mathcal{C}$ is a \emph{$\mathcal{C}$-valued presheaf}. For example, we speak of a sheaf of topological spaces, a sheaf of groups, a sheaf of modules, etc. 
+More generally, if $\mathcal{C}$ is a subcategory of $\mathrm{Set}$ (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor $\mathrm{Op}(X) \rightarrow \mathcal{C}$ is a \emph{$\mathcal{C}$-valued presheaf}. For example, we speak of a presheaf of topological spaces, a presheaf of groups, a presheaf of modules, etc. 
 
 Let us stop for a second and try to unravel the meaning of this definition. A presheaf is giving, for any open subset $U\subset X$ a set $\mathcal{F}(U)$ associated to it and, for any inclusion $V\hookrightarrow U$ a \emph{restriction morphism} $r^U_V: \mathcal{F}(U) \rightarrow \mathcal{F}(V)$.
 
@@ -80,7 +80,7 @@ We also define the set of \emph{\v{C}ech $1$-cochains of $\mathcal{F}$ on $\math
       \mathcal{F}(U)= \left\{ f\in C^0(\mathfrak{U},\mathcal{F}): d_1'(f)=d_1''(f) \right\}.
     \end{equation*}
 
-    Moreover, suppose now that $\mathcal{F}$ is a sheaf of groups. Then since $C^0(\mathfrak{U},\mathcal{F})$ is defined as a product, it naturally inherits the structure of a group. On the other hand, $C^1(\mathfrak{U},\mathcal{F})$ is not in general a group, but it has a distinguished element
+    Moreover, suppose now that $\mathcal{F}$ is a sheaf of groups. Then since $C^0(\mathfrak{U},\mathcal{F})$ is defined as a product, it naturally inherits the structure of a group. Same goes for $C^1(\mathfrak{U},\mathcal{F})$, with identity element
     \begin{equation*}
       1=(1_{\mathcal{F}(U_i\cap U_j)})_{i<j \in I},
     \end{equation*}
@@ -160,7 +160,7 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
     \begin{equation*}
       i_{V\cap W}( f_V|_{V\cap W})= g|_{V\cap W} = i_{V\cap W}(f_W|_{V\cap W})
     \end{equation*}
-    and, since we already proved that $i$ remains injective after passing to global elements, we have that $ f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to ``glue'' these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f_U)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
+    and, since we already proved that $i$ remains injective after passing to global elements, we have that $ f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to ``glue'' these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
     \ \\
 
     There is now a natural question to ask ourselves. One should ask what is it that fails at $\mathcal{H}(U)$. Why $\pi_U$ is not in general surjective? What is the obstruction for the exactness to pass from the local setting to the global one. As we shall show, this obstruction is precisely given by sheaf cohomology.
@@ -223,7 +223,7 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 	\begin{equation*}
 	  H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
 	\end{equation*}
-	In other words, we consider the set of pairs $(\mathfrak{U},g)$, where $\mathfrak{U}=\left\{ U_i,i\in I \right\}$ is an open cover of $U$ and $g\in H^1(\mathfrak{U},\mathcal{F})$ and consider on it the equivalence relation $(\mathfrak{U},g)\sim (\mathfrak{V},g')$ if there exists another open cover $\mathfrak{W}$, with refinements $\tau$ from $\mathfrak{U}$ to $\mathfrak{W}$ and $\eta$ from $\mathfrak{V}$ to $\mathfrak{W}$ such that $\tau^*g=\tau^*g'$.
+	In other words, we consider the set of pairs $(\mathfrak{U},g)$, where $\mathfrak{U}=\left\{ U_i,i\in I \right\}$ is an open cover of $U$ and $g\in H^1(\mathfrak{U},\mathcal{F})$ and consider on it the equivalence relation $(\mathfrak{U},g)\sim (\mathfrak{V},g')$ if there exists another open cover $\mathfrak{W}$, with refinements $\tau$ from $\mathfrak{U}$ to $\mathfrak{W}$ and $\eta$ from $\mathfrak{V}$ to $\mathfrak{W}$ such that $\tau^*g=\eta^*g'$.
 
 	Finally, if we consider some element $h\in \mathcal{H}(U)$, consider the open covering $\mathfrak{U}=\left\{ U_i:i\in I \right\}$ and the cocycle $(g_{ij})_{i<j\in I}$ constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map
 	\begin{align*}
@@ -231,7 +231,7 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 	  h &\longmapsto [(\mathfrak{U},[(g_{ij})_{i<j\in I}])]. 
 	  \end{align*}
 
-	  The set $H^1(U,\mathcal{F})$ has a distinguished element, the equivalence class of any of the distinguished elements of the cochains sets. It is now clear that $\pi_U$ will be surjective precisely when for every $h\in \mathcal{H}(U)$, the class $\delta$ can be represented by the cocycle $1$ in some open cover $\mathfrak{U}$ of $U$. This means that $\mathrm{im} \pi_U=\ker \delta$, and thus we get an exact sequence
+	  The set $H^1(U,\mathcal{F})$ has a distinguished element, the equivalence class of any of the distinguished elements of the cochains sets. It is now clear that $\pi_U$ will be surjective precisely when for every $h\in \mathcal{H}(U)$, the class $\delta(h)$ can be represented by the cocycle $1$ in some open cover $\mathfrak{U}$ of $U$. This means that $\mathrm{im} \pi_U=\ker \delta$, and thus we get an exact sequence
 	  \begin{equation*}
       \begin{CD}
 	1 @>>>	\mathcal{F}(U) @> i_U >> \mathcal{G}(U) @> \pi_U >> \mathcal{H}(U) @>\delta >> H^1(U,\mathcal{F}).
@@ -272,6 +272,9 @@ When $\mathcal{G}$ is also a sheaf of abelian groups, then the three sheaves are
 
 The treatement of cohomology we have given has been almost purely algebraic. However, there are a lot of geometric problems where these ideas are relevant. Moreover, the elements of $H^1(X,\mathcal{F})$ admit a very neat geometric interpretation as \emph{$\mathcal{F}$-torsors}. All these things will be treated in future posts.
 
+
+\subsection*{Acknowledgements}
+Thanks to Raúl González Molina for some comments and corrections.
 \end{document}
 
 

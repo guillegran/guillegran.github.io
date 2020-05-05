@@ -6,6 +6,8 @@ output:
 ---
 By [Guillermo Gallego](https://guillegran.github.io)
 
-+ May 2, 2020. [A first idea of the cohomology of sheaves](CechCohomology/cohomology.html) ([PDF version](CechCohomology/cohomology.pdf))
+(For any comments, feel free to write me at guillegallegosanchez@gmail.com).
+
++ May 2, 2020. [A first idea of the cohomology of sheaves](CechCohomology/cohomologyR.html) ([PDF version](CechCohomology/cohomologyR.pdf))
 
 

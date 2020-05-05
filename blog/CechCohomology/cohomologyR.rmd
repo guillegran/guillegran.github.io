@@ -292,20 +292,22 @@ It is easy to prove now that in fact this continues the above exact sequence to 
 
    The kernel of $d_p$ is the set of *Čech $p-1$-cocycles*, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the *$p$-th Čech cohomology group* $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
 
-  Consider now the special case in which we have an exact sequence of sheaves of groups $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1$ such that, for any open subset $U \subset X$ the group $\mathcal{F}(U)$ is contained in the centre of $\mathcal{G}(U)$. In this case the sheaf $\mathcal{F}$ must be a sheaf of abelian groups and thus $H^2(U,\mathcal{F})$ is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence
+  Consider now the special case in which we have an exact sequence of sheaves of groups $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1$ such that, for any open subset $U \subset X$ the group $\mathcal{F}(U)$ is contained in the centre of $\mathcal{G}(U)$. In this case the sheaf $\mathcal{F}$ must be a sheaf of abelian groups and thus $H^2(U,\mathcal{F})$ is defined. Moreover, in this case, the exact sequence can be continued to a longer exact sequence
 
 \begin{equation*}
 1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}) \rightarrow H^2(U,\mathcal{F}).
 \end{equation*}
 
  The way to prove this is analogous to the construction of the map $\delta$.
-When $\mathcal{G}$ is also a sheaf of abelian groups, then the three sheaves are. In this case it is well known that a long exact sequence that goes on forever can be constructed in the same way.
+When $\mathcal{G}$ is also a sheaf of abelian groups, then the three sheaves are. In this case it is well known that a long exact sequence that goes on forever can be constructed in the same way, assuming that the topological space $X$ satisfies some *good* properties (for example, if it is paracompact).
 
 The treatement of cohomology we have given has been almost purely algebraic. However, there are a lot of geometric problems where these ideas are relevant. Moreover, the elements of $H^1(X,\mathcal{F})$ admit a very neat geometric interpretation as *$\mathcal{F}$-torsors*. All these things will be treated in future posts.
 
 
 ## Acknowledgements
-Thanks to Raúl González Molina for some comments and corrections.
+Thanks to Raúl González Molina for some comments and corrections. 
+
+Special thanks to Aitor Iribar for pointing out that a statement in the first version of this post was wrong: there are cases of topological spaces where Čech cohomology does not coincide with derived functor cohomology for $p>1$, which implies that there is not a long exact sequence for Čech cohomology in these cases. One of these examples can be found in [this paper](https://www.sciencedirect.com/science/article/pii/S0166864113002538). However, Aitor points out that in fact there is a long exact sequence induced by a exact sequence in the category of *presheaves*. He suggests reading Tennison's [*Sheaf Theory*](https://www.cambridge.org/core/books/sheaf-theory/87633C74CA715D4F950D47F47528E17D), chapter 5.4.
 
 ------
 

@@ -1,4 +1,15 @@
-<span class="katex-error" title="ParseError: KaTeX parse error: Can&#x27;t use function &#x27;\v&#x27; in math mode at position 88: …heaves through \̲v̲{C}ech cohomolo…" style="color:#cc0000">In this first entry I want to give a first notion of the cohomology of sheaves through \v{C}ech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
+---
+title: "A first idea of the cohomology of sheaves"
+author: "Guillermo Gallego"
+date: "May 2, 2020"
+output:
+  html_document: 
+    theme: readable
+    includes: 
+     in_header: headers.html
+---
+
+In this first entry I want to give a first notion of the cohomology of sheaves through \v{C}ech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
 
 \section*{Presheaves and sheaves}
 First, let us recall what was the definition of a sheaf. We start with a topological space $X$ and consider the category $\mathrm{Op}(X)$ whose objects are open subsets $U\subset X$ and whose morphisms are given by set inclusions $U\hookrightarrow V$. This is a particular example of a \emph{site}, a category endowed with a \emph{Grothendieck topology}. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category $\mathrm{Op}(X)$.
@@ -16,8 +27,8 @@ The most important example of presheaf is the \emph{presheaf of continuous funct
 \end{equation*}
 The restriction morphisms of this presheaf are given, precisely, by restrictions
 \begin{align*}
-  r^U_V :\mathcal{C}_X(U,Y)&amp;\longrightarrow \mathcal{C}_X(V,Y)\\ 
-    f &amp;\longmapsto f|_V. 
+  r^U_V :\mathcal{C}_X(U,Y)&\longrightarrow \mathcal{C}_X(V,Y)\\ 
+    f &\longmapsto f|_V. 
   \end{align*}
   With this in mind, in general we are going to adopt the notation $f|_V=r^U_V(f)$ for any presheaf $\mathcal{F}$ and any $f\in \mathcal{F}(U)$.
 
@@ -36,40 +47,40 @@ The restriction morphisms of this presheaf are given, precisely, by restrictions
   \end{equation*}
 We also define the set of \emph{\v{C}ech $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$} as
   \begin{equation*}
-    C^1(\mathfrak{U},\mathcal{F})=\prod_{i&lt;j \in I} \mathcal{F}(U_i\cap U_j).
+    C^1(\mathfrak{U},\mathcal{F})=\prod_{i<j \in I} \mathcal{F}(U_i\cap U_j).
   \end{equation*}
-  Elements of $C^0(\mathfrak{U},\mathcal{F})$ can be written as $(f_i)_{i\in I}$ and elements of $C^1(\mathfrak{U},\mathcal{F})$ can be written as $(f_{ij})_{i&lt;j \in I}$. 
+  Elements of $C^0(\mathfrak{U},\mathcal{F})$ can be written as $(f_i)_{i\in I}$ and elements of $C^1(\mathfrak{U},\mathcal{F})$ can be written as $(f_{ij})_{i<j \in I}$. 
   Now, given any open subset $U\subset X$, the restriction maps induce natural maps
   \begin{align*}
-    d_0: \mathcal{F}(U)&amp;\longrightarrow C^0(\mathfrak{U},\mathcal{F})\\ 
-    f &amp;\longmapsto (f|_{U_i})_{i \in I}, 
+    d_0: \mathcal{F}(U)&\longrightarrow C^0(\mathfrak{U},\mathcal{F})\\ 
+    f &\longmapsto (f|_{U_i})_{i \in I}, 
     \end{align*}
   \begin{align*}
-    d&#x27;_1: C^0(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
-    (f_{i})_{i \in I} &amp;\longmapsto (f_i|_{U_i\cap U_j})_{i&lt;j \in I} , 
+    d'_1: C^0(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
+    (f_{i})_{i \in I} &\longmapsto (f_i|_{U_i\cap U_j})_{i<j \in I} , 
     \end{align*}
     and
   \begin{align*}
-    d_1&#x27;&#x27;: C^0(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
-    (f_{i})_{i \in I} &amp;\longmapsto (f_{j}|_{U_i \cap U_j})_{i&lt;j \in I}.
+    d_1'': C^0(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
+    (f_{i})_{i \in I} &\longmapsto (f_{j}|_{U_i \cap U_j})_{i<j \in I}.
     \end{align*}
     Now, the sheaf condition can be restated as saying that for any open subset $U\subset X$ and any open covering $\mathfrak{U}$ of $U$, the map $d_0$ is injective and the diagram
     \begin{equation*}
-      \mathcal{F}(U) \overset{d_0}{\hookrightarrow} C^0(\mathfrak{U},\mathcal{F}) \underset{d_1&#x27;&#x27;}{\overset{d_1&#x27;}{\rightrightarrows}} C^1(\mathfrak{U},\mathcal{F})
+      \mathcal{F}(U) \overset{d_0}{\hookrightarrow} C^0(\mathfrak{U},\mathcal{F}) \underset{d_1''}{\overset{d_1'}{\rightrightarrows}} C^1(\mathfrak{U},\mathcal{F})
     \end{equation*}
     is an equalizer. This means that
     \begin{equation*}
-      \mathcal{F}(U)= \left\{ f\in C^0(\mathfrak{U},\mathcal{F}): d_1&#x27;(f)=d_1&#x27;&#x27;(f) \right\}.
+      \mathcal{F}(U)= \left\{ f\in C^0(\mathfrak{U},\mathcal{F}): d_1'(f)=d_1''(f) \right\}.
     \end{equation*}
 
     Moreover, suppose now that $\mathcal{F}$ is a sheaf of groups. Then since $C^0(\mathfrak{U},\mathcal{F})$ is defined as a product, it naturally inherits the structure of a group. Same goes for $C^1(\mathfrak{U},\mathcal{F})$, with identity element
     \begin{equation*}
-      1=(1_{\mathcal{F}(U_i\cap U_j)})_{i&lt;j \in I},
+      1=(1_{\mathcal{F}(U_i\cap U_j)})_{i<j \in I},
     \end{equation*}
 where we are denoting by $1_G$ the identity element of a group $G$. We can also define the map
   \begin{align*}
-    d_1: C^0(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
-    (f_{i})_{i \in I} &amp;\longmapsto (f_{i}|_{U_i \cap U_j}(f_{j}|_{U_i \cap U_j})^{-1})_{i&lt;j \in I}.
+    d_1: C^0(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
+    (f_{i})_{i \in I} &\longmapsto (f_{i}|_{U_i \cap U_j}(f_{j}|_{U_i \cap U_j})^{-1})_{i<j \in I}.
     \end{align*}
     In this situation, the sheaf condition is equivalent to saying that $\mathcal{F}(U)$ is the kernel of this map, where by the kernel we obiously mean the preimage of the distinguished element. One can also write this as the fact that the following sequence is exact
     \begin{equation*}
@@ -80,9 +91,9 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 
     \begin{equation*}
     \begin{CD}
-      \mathcal{F}(U) @&gt; \varphi_U &gt;&gt; \mathcal{G}(U) \\
+      \mathcal{F}(U) @> \varphi_U >> \mathcal{G}(U) \\
       @VV r^U_{V} V   @VV r^U_{V} V \\
-      \mathcal{F}(V) @&gt; \varphi_V &gt;&gt; \mathcal{G}(V).
+      \mathcal{F}(V) @> \varphi_V >> \mathcal{G}(V).
     \end{CD}
     \end{equation*}
     If the sheaves involved are $\mathcal{C}$-valued then we say that the morphism is a \emph{morphism of  $\mathcal{C}$-valued sheaves} if the $\varphi_U$ are morphisms of $\mathcal{C}$.
@@ -99,13 +110,13 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
     If $\mathcal{F}$, $\mathcal{G}$ and $\mathcal{H}$ are sheaves of groups, we say that a sequence of morphisms of sheaves 
     \begin{equation*}
       \begin{CD}
-	\mathcal{F} @&gt; \varphi &gt;&gt; \mathcal{G} @&gt; \psi &gt;&gt; \mathcal{H}
+	\mathcal{F} @> \varphi >> \mathcal{G} @> \psi >> \mathcal{H}
       \end{CD}
     \end{equation*}
     is \emph{exact} at $\mathcal{G}$ if the induced sequence in the stalks
     \begin{equation*}
       \begin{CD}
-	\mathcal{F}_x @&gt; \varphi_x &gt;&gt; \mathcal{G}_x @&gt; \psi_x &gt;&gt; \mathcal{H}_x
+	\mathcal{F}_x @> \varphi_x >> \mathcal{G}_x @> \psi_x >> \mathcal{H}_x
       \end{CD}
     \end{equation*}
     is an exact sequence of groups at $\mathcal{G}_x$. That is, if $\ker(\psi_x) = \mathrm{im}(\varphi_x)$.
@@ -113,7 +124,7 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
     Note that exactness has been defined at the level of stalks, so we should not expect that exactness is preserved at a global level. That is, in general the sequence 
     \begin{equation*}
       \begin{CD}
-	\mathcal{F}(X) @&gt; \varphi_X &gt;&gt; \mathcal{G}(X) @&gt; \psi_X &gt;&gt; \mathcal{H}(X)
+	\mathcal{F}(X) @> \varphi_X >> \mathcal{G}(X) @> \psi_X >> \mathcal{H}(X)
       \end{CD}
     \end{equation*}
     will not be exact.
@@ -124,13 +135,13 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
     \textbf{Proposition 1.} \textit{A short exact sequence of sheaves of groups on a topological space $X$}
     \begin{equation*}
       \begin{CD}
-1 @&gt;&gt;&gt;	\mathcal{F} @&gt; i &gt;&gt; \mathcal{G} @&gt; \pi &gt;&gt; \mathcal{H} @&gt;&gt;&gt; 1,
+1 @>>>	\mathcal{F} @> i >> \mathcal{G} @> \pi >> \mathcal{H} @>>> 1,
       \end{CD}
     \end{equation*}
     \textit{induces an exact sequence}
     \begin{equation*}
       \begin{CD}
-1 @&gt;&gt;&gt;	\mathcal{F}(U) @&gt; i_U &gt;&gt; \mathcal{G}(U) @&gt; \pi_U &gt;&gt; \mathcal{H}(U),
+1 @>>>	\mathcal{F}(U) @> i_U >> \mathcal{G}(U) @> \pi_U >> \mathcal{H}(U),
       \end{CD}
     \end{equation*}
     \textit{for any open subset} $U\subset X$.
@@ -142,7 +153,7 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
     \begin{equation*}
       i_{V\cap W}( f_V|_{V\cap W})= g|_{V\cap W} = i_{V\cap W}(f_W|_{V\cap W})
     \end{equation*}
-    and, since we already proved that $i$ remains injective after passing to global elements, we have that $ f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to ``glue&#x27;&#x27; these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
+    and, since we already proved that $i$ remains injective after passing to global elements, we have that $ f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to ``glue'' these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
     \ \\
 
     There is now a natural question to ask ourselves. One should ask what is it that fails at $\mathcal{H}(U)$. Why $\pi_U$ is not in general surjective? What is the obstruction for the exactness to pass from the local setting to the global one. As we shall show, this obstruction is precisely given by sheaf cohomology.
@@ -152,29 +163,29 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
       \pi_{U_i \cap U_j}(g_ig_j^{-1})=hh^{-1} = 1.
     \end{equation*}
     Thus, there exists some element $g_{ij} \in \mathcal{F}(U_i\cap U_j)$ such that $$i_{U_i\cap U_j}(g_{ij})=g_ig_j^{-1}.$$
-    Gathering all these elements, we get a $1$-cochain $(g_{ij})_{i&lt;j\in I} \in C^1(\mathfrak{U},\mathcal{F})$.
+    Gathering all these elements, we get a $1$-cochain $(g_{ij})_{i<j\in I} \in C^1(\mathfrak{U},\mathcal{F})$.
     
     This cochain satisfies one extra property. Notice that
     \begin{equation*}
       i_{U_i\cap U_j\cap U_k}(g_{ij} g_{jk} g_{ik}^{-1})=g_i g_j^{-1} g_j g_k^{-1} g_k g_i^{-1}= 1,
     \end{equation*}
-    so, since $i_{U_i \cap U_j \cap U_k}$ is injective, $(g_{ij})_{i&lt;j \in I}$ satisfies the \emph{cocycle condition}:
+    so, since $i_{U_i \cap U_j \cap U_k}$ is injective, $(g_{ij})_{i<j \in I}$ satisfies the \emph{cocycle condition}:
     \begin{equation*}
       g_{ij} g_{jk} g_{ik}^{-1} = 1
     \end{equation*}
-    in $U_i\cap U_j \cap U_k$, for every $i&lt;j&lt;k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of \emph{\v{C}ech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$}. 
+    in $U_i\cap U_j \cap U_k$, for every $i<j<k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of \emph{\v{C}ech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$}. 
 
-    Naively, we would like to define a map $\mathcal{H}(U) \rightarrow Z^1(\mathfrak{U},\mathcal{F})$ sending each $h\in \mathcal{H}(U)$ to the cocycle $(g_{ij})_{i&lt;j \in I}$ constructed above. However, one inmediately realizes that the covering $\mathfrak{U}$ depends on the element $h$, so this is not going to work.
+    Naively, we would like to define a map $\mathcal{H}(U) \rightarrow Z^1(\mathfrak{U},\mathcal{F})$ sending each $h\in \mathcal{H}(U)$ to the cocycle $(g_{ij})_{i<j \in I}$ constructed above. However, one inmediately realizes that the covering $\mathfrak{U}$ depends on the element $h$, so this is not going to work.
 
     \section*{Refinements}
     The way to solve this problem is by taking covering refinements. If $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ and $\mathfrak{V}=\left\{ V_j: j \in J \right\}$ are two different open coverings of $U$, we say that $\mathfrak{V}$ is a \emph{refinement} of $\mathfrak{U}$ is there is a map $\tau:J\rightarrow I$, called the \emph{refinement map}, such that $V_j \subset U_{\tau(j)}$ for every $j \in J$. 
 
     A refinement map $\tau:J \rightarrow I$ naturally induces a map on $1$-cochains
     \begin{align*}
-      \tau^* :C^1(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{V},\mathcal{F})\\ 
-      (g_{ij})_{i&lt;j \in I} &amp;\longmapsto (g_{\tau(r)\tau(s)})_{r&lt;s \in J}. 
+      \tau^* :C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{V},\mathcal{F})\\ 
+      (g_{ij})_{i<j \in I} &\longmapsto (g_{\tau(r)\tau(s)})_{r<s \in J}. 
       \end{align*}
-      (Note that for this to make sense the map $\tau$ must be order-preserving, but since we are working with sheaves of groups, this can be solved by defining $g_{ji}=(g_{ij})^{-1}$ if $i&lt;j$.)
+      (Note that for this to make sense the map $\tau$ must be order-preserving, but since we are working with sheaves of groups, this can be solved by defining $g_{ji}=(g_{ij})^{-1}$ if $i<j$.)
 
       Moreover, clearly the map $\tau^*$ respects cocycles and thus induces a map $$\tau^*:Z^1(\mathfrak{U},\mathcal{F}) \rightarrow Z^1(\mathfrak{V},\mathcal{F}).$$
       This map clearly depends on the refinement map $\tau$. However, if $\eta: J \rightarrow I$ is another refinement map, applying the cocycle condition we get
@@ -190,10 +201,10 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 	(\eta^*g)_{rs}=f_r (\tau^*g)_{rs} f_s^{-1}.
       \end{equation*}
 
-      In general, for any open covering $\mathfrak{U}$, $0$-cochains act on $1$-cochains by ``conjugation&#x27;&#x27;:
+      In general, for any open covering $\mathfrak{U}$, $0$-cochains act on $1$-cochains by ``conjugation'':
       \begin{align*}
-	C^0(\mathfrak{U},\mathcal{F})\times C^1(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
-	( (f_i)_{i\in I}, (g_{ij})_{i &lt;j \in I} )&amp;\longmapsto (f_i g_{ij} f_j^{-1})_{i &lt;j \in I}. 
+	C^0(\mathfrak{U},\mathcal{F})\times C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
+	( (f_i)_{i\in I}, (g_{ij})_{i <j \in I} )&\longmapsto (f_i g_{ij} f_j^{-1})_{i <j \in I}. 
 	\end{align*}
 	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the \emph{first \v{C}ech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$}.
 	
@@ -205,18 +216,18 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 	\begin{equation*}
 	  H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
 	\end{equation*}
-	In other words, we consider the set of pairs $(\mathfrak{U},g)$, where $\mathfrak{U}=\left\{ U_i,i\in I \right\}$ is an open cover of $U$ and $g\in H^1(\mathfrak{U},\mathcal{F})$ and consider on it the equivalence relation $(\mathfrak{U},g)\sim (\mathfrak{V},g&#x27;)$ if there exists another open cover $\mathfrak{W}$, with refinements $\tau$ from $\mathfrak{U}$ to $\mathfrak{W}$ and $\eta$ from $\mathfrak{V}$ to $\mathfrak{W}$ such that $\tau^*g=\eta^*g&#x27;$.
+	In other words, we consider the set of pairs $(\mathfrak{U},g)$, where $\mathfrak{U}=\left\{ U_i,i\in I \right\}$ is an open cover of $U$ and $g\in H^1(\mathfrak{U},\mathcal{F})$ and consider on it the equivalence relation $(\mathfrak{U},g)\sim (\mathfrak{V},g')$ if there exists another open cover $\mathfrak{W}$, with refinements $\tau$ from $\mathfrak{U}$ to $\mathfrak{W}$ and $\eta$ from $\mathfrak{V}$ to $\mathfrak{W}$ such that $\tau^*g=\eta^*g'$.
 
-	Finally, if we consider some element $h\in \mathcal{H}(U)$, consider the open covering $\mathfrak{U}=\left\{ U_i:i\in I \right\}$ and the cocycle $(g_{ij})_{i&lt;j\in I}$ constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map
+	Finally, if we consider some element $h\in \mathcal{H}(U)$, consider the open covering $\mathfrak{U}=\left\{ U_i:i\in I \right\}$ and the cocycle $(g_{ij})_{i<j\in I}$ constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map
 	\begin{align*}
-	  \delta:\mathcal{H}(U)&amp;\longrightarrow H^1(U,\mathcal{F})\\ 
-	  h &amp;\longmapsto [(\mathfrak{U},[(g_{ij})_{i&lt;j\in I}])]. 
+	  \delta:\mathcal{H}(U)&\longrightarrow H^1(U,\mathcal{F})\\ 
+	  h &\longmapsto [(\mathfrak{U},[(g_{ij})_{i<j\in I}])]. 
 	  \end{align*}
 
 	  The set $H^1(U,\mathcal{F})$ has a distinguished element, the equivalence class of any of the distinguished elements of the cochains sets. It is now clear that $\pi_U$ will be surjective precisely when for every $h\in \mathcal{H}(U)$, the class $\delta(h)$ can be represented by the cocycle $1$ in some open cover $\mathfrak{U}$ of $U$. This means that $\mathrm{im} \pi_U=\ker \delta$, and thus we get an exact sequence
 	  \begin{equation*}
       \begin{CD}
-	1 @&gt;&gt;&gt;	\mathcal{F}(U) @&gt; i_U &gt;&gt; \mathcal{G}(U) @&gt; \pi_U &gt;&gt; \mathcal{H}(U) @&gt;\delta &gt;&gt; H^1(U,\mathcal{F}).
+	1 @>>>	\mathcal{F}(U) @> i_U >> \mathcal{G}(U) @> \pi_U >> \mathcal{H}(U) @>\delta >> H^1(U,\mathcal{F}).
       \end{CD}
 	  \end{equation*}
 
@@ -225,8 +236,8 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 
 	  Any morphism of sheaves $\varphi:\mathcal{F} \rightarrow \mathcal{G}$ naturally induces a map on $1$-cochains
 	  \begin{align*}
-	    \varphi_*:C^1(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
-	    (g_{ij})_{i&lt;j \in I} &amp;\longmapsto (\varphi_{U_i \cap U_j} (g_{ij}))_{i&lt;j \in I}. 
+	    \varphi_*:C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
+	    (g_{ij})_{i<j \in I} &\longmapsto (\varphi_{U_i \cap U_j} (g_{ij}))_{i<j \in I}. 
 	    \end{align*}
 	    This map descends well to cohomology and thus gives a map $$\varphi_*:H^1(U,\mathcal{F}) \rightarrow H^1(U,\mathcal{G}).$$
 	    It is easy to prove now that in fact this continues the above exact sequence to an exact sequence
@@ -236,12 +247,12 @@ where we are denoting by $1_G$ the identity element of a group $G$. We can also 
 	  
 	    In general, for any sheaf of sets $\mathcal{F}$, \v{C}ech cochains can be defined for higher degree,
 	    \begin{equation*}
-	      C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0&lt;\dots&lt;i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
+	      C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0<\dots<i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
 	    \end{equation*}
-	    However, a cocycle condition only makes sense when $p&gt;1$ if $\mathcal{F}$ is a sheaf of \emph{abelian} groups. In this case, switching to additive notation, one can define a map
+	    However, a cocycle condition only makes sense when $p>1$ if $\mathcal{F}$ is a sheaf of \emph{abelian} groups. In this case, switching to additive notation, one can define a map
 	    \begin{align*}
-	      d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
-	      (g_{i_0,\dots,i_{p-1}})_{i_0&lt;\dots&lt;i_{p-1}\in I} &amp;\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0&lt;\cdots&lt;i_p\in I}. 
+	      d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
+	      (g_{i_0,\dots,i_{p-1}})_{i_0<\dots<i_{p-1}\in I} &\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0<\cdots<i_p\in I}. 
 	      \end{align*}
 	      The kernel of $d_p$ is the set of \emph{\v{C}ech $p-1$-cocycles}, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the \emph{$p$-th \v{C}ech cohomology group} $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
 
@@ -257,6 +268,6 @@ The treatement of cohomology we have given has been almost purely algebraic. How
 
 \subsection*{Acknowledgements}
 Thanks to Raúl González Molina for some comments and corrections.
+\end{document}
 
 
-</span>

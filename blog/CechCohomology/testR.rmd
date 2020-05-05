@@ -1,0 +1,31 @@
+---
+title: "A first idea of the cohomology of sheaves"
+author: "Guillermo Gallego"
+date: "May 2, 2020"
+output:
+  pdf_document: 
+     includes:
+       in_header: ../headers.tex
+  html_document: 
+    theme: readable
+    includes: 
+     in_header: ../headers.html
+---
+ hola
+
+$A \hookrightarrow B$
+
+\begin{equation*}
+    \begin{CD}
+      \mathcal{F}(U) @> \varphi_U >> \mathcal{G}(U) \\
+      @VV r^U_{V} V   @VV r^U_{V} V \\
+      \mathcal{F}(V) @> \varphi_V >> \mathcal{G}(V).
+    \end{CD}
+\end{equation*}
+
+# Sección 1
+hola
+
+## Subsección
+
+**Teorema 1** $e^{i\pi}+1=0$.

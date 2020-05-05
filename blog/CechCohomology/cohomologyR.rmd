@@ -120,18 +120,22 @@ $$
    Sheaf cohomology is defined (at least until degree $1$) in general for sheaves of groups. Therefore, all the sheaves that we are going to consider from now on are indeed sheaves of groups. 
 
    If $\mathcal{F}$, $\mathcal{G}$ and $\mathcal{H}$ are sheaves of groups, we say that a sequence of morphisms of sheaves 
+
    $$
      \begin{CD}
 	\mathcal{F} @> \varphi >> \mathcal{G} @> \psi >> \mathcal{H}
       \end{CD}
    $$
-    is *exact* at $\mathcal{G}$ if the induced sequence in the stalks
-    \begin{equation*}
+
+  is *exact* at $\mathcal{G}$ if the induced sequence in the stalks
+
+  $$
       \begin{CD}
 	\mathcal{F}_x @> \varphi_x >> \mathcal{G}_x @> \psi_x >> \mathcal{H}_x
       \end{CD}
-    \end{equation*}
-    is an exact sequence of groups at $\mathcal{G}_x$. That is, if $\ker(\psi_x) = \mathrm{im}(\varphi_x)$.
+   $$
+
+  is an exact sequence of groups at $\mathcal{G}_x$. That is, if $\ker(\psi_x) = \mathrm{im}(\varphi_x)$.
 
   Note that exactness has been defined at the level of stalks, so we should not expect that exactness is preserved at a global level. That is, in general the sequence 
     \begin{equation*}
@@ -163,18 +167,20 @@ $$
    *Proof.* Consider $f\in \mathcal{F}(U)$ such that $i_U(f)=1$. For every $x\in U$ we have that $i_x(f_x)=1$ and, since $i_x$ is injective, $f_x=1$. Since this is for every $x\in X$, we have that $f=1$. This proves that $i_U$ is injective and, consequently, that the sequence is exact at $\mathcal{F}(U)$.
 
    Take now $f\in \mathcal{F}(U)$. For every $x\in U$ we have $\pi_x(i_x(f_x))=1$, which implies that $\pi_U(i_U(f))=1$, so $\mathrm{im}\ i_U \subset \ker \pi_U$. On the other hand, if $g\in \mathcal{G}(U)$ is such that $\pi_U(g)=1$ then, for all $x\in U$, we have that $\pi_x(g_x)=1$. Therefore, there exists some $f_x \in \mathcal{F}_x$ such that $i_x(f_x)=g_x$. This implies that for every $x\in U$ there exists some open neighbourhood $V\subset U$ of $x$ and $f_V \in \mathcal{F}(V)$ such that $i_V(f_V)=g|_V$. Moreover, in an overlap $V\cap W$ we have
-   \begin{equation*}
-     i_{V\cap W}( f_V|_{V\cap W})= g|_{V\cap W} = i_{V\cap W}(f_W|_{V\cap W})
-   \end{equation*}
-   and, since we already proved that $i$ remains injective after passing to global elements, we have that $f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to ``glue'' these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
 
-   There is now a natural question to ask ourselves. One should ask what is it that fails at $\mathcal{H}(U)$. Why $\pi_U$ is not in general surjective? What is the obstruction for the exactness to pass from the local setting to the global one. As we shall show, this obstruction is precisely given by sheaf cohomology.
+$$
+     i_{V\cap W}( f_V|_{V\cap W})= g|_{V\cap W} = i_{V\cap W}(f_W|_{V\cap W})
+$$
+
+   and, since we already proved that $i$ remains injective after passing to global elements, we have that $f_V|_{V\cap W}=f_W|_{V\cap W}$. Therefore, the sheaf condition allows us to "glue" these elements to give an $f \in \mathcal{F}(U)$ such that $f|_V=f_V$ and satisfying that $i_U(f)=g$. This proves that $\ker \pi_U \subset \mathrm{im}\ i_U$, thus the sequence is exact at $\mathcal{G}(U)$. \hfill $\blacksquare$
+
+There is now a natural question to ask ourselves. One should ask what is it that fails at $\mathcal{H}(U)$. Why $\pi_U$ is not in general surjective? What is the obstruction for the exactness to pass from the local setting to the global one. As we shall show, this obstruction is precisely given by sheaf cohomology.
 
 Consider some element $h\in \mathcal{H}(U)$. Then, since $\pi_x$ is surjective, for every $x\in U$ there exists some $g_x \in \mathcal{G}_x$ such that $\pi_x(h_x)=g_x$. This implies that we can get an open covering $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ of $U$ and, for every $i \in I$, an element $g_i \in \mathcal{G}(U_i)$ such that $\pi_{U_i}(g_i)=h|_{U_i}$. Let us see now what happens in the overlaps. In general $g_i|_{U_i\cap U_j} \neq g_j|_{U_i\cap U_j}$, so we cannot glue the $g_i$ to obtain a global element. The obstruction to this is the element $g_i g_j^{-1} \in \mathcal{G}(U_i \cap U_j)$. However
-    \begin{equation*}
-      \pi_{U_i \cap U_j}(g_ig_j^{-1})=hh^{-1} = 1.
-    \end{equation*}
-    Thus, there exists some element $g_{ij} \in \mathcal{F}(U_i\cap U_j)$ such that $$i_{U_i\cap U_j}(g_{ij})=g_ig_j^{-1}.$$
+
+$$ \pi_{U_i \cap U_j}(g_ig_j^{-1})=hh^{-1} = 1. $$
+
+Thus, there exists some element $g_{ij} \in \mathcal{F}(U_i\cap U_j)$ such that $$i_{U_i\cap U_j}(g_{ij})=g_ig_j^{-1}.$$
     Gathering all these elements, we get a $1$-cochain $(g_{ij})_{i<j\in I} \in C^1(\mathfrak{U},\mathcal{F})$.
     
 This cochain satisfies one extra property. Notice that
@@ -193,18 +199,22 @@ Naively, we would like to define a map $\mathcal{H}(U) \rightarrow Z^1(\mathfrak
 The way to solve this problem is by taking covering refinements. If $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ and $\mathfrak{V}=\left\{ V_j: j \in J \right\}$ are two different open coverings of $U$, we say that $\mathfrak{V}$ is a *refinement* of $\mathfrak{U}$ is there is a map $\tau:J\rightarrow I$, called the *refinement map*, such that $V_j \subset U_{\tau(j)}$ for every $j \in J$. 
 
 A refinement map $\tau:J \rightarrow I$ naturally induces a map on $1$-cochains
-    \begin{align*}
+
+\begin{align*}
       \tau^* :C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{V},\mathcal{F})\\ 
       (g_{ij})_{i<j \in I} &\longmapsto (g_{\tau(r)\tau(s)})_{r<s \in J}. 
-      \end{align*}
+\end{align*}
+
 (Note that for this to make sense the map $\tau$ must be order-preserving, but since we are working with sheaves of groups, this can be solved by defining $g_{ji}=(g_{ij})^{-1}$ if $i<j$.)
 
 Moreover, clearly the map $\tau^*$ respects cocycles and thus induces a map $$\tau^*:Z^1(\mathfrak{U},\mathcal{F}) \rightarrow Z^1(\mathfrak{V},\mathcal{F}).$$
 This map clearly depends on the refinement map $\tau$. However, if $\eta: J \rightarrow I$ is another refinement map, applying the cocycle condition we get
-      \begin{equation*}
+
+$$
 	(\eta^*g)_{rs}= g_{\eta(r)\eta(s)}= g_{\eta(r)\tau(r)} g_{\tau(r)\eta(s)} = g_{\eta(r)\tau(r)} g_{\tau(r)\tau(s)} g_{\tau(s) \eta(s)}.
-      \end{equation*}
-      If we define the $0$-cochain 
+$$
+
+If we define the $0$-cochain 
       \begin{equation*}
 	(f_r)_{r \in J} = (g_{\eta(r)\tau(r)})_{r\in J} \in C^0(\mathfrak{V},\mathcal{F}),
       \end{equation*}
@@ -221,9 +231,11 @@ This map clearly depends on the refinement map $\tau$. However, if $\eta: J \rig
 	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the *first Čech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$*.
 	
 Now it is clear that the map $\tau^*$ descends to cohomology
-	\begin{equation*}
+
+\begin{equation*}
 	  \tau^*: H^1(\mathfrak{U},\mathcal{F})\rightarrow H^1(\mathfrak{V},\mathcal{F})
-	\end{equation*}
+\end{equation*}
+
 and it does not depend on the choice of the refinement map $\tau:J \rightarrow I$. These refinement maps form a direct system and we can take its direct limit to get the *first Čech cohomology set of $\mathcal{F}$ on $U$*:
 	\begin{equation*}
 	  H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
@@ -231,10 +243,11 @@ and it does not depend on the choice of the refinement map $\tau:J \rightarrow I
 In other words, we consider the set of pairs $(\mathfrak{U},g)$, where $\mathfrak{U}=\left\{ U_i,i\in I \right\}$ is an open cover of $U$ and $g\in H^1(\mathfrak{U},\mathcal{F})$ and consider on it the equivalence relation $(\mathfrak{U},g)\sim (\mathfrak{V},g')$ if there exists another open cover $\mathfrak{W}$, with refinements $\tau$ from $\mathfrak{U}$ to $\mathfrak{W}$ and $\eta$ from $\mathfrak{V}$ to $\mathfrak{W}$ such that $\tau^*g=\eta^*g'$.
 
 Finally, if we consider some element $h\in \mathcal{H}(U)$, consider the open covering $\mathfrak{U}=\left\{ U_i:i\in I \right\}$ and the cocycle $(g_{ij})_{i<j\in I}$ constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map
-	\begin{align*}
+
+\begin{align*}
 	  \delta:\mathcal{H}(U)&\longrightarrow H^1(U,\mathcal{F})\\ 
 	  h &\longmapsto [(\mathfrak{U},[(g_{ij})_{i<j\in I}])]. 
-	  \end{align*}
+\end{align*}
 
   The set $H^1(U,\mathcal{F})$ has a distinguished element, the equivalence class of any of the distinguished elements of the cochains sets. It is now clear that $\pi_U$ will be surjective precisely when for every $h\in \mathcal{H}(U)$, the class $\delta(h)$ can be represented by the cocycle $1$ in some open cover $\mathfrak{U}$ of $U$. This means that $\mathrm{im} \pi_U=\ker \delta$, and thus we get an exact sequence
 	  \begin{equation*}
@@ -247,31 +260,40 @@ Finally, if we consider some element $h\in \mathcal{H}(U)$, consider the open co
   We have arrived naturally at cohomology as a means to continue the global exact sequence $1\rightarrow \mathcal{F}(U) \rightarrow \mathcal{G}(U) \rightarrow \mathcal{H}(U)$ induced by a short exact sequence $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H}\rightarrow 1$.
 
   Any morphism of sheaves $\varphi:\mathcal{F} \rightarrow \mathcal{G}$ naturally induces a map on $1$-cochains
-	  \begin{align*}
+
+\begin{align*}
 	    \varphi_*:C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
 	    (g_{ij})_{i<j \in I} &\longmapsto (\varphi_{U_i \cap U_j} (g_{ij}))_{i<j \in I}. 
-	    \end{align*}
+\end{align*}
+
 This map descends well to cohomology and thus gives a map $$\varphi_*:H^1(U,\mathcal{F}) \rightarrow H^1(U,\mathcal{G}).$$
 It is easy to prove now that in fact this continues the above exact sequence to an exact sequence
-    \begin{equation*}
+
+\begin{equation*}
       1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}).
-    \end{equation*}
+\end{equation*}
 	  
   In general, for any sheaf of sets $\mathcal{F}$, Čech cochains can be defined for higher degree,
-    \begin{equation*}
+
+\begin{equation*}
       C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0<\dots<i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
-    \end{equation*}
+\end{equation*}
+
   However, a cocycle condition only makes sense when $p>1$ if $\mathcal{F}$ is a sheaf of *abelian* groups. In this case, switching to additive notation, one can define a map
-    \begin{align*}
+
+\begin{align*}
       d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
       (g_{i_0,\dots,i_{p-1}})_{i_0<\dots<i_{p-1}\in I} &\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0<\cdots<i_p\in I}. 
-      \end{align*}
+\end{align*}
+
    The kernel of $d_p$ is the set of *Čech $p-1$-cocycles*, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the *$p$-th Čech cohomology group* $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
 
   Consider now the special case in which we have an exact sequence of sheaves of groups $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1$ such that, for any open subset $U \subset X$ the group $\mathcal{F}(U)$ is contained in the centre of $\mathcal{G}(U)$. In this case the sheaf $\mathcal{F}$ must be a sheaf of abelian groups and thus $H^2(U,\mathcal{F})$ is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence
-	    \begin{equation*}
-	      1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}) \rightarrow H^2(U,\mathcal{F}).
-	    \end{equation*}
+
+\begin{equation*}
+1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}) \rightarrow H^2(U,\mathcal{F}).
+\end{equation*}
+
  The way to prove this is analogous to the construction of the map $\delta$.
 When $\mathcal{G}$ is also a sheaf of abelian groups, then the three sheaves are. In this case it is well known that a long exact sequence that goes on forever can be constructed in the same way.
 

@@ -384,16 +384,18 @@ In this situation, the sheaf condition is equivalent to saying that <span class=
 <div id="exact-sequences-of-sheaves" class="section level1">
 <h1>Exact sequences of sheaves</h1>
 <p>Sheaf cohomology is defined (at least until degree <span class="math inline">\(1\)</span>) in general for sheaves of groups. Therefore, all the sheaves that we are going to consider from now on are indeed sheaves of groups.</p>
-If <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(\mathcal{G}\)</span> and <span class="math inline">\(\mathcal{H}\)</span> are sheaves of groups, we say that a sequence of morphisms of sheaves <span class="math display">\[
+<p>If <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(\mathcal{G}\)</span> and <span class="math inline">\(\mathcal{H}\)</span> are sheaves of groups, we say that a sequence of morphisms of sheaves</p>
+<p><span class="math display">\[
      \begin{CD}
     \mathcal{F} @&gt; \varphi &gt;&gt; \mathcal{G} @&gt; \psi &gt;&gt; \mathcal{H}
       \end{CD}
-   \]</span> is <em>exact</em> at <span class="math inline">\(\mathcal{G}\)</span> if the induced sequence in the stalks
-\begin{equation*}
+   \]</span></p>
+<p>is <em>exact</em> at <span class="math inline">\(\mathcal{G}\)</span> if the induced sequence in the stalks</p>
+<p><span class="math display">\[
       \begin{CD}
     \mathcal{F}_x @&gt; \varphi_x &gt;&gt; \mathcal{G}_x @&gt; \psi_x &gt;&gt; \mathcal{H}_x
       \end{CD}
-    \end{equation*}
+   \]</span></p>
 <p>is an exact sequence of groups at <span class="math inline">\(\mathcal{G}_x\)</span>. That is, if <span class="math inline">\(\ker(\psi_x) = \mathrm{im}(\varphi_x)\)</span>.</p>
 Note that exactness has been defined at the level of stalks, so we should not expect that exactness is preserved at a global level. That is, in general the sequence
 \begin{equation*}
@@ -417,16 +419,14 @@ Note that exactness has been defined at the level of stalks, so we should not ex
 \end{equation*}
 <p><em>for any open subset</em> <span class="math inline">\(U\subset X\)</span>.</p>
 <p><em>Proof.</em> Consider <span class="math inline">\(f\in \mathcal{F}(U)\)</span> such that <span class="math inline">\(i_U(f)=1\)</span>. For every <span class="math inline">\(x\in U\)</span> we have that <span class="math inline">\(i_x(f_x)=1\)</span> and, since <span class="math inline">\(i_x\)</span> is injective, <span class="math inline">\(f_x=1\)</span>. Since this is for every <span class="math inline">\(x\in X\)</span>, we have that <span class="math inline">\(f=1\)</span>. This proves that <span class="math inline">\(i_U\)</span> is injective and, consequently, that the sequence is exact at <span class="math inline">\(\mathcal{F}(U)\)</span>.</p>
-Take now <span class="math inline">\(f\in \mathcal{F}(U)\)</span>. For every <span class="math inline">\(x\in U\)</span> we have <span class="math inline">\(\pi_x(i_x(f_x))=1\)</span>, which implies that <span class="math inline">\(\pi_U(i_U(f))=1\)</span>, so <span class="math inline">\(\mathrm{im}\ i_U \subset \ker \pi_U\)</span>. On the other hand, if <span class="math inline">\(g\in \mathcal{G}(U)\)</span> is such that <span class="math inline">\(\pi_U(g)=1\)</span> then, for all <span class="math inline">\(x\in U\)</span>, we have that <span class="math inline">\(\pi_x(g_x)=1\)</span>. Therefore, there exists some <span class="math inline">\(f_x \in \mathcal{F}_x\)</span> such that <span class="math inline">\(i_x(f_x)=g_x\)</span>. This implies that for every <span class="math inline">\(x\in U\)</span> there exists some open neighbourhood <span class="math inline">\(V\subset U\)</span> of <span class="math inline">\(x\)</span> and <span class="math inline">\(f_V \in \mathcal{F}(V)\)</span> such that <span class="math inline">\(i_V(f_V)=g|_V\)</span>. Moreover, in an overlap <span class="math inline">\(V\cap W\)</span> we have
-\begin{equation*}
+<p>Take now <span class="math inline">\(f\in \mathcal{F}(U)\)</span>. For every <span class="math inline">\(x\in U\)</span> we have <span class="math inline">\(\pi_x(i_x(f_x))=1\)</span>, which implies that <span class="math inline">\(\pi_U(i_U(f))=1\)</span>, so <span class="math inline">\(\mathrm{im}\ i_U \subset \ker \pi_U\)</span>. On the other hand, if <span class="math inline">\(g\in \mathcal{G}(U)\)</span> is such that <span class="math inline">\(\pi_U(g)=1\)</span> then, for all <span class="math inline">\(x\in U\)</span>, we have that <span class="math inline">\(\pi_x(g_x)=1\)</span>. Therefore, there exists some <span class="math inline">\(f_x \in \mathcal{F}_x\)</span> such that <span class="math inline">\(i_x(f_x)=g_x\)</span>. This implies that for every <span class="math inline">\(x\in U\)</span> there exists some open neighbourhood <span class="math inline">\(V\subset U\)</span> of <span class="math inline">\(x\)</span> and <span class="math inline">\(f_V \in \mathcal{F}(V)\)</span> such that <span class="math inline">\(i_V(f_V)=g|_V\)</span>. Moreover, in an overlap <span class="math inline">\(V\cap W\)</span> we have</p>
+<p><span class="math display">\[
      i_{V\cap W}( f_V|_{V\cap W})= g|_{V\cap W} = i_{V\cap W}(f_W|_{V\cap W})
-   \end{equation*}
-<p>and, since we already proved that <span class="math inline">\(i\)</span> remains injective after passing to global elements, we have that <span class="math inline">\(f_V|_{V\cap W}=f_W|_{V\cap W}\)</span>. Therefore, the sheaf condition allows us to ``glue’’ these elements to give an <span class="math inline">\(f \in \mathcal{F}(U)\)</span> such that <span class="math inline">\(f|_V=f_V\)</span> and satisfying that <span class="math inline">\(i_U(f)=g\)</span>. This proves that <span class="math inline">\(\ker \pi_U \subset \mathrm{im}\ i_U\)</span>, thus the sequence is exact at <span class="math inline">\(\mathcal{G}(U)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+\]</span></p>
+<p>and, since we already proved that <span class="math inline">\(i\)</span> remains injective after passing to global elements, we have that <span class="math inline">\(f_V|_{V\cap W}=f_W|_{V\cap W}\)</span>. Therefore, the sheaf condition allows us to “glue” these elements to give an <span class="math inline">\(f \in \mathcal{F}(U)\)</span> such that <span class="math inline">\(f|_V=f_V\)</span> and satisfying that <span class="math inline">\(i_U(f)=g\)</span>. This proves that <span class="math inline">\(\ker \pi_U \subset \mathrm{im}\ i_U\)</span>, thus the sequence is exact at <span class="math inline">\(\mathcal{G}(U)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 <p>There is now a natural question to ask ourselves. One should ask what is it that fails at <span class="math inline">\(\mathcal{H}(U)\)</span>. Why <span class="math inline">\(\pi_U\)</span> is not in general surjective? What is the obstruction for the exactness to pass from the local setting to the global one. As we shall show, this obstruction is precisely given by sheaf cohomology.</p>
-Consider some element <span class="math inline">\(h\in \mathcal{H}(U)\)</span>. Then, since <span class="math inline">\(\pi_x\)</span> is surjective, for every <span class="math inline">\(x\in U\)</span> there exists some <span class="math inline">\(g_x \in \mathcal{G}_x\)</span> such that <span class="math inline">\(\pi_x(h_x)=g_x\)</span>. This implies that we can get an open covering <span class="math inline">\(\mathfrak{U}=\left\{ U_i: i \in I \right\}\)</span> of <span class="math inline">\(U\)</span> and, for every <span class="math inline">\(i \in I\)</span>, an element <span class="math inline">\(g_i \in \mathcal{G}(U_i)\)</span> such that <span class="math inline">\(\pi_{U_i}(g_i)=h|_{U_i}\)</span>. Let us see now what happens in the overlaps. In general <span class="math inline">\(g_i|_{U_i\cap U_j} \neq g_j|_{U_i\cap U_j}\)</span>, so we cannot glue the <span class="math inline">\(g_i\)</span> to obtain a global element. The obstruction to this is the element <span class="math inline">\(g_i g_j^{-1} \in \mathcal{G}(U_i \cap U_j)\)</span>. However
-\begin{equation*}
-      \pi_{U_i \cap U_j}(g_ig_j^{-1})=hh^{-1} = 1.
-    \end{equation*}
+<p>Consider some element <span class="math inline">\(h\in \mathcal{H}(U)\)</span>. Then, since <span class="math inline">\(\pi_x\)</span> is surjective, for every <span class="math inline">\(x\in U\)</span> there exists some <span class="math inline">\(g_x \in \mathcal{G}_x\)</span> such that <span class="math inline">\(\pi_x(h_x)=g_x\)</span>. This implies that we can get an open covering <span class="math inline">\(\mathfrak{U}=\left\{ U_i: i \in I \right\}\)</span> of <span class="math inline">\(U\)</span> and, for every <span class="math inline">\(i \in I\)</span>, an element <span class="math inline">\(g_i \in \mathcal{G}(U_i)\)</span> such that <span class="math inline">\(\pi_{U_i}(g_i)=h|_{U_i}\)</span>. Let us see now what happens in the overlaps. In general <span class="math inline">\(g_i|_{U_i\cap U_j} \neq g_j|_{U_i\cap U_j}\)</span>, so we cannot glue the <span class="math inline">\(g_i\)</span> to obtain a global element. The obstruction to this is the element <span class="math inline">\(g_i g_j^{-1} \in \mathcal{G}(U_i \cap U_j)\)</span>. However</p>
+<p><span class="math display">\[ \pi_{U_i \cap U_j}(g_ig_j^{-1})=hh^{-1} = 1. \]</span></p>
 <p>Thus, there exists some element <span class="math inline">\(g_{ij} \in \mathcal{F}(U_i\cap U_j)\)</span> such that <span class="math display">\[i_{U_i\cap U_j}(g_{ij})=g_ig_j^{-1}.\]</span> Gathering all these elements, we get a <span class="math inline">\(1\)</span>-cochain <span class="math inline">\((g_{ij})_{i&lt;j\in I} \in C^1(\mathfrak{U},\mathcal{F})\)</span>.</p>
 This cochain satisfies one extra property. Notice that
 \begin{equation*}
@@ -442,16 +442,16 @@ so, since <span class="math inline">\(i_{U_i \cap U_j \cap U_k}\)</span> is inje
 <div id="refinements" class="section level1">
 <h1>Refinements</h1>
 <p>The way to solve this problem is by taking covering refinements. If <span class="math inline">\(\mathfrak{U}=\left\{ U_i: i \in I \right\}\)</span> and <span class="math inline">\(\mathfrak{V}=\left\{ V_j: j \in J \right\}\)</span> are two different open coverings of <span class="math inline">\(U\)</span>, we say that <span class="math inline">\(\mathfrak{V}\)</span> is a <em>refinement</em> of <span class="math inline">\(\mathfrak{U}\)</span> is there is a map <span class="math inline">\(\tau:J\rightarrow I\)</span>, called the <em>refinement map</em>, such that <span class="math inline">\(V_j \subset U_{\tau(j)}\)</span> for every <span class="math inline">\(j \in J\)</span>.</p>
-A refinement map <span class="math inline">\(\tau:J \rightarrow I\)</span> naturally induces a map on <span class="math inline">\(1\)</span>-cochains
+<p>A refinement map <span class="math inline">\(\tau:J \rightarrow I\)</span> naturally induces a map on <span class="math inline">\(1\)</span>-cochains</p>
 \begin{align*}
       \tau^* :C^1(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{V},\mathcal{F})\\ 
       (g_{ij})_{i&lt;j \in I} &amp;\longmapsto (g_{\tau(r)\tau(s)})_{r&lt;s \in J}. 
-      \end{align*}
+\end{align*}
 <p>(Note that for this to make sense the map <span class="math inline">\(\tau\)</span> must be order-preserving, but since we are working with sheaves of groups, this can be solved by defining <span class="math inline">\(g_{ji}=(g_{ij})^{-1}\)</span> if <span class="math inline">\(i&lt;j\)</span>.)</p>
-Moreover, clearly the map <span class="math inline">\(\tau^*\)</span> respects cocycles and thus induces a map <span class="math display">\[\tau^*:Z^1(\mathfrak{U},\mathcal{F}) \rightarrow Z^1(\mathfrak{V},\mathcal{F}).\]</span> This map clearly depends on the refinement map <span class="math inline">\(\tau\)</span>. However, if <span class="math inline">\(\eta: J \rightarrow I\)</span> is another refinement map, applying the cocycle condition we get
-\begin{equation*}
+<p>Moreover, clearly the map <span class="math inline">\(\tau^*\)</span> respects cocycles and thus induces a map <span class="math display">\[\tau^*:Z^1(\mathfrak{U},\mathcal{F}) \rightarrow Z^1(\mathfrak{V},\mathcal{F}).\]</span> This map clearly depends on the refinement map <span class="math inline">\(\tau\)</span>. However, if <span class="math inline">\(\eta: J \rightarrow I\)</span> is another refinement map, applying the cocycle condition we get</p>
+<p><span class="math display">\[
     (\eta^*g)_{rs}= g_{\eta(r)\eta(s)}= g_{\eta(r)\tau(r)} g_{\tau(r)\eta(s)} = g_{\eta(r)\tau(r)} g_{\tau(r)\tau(s)} g_{\tau(s) \eta(s)}.
-      \end{equation*}
+\]</span></p>
 If we define the <span class="math inline">\(0\)</span>-cochain
 \begin{equation*}
     (f_r)_{r \in J} = (g_{\eta(r)\tau(r)})_{r\in J} \in C^0(\mathfrak{V},\mathcal{F}),
@@ -466,20 +466,20 @@ In general, for any open covering <span class="math inline">\(\mathfrak{U}\)</sp
     ( (f_i)_{i\in I}, (g_{ij})_{i &lt;j \in I} )&amp;\longmapsto (f_i g_{ij} f_j^{-1})_{i &lt;j \in I}. 
     \end{align*}
 <p>This action respects the cocycle condition and thus it gives an action of <span class="math inline">\(C^0(\mathfrak{U},\mathcal{F})\)</span> on <span class="math inline">\(Z^1(\mathfrak{U},\mathcal{F})\)</span>. The set of orbits is denoted as <span class="math inline">\(H^1(\mathfrak{U},\mathcal{F})\)</span> and it is called the <em>first Čech cohomology set of <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(\mathfrak{U}\)</span></em>.</p>
-Now it is clear that the map <span class="math inline">\(\tau^*\)</span> descends to cohomology
+<p>Now it is clear that the map <span class="math inline">\(\tau^*\)</span> descends to cohomology</p>
 \begin{equation*}
       \tau^*: H^1(\mathfrak{U},\mathcal{F})\rightarrow H^1(\mathfrak{V},\mathcal{F})
-    \end{equation*}
+\end{equation*}
 and it does not depend on the choice of the refinement map <span class="math inline">\(\tau:J \rightarrow I\)</span>. These refinement maps form a direct system and we can take its direct limit to get the <em>first Čech cohomology set of <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(U\)</span></em>:
 \begin{equation*}
       H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
     \end{equation*}
 <p>In other words, we consider the set of pairs <span class="math inline">\((\mathfrak{U},g)\)</span>, where <span class="math inline">\(\mathfrak{U}=\left\{ U_i,i\in I \right\}\)</span> is an open cover of <span class="math inline">\(U\)</span> and <span class="math inline">\(g\in H^1(\mathfrak{U},\mathcal{F})\)</span> and consider on it the equivalence relation <span class="math inline">\((\mathfrak{U},g)\sim (\mathfrak{V},g')\)</span> if there exists another open cover <span class="math inline">\(\mathfrak{W}\)</span>, with refinements <span class="math inline">\(\tau\)</span> from <span class="math inline">\(\mathfrak{U}\)</span> to <span class="math inline">\(\mathfrak{W}\)</span> and <span class="math inline">\(\eta\)</span> from <span class="math inline">\(\mathfrak{V}\)</span> to <span class="math inline">\(\mathfrak{W}\)</span> such that <span class="math inline">\(\tau^*g=\eta^*g'\)</span>.</p>
-Finally, if we consider some element <span class="math inline">\(h\in \mathcal{H}(U)\)</span>, consider the open covering <span class="math inline">\(\mathfrak{U}=\left\{ U_i:i\in I \right\}\)</span> and the cocycle <span class="math inline">\((g_{ij})_{i&lt;j\in I}\)</span> constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map
+<p>Finally, if we consider some element <span class="math inline">\(h\in \mathcal{H}(U)\)</span>, consider the open covering <span class="math inline">\(\mathfrak{U}=\left\{ U_i:i\in I \right\}\)</span> and the cocycle <span class="math inline">\((g_{ij})_{i&lt;j\in I}\)</span> constructed above, take its cohomology class, and then take its equivalence class in the direct limit, we get a map</p>
 \begin{align*}
       \delta:\mathcal{H}(U)&amp;\longrightarrow H^1(U,\mathcal{F})\\ 
       h &amp;\longmapsto [(\mathfrak{U},[(g_{ij})_{i&lt;j\in I}])]. 
-      \end{align*}
+\end{align*}
 The set <span class="math inline">\(H^1(U,\mathcal{F})\)</span> has a distinguished element, the equivalence class of any of the distinguished elements of the cochains sets. It is now clear that <span class="math inline">\(\pi_U\)</span> will be surjective precisely when for every <span class="math inline">\(h\in \mathcal{H}(U)\)</span>, the class <span class="math inline">\(\delta(h)\)</span> can be represented by the cocycle <span class="math inline">\(1\)</span> in some open cover <span class="math inline">\(\mathfrak{U}\)</span> of <span class="math inline">\(U\)</span>. This means that <span class="math inline">\(\mathrm{im} \pi_U=\ker \delta\)</span>, and thus we get an exact sequence
 \begin{equation*}
       \begin{CD}
@@ -490,29 +490,29 @@ The set <span class="math inline">\(H^1(U,\mathcal{F})\)</span> has a distinguis
 <div id="conclusion.-the-long-exact-sequence-in-cohomology" class="section level1">
 <h1>Conclusion. The long exact sequence in cohomology</h1>
 <p>We have arrived naturally at cohomology as a means to continue the global exact sequence <span class="math inline">\(1\rightarrow \mathcal{F}(U) \rightarrow \mathcal{G}(U) \rightarrow \mathcal{H}(U)\)</span> induced by a short exact sequence <span class="math inline">\(1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H}\rightarrow 1\)</span>.</p>
-Any morphism of sheaves <span class="math inline">\(\varphi:\mathcal{F} \rightarrow \mathcal{G}\)</span> naturally induces a map on <span class="math inline">\(1\)</span>-cochains
+<p>Any morphism of sheaves <span class="math inline">\(\varphi:\mathcal{F} \rightarrow \mathcal{G}\)</span> naturally induces a map on <span class="math inline">\(1\)</span>-cochains</p>
 \begin{align*}
         \varphi_*:C^1(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
         (g_{ij})_{i&lt;j \in I} &amp;\longmapsto (\varphi_{U_i \cap U_j} (g_{ij}))_{i&lt;j \in I}. 
-        \end{align*}
-This map descends well to cohomology and thus gives a map <span class="math display">\[\varphi_*:H^1(U,\mathcal{F}) \rightarrow H^1(U,\mathcal{G}).\]</span> It is easy to prove now that in fact this continues the above exact sequence to an exact sequence
+\end{align*}
+<p>This map descends well to cohomology and thus gives a map <span class="math display">\[\varphi_*:H^1(U,\mathcal{F}) \rightarrow H^1(U,\mathcal{G}).\]</span> It is easy to prove now that in fact this continues the above exact sequence to an exact sequence</p>
 \begin{equation*}
       1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}).
-    \end{equation*}
-In general, for any sheaf of sets <span class="math inline">\(\mathcal{F}\)</span>, Čech cochains can be defined for higher degree,
+\end{equation*}
+<p>In general, for any sheaf of sets <span class="math inline">\(\mathcal{F}\)</span>, Čech cochains can be defined for higher degree,</p>
 \begin{equation*}
       C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0&lt;\dots&lt;i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
-    \end{equation*}
-However, a cocycle condition only makes sense when <span class="math inline">\(p&gt;1\)</span> if <span class="math inline">\(\mathcal{F}\)</span> is a sheaf of <em>abelian</em> groups. In this case, switching to additive notation, one can define a map
+\end{equation*}
+<p>However, a cocycle condition only makes sense when <span class="math inline">\(p&gt;1\)</span> if <span class="math inline">\(\mathcal{F}\)</span> is a sheaf of <em>abelian</em> groups. In this case, switching to additive notation, one can define a map</p>
 \begin{align*}
       d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&amp;\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
       (g_{i_0,\dots,i_{p-1}})_{i_0&lt;\dots&lt;i_{p-1}\in I} &amp;\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0&lt;\cdots&lt;i_p\in I}. 
-      \end{align*}
+\end{align*}
 <p>The kernel of <span class="math inline">\(d_p\)</span> is the set of <em>Čech <span class="math inline">\(p-1\)</span>-cocycles</em>, <span class="math inline">\(Z^{p-1}(\mathfrak{U},\mathcal{F})\)</span> and it contains the image of <span class="math inline">\(d_{p-1}\)</span>. The quotient <span class="math inline">\(Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)\)</span> is the <em><span class="math inline">\(p\)</span>-th Čech cohomology group</em> <span class="math inline">\(H^p(\mathfrak{U},\mathcal{F})\)</span>. As above, we can take limit by refinement to define <span class="math inline">\(H^p(U,\mathcal{F})\)</span>.</p>
-Consider now the special case in which we have an exact sequence of sheaves of groups <span class="math inline">\(1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1\)</span> such that, for any open subset <span class="math inline">\(U \subset X\)</span> the group <span class="math inline">\(\mathcal{F}(U)\)</span> is contained in the centre of <span class="math inline">\(\mathcal{G}(U)\)</span>. In this case the sheaf <span class="math inline">\(\mathcal{F}\)</span> must be a sheaf of abelian groups and thus <span class="math inline">\(H^2(U,\mathcal{F})\)</span> is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence
+<p>Consider now the special case in which we have an exact sequence of sheaves of groups <span class="math inline">\(1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1\)</span> such that, for any open subset <span class="math inline">\(U \subset X\)</span> the group <span class="math inline">\(\mathcal{F}(U)\)</span> is contained in the centre of <span class="math inline">\(\mathcal{G}(U)\)</span>. In this case the sheaf <span class="math inline">\(\mathcal{F}\)</span> must be a sheaf of abelian groups and thus <span class="math inline">\(H^2(U,\mathcal{F})\)</span> is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence</p>
 \begin{equation*}
-          1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}) \rightarrow H^2(U,\mathcal{F}).
-        \end{equation*}
+1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}) \rightarrow H^2(U,\mathcal{F}).
+\end{equation*}
 <p>The way to prove this is analogous to the construction of the map <span class="math inline">\(\delta\)</span>. When <span class="math inline">\(\mathcal{G}\)</span> is also a sheaf of abelian groups, then the three sheaves are. In this case it is well known that a long exact sequence that goes on forever can be constructed in the same way.</p>
 <p>The treatement of cohomology we have given has been almost purely algebraic. However, there are a lot of geometric problems where these ideas are relevant. Moreover, the elements of <span class="math inline">\(H^1(X,\mathcal{F})\)</span> admit a very neat geometric interpretation as <em><span class="math inline">\(\mathcal{F}\)</span>-torsors</em>. All these things will be treated in future posts.</p>
 <div id="acknowledgements" class="section level2">

@@ -377,22 +377,18 @@ In this situation, the sheaf condition is equivalent to saying that <span class=
     \end{CD}
     \]</span></p>
 <p>If the sheaves involved are <span class="math inline">\(\mathcal{C}\)</span>-valued then we say that the morphism is a <em>morphism of <span class="math inline">\(\mathcal{C}\)</span>-valued sheaves</em> if the <span class="math inline">\(\varphi_U\)</span> are morphisms of <span class="math inline">\(\mathcal{C}\)</span>.</p>
-Another important concept to know is that of the <em>stalk</em> of a sheaf at a point <span class="math inline">\(x\in X\)</span>. If <span class="math inline">\(\mathcal{F}\)</span> is a sheaf on <span class="math inline">\(X\)</span> and <span class="math inline">\(x\in X\)</span>, we define the <em>stalk of <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(x\)</span></em> as the direct limit
-\begin{equation*}
+<p>Another important concept to know is that of the <em>stalk</em> of a sheaf at a point <span class="math inline">\(x\in X\)</span>. If <span class="math inline">\(\mathcal{F}\)</span> is a sheaf on <span class="math inline">\(X\)</span> and <span class="math inline">\(x\in X\)</span>, we define the <em>stalk of <span class="math inline">\(\mathcal{F}\)</span> on <span class="math inline">\(x\)</span></em> as the direct limit <span class="math display">\[
      \mathcal{F}_x=\varinjlim_{x \in U} \mathcal{F}(U).
-   \end{equation*}
-<p>More precisely, we consider the set of pairs <span class="math inline">\((U,f)\)</span> with <span class="math inline">\(U\)</span> an open neighbourhood of <span class="math inline">\(x\)</span> and <span class="math inline">\(f\in \mathcal{F}(U)\)</span> and consider on it the equivalence relation <span class="math inline">\((U,f)\sim (V,g)\)</span> if there exists some open neighbourhood <span class="math inline">\(W\)</span> of <span class="math inline">\(x\)</span>, with <span class="math inline">\(W\subset U\cap V\)</span> and with <span class="math inline">\(f|_W =g|_W\)</span>. The stalk <span class="math inline">\(\mathcal{F}_x\)</span> is then the set of equivalence classes.</p>
+     \]</span> More precisely, we consider the set of pairs <span class="math inline">\((U,f)\)</span> with <span class="math inline">\(U\)</span> an open neighbourhood of <span class="math inline">\(x\)</span> and <span class="math inline">\(f\in \mathcal{F}(U)\)</span> and consider on it the equivalence relation <span class="math inline">\((U,f)\sim (V,g)\)</span> if there exists some open neighbourhood <span class="math inline">\(W\)</span> of <span class="math inline">\(x\)</span>, with <span class="math inline">\(W\subset U\cap V\)</span> and with <span class="math inline">\(f|_W =g|_W\)</span>. The stalk <span class="math inline">\(\mathcal{F}_x\)</span> is then the set of equivalence classes.</p>
 </div>
 <div id="exact-sequences-of-sheaves" class="section level1">
 <h1>Exact sequences of sheaves</h1>
 <p>Sheaf cohomology is defined (at least until degree <span class="math inline">\(1\)</span>) in general for sheaves of groups. Therefore, all the sheaves that we are going to consider from now on are indeed sheaves of groups.</p>
-If <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(\mathcal{G}\)</span> and <span class="math inline">\(\mathcal{H}\)</span> are sheaves of groups, we say that a sequence of morphisms of sheaves
-\begin{equation*}
+If <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(\mathcal{G}\)</span> and <span class="math inline">\(\mathcal{H}\)</span> are sheaves of groups, we say that a sequence of morphisms of sheaves <span class="math display">\[
      \begin{CD}
     \mathcal{F} @&gt; \varphi &gt;&gt; \mathcal{G} @&gt; \psi &gt;&gt; \mathcal{H}
       \end{CD}
-    \end{equation*}
-is <em>exact</em> at <span class="math inline">\(\mathcal{G}\)</span> if the induced sequence in the stalks
+   \]</span> is <em>exact</em> at <span class="math inline">\(\mathcal{G}\)</span> if the induced sequence in the stalks
 \begin{equation*}
       \begin{CD}
     \mathcal{F}_x @&gt; \varphi_x &gt;&gt; \mathcal{G}_x @&gt; \psi_x &gt;&gt; \mathcal{H}_x

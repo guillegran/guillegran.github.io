@@ -110,9 +110,9 @@ $$
    If the sheaves involved are $\mathcal{C}$-valued then we say that the morphism is a *morphism of  $\mathcal{C}$-valued sheaves* if the $\varphi_U$ are morphisms of $\mathcal{C}$.
 
    Another important concept to know is that of the *stalk* of a sheaf at a point $x\in X$. If $\mathcal{F}$ is a sheaf on $X$ and $x\in X$, we define the *stalk of $\mathcal{F}$ on $x$* as the direct limit
-   \begin{equation*}
+$$
      \mathcal{F}_x=\varinjlim_{x \in U} \mathcal{F}(U).
-   \end{equation*}
+     $$
    More precisely, we consider the set of pairs $(U,f)$ with $U$ an open neighbourhood of $x$ and $f\in \mathcal{F}(U)$ and consider on it the equivalence relation $(U,f)\sim (V,g)$ if there exists some open neighbourhood $W$ of $x$, with $W\subset U\cap V$ and with $f|_W =g|_W$. The stalk $\mathcal{F}_x$ is then the set of equivalence classes.
 
 # Exact sequences of sheaves
@@ -120,11 +120,11 @@ $$
    Sheaf cohomology is defined (at least until degree $1$) in general for sheaves of groups. Therefore, all the sheaves that we are going to consider from now on are indeed sheaves of groups. 
 
    If $\mathcal{F}$, $\mathcal{G}$ and $\mathcal{H}$ are sheaves of groups, we say that a sequence of morphisms of sheaves 
-   \begin{equation*}
+   $$
      \begin{CD}
 	\mathcal{F} @> \varphi >> \mathcal{G} @> \psi >> \mathcal{H}
       \end{CD}
-    \end{equation*}
+   $$
     is *exact* at $\mathcal{G}$ if the induced sequence in the stalks
     \begin{equation*}
       \begin{CD}

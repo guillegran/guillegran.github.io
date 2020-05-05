@@ -35,5 +35,5 @@ These are the **lecture notes** that I developed for the course (in Spanish):
 
 + All lessons together in a single [PDF file](files/valencia/valencia.pdf)
 
-<br>
+----
 [Take me home](https://guillegran.github.io)

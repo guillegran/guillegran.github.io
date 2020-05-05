@@ -77,5 +77,5 @@ Here is some **material** that I developed for the course (in Spanish):
 
 + [Notebook](files/neoland/teoria_NLP.html) on Natural Language Processing and Sentiment Analysis ([Jupyter File](files/neoland/teoria_NLP.ipynb))
 
-<br>
+----
 [Take me home](https://guillegran.github.io)

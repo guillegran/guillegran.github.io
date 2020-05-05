@@ -16,6 +16,10 @@ output:
 
 In this first entry I want to give a first notion of the cohomology of sheaves through Čech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
 
+<center>
+![](haces.png){#id .class width=50% height=50%}
+</center>
+
 # Presheaves and sheaves
 First, let us recall what was the definition of a sheaf. We start with a topological space $X$ and consider the category $\mathrm{Op}(X)$ whose objects are open subsets $U\subset X$ and whose morphisms are given by set inclusions $U\hookrightarrow V$. This is a particular example of a *site*, a category endowed with a *Grothendieck topology*. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category $\mathrm{Op}(X)$.
 
@@ -303,4 +307,9 @@ The treatement of cohomology we have given has been almost purely algebraic. How
 ## Acknowledgements
 Thanks to Raúl González Molina for some comments and corrections.
 
+------
+
+[Take me to the blog index](https://guillegran.github.io/blog/indice.html)
+
+[Take me home](https://guillegran.github.io)
 

@@ -5,6 +5,7 @@ date: "May 2, 2020"
 output:
   html_document: 
     toc: true
+    toc_float: true
     theme: readable
     includes: 
      in_header: ../headers.html
@@ -16,15 +17,15 @@ output:
 In this first entry I want to give a first notion of the cohomology of sheaves through Čech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
 
 # Presheaves and sheaves
-First, let us recall what was the definition of a sheaf. We start with a topological space $X$ and consider the category $\mathrm{Op}(X)$ whose objects are open subsets $U\subset X$ and whose morphisms are given by set inclusions $U\hookrightarrow V$. This is a particular example of a \emph{site}, a category endowed with a \emph{Grothendieck topology}. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category $\mathrm{Op}(X)$.
+First, let us recall what was the definition of a sheaf. We start with a topological space $X$ and consider the category $\mathrm{Op}(X)$ whose objects are open subsets $U\subset X$ and whose morphisms are given by set inclusions $U\hookrightarrow V$. This is a particular example of a *site*, a category endowed with a *Grothendieck topology*. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category $\mathrm{Op}(X)$.
 
 **Definition 1.** A *presheaf* is a contravariant functor $\mathcal{F}:\mathrm{Op}(X) \rightarrow \mathrm{Set}$. 
 
-More generally, if $\mathcal{C}$ is a subcategory of $\mathrm{Set}$ (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor $\mathrm{Op}(X) \rightarrow \mathcal{C}$ is a \emph{$\mathcal{C}$-valued presheaf}. For example, we speak of a presheaf of topological spaces, a presheaf of groups, a presheaf of modules, etc. 
+More generally, if $\mathcal{C}$ is a subcategory of $\mathrm{Set}$ (for example the category of topological spaces, the category of groups or an abelian category) we say that a contravariant functor $\mathrm{Op}(X) \rightarrow \mathcal{C}$ is a *$\mathcal{C}$-valued presheaf*. For example, we speak of a presheaf of topological spaces, a presheaf of groups, a presheaf of modules, etc. 
 
-Let us stop for a second and try to unravel the meaning of this definition. A presheaf is giving, for any open subset $U\subset X$ a set $\mathcal{F}(U)$ associated to it and, for any inclusion $V\hookrightarrow U$ a \emph{restriction morphism} $r^U_V: \mathcal{F}(U) \rightarrow \mathcal{F}(V)$.
+Let us stop for a second and try to unravel the meaning of this definition. A presheaf is giving, for any open subset $U\subset X$ a set $\mathcal{F}(U)$ associated to it and, for any inclusion $V\hookrightarrow U$ a *restriction morphism* $r^U_V: \mathcal{F}(U) \rightarrow \mathcal{F}(V)$.
 
-The most important example of presheaf is the \emph{presheaf of continuous functions}. If $X$ is a topological space and $Y$ is another topological space, we define the presheaf $\mathcal{C}_X(-,Y)$ on $X$ given by
+The most important example of presheaf is the *presheaf of continuous functions*. If $X$ is a topological space and $Y$ is another topological space, we define the presheaf $\mathcal{C}_X(-,Y)$ on $X$ given by
 
 \begin{equation*}
   \mathcal{C}_X (U,Y) = \left\{ \text{Continuous maps } U\rightarrow Y \right\}.
@@ -39,9 +40,9 @@ The restriction morphisms of this presheaf are given, precisely, by restrictions
 
   With this in mind, in general we are going to adopt the notation $f|_V=r^U_V(f)$ for any presheaf $\mathcal{F}$ and any $f\in \mathcal{F}(U)$.
 
-  This presheaf has some extra good properties that we would like to have in general. The first property is known as \emph{locality}, this means that if we cover any open subset $U\subset X$ by open sets, $U=\bigcup_{i\in I} U_i$ and $s,t: U \rightarrow Y$ are two functions that coincide on all of the $U_i$, that is $s|_{U_i}=t|_{U_i}$ for every $i\in I$, then $s=t$. The second property is known as \emph{gluing}: if for every $i \in I$ we define some $f_i:U_i \rightarrow Y$ in such a way that they agree on the overlaps, that is $f_i|_{U_i\cap U_j} = f_j|_{U_i \cap U_j}$, then there is some function $f:U \rightarrow Y$ such that $f|_{U_i} =f_i$. These two properties can be gathered in just one if we just add to the gluing condition that the obtained $f$ is unique. Thus, we define:
+  This presheaf has some extra good properties that we would like to have in general. The first property is known as *locality*, this means that if we cover any open subset $U\subset X$ by open sets, $U=\bigcup_{i\in I} U_i$ and $s,t: U \rightarrow Y$ are two functions that coincide on all of the $U_i$, that is $s|_{U_i}=t|_{U_i}$ for every $i\in I$, then $s=t$. The second property is known as *gluing*: if for every $i \in I$ we define some $f_i:U_i \rightarrow Y$ in such a way that they agree on the overlaps, that is $f_i|_{U_i\cap U_j} = f_j|_{U_i \cap U_j}$, then there is some function $f:U \rightarrow Y$ such that $f|_{U_i} =f_i$. These two properties can be gathered in just one if we just add to the gluing condition that the obtained $f$ is unique. Thus, we define:
 
-  **Definition 2.** A presheaf $\mathcal{F}$ is a \emph{sheaf} if, for every open subset $U\subset X$, given an open covering $U=\bigcup_{i\in I} U_i$ and a collection of elements $s_i \in \mathcal{F}(U_i)$ for every $i\in I$ such that, for every $i,j \in I$, 
+  **Definition 2.** A presheaf $\mathcal{F}$ is a *sheaf* if, for every open subset $U\subset X$, given an open covering $U=\bigcup_{i\in I} U_i$ and a collection of elements $s_i \in \mathcal{F}(U_i)$ for every $i\in I$ such that, for every $i,j \in I$, 
 
   \begin{equation*}
     s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j},
@@ -50,10 +51,11 @@ The restriction morphisms of this presheaf are given, precisely, by restrictions
   there exists a unique $s\in \mathcal{F}(U)$ such that $s|_{U_i}=s_i$ for every $i\in I$.     
 
   Let us see the sheaf condition in a different way. Consider a presheaf $\mathcal{F}$, an open subset $U\subset X$ and an open covering $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ of $U$, that is, $U=\bigcup_{i \in I} U_i$. Also, for convenience let us fix once and for all a well-ordering in the index set $I$. We define the set of *Čech $0$-cochains of $\mathcal{F}$ on $\mathfrak{U}$* as
+
   \begin{equation*}
     C^0(\mathfrak{U},\mathcal{F})=\prod_{i \in I} \mathcal{F}(U_i).
   \end{equation*}
-We also define the set of \emph{Čech $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$} as
+We also define the set of *Čech $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$* as
   \begin{equation*}
     C^1(\mathfrak{U},\mathcal{F})=\prod_{i<j \in I} \mathcal{F}(U_i\cap U_j).
   \end{equation*}
@@ -105,9 +107,9 @@ $$
     \end{CD}
     $$
 
-   If the sheaves involved are $\mathcal{C}$-valued then we say that the morphism is a \emph{morphism of  $\mathcal{C}$-valued sheaves} if the $\varphi_U$ are morphisms of $\mathcal{C}$.
+   If the sheaves involved are $\mathcal{C}$-valued then we say that the morphism is a *morphism of  $\mathcal{C}$-valued sheaves* if the $\varphi_U$ are morphisms of $\mathcal{C}$.
 
-   Another important concept to know is that of the \emph{stalk} of a sheaf at a point $x\in X$. If $\mathcal{F}$ is a sheaf on $X$ and $x\in X$, we define the \emph{stalk of $\mathcal{F}$ on $x$} as the direct limit
+   Another important concept to know is that of the *stalk* of a sheaf at a point $x\in X$. If $\mathcal{F}$ is a sheaf on $X$ and $x\in X$, we define the *stalk of $\mathcal{F}$ on $x$* as the direct limit
    \begin{equation*}
      \mathcal{F}_x=\varinjlim_{x \in U} \mathcal{F}(U).
    \end{equation*}
@@ -123,7 +125,7 @@ $$
 	\mathcal{F} @> \varphi >> \mathcal{G} @> \psi >> \mathcal{H}
       \end{CD}
     \end{equation*}
-    is \emph{exact} at $\mathcal{G}$ if the induced sequence in the stalks
+    is *exact* at $\mathcal{G}$ if the induced sequence in the stalks
     \begin{equation*}
       \begin{CD}
 	\mathcal{F}_x @> \varphi_x >> \mathcal{G}_x @> \psi_x >> \mathcal{H}_x
@@ -179,16 +181,16 @@ This cochain satisfies one extra property. Notice that
     \begin{equation*}
       i_{U_i\cap U_j\cap U_k}(g_{ij} g_{jk} g_{ik}^{-1})=g_i g_j^{-1} g_j g_k^{-1} g_k g_i^{-1}= 1,
     \end{equation*}
-so, since $i_{U_i \cap U_j \cap U_k}$ is injective, $(g_{ij})_{i<j \in I}$ satisfies the \emph{cocycle condition}:
+so, since $i_{U_i \cap U_j \cap U_k}$ is injective, $(g_{ij})_{i<j \in I}$ satisfies the *cocycle condition*:
     \begin{equation*}
       g_{ij} g_{jk} g_{ik}^{-1} = 1
     \end{equation*}
-in $U_i\cap U_j \cap U_k$, for every $i<j<k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of \emph{Čech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$}. 
+in $U_i\cap U_j \cap U_k$, for every $i<j<k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of *Čech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$*. 
 
 Naively, we would like to define a map $\mathcal{H}(U) \rightarrow Z^1(\mathfrak{U},\mathcal{F})$ sending each $h\in \mathcal{H}(U)$ to the cocycle $(g_{ij})_{i<j \in I}$ constructed above. However, one inmediately realizes that the covering $\mathfrak{U}$ depends on the element $h$, so this is not going to work.
 
 # Refinements
-The way to solve this problem is by taking covering refinements. If $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ and $\mathfrak{V}=\left\{ V_j: j \in J \right\}$ are two different open coverings of $U$, we say that $\mathfrak{V}$ is a \emph{refinement} of $\mathfrak{U}$ is there is a map $\tau:J\rightarrow I$, called the \emph{refinement map}, such that $V_j \subset U_{\tau(j)}$ for every $j \in J$. 
+The way to solve this problem is by taking covering refinements. If $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ and $\mathfrak{V}=\left\{ V_j: j \in J \right\}$ are two different open coverings of $U$, we say that $\mathfrak{V}$ is a *refinement* of $\mathfrak{U}$ is there is a map $\tau:J\rightarrow I$, called the *refinement map*, such that $V_j \subset U_{\tau(j)}$ for every $j \in J$. 
 
 A refinement map $\tau:J \rightarrow I$ naturally induces a map on $1$-cochains
     \begin{align*}
@@ -216,13 +218,13 @@ This map clearly depends on the refinement map $\tau$. However, if $\eta: J \rig
 	C^0(\mathfrak{U},\mathcal{F})\times C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
 	( (f_i)_{i\in I}, (g_{ij})_{i <j \in I} )&\longmapsto (f_i g_{ij} f_j^{-1})_{i <j \in I}. 
 	\end{align*}
-	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the \emph{first Čech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$}.
+	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the *first Čech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$*.
 	
 Now it is clear that the map $\tau^*$ descends to cohomology
 	\begin{equation*}
 	  \tau^*: H^1(\mathfrak{U},\mathcal{F})\rightarrow H^1(\mathfrak{V},\mathcal{F})
 	\end{equation*}
-and it does not depend on the choice of the refinement map $\tau:J \rightarrow I$. These refinement maps form a direct system and we can take its direct limit to get the \emph{first Čech cohomology set of $\mathcal{F}$ on $U$}:
+and it does not depend on the choice of the refinement map $\tau:J \rightarrow I$. These refinement maps form a direct system and we can take its direct limit to get the *first Čech cohomology set of $\mathcal{F}$ on $U$*:
 	\begin{equation*}
 	  H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
 	\end{equation*}
@@ -259,12 +261,12 @@ It is easy to prove now that in fact this continues the above exact sequence to 
     \begin{equation*}
       C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0<\dots<i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
     \end{equation*}
-  However, a cocycle condition only makes sense when $p>1$ if $\mathcal{F}$ is a sheaf of \emph{abelian} groups. In this case, switching to additive notation, one can define a map
+  However, a cocycle condition only makes sense when $p>1$ if $\mathcal{F}$ is a sheaf of *abelian* groups. In this case, switching to additive notation, one can define a map
     \begin{align*}
       d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
       (g_{i_0,\dots,i_{p-1}})_{i_0<\dots<i_{p-1}\in I} &\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0<\cdots<i_p\in I}. 
       \end{align*}
-   The kernel of $d_p$ is the set of \emph{Čech $p-1$-cocycles}, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the \emph{$p$-th Čech cohomology group} $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
+   The kernel of $d_p$ is the set of *Čech $p-1$-cocycles*, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the *$p$-th Čech cohomology group* $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
 
   Consider now the special case in which we have an exact sequence of sheaves of groups $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1$ such that, for any open subset $U \subset X$ the group $\mathcal{F}(U)$ is contained in the centre of $\mathcal{G}(U)$. In this case the sheaf $\mathcal{F}$ must be a sheaf of abelian groups and thus $H^2(U,\mathcal{F})$ is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence
 	    \begin{equation*}
@@ -273,7 +275,7 @@ It is easy to prove now that in fact this continues the above exact sequence to 
  The way to prove this is analogous to the construction of the map $\delta$.
 When $\mathcal{G}$ is also a sheaf of abelian groups, then the three sheaves are. In this case it is well known that a long exact sequence that goes on forever can be constructed in the same way.
 
-The treatement of cohomology we have given has been almost purely algebraic. However, there are a lot of geometric problems where these ideas are relevant. Moreover, the elements of $H^1(X,\mathcal{F})$ admit a very neat geometric interpretation as \emph{$\mathcal{F}$-torsors}. All these things will be treated in future posts.
+The treatement of cohomology we have given has been almost purely algebraic. However, there are a lot of geometric problems where these ideas are relevant. Moreover, the elements of $H^1(X,\mathcal{F})$ admit a very neat geometric interpretation as *$\mathcal{F}$-torsors*. All these things will be treated in future posts.
 
 
 ## Acknowledgements

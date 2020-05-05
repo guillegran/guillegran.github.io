@@ -5,7 +5,6 @@ date: "May 2, 2020"
 output:
   html_document: 
     toc: true
-    toc_float: true
     theme: readable
     includes: 
      in_header: ../headers.html
@@ -14,7 +13,7 @@ output:
        in_header: ../headers.tex
 ---
 
-In this first entry I want to give a first notion of the cohomology of sheaves through \v{C}ech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
+In this first entry I want to give a first notion of the cohomology of sheaves through Čech cohomology and try to show how cohomology appears in a natural way when studying sheaves. 
 
 # Presheaves and sheaves
 First, let us recall what was the definition of a sheaf. We start with a topological space $X$ and consider the category $\mathrm{Op}(X)$ whose objects are open subsets $U\subset X$ and whose morphisms are given by set inclusions $U\hookrightarrow V$. This is a particular example of a \emph{site}, a category endowed with a \emph{Grothendieck topology}. In general, sheaves are defined over sites, but for the sake of simplicity, we will stick to the category $\mathrm{Op}(X)$.
@@ -50,11 +49,11 @@ The restriction morphisms of this presheaf are given, precisely, by restrictions
 
   there exists a unique $s\in \mathcal{F}(U)$ such that $s|_{U_i}=s_i$ for every $i\in I$.     
 
-  Let us see the sheaf condition in a different way. Consider a presheaf $\mathcal{F}$, an open subset $U\subset X$ and an open covering $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ of $U$, that is, $U=\bigcup_{i \in I} U_i$. Also, for convenience let us fix once and for all a well-ordering in the index set $I$. We define the set of *\v{C}ech $0$-cochains of $\mathcal{F}$ on $\mathfrak{U}$* as
+  Let us see the sheaf condition in a different way. Consider a presheaf $\mathcal{F}$, an open subset $U\subset X$ and an open covering $\mathfrak{U}=\left\{ U_i: i \in I \right\}$ of $U$, that is, $U=\bigcup_{i \in I} U_i$. Also, for convenience let us fix once and for all a well-ordering in the index set $I$. We define the set of *Čech $0$-cochains of $\mathcal{F}$ on $\mathfrak{U}$* as
   \begin{equation*}
     C^0(\mathfrak{U},\mathcal{F})=\prod_{i \in I} \mathcal{F}(U_i).
   \end{equation*}
-We also define the set of \emph{\v{C}ech $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$} as
+We also define the set of \emph{Čech $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$} as
   \begin{equation*}
     C^1(\mathfrak{U},\mathcal{F})=\prod_{i<j \in I} \mathcal{F}(U_i\cap U_j).
   \end{equation*}
@@ -184,7 +183,7 @@ so, since $i_{U_i \cap U_j \cap U_k}$ is injective, $(g_{ij})_{i<j \in I}$ satis
     \begin{equation*}
       g_{ij} g_{jk} g_{ik}^{-1} = 1
     \end{equation*}
-in $U_i\cap U_j \cap U_k$, for every $i<j<k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of \emph{\v{C}ech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$}. 
+in $U_i\cap U_j \cap U_k$, for every $i<j<k \in I$. The set of $1$-cochains of $\mathcal{F}$ on $\mathfrak{U}$ satisfying the cocycle condition is denoted by $Z^1(\mathfrak{U},\mathcal{F})$ and is called the set of \emph{Čech $1$-cocycles of $\mathcal{F}$ on $\mathfrak{U}$}. 
 
 Naively, we would like to define a map $\mathcal{H}(U) \rightarrow Z^1(\mathfrak{U},\mathcal{F})$ sending each $h\in \mathcal{H}(U)$ to the cocycle $(g_{ij})_{i<j \in I}$ constructed above. However, one inmediately realizes that the covering $\mathfrak{U}$ depends on the element $h$, so this is not going to work.
 
@@ -217,13 +216,13 @@ This map clearly depends on the refinement map $\tau$. However, if $\eta: J \rig
 	C^0(\mathfrak{U},\mathcal{F})\times C^1(\mathfrak{U},\mathcal{F})&\longrightarrow C^1(\mathfrak{U},\mathcal{F})\\ 
 	( (f_i)_{i\in I}, (g_{ij})_{i <j \in I} )&\longmapsto (f_i g_{ij} f_j^{-1})_{i <j \in I}. 
 	\end{align*}
-	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the \emph{first \v{C}ech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$}.
+	This action respects the cocycle condition and thus it gives an action of $C^0(\mathfrak{U},\mathcal{F})$ on $Z^1(\mathfrak{U},\mathcal{F})$. The set of orbits is denoted as $H^1(\mathfrak{U},\mathcal{F})$ and it is called the \emph{first Čech cohomology set of $\mathcal{F}$ on $\mathfrak{U}$}.
 	
 Now it is clear that the map $\tau^*$ descends to cohomology
 	\begin{equation*}
 	  \tau^*: H^1(\mathfrak{U},\mathcal{F})\rightarrow H^1(\mathfrak{V},\mathcal{F})
 	\end{equation*}
-and it does not depend on the choice of the refinement map $\tau:J \rightarrow I$. These refinement maps form a direct system and we can take its direct limit to get the \emph{first \v{C}ech cohomology set of $\mathcal{F}$ on $U$}:
+and it does not depend on the choice of the refinement map $\tau:J \rightarrow I$. These refinement maps form a direct system and we can take its direct limit to get the \emph{first Čech cohomology set of $\mathcal{F}$ on $U$}:
 	\begin{equation*}
 	  H^1(U,\mathcal{F})=\varinjlim_{\mathfrak{U}} H^1(\mathfrak{U},\mathcal{F}).
 	\end{equation*}
@@ -256,7 +255,7 @@ It is easy to prove now that in fact this continues the above exact sequence to 
       1\rightarrow \mathcal{F}(U) \overset{i_U}{\rightarrow} \mathcal{G}(U) \overset{\pi_U}{\rightarrow} \mathcal{H}(U) \overset{\delta}{\rightarrow} H^1(U,\mathcal{F}) \overset{i_*}{\rightarrow} H^1(U,\mathcal{G}) \overset{\pi_*}{\rightarrow} H^1(U,\mathcal{H}).
     \end{equation*}
 	  
-  In general, for any sheaf of sets $\mathcal{F}$, \v{C}ech cochains can be defined for higher degree,
+  In general, for any sheaf of sets $\mathcal{F}$, Čech cochains can be defined for higher degree,
     \begin{equation*}
       C^p(\mathfrak{U},\mathcal{F})=\prod_{i_0<\dots<i_p} \mathcal{F}(U_{i_0} \cap \cdots \cap U_{i_p}).
     \end{equation*}
@@ -265,7 +264,7 @@ It is easy to prove now that in fact this continues the above exact sequence to 
       d_p :C^{p-1}(\mathfrak{U},\mathcal{F})&\longrightarrow C^p(\mathfrak{U},\mathcal{F}) \\ 
       (g_{i_0,\dots,i_{p-1}})_{i_0<\dots<i_{p-1}\in I} &\longmapsto \left( \sum_{k=0}^p (-1)^k g_{i_0,\dots,i_{k-1},i_{k+1},\dots,i_p}|_{U_{i_0} \cap \cdots U_{i_p}} \right)_{i_0<\cdots<i_p\in I}. 
       \end{align*}
-   The kernel of $d_p$ is the set of \emph{\v{C}ech $p-1$-cocycles}, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the \emph{$p$-th \v{C}ech cohomology group} $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
+   The kernel of $d_p$ is the set of \emph{Čech $p-1$-cocycles}, $Z^{p-1}(\mathfrak{U},\mathcal{F})$ and it contains the image of $d_{p-1}$. The quotient $Z^{p}(\mathfrak{U},\mathcal{F})/\mathrm{im}(d_p)$ is the \emph{$p$-th Čech cohomology group} $H^p(\mathfrak{U},\mathcal{F})$. As above, we can take limit by refinement to define $H^p(U,\mathcal{F})$.
 
   Consider now the special case in which we have an exact sequence of sheaves of groups $1\rightarrow \mathcal{F} \rightarrow \mathcal{G} \rightarrow \mathcal{H} \rightarrow 1$ such that, for any open subset $U \subset X$ the group $\mathcal{F}(U)$ is contained in the centre of $\mathcal{G}(U)$. In this case the sheaf $\mathcal{F}$ must be a sheaf of abelian groups and thus $H^2(U,\mathcal{F})$ is defined. Moreover, in this case the exact sequence can be continued to a longer exact sequence
 	    \begin{equation*}

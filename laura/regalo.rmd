@@ -1,0 +1,10 @@
+---
+title: "Tu regalo"
+output:
+  html_document: 
+    theme: readable
+---
+
+![](regalo.jpg)
+
+¡Primero tendrás que [desenvolverlo](disney.png)!

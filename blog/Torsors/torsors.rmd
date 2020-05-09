@@ -81,10 +81,12 @@ The best way to unravel this definition is by looking at **examples**. The simpl
 **Proposition 1.** *Let $\mathcal{F}$ be a $\mathcal{G}$-torsor. If $\mathcal{F}$ admits a global section, that is, if $\mathcal{F}(X)$ is nonempty, then it is isomorphic to the trivial $\mathcal{G}$-torsor.*
 
 *Proof.* Choose $f\in \mathcal{F}(X)$. Since $f|_U \in \mathcal{F}(U)$ for every open subset $U\subset X$, the action $\mathcal{G}(U)\times \mathcal{F}(U) \rightarrow \mathcal{F}(U)$ is free and transitive. Therefore, every $h_U \in \mathcal{F}(U)$ can be written in a unique way as $h_U=g_U \cdot f|_U$, for $g_U \in \mathcal{G}(U)$. Thus, the map
+
 \begin{align*}
  \mathcal{F}(U)&\longrightarrow \mathcal{G}(U)\\ 
   h_U &\longmapsto g_U, 
   \end{align*}
+
   which is clearly equivariant, defines a sheaf isomorphism. $\blacksquare$
 
 Note now that since for every $x\in X$, we have that $\mathcal{F}_x \neq \varnothing$, there is an open cover $\mathfrak{U}$ of $X$ such that, for every $U\in \mathfrak{U}$, the set $\mathcal{F}(U)$ is nonempty. Therefore, on every $U \in \mathfrak{U}$, the sheaf $\mathcal{F}|_U$ is isomorphic to the trivial $\mathcal{G}|_U$-torsor. In conclusion, what property 2 in the definition of $\mathcal{G}$-torsor actually means is that every $\mathcal{G}$-torsor is, in some way, "locally trivial". The open cover $\mathfrak{U}$ is called a *trivializing cover*.

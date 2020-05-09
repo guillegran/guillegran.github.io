@@ -1,0 +1,120 @@
+---
+title: "Torsors and cocycles"
+author: "Guillermo Gallego"
+date: "May 8, 2020"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+    includes: 
+     in_header: ../headers.html
+  pdf_document: 
+     includes:
+       in_header: ../headers.tex
+---
+
+In my [last post](https://guillegran.github.io/blog/CechCohomology/cohomologyR.html) I mentioned that first Čech cohomology classes of a sheaf $\mathcal{G}$ of (maybe non-abelian) groups admit a geometric interpretation in terms of $\mathcal{G}$-torsors. In this post I am going to introduce the notion of a $\mathcal{G}$-torsor over a topological space $X$, and show how the set of equivalence classes of $\mathcal{G}$-torsors on $X$ can be identified with $H^1(X,\mathcal{G})$.
+
+<center>
+![](reloj.png){#id .class width=50% height=50%}
+</center>
+
+# The action groupoid
+
+Before I talk about torsors, let me introduce a very simple concept, but that will be very useful in this and other posts. Take any left action $G\times S\rightarrow S$ of a group $G$ on a set $S$. To this action we can associate its *action groupoid*, which is the category $[S,G]$ whose objects are precisely the elements of the set $S$ and, for every $x,y \in S$, the set of morphisms from $x$ to $y$ is
+
+$$
+\mathrm{Mor}_{[S,G]} (x,y)= \{g \in G: g\cdot x=y\}.
+$$
+
+This is clearly a groupoid since every morphism $g$ is an isomorphism, with inverse given by $g^{-1}$. The *moduli set* of this category (that is, its set of isomorphism classes)  is simply the set of orbits $S/G$.
+
+In the last post we saw an example of a group action. Recall that for any open covering $\mathfrak{U}$ of a topological space $X$ and for any sheaf of groups $\mathcal{G}$ over $X$, we had that an action of $0$-cochains on $1$-cochains by "conjugation":
+
+\begin{align*}
+ C^0(\mathfrak{U},\mathcal{G}) \times C^1(\mathfrak{U},\mathcal{G})&\longrightarrow C^1(\mathfrak{U},\mathcal{G})\\ 
+  ((f_U)_{U\in \mathfrak{U}}, (g_{UV})_{U<V \in \mathfrak{U}}) &\longmapsto (f_U g_{UV} f_V^{-1})_{U<V \in \mathfrak{U}}. 
+  \end{align*}
+  Moreover, we saw that this action respects cocycles.
+Now, as in the last post, we can use refinement maps to define the sets $C^0(X,\mathcal{G})$, $C^1(X,\mathcal{G})$ and $Z^1(X,\mathcal{G})$ as limits by refinement. Suppose that we have some element of $Z^1(X,\mathcal{G})$ represented by a pair $(\mathfrak{U},g)$, with $g\in Z^1(\mathfrak{U},\mathcal{G})$ and some element of $C^0(X,\mathcal{G})$ represented by another pair $(\mathfrak{V},f)$. We can take a common refinement of both open covers by defining
+
+$$
+\mathfrak{W}=\{ U\cap V: U \in \mathfrak{U}, V \in \mathfrak{V} \}
+$$
+
+(which is of course an open cover, since every point is in some $U$ *and* in some $V$) with refinement maps given by
+
+\begin{align*}
+ \mathfrak{W}&\longrightarrow \mathfrak{U}\\ 
+  U\cap V &\longmapsto U 
+  \end{align*}
+  (analogously for $\mathfrak{W} \rightarrow \mathfrak{V}$). Thus, for the previously chosen elements we can take representatives $g \in Z^1(\mathfrak{W},\mathcal{G})$ and $f \in C^0(\mathfrak{W},\mathcal{G})$ and define
+
+$$
+f \cdot g = (f_U g_{UV} f_V^{-1})_{U < V \in \mathfrak{W}}.
+$$
+
+In conclusion, we have just defined an action of the group $C^0(X,\mathcal{G})$ in the set $Z^1(X,\mathcal{G})$ (of course, in the same way we can define an action on $C^1$, but we are particularly interested in this one). Moreover, the good properties of the direct limit guarantee that the set of orbits is precisely $H^1(X,\mathcal{G})$.
+
+We can now consider the action groupoid $[Z^1(X,\mathcal{G}),C^0(X,\mathcal{G})]$ associated to this action, whose moduli set is the Čech cohomology set $H^1(X,\mathcal{G})$. What we are going to do now is to give an interpretation of this action groupoid in terms of $\mathcal{G}$-torsors.
+
+# Torsors
+As above, let $X$ be a topological space and $\mathcal{G}$ a sheaf of groups over $X$.
+
+**Definition 1.** A *$\mathcal{G}$-torsor* is a sheaf of sets $\mathcal{F}$ on $X$ endowed with an action $\mathcal{G} \times \mathcal{F} \rightarrow \mathcal{F}$ such that
+
+  1. whenever $\mathcal{F}(U)$ is nonempty, the action  $\mathcal{G}(U) \times \mathcal{F}(U) \rightarrow \mathcal{F}(U)$ is [free and transitive](https://en.wikipedia.org/wiki/Group_action), and
+
+  2. for every $x\in X$, the stalk $\mathcal{F}_x$ is nonempty.
+
+A *morphism of $\mathcal{G}$-torsors* $\mathcal{F} \rightarrow \mathcal{F}'$ is simply a morphism of sheaves compatible with the $\mathcal{G}$-actions (we say that it is $\mathcal{G}$-equivariant).
+
+More precisely, given a morphism of $\mathcal{G}$-torsors $\varphi:\mathcal{F} \rightarrow \mathcal{F}'$, being $\mathcal{G}$-equivariant means that, if $\mathcal{F}(U)$ is nonempty, for every $p\in \mathcal{F}(U)$ we have
+
+$$
+\varphi_U(g\cdot p)=g\cdot \varphi_U(p).
+$$
+
+The best way to unravel this definition is by looking at **examples**. The simplest example of a $\mathcal{G}$-torsor is the *trivial $\mathcal{G}$-torsor*, which is $\mathcal{F}=\mathcal{G}$ with the natural action given by the group operation. A key fact is now the following:
+
+**Proposition 1.** *Let $\mathcal{F}$ be a $\mathcal{G}$-torsor. If $\mathcal{F}$ admits a global section, that is, if $\mathcal{F}(X)$ is nonempty, then it is isomorphic to the trivial $\mathcal{G}$-torsor.*
+
+*Proof.* Choose $f\in \mathcal{F}(X)$. Since $f|_U \in \mathcal{F}(U)$ for every open subset $U\subset X$, the action $\mathcal{G}(U)\times \mathcal{F}(U) \rightarrow \mathcal{F}(U)$ is free and transitive. Therefore, every $h_U \in \mathcal{F}(U)$ can be written in a unique way as $h_U=g_U \cdot f|_U$, for $g_U \in \mathcal{G}(U)$. Thus, the map
+\begin{align*}
+ \mathcal{F}(U)&\longrightarrow \mathcal{G}(U)\\ 
+  h_U &\longmapsto g_U, 
+  \end{align*}
+  which is clearly equivariant, defines a sheaf isomorphism. $\blacksquare$
+
+Note now that since for every $x\in X$, we have that $\mathcal{F}_x \neq \varnothing$, there is an open cover $\mathfrak{U}$ of $X$ such that, for every $U\in \mathfrak{U}$, the set $\mathcal{F}(U)$ is nonempty. Therefore, on every $U \in \mathfrak{U}$, the sheaf $\mathcal{F}|_U$ is isomorphic to the trivial $\mathcal{G}|_U$-torsor. In conclusion, what property 2 in the definition of $\mathcal{G}$-torsor actually means is that every $\mathcal{G}$-torsor is, in some way, "locally trivial". The open cover $\mathfrak{U}$ is called a *trivializing cover*.
+
+There are other examples of of $\mathcal{G}$-torsors that the reader could be familiar with. To introduce these examples, first consider a topological group $G$. Associated to this group we can define two different sheaves. One is the *sheaf of $G$-valued functions*, which we denote simply by $G$, and is defined by
+
+$$
+G(U)= \{ \text{Continuous maps } U\rightarrow G \}.
+$$
+
+The other one is the *sheaf of **locally constant** $G$-valued functions*, denoted by $\underline{G}$, and defined by
+
+$$
+\underline{G}(U)= \{ \text{Continuous maps } U\rightarrow G \text{ that are locally constant} \}.
+$$
+Note that these two sheaves are essentially different, although they coincide if the group $G$ is endowed with the discrete topology. Now, $G$-torsors are best known as *principal $G$-bundles* (or rather, as their sheaves of sections). On the other hand $\underline{G}$-torsors can be identified with *$G$-covering spaces*. I will say a lot about these two examples in future posts. If the reader is familiar with principal bundles, maybe it is useful for them to think of a $\mathcal{G}$-torsor as a generalization of a principal bundle in the sense that the structure group depends continuously on the base point.
+
+Now, let us see how there is a groupoid naturally associated with $\mathcal{G}$-torsors:
+
+**Proposition 2.** Every morphism of $\mathcal{G}$-torsors is an isomorphism.
+
+*Proof.* Consider $\varphi:\mathcal{F} \rightarrow \mathcal{F}'$ a morhpism of $\mathcal{G}$-torsors. First, we will see that the map is injective. Suppose that there are $p_1,p_2 \in \mathcal{F}(U)$ such that $\varphi_U(p_1)=\varphi_U(p_2)$. Since the action on $\mathcal{F}(U)$ is transitive and free, there exists a unique $g \in \mathcal{G}(U)$ such that $p_1=g\cdot p_2$ and, since $\varphi$ is equivariant, $\varphi_U(p_1)=g\cdot \varphi_U(p_2)$. But the group $\mathcal{G}(U)$ also acts freely and transitively on $\mathcal{F}'(U)$, so $g=1$ and $p_1=p_2$. On the other hand, to see that it is surjective take any element $p\in \mathcal{F}(U)$. Since the action is transitive we can write any other element $p'\in \mathcal{F}(U)$ as $p'=g\cdot \varphi_U(p)$, for some $g\in \mathcal{G}(U)$. Therefore, since $\varphi$ is equivariant, $p'=\varphi_U(g\cdot p)$. $\blacksquare$
+
+What we have just shown is that if we consider the category whose objects are $\mathcal{G}$-torsors and whose morphisms are morphisms of $\mathcal{G}$-torsors, this category is in fact a groupoid. The main purpose of this post is to show that this groupoid is equivalent to the action groupoid $[Z^1(X,\mathcal{G}),C^0(X,\mathcal{G})]$. In particular, this equivalence will yield a bijective correspondence between isomorphism classes of $\mathcal{G}$-torsors and cohomology classes in $H^1(X,\mathcal{G})$.
+
+# Transition functions
+
+------
+
+[Take me to the blog index](https://guillegran.github.io/blog/indice.html)
+
+[Take me home](https://guillegran.github.io)
+

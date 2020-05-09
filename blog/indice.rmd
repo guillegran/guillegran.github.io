@@ -6,9 +6,11 @@ output:
 ---
 By [Guillermo Gallego](https://guillegran.github.io)
 
++ May 9, 2020. [Torsors and cocycles](Torsors/torsors.html) ([PDF version](Torsors/torsors.pdf))
+
 + May 2, 2020. [A first idea of the cohomology of sheaves](CechCohomology/cohomologyR.html) ([PDF version](CechCohomology/cohomologyR.pdf))
 
 ----
 
-(For any comments, feel free to write me at guillegallegosanchez@gmail.com).
+(For any comments, feel free to message me at guillegallegosanchez@gmail.com).
 

@@ -1,0 +1,185 @@
+---
+title: "The cocycle approach to algebraic topology"
+author: "Guillermo Gallego"
+date: "June 12, 2020"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+    includes: 
+     in_header: ../headers.html
+  pdf_document: 
+     includes:
+       in_header: ../headers.tex
+---
+
+Well, it's been more than a month now. My original purpose was to post a new entry every week but this has certainly been disturbed by my work on my Teacher's Training Master's Thesis (more on this another day, maybe in Spanish). Anyway, here we are again. This is going to be a long one, so prepare yourself.
+
+If you are a graduate student or a last-year undergraduate interested in the fields of geometry and topology, it is very likely that you have taken a first course on Algebraic Topology. Most of these introductory courses tend to cover the topic of covering spaces and their relation with the fundamental group. The main result of this theory is the classification of regular covering spaces also adressed sometimes as the "Galois theory" of covering spaces. This result relies on a more fundamental fact that is the monodromy representation. 
+If you have taken this kind of course, probably you had to study some proofs that were rather technical and boring, regarding lifting of paths, of homotopies, etc. Moreover, very likely you have gone through the hell of reading and understanding the proof of the very useful Seifert-Van Kampen theorem.
+
+But what if I told you that all those efforts have been in vain? What if I told you that there is a much more simpler way of dealing with these topics?
+
+Welcome to the *cocycle approach to algebraic topology*.
+
+**[Contar algo más de lo que se va a hacer]**
+
+## Cocycles and covering spaces
+The key for the simplicity of the cocycle approach is to define $G$-coverings in a (maybe unexpected) way that we could think as (almost) purely algebraic.
+
+Let $X$ be a topological space and $G$ a group. Moreover, choose $\mathfrak{U}$ any open cover of $X$.
+
+**Definition 1**. A *$\mathfrak{U}$-based $G$-covering space of $X$* consists of a locally constant map $g_{UV}: U\cap V \rightarrow G$ for every $U,V \in \mathfrak{U}$ such that $U\cap V \neq \varnothing$ satisfying the *cocycle condition*, that is, if $U \cap V \cap W \neq \varnothing$, then, for every $x\in U \cap V \cap W$,
+
+$$
+g_{UV}(x) g_{VW}(x) = g_{UW} (x).
+$$
+
+You should not be impressed by this definition if you have read the previous entries of this blog **[CITAR]**. If you consider the sheaf $\underline{G}$ of locally constant maps from $X$ to $G$ (or equivalently, if you endow $G$ with the discrete topology and consider the sheaf of continuous maps from $X$ to $G$) then we just defined a Čech 1-cocycle on $\mathfrak{U}$ with coefficients in $\underline{G}$. The relation between cocycles and covering spaces is a particular case of the relation between cocycles and torsors. To be consistent with the notation of the previous entries, we will denote the set of $\mathfrak{U}$-based $G$-coverings as $Z^1(\mathfrak{U},\underline{G})$.
+
+## The monodromy representation
+Given a topological space $X$, an open cover $\mathfrak{U}$ and a $\mathfrak{U}$-based $G$-covering, we can associate to it a representation of the fundamental group, called the *monodromy representations*. 
+
+For those absent-minded let me recall that if we fix a point $x_0\in X$, the fundamental group of $X$ at $x_0$, denoted by $\pi_1(X,x_0)$ is formed by the homotopy classes of loops based at $x_0$, with the product given by path concatenation. By a *representation* the fundamental group on $G$ we mean a group homomorphism $\pi_1(X,x_0) \rightarrow G$.
+
+To any $\mathfrak{U}$-based $G$ covering $g=(g_{UV})_{U,V \in \mathfrak{U}}$, we can associate its monodromy representation
+
+$$
+f_g: \pi_1(X,x_0) \longrightarrow G
+$$
+
+in the following way. First, consider a loop based at $x_0$, that is, a continuous map $\sigma:[0,1] \rightarrow X$ with $\sigma(0)=\sigma(1)=x_0$. Now we are going to need an easy technical result, which you may know from your algebraic topology course (if you took one): the [Lebesgue number lemma](http://en.wikipedia.org/wiki/Lebesgue%27s_number_lemma).
+
+**Lemma 2**. Given a compact metric space $(X,d)$ and an open cover of $X$, there exists some number $\delta >0$ such that every subset of $X$ contained in some ball of radius $\delta$ is contained in some member of the cover. 
+
+(You can look in the [Wikipedia page](http://en.wikipedia.org/wiki/Lebesgue%27s_number_lemma) for a proof).
+
+The way that this lemma is going to be useful for us is that it allows us to take a partition $t_0=0<t_1<t_2<...<t_n=1$ of the interval $[0,1]$ in such a way that, for every $i=1,...,n$ there exists some $U_i \in \mathfrak{U}$ such that $\sigma( [t_{i-1},t_{i}] ) \subset U_i$. Now, if we call $x_i=\sigma(t_i)$ and $g_{ij}=g_{U_i U_j}$, we can define
+
+$$
+f_g([\sigma]) = g_{12}(x_1) g_{23}(x_2) ... g_{n1}(x_n).
+$$
+
+In order to see that this is well defined we have to check that:
+
+1. It does not depend on the choice of the "Lebesgue partition" $t_0<t_1<t_2<...<t_n$ and of the "Lebesgue cover" $U_1,...,U_n$.
+   
+2. It does not depend on the choice of $\sigma$ inside its homotopy class $[\sigma]$.
+
+To check 1 it suffices to show that the definition is invariant by refinement, and, by induction, we can restrict ourselves to the case of adding one point. Thus, choose any point $t_{i'} \in (t_{i-1},t_i)$ and an open set $U_{i'}$ such that $\sigma([t_{i-1},t_{i'}]) \subset U_{i'}$ and $\sigma([t_{i'},t_{i}]) \subset U_i$. By the cocycle condition we have that
+
+$$
+ g_{i-1,i'}(t_{i-1}) g_{i',i}(t_{i-1})=g_{i-1,i}(t_{i-1}). 
+$$
+
+In order to check 2 consider two homotopic loops $\sigma$ and $\eta$. Since they are homotopic, there exists some continuous map $F:[0,1]\times [0,1] \rightarrow X$ with $F(0,t)=\sigma(t)$, $F(1,t)=\eta(t)$ and $F(s,0)=F(s,1)=x_0$, for every $(s,t)\in [0,1]\times [0,1]$. Now, we may apply again the Lebesgue number lemma to obtain partitions $s_0=0 <s_1 <...<s_m=1$ and $t_0=0 <t_1 <...<t_m=1$ in such a way that, for every $i=1,...,m$ and $j=1,...,n$ there exists some $U_{ij} \in \mathfrak{U}$ such that 
+
+$$
+F([s_{i-1},s_i] \times [t_{i-1},t_i]) \subset U_{ij}.
+$$
+
+Moreover, since $F(s,0)=x_0$ for every $s \in [0,1]$, we can choose all the $U_{i1}$ to be equal to some $U_{0}$.
+
+Consider now the map $\gamma:[0,1] \rightarrow G$ that maps any $s \in [s_{i-1},s_i]$ to the element
+
+$$
+\gamma(s)= f_g(F(s,-)) = g_{U_{0} U_{i2}}(F(s,t_1)) g_{U_{i2} U_{i3}}(F(s,t_2)) ... g_{U_{in} U_{0}}(F(s,t_n)).
+$$
+
+This is well defined since
+
+$$
+g_{U_{ij}U_{i (j+1)}} (F(s_i,t_i)) = g_{U_{ij} U_{(i+1) j}} g_{U_{(i+1)j} U_{(i+1) (j+1)}} g_{U_{(i+1) (j+1)}U_{i (j+1)}} (F(s_i,t_i)),
+$$
+
+so the definition of $\gamma(s_i)$ does not vary if we regard $s_i$ as an element of the $U_{ij}$ or of the $U_{(i+1) j}$.
+
+Finally, remember that the $g$ functions are locally constant, so $\gamma:[0,1]\rightarrow G$ is a locally constant map. Since $[0,1]$ is connected, $\gamma$ is constant. Therefore,
+
+$$
+f_g(\sigma) = \gamma(0) = \gamma(1) = f_g(\eta).
+$$
+
+To sum up, we have defined the *monodromy map*
+
+$$
+Z^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0), G),
+$$
+
+that assigns every $G$-covering $g$ to its monodromy representation $f_g$.
+
+## The Betti groupoid
+Consider the *conjugation action* of $G$ on the set $\mathrm{Hom}(\pi_1(X,x_0),G)$, that is, given an element $g \in G$, we can compose any $f:\pi_1(X,x_0) \rightarrow G$ with the inner automorphism defined by $g$ to obtain
+
+$$
+(g\cdot f)([\sigma]) = g f([\sigma]) g^{-1}.
+$$
+
+If you recall the notion of the *action groupoid* from my previous post **[CITAR]**, we can consider the one associated to this action 
+
+$$
+[\mathrm{Hom}(\pi_1(X,x_0),G), G].
+$$
+
+This is called the *Betti groupoid*. The set of isomorphism classes of this groupoid 
+
+$$
+\mathrm{Hom}(\pi_1(X,x_0),G)/ G
+$$
+ 
+is called the *Betti moduli space*. The reason why the name of Betti appears here is because, if $G$ is abelian then the conjugation action of $G$ is trivial and the the Betti groupoid / moduli space is simply the group
+
+$$
+\mathrm{Hom}(H_1(X),G),
+$$
+
+where $H_1(X)$ is the first (singular) homology group of $X$ which is well known to be the abelianization of $\pi_1(X,x_0)$. 
+
+**Definition 3**. Let $g$ and $g'$ be two $\mathfrak{U}$-based $G$-covering spaces of some topological space $X$. An isomorphism $h$ between $g$ and $g'$ is a collection of locally constant maps $h_U:U \rightarrow G$ for every $U\in \mathfrak{U}$ such that 
+
+$$
+g'_{UV} = h_U g_{UV} h_V^{-1}.
+$$
+
+If you read my previous posts you might recall that any collection $h=(h_U)_{U\in \mathfrak{U}}$ of maps of this kind is called a ($0$-)cochain, and we denoted the set of cochains as $C^0(\mathfrak{U},\underline{G})$. This set acts on the set of $G$-coverings $Z^1(\mathfrak{U},\underline{G})$ like as
+
+$$
+(h\cdot g)_{UV} = h_U g_{UV} h_V^{-1}.
+$$
+
+and the category of ($\mathfrak{U}$-based) $G$-coverings is precisely the action groupoid 
+$$
+(\mathfrak{U}\text{-based) } G \text{-coverings} = [Z^1(\mathfrak{U},\underline{G}),C^0(\mathfrak{U},\underline{G})].
+$$
+
+Notice now that
+
+$$
+f_{h\cdot g} ([\sigma]) = h_1(x_1) g_{12}(x_1) h_2(x_1)^{-1} h_2(x_2) g_{23}(x_2)... g_{n1}(x_n) h_1(x_n).
+$$
+
+But, since the $h_i$ are locally constant on the $U_i$, if we denote $h=h_1(x_0)$, we have,
+
+$$
+f_{h\cdot g} ([\sigma]) = h f_{g}([\sigma]) h^{-1}.
+$$
+
+Therefore any $G$-covering isomorphism induces a conjugation isomorphism on the Betti groupoid. On the other hand, for any $h \in G$ we can define the $G$-covering isomorphism $(h\cdot g)_{UV}= h g_{UV} h^{-1}$.
+
+In conclusion, the monodromy map defines in fact a fully faithful functor from the category of $G$-coverings to the Betti groupoid:
+
+$$
+[Z^1(\mathfrak{U},\underline{G}),C^0(\mathfrak{U},\underline{G})] \longrightarrow[\mathrm{Hom}(\pi_1(X,x_0),G), G].
+$$
+
+In the next section we are going to see when this functor is in fact an equivalence of categories (that is, when is it essentially surjective).
+
+## Recovering the covering
+
+------
+
+[Take me to the blog index](https://guillegran.github.io/blog/indice.html)
+
+[Take me home](https://guillegran.github.io)
+

@@ -1,7 +1,7 @@
 ---
 title: "The cocycle approach to algebraic topology"
 author: "Guillermo Gallego"
-date: "June 12, 2020"
+date: "June 14, 2020"
 output:
   html_document: 
     toc: true
@@ -16,34 +16,36 @@ output:
 
 Well, it's been more than a month now. My original purpose was to post a new entry every week but this has certainly been disturbed by my work on my Teacher's Training Master's Thesis (more on this another day, maybe in Spanish). Anyway, here we are again. This is going to be a long one, so prepare yourself.
 
-If you are a graduate student or a last-year undergraduate interested in the fields of geometry and topology, it is very likely that you have taken a first course on Algebraic Topology. Most of these introductory courses tend to cover the topic of covering spaces and their relation with the fundamental group. The main result of this theory is the classification of regular covering spaces also adressed sometimes as the "Galois theory" of covering spaces. This result relies on a more fundamental fact that is the monodromy representation. 
-If you have taken this kind of course, probably you had to study some proofs that were rather technical and boring, regarding lifting of paths, of homotopies, etc. Moreover, very likely you have gone through the hell of reading and understanding the proof of the very useful Seifert-Van Kampen theorem.
+If you are a graduate student or a last-year undergraduate interested in the fields of geometry and topology, it is very likely that you have taken a first course on Algebraic Topology. Most of these introductory courses tend to cover the topic of covering spaces and their relation with the fundamental group. One of the main results of this theory is the classification of regular covering spaces, also adressed sometimes as the "Galois theory" of covering spaces. This result relies on a more fundamental fact that is the **monodromy theorem**: 
+
+**Theorem**. Let $G$ be a group and $X$ a topological space admitting a universal covering space. The set of isomorphism classes of $G$-covering spaces of $X$ is in one-to-one correspondence with the set of conjugation classes of $G$-representations of the fundamental group of $X$
+
+$$
+\mathrm{Hom}(\pi_1(X),G)/G.
+$$
+
+If you have taken this kind of course, probably you had to study some proofs that were rather technical and boring, regarding lifting of paths and homotopies, the construction of the universal covering space, etc. Moreover, very likely you have gone through the hell of reading and understanding the proof of the very useful Seifert--van Kampen theorem.
 
 But what if I told you that all those efforts have been in vain? What if I told you that there is a much more simpler way of dealing with these topics?
 
 Welcome to the *cocycle approach to algebraic topology*.
 
-**[Contar algo más de lo que se va a hacer]**
-**[Mencionar el monodromy theorem]**
+This approach consists in regarding $G$-covering spaces (those that come from a properly discontinuous action) as Čech 1-cocycles with coefficients in the sheaf $\underline{G}$ of locally constant $G$-valued maps, under the torsor-cocycle correspondence (that I explained in my [last post](http://guillegran.github.com/blog/Torsors/torsors.html)). 
 
-**Theorem**. Let $G$ be a group and $X$ a topological space admitting a universal covering space. The set of isomorphism classes of $G$-covering spaces of $X$ is in one-to-one correspondence with the set of conjugation classes of $G$-representations of the fundamental group of $X$
-
-$$
-\mathrm{Hom}(\pi(X),G)/G.
-$$
+Under this point of view, we can give a very explicit and "algebraic-like" proof of the monodromy theorem and some of its consequences, like the Seifert--van Kampen theorem or the "Galois theory" of covering spaces.
 
 ## Cocycles and covering spaces
 The key for the simplicity of the cocycle approach is to define $G$-coverings in a (maybe unexpected) way that we could think as (almost) purely algebraic.
 
 Let $X$ be a topological space and $G$ a group. Moreover, choose $\mathfrak{U}$ any open cover of $X$.
 
-**Definition 1**. A *$\mathfrak{U}$-based $G$-covering space of $X$* consists of a locally constant map $g_{UV}: U\cap V \rightarrow G$ for every $U,V \in \mathfrak{U}$ such that $U\cap V \neq \varnothing$ satisfying the *cocycle condition*, that is, if $U \cap V \cap W \neq \varnothing$, then, for every $x\in U \cap V \cap W$,
+**Definition**. A *$\mathfrak{U}$-based $G$-covering space of $X$* consists of a locally constant map $g_{UV}: U\cap V \rightarrow G$ for every $U,V \in \mathfrak{U}$ such that $U\cap V \neq \varnothing$ satisfying the *cocycle condition*, that is, if $U \cap V \cap W \neq \varnothing$, then, for every $x\in U \cap V \cap W$,
 
 $$
 g_{UV}(x) g_{VW}(x) = g_{UW} (x).
 $$
 
-You should not be impressed by this definition if you have read the previous entries of this blog **[CITAR]**. If you consider the sheaf $\underline{G}$ of locally constant maps from $X$ to $G$ (or equivalently, if you endow $G$ with the discrete topology and consider the sheaf of continuous maps from $X$ to $G$) then we just defined a Čech 1-cocycle on $\mathfrak{U}$ with coefficients in $\underline{G}$. The relation between cocycles and covering spaces is a particular case of the relation between cocycles and torsors. To be consistent with the notation of the previous entries, we will denote the set of $\mathfrak{U}$-based $G$-coverings as $Z^1(\mathfrak{U},\underline{G})$.
+You should not be impressed by this definition if you have read the [previous entry](http://guillegran.github.com/blog/Torsors/torsors.html) of this blog. If you consider the sheaf $\underline{G}$ of locally constant maps from $X$ to $G$ (or equivalently, if you endow $G$ with the discrete topology and consider the sheaf of continuous maps from $X$ to $G$) then we just defined a Čech 1-cocycle on $\mathfrak{U}$ with coefficients in $\underline{G}$. The relation between cocycles and covering spaces is a particular case of the relation between cocycles and torsors. To be consistent with the notation of the previous entries, we will denote the set of $\mathfrak{U}$-based $G$-coverings as $Z^1(\mathfrak{U},\underline{G})$.
 
 ## The monodromy representation
 Given a topological space $X$, an open cover $\mathfrak{U}$ and a $\mathfrak{U}$-based $G$-covering, we can associate to it a representation of the fundamental group, called the *monodromy representations*. 
@@ -58,7 +60,7 @@ $$
 
 in the following way. First, consider a loop based at $x_0$, that is, a continuous map $\sigma:[0,1] \rightarrow X$ with $\sigma(0)=\sigma(1)=x_0$. Now we are going to need an easy technical result, which you may know from your algebraic topology course (if you took one): the [Lebesgue number lemma](http://en.wikipedia.org/wiki/Lebesgue%27s_number_lemma).
 
-**Lemma 2**. Given a compact metric space $(X,d)$ and an open cover of $X$, there exists some number $\delta >0$ such that every subset of $X$ contained in some ball of radius $\delta$ is contained in some member of the cover. 
+**Lemma**. Given a compact metric space $(X,d)$ and an open cover of $X$, there exists some number $\delta >0$ such that every subset of $X$ contained in some ball of radius $\delta$ is contained in some member of the cover. 
 
 (You can look in the [Wikipedia page](http://en.wikipedia.org/wiki/Lebesgue%27s_number_lemma) for a proof).
 
@@ -67,6 +69,10 @@ The way that this lemma is going to be useful for us is that it allows us to tak
 $$
 f_g([\sigma]) = g_{12}(x_1) g_{23}(x_2) ... g_{n1}(x_n).
 $$
+
+<center>
+![](lebesguepath.jpg){#id .class width=50% height=50%}
+</center>
 
 In order to see that this is well defined we have to check that:
 
@@ -77,8 +83,12 @@ In order to see that this is well defined we have to check that:
 To check 1 it suffices to show that the definition is invariant by refinement, and, by induction, we can restrict ourselves to the case of adding one point. Thus, choose any point $t_{i'} \in (t_{i-1},t_i)$ and an open set $U_{i'}$ such that $\sigma([t_{i-1},t_{i'}]) \subset U_{i'}$ and $\sigma([t_{i'},t_{i}]) \subset U_i$. By the cocycle condition we have that
 
 $$
- g_{i-1,i'}(t_{i-1}) g_{i',i}(t_{i-1})=g_{i-1,i}(t_{i-1}). 
+ g_{i-1,i'}(x_{i-1}) g_{i',i}(x_{i-1})=g_{i-1,i}(x_{i-1}). 
 $$
+
+<center>
+![](refinement.jpg){#id .class width=50% height=50%}
+</center>
 
 In order to check 2 consider two homotopic loops $\sigma$ and $\eta$. Since they are homotopic, there exists some continuous map $F:[0,1]\times [0,1] \rightarrow X$ with $F(0,t)=\sigma(t)$, $F(1,t)=\eta(t)$ and $F(s,0)=F(s,1)=x_0$, for every $(s,t)\in [0,1]\times [0,1]$. Now, we may apply again the Lebesgue number lemma to obtain partitions $s_0=0 <s_1 <...<s_m=1$ and $t_0=0 <t_1 <...<t_m=1$ in such a way that, for every $i=1,...,m$ and $j=1,...,n$ there exists some $U_{ij} \in \mathfrak{U}$ such that 
 
@@ -87,6 +97,10 @@ F([s_{i-1},s_i] \times [t_{i-1},t_i]) \subset U_{ij}.
 $$
 
 Moreover, since $F(s,0)=x_0$ for every $s \in [0,1]$, we can choose all the $U_{i1}$ to be equal to some $U_{0}$.
+
+<center>
+![](lebesguehomotopy.jpg){#id .class width=50% height=50%}
+</center>
 
 Consider now the map $\gamma:[0,1] \rightarrow G$ that maps any $s \in [s_{i-1},s_i]$ to the element
 
@@ -123,7 +137,7 @@ $$
 (g\cdot f)([\sigma]) = g f([\sigma]) g^{-1}.
 $$
 
-If you recall the notion of the *action groupoid* from my previous post **[CITAR]**, we can consider the one associated to this action 
+If you recall the notion of the *action groupoid* from my [previous post](http://guillegran.github.com/blog/Torsors/torsors.html), we can consider the one associated to this action 
 
 $$
 [\mathrm{Hom}(\pi_1(X,x_0),G), G].
@@ -143,13 +157,13 @@ $$
 
 where $H_1(X)$ is the first (singular) homology group of $X$ which is well known to be the abelianization of $\pi_1(X,x_0)$. 
 
-**Definition 3**. Let $g$ and $g'$ be two $\mathfrak{U}$-based $G$-covering spaces of some topological space $X$. An isomorphism $h$ between $g$ and $g'$ is a collection of locally constant maps $h_U:U \rightarrow G$ for every $U\in \mathfrak{U}$ such that 
+**Definition**. Let $g$ and $g'$ be two $\mathfrak{U}$-based $G$-covering spaces of some topological space $X$. An isomorphism $h$ between $g$ and $g'$ is a collection of locally constant maps $h_U:U \rightarrow G$ for every $U\in \mathfrak{U}$ such that 
 
 $$
 g'_{UV} = h_U g_{UV} h_V^{-1}.
 $$
 
-If you read my previous posts you might recall that any collection $h=(h_U)_{U\in \mathfrak{U}}$ of maps of this kind is called a ($0$-)cochain, and we denoted the set of cochains as $C^0(\mathfrak{U},\underline{G})$. This set acts on the set of $G$-coverings $Z^1(\mathfrak{U},\underline{G})$ like as
+If you read my [post on Čech cohomology](guillegran.github.io/blog/CechCohomology/cohomologyR.html) you might recall that any collection $h=(h_U)_{U\in \mathfrak{U}}$ of maps of this kind is called a ($0$-)cochain, and we denoted the set of cochains as $C^0(\mathfrak{U},\underline{G})$. This set acts on the set of $G$-coverings $Z^1(\mathfrak{U},\underline{G})$ as
 
 $$
 (h\cdot g)_{UV} = h_U g_{UV} h_V^{-1}.
@@ -207,7 +221,13 @@ $$
 \gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V,
 $$
 
-where $*$ stands for the concatenation of paths and $\gamma^{-1}_V$ denotes the path $\gamma_V$ transversed backwards. This path is a loop based on $x_0$ and we can define
+where $*$ stands for the concatenation of paths and $\gamma^{-1}_V$ denotes the path $\gamma_V$ transversed backwards. 
+
+<center>
+![](loop.jpg){#id .class width=50% height=50%}
+</center>
+
+This path is a loop based on $x_0$ and we can define
 
 $$
 g_{UV} (x) = f([\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V]).
@@ -230,6 +250,10 @@ and
 $$
 g_{UW} (x) = f([\gamma_U * \delta_U * \delta_W * \gamma^{-1}_W]).
 $$
+
+<center>
+![](loopcocycle.jpg){#id .class width=70% height=70%}
+</center>
 
 Now, $\gamma^{-1}_V * \gamma_V$ is the constant path at $x_V$, so
 
@@ -254,6 +278,10 @@ for certain $x_1,...,x_n$ given by the Lebesgue number lemma. Now, we can choose
 $$
 g_{i (i+1)} (x_i) = f([\gamma_{U_i} * \alpha_i * \beta_i * \gamma_{U_{i+1}}^{-1}]). 
 $$
+
+<center>
+![](loophomotopy.jpg){#id .class width=100% height=100%}
+</center>
 
 Therefore,
 
@@ -287,7 +315,7 @@ $$
 
 This is our version of the **monodromy theorem**.
 
-Recall from my previous post **[CITAR]** that the moduli set of the action groupoid $[Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})]$ is the (first) Čech cohomology set of $\mathfrak{U}$ with coefficients on $\underline{G}$, denoted by $H^1(\mathfrak{U},\underline{G})$. We have shown that this cohomology set is in bijection with the Betti moduli set
+Recall from my [previous post](http://guillegran.github.com/blog/Torsors/torsors.html) that the moduli set of the action groupoid $[Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})]$ is the (first) Čech cohomology set of $\mathfrak{U}$ with coefficients on $\underline{G}$, denoted by $H^1(\mathfrak{U},\underline{G})$. We have shown that this cohomology set is in bijection with the Betti moduli set
 
 $$
 H^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0),G)/ G.
@@ -295,9 +323,10 @@ $$
 
 ## Applications of the monodromy theorem
 
-### The Seifert-Van Kampen theorem
+### The Seifert--van Kampen theorem
+The thoerem of Seifert--van Kampen is a very powerful tool for the computation of the fundamental group. It says that if you can cover some topological space by two path-connected open sets whose intersection is path-connected too, then you can compute the fundamental group of the space as the free product of the fundamental groups of the open sets, quotiented by the normal subgroup generated by the elements which are products of loops contained in the intersection. Some people call this group the [*amalgamated product*](http://en.wikipedia.org/wiki/Free_product#Generalization:_Free_product_with_amalgamation). Another way to say this is that the diagram induced by the inclusions on the fundamental groups is a [pushout](http://en.wikipedia.org/wiki/Pushout_(category_theory)).
 
-**[Contar algo, mencionar a Grothendieck]**
+The proof of this theorem, although elementary, is a bit involved and tedious (you can read it in [Hatcher's book](https://pi.math.cornell.edu/~hatcher/AT/AT.pdf)). However, in the particular (although quite general) case where $X$ has the good conditions that we asked for the monodromy theorem, a much more elegant proof can be given. Some people attribute this proof to Grothendieck although I do not know the actual reference (if you know it, [e-mail me](guillegallegosanchez@gmail.com)!).
 
 
 **Theorem**. Let $X$ be a path-connected, locally path-connected and semilocally simply-connected. Let $U,V \subset X$ be open sets with $X=U\cup V$ such that $U$, $V$ and $U\cap V$ are path-connected, locally path-connected and semilocally simply-connected. Take $x_0 \in U \cap V$. If we consider the diagram given by inclusions
@@ -347,8 +376,14 @@ $$
 
 then, since they are locally constant, $g_{U,12}=g_{V,12}$ in all the path-component of $U_1 \cap U_2$ containing $x$. Therefore, for every $x\in U_1 \cap U_2$, we can define $g_{12}(x)$ to be $g_{U,12}(x)$ if $x\in U$ and $g_{V,12}(x)$ if $x\in V$. Putting all these together we obtain the cocycle $g\in Z^1(\mathfrak{U},\underline{G})$ we were looking for.
 
+In the following picture we can see how one can apply the Seifert--van Kampen theorem to compute the fundamental group of the surface of genus 2.
+
+<center>
+![](surface.jpg){#id .class width=100% height=100%}
+</center>
+
 ### The topological properties of $G$-coverings
-In a similar way as what we did in my previous post **[CITAR]** to relate torsors with cocycles, to any $G$-covering $g$ we can associate a topological space $X_g$ mapping to $X$. We do this in the following way. 
+In a similar way as what we did in my [previous post](http://guillegran.github.com/blog/Torsors/torsors.html) to relate torsors with cocycles, to any $G$-covering $g$ we can associate a topological space $X_g$ mapping to $X$. We do this in the following way. 
 
 Consider $g$ a $\mathfrak{U}$-based $G$-covering and define the set
 
@@ -359,10 +394,14 @@ $$
 with the equivalence relation $\sim$ given as
 
 $$
-(x,h) \sim (x,h')
+(x_U,g_U) \sim (x_V,g_V)
 $$
 
-if there exist $U,V \in \mathfrak{U}$ such that $x\in U\cap V$ and $h'=g_{UV}(x) h$. If we take the discrete topology on $G$, we can endow $X_g$ with the quotient topology and we get a canonical continuous surjective map $p:X_g \rightarrow X$ sending every $[(x,g)]$ to $x$.
+for $x_U \in U$ and $x_V \in V$ if $x_U=x_V$ and $g_V=g_{UV}(x_U) g_U$. If we take the discrete topology on $G$, we can endow $X_g$ with the quotient topology and we get a canonical continuous surjective map $p:X_g \rightarrow X$ sending every $[(x,g)]$ to $x$.
+
+<center>
+![](covering.jpg){#id .class width=70% height=70%}
+</center>
 
 Some topological properties of the space $X_g$ are determined by the monodromy representation $f_g:\pi_1(X,x_0) \rightarrow G$. If $X$ is path-connected then:
 
@@ -396,25 +435,50 @@ $$
 (U \times \mathbb{Z} \sqcup V \times \mathbb{Z}) / \sim
 $$
 
-with the relation $(x,n) \sim (x,n+1)$, for $x \in (e^{-i\epsilon},e^{i\epsilon})$. This space is clearly homeomorphic to $\mathbb{R}$, which is simply connected. Therefore, $\pi_1(S^1)$ is isomorphic to $\mathbb{Z}$.
+with the relation $(x_V,n) \sim (x_U,n+1)$, for $x_U=x_V \in (e^{-i\epsilon},e^{i\epsilon})$ and $(x_U,n) \sim (x_V,n)$ for $x_U=x_V \in (e^{i(\pi-\epsilon)},e^{i(\pi+\epsilon)})$. 
+This space is clearly homeomorphic to $\mathbb{R}$, which is simply connected. Therefore, $\pi_1(S^1)$ is isomorphic to $\mathbb{Z}$.
 
-When $X$ is path-connected, locally path-connected and semilocally simply connected, we can find a cover $\mathfrak{U}$ such that any $f:\pi_1(X,x_0) \rightarrow G$ induces a $G$-covering based on $\mathfrak{U}$. In particular, the identity isomorphism $\mathrm{id}:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)$ induces a $G$-covering whose associated topological space is simply connected. This is called the *universal covering space*.
+<center>
+![](circle.jpg){#id .class width=100% height=100%}
+</center>
+
+
+When $X$ is path-connected, locally path-connected and semilocally simply connected, we can find a cover $\mathfrak{U}$ such that any $f:\pi_1(X,x_0) \rightarrow G$ induces a $G$-covering based on $\mathfrak{U}$. In particular, the identity isomorphism $\mathrm{id}:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)$ induces a $G$-covering whose associated topological space, which we denote by $\tilde{X}$ is simply connected. This is called the *universal covering space*.
 
 ### The Galois theory of coverings
 
-Let $X$ be a path-connected, locally path-connected and semilocally simply connected topological space and choose an open cover $\mathfrak{U}$ of $X$ satisfying properties P1 and P2. Fix once and for all a base point $x_0 \in X$.
+Let $X$ be a path-connected, locally path-connected and semilocally simply connected topological space and choose an open cover $\mathfrak{U}$ of $X$ satisfying properties P1 and P2. Fix once and for all a base point $x_0 \in X$ and write $\pi=\pi_1(X,x_0)$.
 
-**Definition**. A *regular* or *Galois covering space* is a pair $(Y,p)$, where $Y$ is a connected topological space and $p:Y\rightarrow X$ a continuous surjective map such that there is some group $G$ and some $\mathfrak{U}$-based $G$-covering $g$ with $Y=X_g$ and $p:X_g\rightarrow X$. We call $G$ the *Galois group* of $(Y,p)$.
+**Definition**. A *regular* or *Galois covering space* is a pair $(Y,p)$, where $Y$ is a connected topological space and $p:Y\rightarrow X$ a continuous surjective map such that there is some group $G$ and some $\mathfrak{U}$-based $G$-covering $g$ with $Y=X_g$ and $p:X_g\rightarrow X$. We call $G=\mathrm{Gal}(Y,p)$ the *Galois group* of $(Y,p)$.
 
-Now we can prove the **Galois theorem of covering spaces**:
+A morphism between two Galois coverings $(Y_1,p_1)$, $(Y_2,p_2)$ is a continuous map $\varphi:Y_1 \rightarrow Y_2$ such that $p_1=p_2 \circ \varphi$. We denote the category of Galois covering spaces with morphisms between them by $\mathrm{GalCov}(X)$.
 
-**Theorem**.  There is a one-to-one correspondence between the normal subgroups of the fundamental group $\pi_1(X,x_0)$ and the Galois coverings of $X$.
+**Lemma**. The category $\mathrm{GalCov(X)}$ is isomorphic to the coslice category $\pi\backslash \mathrm{Grp}$ whose objects are pairs $(G,f)$, with $G$ a group and $f:\pi \rightarrow G$ a group homomorphism and morphisms between two pairs $(G_1,f_1)$ and $(G_2,f_2)$ are given by group homomorphisms $\varphi:G_1 \rightarrow G_2$ with $f_2=\varphi \circ f_1$.
 
-Consider $Y$ a Galois covering with Galois group $G$ and $g$ some $\mathfrak{U}$-based $G$-covering such that $Y=X_g$. Then we can associate to it the kernel of the monodromy representation $f_g:\pi_1(X,x_0) \rightarrow G$, which is a normal subgroup of $\pi_1(X,x_0)$. A different $g$ would yield another homomorphism, so the map is injective.
+Consider $Y$ a Galois covering with Galois group $G$ and $g$ some $\mathfrak{U}$-based $G$-covering such that $Y=X_g$. Then we can associate to it the monodromy representation $f_g:\pi \rightarrow G$. 
 
-On the other hand, if $N$ is a normal subgroup of $\pi_1(X,x_0)$, associated to the natural projection $p:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)/N$ we have a $\mathfrak{U}$-based $\pi_1(X,x_0)/N$-covering $g$, whose associated topological space $X_g$ is a Galois covering of $X$. This construction is an inverse of the previous one. Indeed, by the isomorphism theorem and the universal property of the quotient there is a canonical isomorphism $\varphi:\pi_1(X,x_0)/\ker f_g \rightarrow G$ with $f_g= \varphi \circ p$.
+Now, a morphism of Galois coverings $Y_1 \rightarrow Y_2$ maps a point of the form $[(x,g)]$, for $x \in X$ and $g\in \mathrm{Gal}(Y_1)$ to a point of the form $[(x,\varphi(g))]$, for $\varphi: \mathrm{Gal}(Y_1) \rightarrow \mathrm{Gal}(Y_2)$. It is easy to check that since the morphism $Y_1\rightarrow Y_2$ is a continuous map, the map $\varphi$ must be a group homomorphism. Moreover, if $g_1$ and $g_2$ are cocycles defining $Y_1$ and $Y_2$, we have that $g_{2,UV} = \varphi(g_{1,UV})$ for every $U,V \in \mathfrak{U}$, so $f_{g_2}=\varphi \circ f_{g_1}$.
 
+Therefore, we have given a functor 
 
+$$
+\mathrm{Gal}: \mathrm{GalCov(X)} \longrightarrow \pi \backslash \mathrm{Grp}.
+$$
+
+Now, to any $f:\pi \rightarrow G$ we can associate a $\mathfrak{U}$-based $G$-covering $g$ yielding $f$ as its monodromy representation, and consider the Galois covering $X_g$. Moreover, to any $\varphi:G_1 \rightarrow G_2$ we associate the morphism $Y_1 \rightarrow Y_2$ sending $[(x,g)]$ to $[(x,\varphi(g))]$. Thus, the functor $\mathrm{Gal}$ is an isomorphism of categories.
+
+**Lemma**. The slice category $\pi \backslash \mathrm{Grp}$ is equivalent to the category $\mathcal{N}(\pi)$, whose objects are normal subgroups of $\pi$ and whose morphisms are given by inclusions between these subgroups.
+
+The functor maps any homomorphism $f:\pi \rightarrow G$ to its kernel $\ker f$, which is a normal subgroup of $\pi$. It is a functor since, if $f_2= \varphi \circ f_1$, then $\ker f_1 \subset \ker f_2$. It is an equivalence since to any normal subgroup $N \subset \pi$ we can associate the canonical projection $\pi \rightarrow \pi/N$, and $G$ is isomorphic to $\pi/\ker f$ by the isomorphism theorem. The universal property of the quotient group guarantees that given $N_1 \subset N_2$ normal subgroups and $f_i: \pi \rightarrow \pi/N_i$, for $i=1,2$, the canonical projections, there is a unique homomorphism $\varphi: \pi/N_1 \rightarrow \pi/N_2$ such that $f_2=\varphi \circ f_1$.
+
+Putting these two lemmas together we have proven the **Galois theorem of covering spaces**:
+
+**Theorem**.  The categories $\mathrm{GalCov}(X)$ and $\mathcal{N}(X)$ are equivalent.
+
+An useful corollary of this theorem is the **universal property** of the universal covering space: for every Galois cover $Y\rightarrow X$ there is a unique morphism of Galois coverings $\tilde{X} \rightarrow Y$, where $\tilde{X}$ is the universal covering space of $X$. 
+This is true since the normal subgroup of $\pi_1(X,x_0)$ associated to the universal covering is the trivial subgroup $\{1\}$, which is contained in any other normal subgroup of $\pi_1(X,x_0)$. In particular, this shows that the universal covering space is unique up to isomorphism.
+
+In principle this is only a "Galois theory" in the sense that it is a functorial correspondence whose structure resembles that of the fundamental theorems of Galois. However, a real connection between the "Galois theory" of covering spaces and the actual Galois theory of field extensions is more tangible in the realm of Algebraic Geometry. In particular, it appears in a beautiful way in the thoery of Riemann Surfaces. Moreover, this correspondence lies in the core of the idea of the [*étale fundamental group*](https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group).
 
 ------
 

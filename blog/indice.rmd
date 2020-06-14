@@ -6,6 +6,8 @@ output:
 ---
 By [Guillermo Gallego](https://guillegran.github.io)
 
++ June 14, 2020. [The cocycle approach to algebraic topology](Monodromy/monodromy.html) ([PDF version](Monodromy/monodromy.pdf))
+
 + May 9, 2020. [Torsors and cocycles](Torsors/torsors.html) ([PDF version](Torsors/torsors.pdf))
 
 + May 2, 2020. [A first idea of the cohomology of sheaves](CechCohomology/cohomologyR.html) ([PDF version](CechCohomology/cohomologyR.pdf))

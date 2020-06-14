@@ -35,13 +35,12 @@
   });
 </script>
 
-<!-- Para justificar
+<!-- Para justificar -->
 <style>
 body {
 text-align: justify
 }
 </style>
--->
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -315,7 +314,11 @@ div.tocify {
 <p>If you are a graduate student or a last-year undergraduate interested in the fields of geometry and topology, it is very likely that you have taken a first course on Algebraic Topology. Most of these introductory courses tend to cover the topic of covering spaces and their relation with the fundamental group. The main result of this theory is the classification of regular covering spaces also adressed sometimes as the “Galois theory” of covering spaces. This result relies on a more fundamental fact that is the monodromy representation. If you have taken this kind of course, probably you had to study some proofs that were rather technical and boring, regarding lifting of paths, of homotopies, etc. Moreover, very likely you have gone through the hell of reading and understanding the proof of the very useful Seifert-Van Kampen theorem.</p>
 <p>But what if I told you that all those efforts have been in vain? What if I told you that there is a much more simpler way of dealing with these topics?</p>
 <p>Welcome to the <em>cocycle approach to algebraic topology</em>.</p>
-<p><strong>[Contar algo más de lo que se va a hacer]</strong></p>
+<p><strong>[Contar algo más de lo que se va a hacer]</strong> <strong>[Mencionar el monodromy theorem]</strong></p>
+<p><strong>Theorem</strong>. Let <span class="math inline">\(G\)</span> be a group and <span class="math inline">\(X\)</span> a topological space admitting a universal covering space. The set of isomorphism classes of <span class="math inline">\(G\)</span>-covering spaces of <span class="math inline">\(X\)</span> is in one-to-one correspondence with the set of conjugation classes of <span class="math inline">\(G\)</span>-representations of the fundamental group of <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+\mathrm{Hom}(\pi(X),G)/G.
+\]</span></p>
 <div id="cocycles-and-covering-spaces" class="section level2">
 <h2>Cocycles and covering spaces</h2>
 <p>The key for the simplicity of the cocycle approach is to define <span class="math inline">\(G\)</span>-coverings in a (maybe unexpected) way that we could think as (almost) purely algebraic.</p>
@@ -388,7 +391,7 @@ Z^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0), G),
 <p><span class="math display">\[
 \mathrm{Hom}(\pi_1(X,x_0),G)/ G
 \]</span></p>
-<p>is called the <em>Betti moduli space</em>. The reason why the name of Betti appears here is because, if <span class="math inline">\(G\)</span> is abelian then the conjugation action of <span class="math inline">\(G\)</span> is trivial and the the Betti groupoid / moduli space is simply the group</p>
+<p>is called the <em>Betti moduli set</em>. The reason why the name of Betti appears here is because, if <span class="math inline">\(G\)</span> is abelian then the conjugation action of <span class="math inline">\(G\)</span> is trivial and the the Betti groupoid / moduli set is simply the group</p>
 <p><span class="math display">\[
 \mathrm{Hom}(H_1(X),G),
 \]</span></p>
@@ -421,9 +424,166 @@ f_{h\cdot g} ([\sigma]) = h f_{g}([\sigma]) h^{-1}.
 </div>
 <div id="recovering-the-covering" class="section level2">
 <h2>Recovering the covering</h2>
+<p>A natural question to ask now is if, given a representation of the fundamental group <span class="math inline">\(\pi_1(X,x_0) \rightarrow G\)</span>, it is the monodromy representation of some <span class="math inline">\(G\)</span>-covering, based in some open cover <span class="math inline">\(\mathfrak{U}\)</span>.</p>
+<p>The answer is in general no.</p>
+<p>However, a <span class="math inline">\(G\)</span>-covering can be recovered given some “good” conditions on the topological space <span class="math inline">\(X\)</span>. First, we are going to ask that <span class="math inline">\(X\)</span> is <em>path-connected</em>. This is not a very strong assumption, since we could restrict ourselves to the study of the path components. The strong assumptions are the local ones: we are going to ask <span class="math inline">\(X\)</span> to be <em>locally path-connected</em> and <em>semilocally simply-connected</em>. This amounts to say that any open cover of <span class="math inline">\(X\)</span> can be refined to a cover <span class="math inline">\(\mathfrak{U}\)</span> that satisfies the following properties:</p>
+<ul>
+<li><p>(P1) Every <span class="math inline">\(U\in \mathfrak{U}\)</span> is path-connected.</p></li>
+<li><p>(P2) Every loop <span class="math inline">\(\sigma\)</span> in any <span class="math inline">\(U\in \mathfrak{U}\)</span> is nullhomotopic <em>as a loop on <span class="math inline">\(X\)</span></em>.</p></li>
+</ul>
+<p>Notice that being semilocally simply-connected is slightly weaker that being locally simply-connected (this would mean that every path <span class="math inline">\(\sigma\)</span> on any <span class="math inline">\(U\)</span> is nullhomotopic <em>on <span class="math inline">\(U\)</span></em>). A common example of a space which is semilocally simply-connected but not locally simply-connected is the <a href="http://en.wikipedia.org/wiki/Hawaiian_earring">Hawaiian earring space</a>.</p>
+<p>Maybe you know these conditions from your Algebraic Topology course, since they are the sufficient and necessary conditions for the existence of a <em>universal covering space</em>. We will come to that later.</p>
+<p>Now, under these assumptions on <span class="math inline">\(X\)</span>, given a homomorphism <span class="math inline">\(f:\pi_1(X,x_0) \rightarrow G\)</span> we can consider an open cover <span class="math inline">\(\mathfrak{U}\)</span> satisfying the conditions above, and we are going to define a <span class="math inline">\(\mathfrak{U}\)</span>-based <span class="math inline">\(G\)</span>-covering yielding <span class="math inline">\(f\)</span> as its monodromy representation.</p>
+<p>First we can use the axiom of choice to choose a point <span class="math inline">\(x_U\)</span> in every <span class="math inline">\(U\in \mathfrak{U}\)</span> and a path <span class="math inline">\(\gamma_U\)</span> joining <span class="math inline">\(x_0\)</span> with <span class="math inline">\(x_U\)</span>. Moreover, we clearly can make this choice in a way that, if <span class="math inline">\(x_0 \in U\)</span>, then <span class="math inline">\(x_U=x_0\)</span> and <span class="math inline">\(\gamma_U\)</span> is the constant path at <span class="math inline">\(x_0\)</span>.</p>
+<p>Consider now two open sets <span class="math inline">\(U,V \in \mathfrak{U}\)</span> such that <span class="math inline">\(U\cap V \neq \varnothing\)</span> and a point <span class="math inline">\(x\in U\cap V\)</span>. Choose a path <span class="math inline">\(\alpha_U\)</span> joining <span class="math inline">\(x_U\)</span> and <span class="math inline">\(x\)</span> and whose image is completely contained on <span class="math inline">\(U\)</span> and another path <span class="math inline">\(\alpha_V\)</span> joining <span class="math inline">\(x\)</span> and <span class="math inline">\(x_V\)</span> whose image is completely contained on <span class="math inline">\(V\)</span>. We can then define the path</p>
+<p><span class="math display">\[
+\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V,
+\]</span></p>
+<p>where <span class="math inline">\(*\)</span> stands for the concatenation of paths and <span class="math inline">\(\gamma^{-1}_V\)</span> denotes the path <span class="math inline">\(\gamma_V\)</span> transversed backwards. This path is a loop based on <span class="math inline">\(x_0\)</span> and we can define</p>
+<p><span class="math display">\[
+g_{UV} (x) = f([\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V]).
+\]</span></p>
+<p>Note that this definition does not depend on the choice of <span class="math inline">\(\alpha_U\)</span> and <span class="math inline">\(\alpha_V\)</span> since any other <span class="math inline">\(\alpha'_U\)</span> or <span class="math inline">\(\alpha'_V\)</span> will be homotopic to <span class="math inline">\(\alpha_U\)</span> and <span class="math inline">\(\alpha_V\)</span>, respectively, as paths on <span class="math inline">\(X\)</span>, by the second condition on the open cover.</p>
+<p>Let us check now that this is indeed a cocycle. Consider</p>
+<p><span class="math display">\[
+g_{UV} (x) = f([\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V]),
+\]</span></p>
+<p><span class="math display">\[
+g_{VW} (x) = f([\gamma_V * \beta_V * \beta_W * \gamma^{-1}_W]),
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+g_{UW} (x) = f([\gamma_U * \delta_U * \delta_W * \gamma^{-1}_W]).
+\]</span></p>
+<p>Now, <span class="math inline">\(\gamma^{-1}_V * \gamma_V\)</span> is the constant path at <span class="math inline">\(x_V\)</span>, so</p>
+<p><span class="math display">\[
+g_{UV} g_{VW} (x) = f([\gamma_U * \alpha_U * \alpha_V * \beta_V * \beta_W * \gamma^{-1}_W]).
+\]</span></p>
+<p>Note that <span class="math inline">\(\alpha_V * \beta_V\)</span> is a loop based on <span class="math inline">\(x\)</span> whose image is contained on <span class="math inline">\(V\)</span>, so it is nullhomotopic. Moreover, <span class="math inline">\(\alpha_U\)</span> and <span class="math inline">\(\delta_U\)</span> are paths contained on <span class="math inline">\(U\)</span> joining <span class="math inline">\(x_U\)</span> and <span class="math inline">\(x\)</span>, so they are homotopic, and the same goes for <span class="math inline">\(\beta_W\)</span> and <span class="math inline">\(\delta_W\)</span>. Therefore, we have</p>
+<p><span class="math display">\[
+g_{UV} g_{VW} (x) = f([\gamma_U * \delta_U *  \delta_W * \gamma^{-1}_W])=g_{UW}(x).
+\]</span></p>
+<p>Finally, we have to check that the monodromy representation <span class="math inline">\(f_g\)</span> is equal to <span class="math inline">\(f\)</span>. Consider any loop <span class="math inline">\(\sigma\)</span> based at <span class="math inline">\(x_0\)</span> and recall that we defined the monodromy representation as</p>
+<p><span class="math display">\[
+f_g([\sigma]) = g_{12}(x_1) g_{23}(x_2) ... g_{n1}(x_n)
+\]</span></p>
+<p>for certain <span class="math inline">\(x_1,...,x_n\)</span> given by the Lebesgue number lemma. Now, we can choose paths <span class="math inline">\(\alpha_i\)</span> joining <span class="math inline">\(x_{U_i}\)</span> and <span class="math inline">\(x_i\)</span> contained on <span class="math inline">\(U_i\)</span> and <span class="math inline">\(\beta_i\)</span> joining <span class="math inline">\(x_i\)</span> with <span class="math inline">\(x_{U_{i+1}}\)</span> contained on <span class="math inline">\(U_{i+1}\)</span>, so</p>
+<p><span class="math display">\[
+g_{i (i+1)} (x_i) = f([\gamma_{U_i} * \alpha_i * \beta_i * \gamma_{U_{i+1}}^{-1}]). 
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+f_g([\sigma]) = f([\gamma_{U_1} * \alpha_1 * \beta_1 * \alpha_2 * \beta_2 * \cdots * \alpha_n * \beta_n * \gamma_{U_1}]).
+\]</span></p>
+<p>However, <span class="math inline">\(x_0 \in U_1\)</span>, so <span class="math inline">\(x_0=x_n=x_{U_1}\)</span> and <span class="math inline">\(\gamma_{U_1}=\beta_n\)</span> is the constant path at <span class="math inline">\(x_0\)</span> so</p>
+<p><span class="math display">\[
+f_g([\sigma]) = f([\alpha_1 * \beta_1 * \alpha_2 * \beta_2 * \cdots * \alpha_n]).
+\]</span></p>
+<p>Finally, <span class="math inline">\(\alpha_1\)</span> is contained in <span class="math inline">\(U_1\)</span> and joins <span class="math inline">\(x_0\)</span> with <span class="math inline">\(x_1\)</span> and <span class="math inline">\(\beta_i * \alpha_{i+1}\)</span> is contained in <span class="math inline">\(U_{i+1}\)</span> and joins <span class="math inline">\(x_i\)</span> with <span class="math inline">\(x_{i+1}\)</span>. Therefore this whole path is homotopic to <span class="math inline">\(\sigma\)</span>, so</p>
+<p><span class="math display">\[
+f_g([\sigma])=f([\sigma]).
+\]</span></p>
+<p>In conclusion, we have shown that if we choose an open cover <span class="math inline">\(\mathfrak{U}\)</span> with the conditions P1 and P2 stated above, the monodromy map gives a bijection</p>
+<p><span class="math display">\[
+Z^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0),G).
+\]</span></p>
+<p>From the point of view of action groupoids, we get an equivalence of categories</p>
+<p><span class="math display">\[
+[Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})] \longrightarrow [\mathrm{Hom}(\pi_1(X,x_0),G), G].
+\]</span></p>
+<p>This is our version of the <strong>monodromy theorem</strong>.</p>
+<p>Recall from my previous post <strong>[CITAR]</strong> that the moduli set of the action groupoid <span class="math inline">\([Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})]\)</span> is the (first) Čech cohomology set of <span class="math inline">\(\mathfrak{U}\)</span> with coefficients on <span class="math inline">\(\underline{G}\)</span>, denoted by <span class="math inline">\(H^1(\mathfrak{U},\underline{G})\)</span>. We have shown that this cohomology set is in bijection with the Betti moduli set</p>
+<p><span class="math display">\[
+H^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0),G)/ G.
+\]</span></p>
+</div>
+<div id="applications-of-the-monodromy-theorem" class="section level2">
+<h2>Applications of the monodromy theorem</h2>
+<div id="the-seifert-van-kampen-theorem" class="section level3">
+<h3>The Seifert-Van Kampen theorem</h3>
+<p><strong>[Contar algo, mencionar a Grothendieck]</strong></p>
+<p><strong>Theorem</strong>. Let <span class="math inline">\(X\)</span> be a path-connected, locally path-connected and semilocally simply-connected. Let <span class="math inline">\(U,V \subset X\)</span> be open sets with <span class="math inline">\(X=U\cup V\)</span> such that <span class="math inline">\(U\)</span>, <span class="math inline">\(V\)</span> and <span class="math inline">\(U\cap V\)</span> are path-connected, locally path-connected and semilocally simply-connected. Take <span class="math inline">\(x_0 \in U \cap V\)</span>. If we consider the diagram given by inclusions</p>
+<p><span class="math display">\[
+    \begin{CD}
+      U \cap V @&gt; i_{U} &gt;&gt; U \\
+      @VV i_{V} V   @VV j_{U} V \\
+      V @&gt; j_{V} &gt;&gt; X,
+    \end{CD}
+    \]</span></p>
+<p>the induced diagram on the fundamental groups</p>
+<p><span class="math display">\[
+    \begin{CD}
+      \pi_1(U \cap V,x_0) @&gt; i_{U,*} &gt;&gt; \pi_1(U,x_0) \\
+      @VV i_{V,*} V   @VV j_{U,*} V \\
+      \pi_1(V,x_0) @&gt; j_{V,*} &gt;&gt; \pi_1(X,x_0)
+    \end{CD}
+    \]</span></p>
+<p>is a <a href="http://en.wikipedia.org/wiki/Pushout_(category_theory)">pushout diagram</a>.</p>
+<p>In order to prove this theorem we have to show that, given any other group <span class="math inline">\(G\)</span> and homomorphisms <span class="math inline">\(h_U: \pi_1(U,x_0) \rightarrow G\)</span> and <span class="math inline">\(h_V: \pi_1(V,x_0) \rightarrow G\)</span> making the following diagram commute</p>
+<p><span class="math display">\[
+    \begin{CD}
+      \pi_1(U \cap V,x_0) @&gt; i_{U,*} &gt;&gt; \pi_1(U,x_0) \\
+      @VV i_{V,*} V   @VV h_{U} V \\
+      \pi_1(V,x_0) @&gt; h_{V} &gt;&gt; G,
+    \end{CD}
+    \]</span></p>
+<p>there exists a unique <span class="math inline">\(h:\pi_1(X,x_0) \rightarrow G\)</span> such that <span class="math inline">\(h_i=h \circ j_{i,*}\)</span>, <span class="math inline">\(i=U,V\)</span>.</p>
+<p>Now, given the conditions on <span class="math inline">\(U\)</span>, <span class="math inline">\(V\)</span>, <span class="math inline">\(U\cap V\)</span> and <span class="math inline">\(X\)</span>, we can find an open cover <span class="math inline">\(\mathfrak{U}\)</span> of <span class="math inline">\(X\)</span> such that it and its restrictions <span class="math inline">\(U\cap \mathfrak{U}\)</span>, <span class="math inline">\(V \cap \mathfrak{U}\)</span> and <span class="math inline">\(U\cap V \cap \mathfrak{U}\)</span> satisfy the properties P1 and P2. We can then identify <span class="math inline">\(\mathrm{Hom}(\pi_1(X,x_0),G)\)</span> with <span class="math inline">\(Z^1(\mathfrak{U},\underline{G})\)</span> and similarly for <span class="math inline">\(U\)</span>, <span class="math inline">\(V\)</span> and <span class="math inline">\(U \cap V\)</span>. Moreover, it is easy to check that the natural map <span class="math inline">\(Z^1(\mathfrak{U},\underline{G}) \rightarrow Z^1(U\cap \mathfrak{U}, \underline{G})\)</span> given by restriction corresponds to a map <span class="math inline">\(\mathrm{Hom}(\pi_1(X,x_0),G) \rightarrow \mathrm{Hom}(\pi_1(U,x_0),G)\)</span> sending any <span class="math inline">\(h: \pi_1(X,x_0) \rightarrow G\)</span> to <span class="math inline">\(h_U=h\circ j_{U,*}: \pi_1(U,x_0) \rightarrow G\)</span> (same goes for <span class="math inline">\(V\)</span> and <span class="math inline">\(h_V\)</span>).</p>
+<p>Therefore, we just need to show that if <span class="math inline">\(g_U \in Z^1(U\cap \mathfrak{U}, \underline{G})\)</span> and <span class="math inline">\(g_V \in Z^1(V \cap \mathfrak{U}, \underline{G})\)</span> are two cocycles that coincide in the restriction <span class="math inline">\(Z^1(U\cap V \cap \mathfrak{U}, \underline{G})\)</span>, then there exists some cocycle <span class="math inline">\(g \in Z^1(\mathfrak{U}, \underline{G})\)</span> yielding <span class="math inline">\(g_U\)</span> and <span class="math inline">\(g_V\)</span> after restricting to <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> respectively.</p>
+<p>The reason behind this is the sheaf condition. Explicitly, given <span class="math inline">\(U_1, U_2 \in \mathfrak{U}\)</span>, with <span class="math inline">\(U_1 \cap U_2 \neq \varnothing\)</span> and <span class="math inline">\(x \in U_1 \cap U_2 \cap U \cap V\)</span>, if</p>
+<p><span class="math display">\[
+g_{U,12}(x) = g_{V,12}(x),
+\]</span></p>
+<p>then, since they are locally constant, <span class="math inline">\(g_{U,12}=g_{V,12}\)</span> in all the path-component of <span class="math inline">\(U_1 \cap U_2\)</span> containing <span class="math inline">\(x\)</span>. Therefore, for every <span class="math inline">\(x\in U_1 \cap U_2\)</span>, we can define <span class="math inline">\(g_{12}(x)\)</span> to be <span class="math inline">\(g_{U,12}(x)\)</span> if <span class="math inline">\(x\in U\)</span> and <span class="math inline">\(g_{V,12}(x)\)</span> if <span class="math inline">\(x\in V\)</span>. Putting all these together we obtain the cocycle <span class="math inline">\(g\in Z^1(\mathfrak{U},\underline{G})\)</span> we were looking for.</p>
+</div>
+<div id="the-topological-properties-of-g-coverings" class="section level3">
+<h3>The topological properties of <span class="math inline">\(G\)</span>-coverings</h3>
+<p>In a similar way as what we did in my previous post <strong>[CITAR]</strong> to relate torsors with cocycles, to any <span class="math inline">\(G\)</span>-covering <span class="math inline">\(g\)</span> we can associate a topological space <span class="math inline">\(X_g\)</span> mapping to <span class="math inline">\(X\)</span>. We do this in the following way.</p>
+<p>Consider <span class="math inline">\(g\)</span> a <span class="math inline">\(\mathfrak{U}\)</span>-based <span class="math inline">\(G\)</span>-covering and define the set</p>
+<p><span class="math display">\[
+X_g = \coprod_{U \in \mathfrak{U}} U \times G / \sim,
+\]</span></p>
+<p>with the equivalence relation <span class="math inline">\(\sim\)</span> given as</p>
+<p><span class="math display">\[
+(x,h) \sim (x,h')
+\]</span></p>
+<p>if there exist <span class="math inline">\(U,V \in \mathfrak{U}\)</span> such that <span class="math inline">\(x\in U\cap V\)</span> and <span class="math inline">\(h'=g_{UV}(x) h\)</span>. If we take the discrete topology on <span class="math inline">\(G\)</span>, we can endow <span class="math inline">\(X_g\)</span> with the quotient topology and we get a canonical continuous surjective map <span class="math inline">\(p:X_g \rightarrow X\)</span> sending every <span class="math inline">\([(x,g)]\)</span> to <span class="math inline">\(x\)</span>.</p>
+<p>Some topological properties of the space <span class="math inline">\(X_g\)</span> are determined by the monodromy representation <span class="math inline">\(f_g:\pi_1(X,x_0) \rightarrow G\)</span>. If <span class="math inline">\(X\)</span> is path-connected then:</p>
+<ul>
+<li><p>the space <span class="math inline">\(X_g\)</span> is path-connected if and only if <span class="math inline">\(f_g\)</span> is surjective.</p></li>
+<li><p>every path component of <span class="math inline">\(X_g\)</span> is simply connected if and only if <span class="math inline">\(f_g\)</span> is injective.</p></li>
+</ul>
+<p>Let us see why these properties are true. First, if <span class="math inline">\(X_g\)</span> is path-connected, that means that for any <span class="math inline">\(h \in G\)</span> there is some path <span class="math inline">\(\gamma\)</span> joining <span class="math inline">\([(x_0,1_G)]\)</span> with <span class="math inline">\([(x_0,h)]\)</span>. This path must pass through some <span class="math inline">\(U_0 \times \{h_0=1_G\}, U_1 \times \{h_1\}, ..., U_n \times \{h_n=h\}\)</span> in such a way that <span class="math inline">\(h_i(x_i)=g_{i-1,i}(x_i) h_{i-1}(x_i)\)</span>. Now, <span class="math inline">\(p\circ \gamma\)</span> is a loop based in <span class="math inline">\(x_0\)</span> and</p>
+<p><span class="math display">\[
+f_g([p\circ \gamma])=g_{12}(x_1)...g_{n1}(x_n)=h.
+\]</span></p>
+<p>On the other hand, if <span class="math inline">\(h=f_g([\sigma])\)</span> there are some <span class="math inline">\(U_0,...,U_n\)</span> and <span class="math inline">\(x_0,...,x_n\)</span> with</p>
+<p><span class="math display">\[
+h=g_{12}(x_1)...g_{n1}(x_n).
+\]</span></p>
+<p>We can now lift <span class="math inline">\(\sigma\)</span> to the path on <span class="math inline">\(X_g\)</span> given by <span class="math inline">\(\gamma(t)=(\sigma(t), g_{12}(x_1)...g_{(i-1)i}(x_{i-1}))\)</span>, for <span class="math inline">\(t\in [t_{i-1},t_i)\)</span>, which joins <span class="math inline">\(\gamma(0)=(x_0,1_G)\)</span> with <span class="math inline">\(\gamma(1)=(x_0,g_{12}(x_1)...g_{n1}(x_{n}))=(x_0,h)\)</span>.</p>
+<p>If <span class="math inline">\(1_G=f_g([\sigma])\)</span> for some <span class="math inline">\(\sigma\)</span>, as above we can lift <span class="math inline">\(\sigma\)</span> to some path <span class="math inline">\(\gamma\)</span> on <span class="math inline">\(X_g\)</span> joining <span class="math inline">\((x_0,1_G)\)</span> with itself. Therefore, <span class="math inline">\(\gamma\)</span> is a loop on <span class="math inline">\(X_g\)</span>. If the path component of <span class="math inline">\(X_g\)</span> containing <span class="math inline">\(\gamma\)</span> is simply connected, then <span class="math inline">\(\gamma\)</span> is nullhomotopic and so its <span class="math inline">\(\sigma=p \circ \gamma\)</span>. This implies that <span class="math inline">\(f_g\)</span> is injective.</p>
+<p>On the other hand, choose a loop <span class="math inline">\(\gamma\)</span> in <span class="math inline">\(X_g\)</span> based in <span class="math inline">\((x_0,g)\)</span>. As above, <span class="math inline">\(p\circ \gamma\)</span> is a loop based in <span class="math inline">\(x_0\)</span> with <span class="math inline">\(f_g([p\circ \gamma])=1_G\)</span>. If <span class="math inline">\(f_g\)</span> is injective then <span class="math inline">\(p\circ \gamma\)</span> is nullhomotopic. In a similar way to how we lifted <span class="math inline">\(\sigma\)</span> above, we can lift this homotopy to <span class="math inline">\(X_g\)</span> to obtain that <span class="math inline">\(\gamma\)</span> is nullhomotopic.</p>
+<p>Putting these two together, <span class="math inline">\(X_g\)</span> is simply connected if and only if <span class="math inline">\(f_g\)</span> is a group isomorphism. In other words, <span class="math inline">\(G\)</span> is isomorphic to the fundamental group of <span class="math inline">\(X\)</span>.</p>
+<p>This fact can be used to compute the fundamental group of the circle <span class="math inline">\(S^1\)</span>. We can define the cover of <span class="math inline">\(S^1=\{e^{it}: t\in [0,2\pi]\}\)</span> given by <span class="math inline">\(U=(e^{-i\epsilon},e^{i(\pi+\epsilon)})\)</span> and <span class="math inline">\(V=(e^{i(\pi-\epsilon)},e^{i\epsilon})\)</span>, for some small <span class="math inline">\(\epsilon\)</span>, and the <span class="math inline">\(\mathbb{Z}\)</span>-covering given by <span class="math inline">\(g_{VU}(1)=1\)</span> and <span class="math inline">\(g_{UV}(-1)=0\)</span>. The topological space associated to this covering is</p>
+<p><span class="math display">\[
+(U \times \mathbb{Z} \sqcup V \times \mathbb{Z}) / \sim
+\]</span></p>
+<p>with the relation <span class="math inline">\((x,n) \sim (x,n+1)\)</span>, for <span class="math inline">\(x \in (e^{-i\epsilon},e^{i\epsilon})\)</span>. This space is clearly homeomorphic to <span class="math inline">\(\mathbb{R}\)</span>, which is simply connected. Therefore, <span class="math inline">\(\pi_1(S^1)\)</span> is isomorphic to <span class="math inline">\(\mathbb{Z}\)</span>.</p>
+<p>When <span class="math inline">\(X\)</span> is path-connected, locally path-connected and semilocally simply connected, we can find a cover <span class="math inline">\(\mathfrak{U}\)</span> such that any <span class="math inline">\(f:\pi_1(X,x_0) \rightarrow G\)</span> induces a <span class="math inline">\(G\)</span>-covering based on <span class="math inline">\(\mathfrak{U}\)</span>. In particular, the identity isomorphism <span class="math inline">\(\mathrm{id}:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)\)</span> induces a <span class="math inline">\(G\)</span>-covering whose associated topological space is simply connected. This is called the <em>universal covering space</em>.</p>
+</div>
+<div id="the-galois-theory-of-coverings" class="section level3">
+<h3>The Galois theory of coverings</h3>
+<p>Let <span class="math inline">\(X\)</span> be a path-connected, locally path-connected and semilocally simply connected topological space and choose an open cover <span class="math inline">\(\mathfrak{U}\)</span> of <span class="math inline">\(X\)</span> satisfying properties P1 and P2. Fix once and for all a base point <span class="math inline">\(x_0 \in X\)</span>.</p>
+<p><strong>Definition</strong>. A <em>regular</em> or <em>Galois covering space</em> is a pair <span class="math inline">\((Y,p)\)</span>, where <span class="math inline">\(Y\)</span> is a connected topological space and <span class="math inline">\(p:Y\rightarrow X\)</span> a continuous surjective map such that there is some group <span class="math inline">\(G\)</span> and some <span class="math inline">\(\mathfrak{U}\)</span>-based <span class="math inline">\(G\)</span>-covering <span class="math inline">\(g\)</span> with <span class="math inline">\(Y=X_g\)</span> and <span class="math inline">\(p:X_g\rightarrow X\)</span>. We call <span class="math inline">\(G\)</span> the <em>Galois group</em> of <span class="math inline">\((Y,p)\)</span>.</p>
+<p>Now we can prove the <strong>Galois theorem of covering spaces</strong>:</p>
+<p><strong>Theorem</strong>. There is a one-to-one correspondence between the normal subgroups of the fundamental group <span class="math inline">\(\pi_1(X,x_0)\)</span> and the Galois coverings of <span class="math inline">\(X\)</span>.</p>
+<p>Consider <span class="math inline">\(Y\)</span> a Galois covering with Galois group <span class="math inline">\(G\)</span> and <span class="math inline">\(g\)</span> some <span class="math inline">\(\mathfrak{U}\)</span>-based <span class="math inline">\(G\)</span>-covering such that <span class="math inline">\(Y=X_g\)</span>. Then we can associate to it the kernel of the monodromy representation <span class="math inline">\(f_g:\pi_1(X,x_0) \rightarrow G\)</span>, which is a normal subgroup of <span class="math inline">\(\pi_1(X,x_0)\)</span>. A different <span class="math inline">\(g\)</span> would yield another homomorphism, so the map is injective.</p>
+<p>On the other hand, if <span class="math inline">\(N\)</span> is a normal subgroup of <span class="math inline">\(\pi_1(X,x_0)\)</span>, associated to the natural projection <span class="math inline">\(p:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)/N\)</span> we have a <span class="math inline">\(\mathfrak{U}\)</span>-based <span class="math inline">\(\pi_1(X,x_0)/N\)</span>-covering <span class="math inline">\(g\)</span>, whose associated topological space <span class="math inline">\(X_g\)</span> is a Galois covering of <span class="math inline">\(X\)</span>. This construction is an inverse of the previous one. Indeed, by the isomorphism theorem and the universal property of the quotient there is a canonical isomorphism <span class="math inline">\(\varphi:\pi_1(X,x_0)/\ker f_g \rightarrow G\)</span> with <span class="math inline">\(f_g= \varphi \circ p\)</span>.</p>
 <hr />
 <p><a href="https://guillegran.github.io/blog/indice.html">Take me to the blog index</a></p>
 <p><a href="https://guillegran.github.io">Take me home</a></p>
+</div>
 </div>
 
 

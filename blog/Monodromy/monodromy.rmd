@@ -24,6 +24,13 @@ But what if I told you that all those efforts have been in vain? What if I told 
 Welcome to the *cocycle approach to algebraic topology*.
 
 **[Contar algo más de lo que se va a hacer]**
+**[Mencionar el monodromy theorem]**
+
+**Theorem**. Let $G$ be a group and $X$ a topological space admitting a universal covering space. The set of isomorphism classes of $G$-covering spaces of $X$ is in one-to-one correspondence with the set of conjugation classes of $G$-representations of the fundamental group of $X$
+
+$$
+\mathrm{Hom}(\pi(X),G)/G.
+$$
 
 ## Cocycles and covering spaces
 The key for the simplicity of the cocycle approach is to define $G$-coverings in a (maybe unexpected) way that we could think as (almost) purely algebraic.
@@ -128,7 +135,7 @@ $$
 \mathrm{Hom}(\pi_1(X,x_0),G)/ G
 $$
  
-is called the *Betti moduli space*. The reason why the name of Betti appears here is because, if $G$ is abelian then the conjugation action of $G$ is trivial and the the Betti groupoid / moduli space is simply the group
+is called the *Betti moduli set*. The reason why the name of Betti appears here is because, if $G$ is abelian then the conjugation action of $G$ is trivial and the the Betti groupoid / moduli set is simply the group
 
 $$
 \mathrm{Hom}(H_1(X),G),
@@ -176,6 +183,238 @@ $$
 In the next section we are going to see when this functor is in fact an equivalence of categories (that is, when is it essentially surjective).
 
 ## Recovering the covering
+A natural question to ask now is if, given a representation of the fundamental group $\pi_1(X,x_0) \rightarrow G$, it is the monodromy representation of some $G$-covering, based in some open cover $\mathfrak{U}$.
+
+The answer is in general no.
+
+However, a $G$-covering can be recovered given some "good" conditions on the topological space $X$. First, we are going to ask that $X$ is *path-connected*. This is not a very strong assumption, since we could restrict ourselves to the study of the path components. The strong assumptions are the local ones: we are going to ask $X$ to be *locally path-connected* and *semilocally simply-connected*. This amounts to say that any open cover of $X$ can be refined to a cover $\mathfrak{U}$ that satisfies the following properties:
+
++ (P1) Every $U\in \mathfrak{U}$ is path-connected.
+
++ (P2) Every loop $\sigma$ in any $U\in \mathfrak{U}$ is nullhomotopic *as a loop on $X$*.
+
+Notice that being semilocally simply-connected is slightly weaker that being locally simply-connected (this would mean that every path $\sigma$ on any $U$ is nullhomotopic *on $U$*). A common example of a space which is semilocally simply-connected but not locally simply-connected is the [Hawaiian earring space](http://en.wikipedia.org/wiki/Hawaiian_earring).
+
+Maybe you know these conditions from your Algebraic Topology course, since they are the sufficient and necessary conditions for the existence of a *universal covering space*. We will come to that later.
+
+Now, under these assumptions on $X$, given a homomorphism $f:\pi_1(X,x_0) \rightarrow G$ we can consider an open cover $\mathfrak{U}$ satisfying the conditions above, and we are going to define a $\mathfrak{U}$-based $G$-covering yielding $f$ as its monodromy representation.
+
+First we can use the axiom of choice to choose a point $x_U$ in every $U\in \mathfrak{U}$ and a path $\gamma_U$ joining $x_0$ with $x_U$. Moreover, we clearly can make this choice in a way that, if $x_0 \in U$, then $x_U=x_0$ and $\gamma_U$ is the constant path at $x_0$.
+
+Consider now two open sets $U,V \in \mathfrak{U}$ such that $U\cap V \neq \varnothing$ and a point $x\in U\cap V$. Choose a path $\alpha_U$ joining $x_U$ and $x$ and whose image is completely contained on $U$ and another path $\alpha_V$ joining $x$ and $x_V$ whose image is completely contained on $V$. We can then define the path
+
+$$
+\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V,
+$$
+
+where $*$ stands for the concatenation of paths and $\gamma^{-1}_V$ denotes the path $\gamma_V$ transversed backwards. This path is a loop based on $x_0$ and we can define
+
+$$
+g_{UV} (x) = f([\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V]).
+$$
+
+Note that this definition does not depend on the choice of $\alpha_U$ and $\alpha_V$ since any other $\alpha'_U$ or $\alpha'_V$ will be homotopic to $\alpha_U$ and $\alpha_V$, respectively, as paths on $X$, by the second condition on the open cover.
+
+Let us check now that this is indeed a cocycle. Consider
+
+$$
+g_{UV} (x) = f([\gamma_U * \alpha_U * \alpha_V * \gamma^{-1}_V]),
+$$
+
+$$
+g_{VW} (x) = f([\gamma_V * \beta_V * \beta_W * \gamma^{-1}_W]),
+$$
+
+and
+
+$$
+g_{UW} (x) = f([\gamma_U * \delta_U * \delta_W * \gamma^{-1}_W]).
+$$
+
+Now, $\gamma^{-1}_V * \gamma_V$ is the constant path at $x_V$, so
+
+$$
+g_{UV} g_{VW} (x) = f([\gamma_U * \alpha_U * \alpha_V * \beta_V * \beta_W * \gamma^{-1}_W]).
+$$
+
+Note that $\alpha_V * \beta_V$ is a loop based on $x$ whose image is contained on $V$, so it is nullhomotopic. Moreover, $\alpha_U$ and $\delta_U$ are paths contained on $U$ joining $x_U$ and $x$, so they are homotopic, and the same goes for $\beta_W$ and $\delta_W$. Therefore, we have
+
+$$
+g_{UV} g_{VW} (x) = f([\gamma_U * \delta_U *  \delta_W * \gamma^{-1}_W])=g_{UW}(x).
+$$
+
+Finally, we have to check that the monodromy representation $f_g$ is equal to $f$. Consider any loop $\sigma$ based at $x_0$ and recall that we defined the monodromy representation as
+
+$$
+f_g([\sigma]) = g_{12}(x_1) g_{23}(x_2) ... g_{n1}(x_n)
+$$
+
+for certain $x_1,...,x_n$ given by the Lebesgue number lemma. Now, we can choose paths $\alpha_i$ joining $x_{U_i}$ and $x_i$ contained on $U_i$ and $\beta_i$ joining $x_i$ with $x_{U_{i+1}}$ contained on $U_{i+1}$, so
+
+$$
+g_{i (i+1)} (x_i) = f([\gamma_{U_i} * \alpha_i * \beta_i * \gamma_{U_{i+1}}^{-1}]). 
+$$
+
+Therefore,
+
+$$
+f_g([\sigma]) = f([\gamma_{U_1} * \alpha_1 * \beta_1 * \alpha_2 * \beta_2 * \cdots * \alpha_n * \beta_n * \gamma_{U_1}]).
+$$
+
+However, $x_0 \in U_1$, so $x_0=x_n=x_{U_1}$ and $\gamma_{U_1}=\beta_n$ is the constant path at $x_0$ so
+
+$$
+f_g([\sigma]) = f([\alpha_1 * \beta_1 * \alpha_2 * \beta_2 * \cdots * \alpha_n]).
+$$
+
+Finally, $\alpha_1$ is contained in $U_1$ and joins $x_0$ with $x_1$ and $\beta_i * \alpha_{i+1}$ is contained in $U_{i+1}$ and joins $x_i$ with $x_{i+1}$. Therefore this whole path is homotopic to $\sigma$, so
+
+$$
+f_g([\sigma])=f([\sigma]).
+$$
+
+In conclusion, we have shown that if we choose an open cover $\mathfrak{U}$ with the conditions P1 and P2 stated above, the monodromy map gives a bijection
+
+$$
+Z^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0),G).
+$$
+
+From the point of view of action groupoids, we get an equivalence of categories
+
+$$
+[Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})] \longrightarrow [\mathrm{Hom}(\pi_1(X,x_0),G), G].
+$$
+
+This is our version of the **monodromy theorem**.
+
+Recall from my previous post **[CITAR]** that the moduli set of the action groupoid $[Z^1(\mathfrak{U},\underline{G}), C^0(\mathfrak{U},\underline{G})]$ is the (first) Čech cohomology set of $\mathfrak{U}$ with coefficients on $\underline{G}$, denoted by $H^1(\mathfrak{U},\underline{G})$. We have shown that this cohomology set is in bijection with the Betti moduli set
+
+$$
+H^1(\mathfrak{U},\underline{G}) \longrightarrow \mathrm{Hom}(\pi_1(X,x_0),G)/ G.
+$$
+
+## Applications of the monodromy theorem
+
+### The Seifert-Van Kampen theorem
+
+**[Contar algo, mencionar a Grothendieck]**
+
+
+**Theorem**. Let $X$ be a path-connected, locally path-connected and semilocally simply-connected. Let $U,V \subset X$ be open sets with $X=U\cup V$ such that $U$, $V$ and $U\cap V$ are path-connected, locally path-connected and semilocally simply-connected. Take $x_0 \in U \cap V$. If we consider the diagram given by inclusions
+
+
+$$
+    \begin{CD}
+      U \cap V @> i_{U} >> U \\
+      @VV i_{V} V   @VV j_{U} V \\
+      V @> j_{V} >> X,
+    \end{CD}
+    $$
+
+the induced diagram on the fundamental groups
+
+$$
+    \begin{CD}
+      \pi_1(U \cap V,x_0) @> i_{U,*} >> \pi_1(U,x_0) \\
+      @VV i_{V,*} V   @VV j_{U,*} V \\
+      \pi_1(V,x_0) @> j_{V,*} >> \pi_1(X,x_0)
+    \end{CD}
+    $$
+
+is a [pushout diagram](http://en.wikipedia.org/wiki/Pushout_(category_theory)).
+
+In order to prove this theorem we have to show that, given any other group $G$ and homomorphisms $h_U: \pi_1(U,x_0) \rightarrow G$ and $h_V: \pi_1(V,x_0) \rightarrow G$ making the following diagram commute
+
+$$
+    \begin{CD}
+      \pi_1(U \cap V,x_0) @> i_{U,*} >> \pi_1(U,x_0) \\
+      @VV i_{V,*} V   @VV h_{U} V \\
+      \pi_1(V,x_0) @> h_{V} >> G,
+    \end{CD}
+    $$
+
+there exists a unique $h:\pi_1(X,x_0) \rightarrow G$ such that $h_i=h \circ j_{i,*}$, $i=U,V$.
+
+Now, given the conditions on $U$, $V$, $U\cap V$ and $X$, we can find an open cover $\mathfrak{U}$ of $X$ such that it and its restrictions $U\cap \mathfrak{U}$, $V \cap \mathfrak{U}$ and $U\cap V \cap \mathfrak{U}$ satisfy the properties P1 and P2. We can then identify $\mathrm{Hom}(\pi_1(X,x_0),G)$ with $Z^1(\mathfrak{U},\underline{G})$ and similarly for $U$, $V$ and $U \cap V$. Moreover, it is easy to check that the natural map $Z^1(\mathfrak{U},\underline{G}) \rightarrow Z^1(U\cap \mathfrak{U}, \underline{G})$ given by restriction corresponds to a map $\mathrm{Hom}(\pi_1(X,x_0),G) \rightarrow \mathrm{Hom}(\pi_1(U,x_0),G)$ sending any $h: \pi_1(X,x_0) \rightarrow G$ to $h_U=h\circ j_{U,*}: \pi_1(U,x_0) \rightarrow G$ (same goes for $V$ and $h_V$).
+
+Therefore, we just need to show that if $g_U \in Z^1(U\cap \mathfrak{U}, \underline{G})$ and $g_V \in Z^1(V \cap \mathfrak{U}, \underline{G})$ are two cocycles that coincide in the restriction $Z^1(U\cap V \cap \mathfrak{U}, \underline{G})$, then there exists some cocycle $g \in Z^1(\mathfrak{U}, \underline{G})$ yielding $g_U$ and $g_V$ after restricting to $U$ and $V$ respectively.
+
+The reason behind this is the sheaf condition. Explicitly, given $U_1, U_2 \in \mathfrak{U}$, with $U_1 \cap U_2 \neq \varnothing$ and $x \in U_1 \cap U_2 \cap U \cap V$, if
+
+$$
+g_{U,12}(x) = g_{V,12}(x),
+$$
+
+then, since they are locally constant, $g_{U,12}=g_{V,12}$ in all the path-component of $U_1 \cap U_2$ containing $x$. Therefore, for every $x\in U_1 \cap U_2$, we can define $g_{12}(x)$ to be $g_{U,12}(x)$ if $x\in U$ and $g_{V,12}(x)$ if $x\in V$. Putting all these together we obtain the cocycle $g\in Z^1(\mathfrak{U},\underline{G})$ we were looking for.
+
+### The topological properties of $G$-coverings
+In a similar way as what we did in my previous post **[CITAR]** to relate torsors with cocycles, to any $G$-covering $g$ we can associate a topological space $X_g$ mapping to $X$. We do this in the following way. 
+
+Consider $g$ a $\mathfrak{U}$-based $G$-covering and define the set
+
+$$
+X_g = \coprod_{U \in \mathfrak{U}} U \times G / \sim,
+$$
+
+with the equivalence relation $\sim$ given as
+
+$$
+(x,h) \sim (x,h')
+$$
+
+if there exist $U,V \in \mathfrak{U}$ such that $x\in U\cap V$ and $h'=g_{UV}(x) h$. If we take the discrete topology on $G$, we can endow $X_g$ with the quotient topology and we get a canonical continuous surjective map $p:X_g \rightarrow X$ sending every $[(x,g)]$ to $x$.
+
+Some topological properties of the space $X_g$ are determined by the monodromy representation $f_g:\pi_1(X,x_0) \rightarrow G$. If $X$ is path-connected then:
+
++ the space $X_g$ is path-connected if and only if $f_g$ is surjective.
+
++ every path component of $X_g$ is simply connected if and only if $f_g$ is injective.
+
+Let us see why these properties are true. First, if $X_g$ is path-connected, that means that for any $h \in G$ there is some path $\gamma$ joining $[(x_0,1_G)]$ with $[(x_0,h)]$. This path must pass through some $U_0 \times \{h_0=1_G\}, U_1 \times \{h_1\}, ..., U_n \times \{h_n=h\}$ in such a way that $h_i(x_i)=g_{i-1,i}(x_i) h_{i-1}(x_i)$.  Now, $p\circ \gamma$ is a loop based in $x_0$ and 
+
+$$
+f_g([p\circ \gamma])=g_{12}(x_1)...g_{n1}(x_n)=h.
+$$
+
+On the other hand, if $h=f_g([\sigma])$ there are some $U_0,...,U_n$ and $x_0,...,x_n$ with 
+
+$$
+h=g_{12}(x_1)...g_{n1}(x_n).
+$$
+
+We can now lift $\sigma$ to the path on $X_g$ given by  $\gamma(t)=(\sigma(t), g_{12}(x_1)...g_{(i-1)i}(x_{i-1}))$, for $t\in [t_{i-1},t_i)$, which joins $\gamma(0)=(x_0,1_G)$ with $\gamma(1)=(x_0,g_{12}(x_1)...g_{n1}(x_{n}))=(x_0,h)$.
+
+If $1_G=f_g([\sigma])$ for some $\sigma$, as above we can lift $\sigma$ to some path $\gamma$ on $X_g$ joining $(x_0,1_G)$ with itself. Therefore, $\gamma$ is a loop on $X_g$. If the path component of $X_g$ containing $\gamma$ is simply connected, then $\gamma$ is nullhomotopic and so its $\sigma=p \circ \gamma$. This implies that $f_g$ is injective. 
+
+On the other hand, choose a loop $\gamma$ in $X_g$ based in $(x_0,g)$. As above, $p\circ \gamma$ is a loop based in $x_0$ with $f_g([p\circ \gamma])=1_G$. If $f_g$ is injective then $p\circ \gamma$ is nullhomotopic. In a similar way to how we lifted $\sigma$ above, we can lift this homotopy to $X_g$ to obtain that $\gamma$ is nullhomotopic.
+
+Putting these two together, $X_g$ is simply connected if and only if $f_g$ is a group isomorphism. In other words, $G$ is isomorphic to the fundamental group of $X$. 
+
+This fact can be used to compute the fundamental group of the circle $S^1$. We can define the cover of $S^1=\{e^{it}: t\in [0,2\pi]\}$ given by $U=(e^{-i\epsilon},e^{i(\pi+\epsilon)})$ and $V=(e^{i(\pi-\epsilon)},e^{i\epsilon})$, for some small $\epsilon$, and the $\mathbb{Z}$-covering given by $g_{VU}(1)=1$ and $g_{UV}(-1)=0$. The topological space associated to this covering is
+
+$$
+(U \times \mathbb{Z} \sqcup V \times \mathbb{Z}) / \sim
+$$
+
+with the relation $(x,n) \sim (x,n+1)$, for $x \in (e^{-i\epsilon},e^{i\epsilon})$. This space is clearly homeomorphic to $\mathbb{R}$, which is simply connected. Therefore, $\pi_1(S^1)$ is isomorphic to $\mathbb{Z}$.
+
+When $X$ is path-connected, locally path-connected and semilocally simply connected, we can find a cover $\mathfrak{U}$ such that any $f:\pi_1(X,x_0) \rightarrow G$ induces a $G$-covering based on $\mathfrak{U}$. In particular, the identity isomorphism $\mathrm{id}:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)$ induces a $G$-covering whose associated topological space is simply connected. This is called the *universal covering space*.
+
+### The Galois theory of coverings
+
+Let $X$ be a path-connected, locally path-connected and semilocally simply connected topological space and choose an open cover $\mathfrak{U}$ of $X$ satisfying properties P1 and P2. Fix once and for all a base point $x_0 \in X$.
+
+**Definition**. A *regular* or *Galois covering space* is a pair $(Y,p)$, where $Y$ is a connected topological space and $p:Y\rightarrow X$ a continuous surjective map such that there is some group $G$ and some $\mathfrak{U}$-based $G$-covering $g$ with $Y=X_g$ and $p:X_g\rightarrow X$. We call $G$ the *Galois group* of $(Y,p)$.
+
+Now we can prove the **Galois theorem of covering spaces**:
+
+**Theorem**.  There is a one-to-one correspondence between the normal subgroups of the fundamental group $\pi_1(X,x_0)$ and the Galois coverings of $X$.
+
+Consider $Y$ a Galois covering with Galois group $G$ and $g$ some $\mathfrak{U}$-based $G$-covering such that $Y=X_g$. Then we can associate to it the kernel of the monodromy representation $f_g:\pi_1(X,x_0) \rightarrow G$, which is a normal subgroup of $\pi_1(X,x_0)$. A different $g$ would yield another homomorphism, so the map is injective.
+
+On the other hand, if $N$ is a normal subgroup of $\pi_1(X,x_0)$, associated to the natural projection $p:\pi_1(X,x_0) \rightarrow \pi_1(X,x_0)/N$ we have a $\mathfrak{U}$-based $\pi_1(X,x_0)/N$-covering $g$, whose associated topological space $X_g$ is a Galois covering of $X$. This construction is an inverse of the previous one. Indeed, by the isomorphism theorem and the universal property of the quotient there is a canonical isomorphism $\varphi:\pi_1(X,x_0)/\ker f_g \rightarrow G$ with $f_g= \varphi \circ p$.
+
+
 
 ------
 

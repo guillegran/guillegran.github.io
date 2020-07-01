@@ -1,0 +1,299 @@
+---
+title: "Flat connections and the fundamental group"
+author: "Guillermo Gallego"
+date: "July 1, 2020"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+    includes: 
+     in_header: ../headers.html
+  pdf_document: 
+     includes:
+       in_header: ../headers.tex
+---
+
+In this post we are going to study the correspondence between flat connections and representations of the fundamental group, sometimes called the "Riemann-Hilbert correspondence". This is a very rich result in that it draws together several fields of Mathematics and leads to new interesting problems like the study of certain moduli spaces or the relationship to Yang-Mills equation. Moreover, this correspondence is the first step to fully understand another correspondence known as the Nonabelian Hodge Theorem.
+
+There are several ways of proving this correspondence. One is through holonomy, and it is maybe the more straightforward since it directly relates flat connections with representations of the fundamental group. In this post however, given that in my last post [CITAR] we already gave a correspondence between representations of the fundamental group and covering spaces, we are going to prove the correspondence by relating flat connections to covering spaces (also called *local systems* in this context). With this point of view, a general "global" proof of the correspondence can be given by using the Frobenius theorem. We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which is more simple and straightforward, and maybe fits better with the "cocycle approach" that I have been mantaining in my previous posts.
+
+We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which is more simple and straightforward, and maybe fits better with the more algebraic "cocycle approach" that I have been mantaining in my previous posts.
+
+# Principal bundles
+This post will be essentially differential-geometric, so our main objects here will be a smooth manifold $X$ and a Lie group $G$. We fix them once and for all. As we said above, we are going to try to stick to the "cocycle approach" during this post, so we are going to define a principal bundle as a cocycle.
+
+**Definition**. A *principal $G$-bundle* on $X$ is a pair $(\mathfrak{U},g)$, where $\mathfrak{U}$ is an open cover of $X$ and $g$ is a collection of maps $g_{UV}: U\cap V \rightarrow G$ for every $U, V \in \mathfrak{U}$ with $U\cap V \neq \varnothing$ such that, if $U\cap V \cap W \neq \varnothing$ we have the *cocycle condition*:
+
+$$
+g_{UV}g_{VW} = g_{UW}.
+$$
+
+Given $(\mathfrak{U},g)$ and $(\mathfrak{U},g')$ two principal $G$-bundles with the same underlying cover $\mathfrak{U}$, a *gauge transformation* $f$ between them is a collection of maps $f_U: U \rightarrow G$ for every $U \in \mathfrak{U}$ such that 
+
+$$
+g'_{UV}=f_U g_{UV} f_V^{-1}.
+$$
+
+If you read my post about torsors and cocycles [CITAR] then you know that a principal $G$-bundle is simply a Čech 1-cocycle with coefficients on the sheaf $G$ that maps any open set $U$ to the set $C^\infty(U,G)$ of smooth $G$-valued functions in $U$, or, equivalently, a principal $G$-bundle is a $G$-torsor. Gauge transformations of principal $G$-bundles correspond to the action of the set of Čech 0-cochains in the set of 1-cocycles or equivalently, to a morphism of torsors. Thus, the category of principal $G$-bundles with gauge transformations is equivalent to the category of $G$-torsors.
+
+When principal bundles are studied in differential geometry people like to think about their *total space*. From our approach, this space is the smooth manifold
+
+$$
+P_g = \coprod_{U\in \mathfrak{U}} U\times G / \sim,
+$$
+
+where $(x,f) \sim (x,g_{UV}(x) f)$ for all $x\in U\cap V$ and $f \in G$. This space has a natural projection $p:P_g \rightarrow X$, sending every equivalence class $[(x,f)]$ to the point $x\in X$. The group $G$ acts naturally on $P_g$ by writing $[x,f] \cdot h = [x,fh]$. It is easy to see now that a gauge transformation corresponds to a smooth map $f:P_g \rightarrow P_{g'}$ such that $p' \circ f = p$.
+
+The associated $G$-torsor can be now recovered as the *sheaf of local sections* of $p$, that is, to every $U\subset X$ we associate the set of $\Gamma(U,P_g)$ consisting on functions $s:U\rightarrow P_g$ such that $p \circ s = \mathrm{id}_U$. The open cover is recovered by considering $\mathfrak{U}$ a trivializing cover of $p$ (that is, a set of open sets such that $\Gamma(U,P_g)\neq \varnothing$ for every $U$ in it). 
+
+Finally, in order to recover the cocycle we can consider a section $s_U \in \Gamma(U,P_g)$ for every $U \in \mathfrak{U}$. This section $s_U$ has the form $s_U(x)=[x,f_U(x)]$ for some $f_U:U\rightarrow G$. If $V\in \mathfrak{U}$ is another open set with $U\cap V \neq \varnothing$ and $x\in U\cap V$, we have $[x,f_U(x)]=[x,g_{UV}(x)f_U(x)]$. Now, if we define $\tilde{g}_{UV}:U\cap V \rightarrow G$ so that $s_U(x)=s_V(x)\cdot \tilde{g}_{UV}(x)$, we have
+
+$$
+g_{UV}(x)f_U(x) = \tilde{g}_{UV}(x) f_V(x),
+$$
+
+so $\tilde{g}_{UV}$ is the original cocycle up to a gauge transformation.
+
+In this way we see how the usual definition of principal bundle is equivalent to the one we just gave. 
+
+# Local systems
+The way we are going to think about representations of the fundamental group is through *local systems*. 
+
+**Definition**. A *$G$-local system* on $X$ is a pair $(\mathfrak{U},g)$, where $\mathfrak{U}$ is an open cover of $X$ and $g$ is a collection of *locally constant* maps $g_{UV}:U\cap V \rightarrow G$ such that $U\cap V \neq \varnothing$ satisfying the cocycle condition
+
+$$
+g_{UV}g_{VW} = g_{UW},
+$$
+
+for $U\cap V \cap W \neq \varnothing$.
+
+As above, given $(\mathfrak{U},g)$ and $(\mathfrak{U},g')$ two $G$-local systems with the same underlying cover $\mathfrak{U}$, a *gauge transformation* $f$ between them is a collection of *locally constant* maps $f_U: U \rightarrow G$ for every $U \in \mathfrak{U}$ such that 
+
+$$
+g'_{UV}=f_U g_{UV} f_V^{-1}.
+$$
+
+Of course, if you read my previous post [CITAR] you know that we are referring to as local systems is the same thing that what there we called a $G$-covering space. Since locally constant functions are in particular smooth, every local system is in particular a principal bundle. Moreover, the associated total space $P_g$ that we defined above coincides with the covering $X_g$ that we defined in my previous post [CITAR]. 
+
+Moreover, since we are working with a smooth manifold $X$ we can refine any open cover of $X$ to an open cover such that its elements are path connected and simply connected. If we choose $\mathfrak{U}$ an open cover with these properties, then we saw that there is an equivalence of categories between local systems with underlying cover $\mathfrak{U}$ and the *Betti groupoid* defined by the conjugation action of $G$ in the set of representations of the fundamental group of $X$, $\mathrm{Hom}(\pi_1(X),G)$.
+
+What we are going to prove in this post is that the category of local systems is equivalent to another "differential geometric" category, the category of *flat bundles* which we have yet to define. As a consequence, this equivalence will yield an equivalence between this category of *flat bundles* and the Betti groupoid.
+
+# Connections for matrix groups
+**Definition**. A *complex vector bundle of rank $n$ on $X$* is a pair $(E,p)$, where $E$ is a smooth manifold and $p:E\rightarrow X$ is a smooth surjective map such that there exists an open cover $\mathfrak{U}$ of $X$ (which we call a *trivializing cover*) and, for every $U \in \mathfrak{U}$, a homeomorphism $\varphi_U:p^{-1}(U) \rightarrow U\times \mathbb{C}^n$ with $p|_{p^{-1}(U)} = \mathrm{pr}_1 \circ \varphi_U$. Moreover, if $U,V \in \mathfrak{U}$ are such that $U\cap V \neq \varnothing$, then, for every $(x,v) \in U\cap V \times \mathbb{C}^n$ we must have
+
+$$
+\varphi_U \circ \varphi_V^{-1} (x,v) = (x,v g_{UV}(x))
+$$
+
+for some *transition function* $g_{UV}: U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})$. 
+
+Given a rank $n$ vector bundle $E\rightarrow X$ and an open set $U\subset X$, a section of $E$ on $U$ is a map $s: U\rightarrow E$ such that $p\circ s = \mathrm{id}_U$. We can define the sheaf of sections $\Gamma_E$ as the sheaf that to any $U\subset X$ associates the set of sections of $E$ on $U$. Clearly, if $\mathfrak{U}$ is a trivializing cover then, for any $U\in \mathfrak{U}$, $\Gamma_E(U)=C^\infty(U,\mathbb{C}^n)$.
+
+Note that if $U\cap V \cap W \neq \varnothing$ then 
+
+$$
+\varphi_U\circ \varphi_W^{-1}=\varphi_U \circ \varphi_V^{-1} \circ \varphi_V \circ \varphi_W^{-1},
+$$
+
+so $g_{UW}= g_{UV} g_{VW}$. Therefore, the transition functions of any rank $n$ complex vector bundle on $X$ define a principal $\mathrm{GL}(n,\mathbb{C})$-bundle. 
+
+On the other hand, if $G\subset \mathrm{GL}(n,\mathbb{C})$ is a group formed by complex matrices, then, given a principal $G$-bundle $(\mathfrak{U},g)$ we can define
+
+$$
+E_g=\coprod_{U\in \mathfrak{U}} U\times \mathbb{C}^n / \sim,
+$$
+
+where $(x_U,v_U) \sim (x_V, v_V)$, for $x_U \in U$, $x_V \in V$ and $U \cap V \neq \varnothing$, if $x_U=x_V$ and $v_U=v_V g_{UV}(x_U)$. This space has a natural surjection $p:E_g \rightarrow X$, $p[x,v]=x$. This clearly defines a rank $n$ vector bundle on $X$ whose transition functions are given by the cocycle $g$.
+
+**Definition**. We say that $G$ is a *group of complex matrices* (or simply a *matrix group*) if there is an inclusion $G\hookrightarrow \mathrm{GL}(n,\mathbb{C})$ for some $n$, where $\mathrm{GL}(n,\mathbb{C})$ denotes the group of complex $n\times n$ matrices.
+
+During the course of this section we will assume that $G\subset \mathrm{GL}(n,\mathbb{C})$ is a group of complex matrices.
+
+Let us define now what we understand as a connection in this context.
+
+Let $P=(\mathfrak{U},g)$ be a principal $G$-bundle. Consider $p:E\rightarrow X$ the associated vector bundle as defined above, and write $\Gamma_E$ for the sheaf of sections of $E$, $C^\infty_X$ for the sheaf of complex functions on $X$ and $\Omega^i_X$ for the sheaf of smooth complex $i$-forms over $X$.
+
+**Definition**. A *connection* on $P$ is a $C^\infty_X$-linear operator
+
+$$
+D: \Gamma_E \rightarrow \Gamma_E \otimes \Omega^1_X
+$$
+
+such that
+
+$$
+D(f s) = s df + f Ds,
+$$
+
+for $f \in C^\infty(U,\mathbb{C})$ and $s\in \Gamma_E(U)$, for every $U\subset X$. 
+
+Take $U\in \mathfrak{U}$ and consider $\{e_1,...,e_n\}\subset \Gamma_E(U)$ with 
+
+$$
+e_i(x)=(x,(0,\overset{(i)}{\dots},1,0...,0))
+$$
+
+sending every point to the $i$-th element of the canonical basis of $\mathbb{C}^n$. Then, given a connection $D$, we can write
+
+$$
+D(e_i)=\sum_j e_j A_{i}^j  
+$$
+
+with $A_{i}^j \in \Omega^1_X(U)$. Using matrix notation, we can write $e=(e_i)$ as a row vector and $A=(A_{i}^j)$ as a square matrix, so we have
+
+$$
+De= e A .
+$$
+
+Now, given any other section $s\in \Gamma_E(U)$, we can write $s=\sum_i s^ie_i$ for $s_i\in C^\infty_X(U)$ and we have
+
+$$
+Ds= \sum_i D(s^ie_i) = \sum_i ds^i e_i + s^i De_i = \sum_i ds^i e_i + s^i  e_j A^j_i = (d+A) s.
+$$
+
+The matrix $A$ is called the *connection 1-form* of $D$.
+
+**Definition**. Let $D$ be a connection on $P$. We define the *curvature* of $D$ to be the operator
+
+$$
+D^2: \Gamma_E \rightarrow \Gamma_E \otimes \Omega^2_X.
+$$
+
+The curvature is a $\Gamma_E$-linear map, since
+
+$$
+D^2(fs)=D(sdf + fDs)=Ds \wedge df + df \wedge Ds + f D^2 s= fD^2 s,
+$$
+
+therefore, can be seen as a section of the sheaf $\Gamma_{\mathrm{End}(E)} \otimes \Omega^2_X$, where $\mathrm{End}(E)$ denotes the bundle of endomorphisms of $E$. The set of sections of $\Gamma_{\mathrm{End}(E)} \otimes \Omega^2_X$ consists of $\mathrm{End}(E)$ valued 2-forms and thus we denote it as $\Omega^2(X,\mathrm{End}(E))$. 
+
+Locally, in $U\in \mathfrak{U}$, we have
+
+$$
+D^2(e)=D(eA) = De \wedge A + edA = e(A\wedge A + dA)=e F_A,
+$$
+
+with $F_A=dA + A\wedge A \in \Omega^2(U,\mathrm{End}(E))$. The 2-form $F_A$ is called the *curvature 2-form* of $D$.
+
+Now, for every two $U, V \in \mathfrak{U}$ with $U\cap V \neq \varnothing$, we have $e_U|_{U\cap V} = e_V|_{U\cap V} g_{UV}$. Therefore, in $U\cap V$,
+
+\begin{align*}
+e_U A_U &= D(e_U)=D(e_Vg_{UV})=D(e_V)g_{UV}+ e_Vdg_{UV} \\ 
+&=e_VA_V  g_{UV}+e_V dg_{UV} = e_U (g_{UV}^{-1} A_V g_{UV} + g_{UV}^{-1} dg_{UV}).
+\end{align*}
+
+Thus the data of a connection can be recovered from a family of matrix-valued 1-forms $\{A_U\}_{U\in \mathfrak{U}}$ satisfying the compatibility condition
+
+$$
+A_U = g_{UV}^{-1} A_V g_{UV} + g_{UV}^{-1} dg_{UV}.
+$$
+
+Let us see now how the curvature forms are related:
+
+\begin{align*}
+e_U F_{A_U} &= D^2(e_U) = D^2(e_V g_{UV}) = D(De_V g_{UV} + e_V dg_{UV}) \\ & = D^2(e_V) g_{UV} - De_V \wedge dg_{UV} + De_V\wedge dg_{UV} = e_V F_{A_V} g_{UV} = e_U g_{UV}^{-1} F_{A_V} g_{UV},
+\end{align*}
+
+so $F_{A_U}=g_{UV}^{-1} F_{A_V} g_{UV}$.
+
+As a consequence of this, if we denote by $\mathcal{G}_P$ the group of gauge transformations of the principal bundle $P$, we have a natural action of $\mathcal{G}_P$ in the set $\mathcal{A}_P$ of connections on $P$. Indeed, the group $\mathcal{G}_P$ acts in each $\Gamma_E$ by right multiplication, so that we can define $f\cdot D$ as
+
+$$
+f\cdot D(s)=D(s f).
+$$
+
+Therefore, in trivializing open sets, if we define the matrix $f \cdot A$ so that $e f (f\cdot A)= f\cdot D(e)$, we have
+
+$$
+e f (f\cdot A) = f\cdot D (e) = D(e f) = D(e) f + e df = e A f + e f f^{-1} df= e f (f^{-1} A f + f^{-1} df),
+$$
+
+so that $f\cdot A_U = f_U^{-1} A_U f_U + f_U^{-1} df_U$.
+
+Now, 
+$$
+e f F_{f\cdot A}=(f \cdot D)^2 (e) = D^2(ef) = D(D(e)f+edf)=D^2(e)f-De\wedge df + De \wedge df=eF_A f=ef(f^{-1}F_A f),
+$$
+so
+
+$$
+F_{f\cdot A} = f^{-1} F_A f.
+$$
+
+# Flat connections
+Fix $P=(\mathfrak{U},g_{UV})$ a principal $G$-bundle.
+
+**Definition**. We say that a connection $D$ in $P$ is *flat* if $D^2=0$.
+
+Let us suppose now that $P$ admits a flat connection. 
+
+From the above formulas it is evident that the flatness of a connection is preserved by gauge transformations, so the action of the gauge group $\mathcal{G}_P$ descends to an action in the set $\mathcal{F}_P$ of flat connections. The action groupoid $[\mathcal{F}_P,\mathcal{G}_P]$ associated to this action is called the *de Rham groupoid*, and the set of equivalence classes is called the *de Rham moduli space*.
+
+We are now going to construct a functor
+
+$$ 
+\{\text{Flat connections in $P$}\} \longrightarrow \{\text{$G$-local systems based in $\mathfrak{U}$}\}.
+$$
+
+Given a flat connection $D$ in $P$ we want to find a cocycle $\{h_{UV}\}_{U,V \in \mathfrak{U}}$ consisting of locally constant functions $h_{UV}: U\cap V \rightarrow G$. The way to do this is the following. 
+
+Consider $E$ the associated vector bundle to $P$, a *local frame* of $E$ in $U\in \mathfrak{U}$ is a collection $\epsilon_U=\{\epsilon_{i,U}: i=1,...,n\}\subset \Gamma_E(U)$, for $U \in \mathfrak{U}$ such that the set $\{\epsilon_{i,U}(x):i=1,...,n\}$ is linearly independent for all $x\in U$. Clearly, any frame is of the form $e_U f_U$, where $e_U={e_1,...,e_n} \subset \Gamma_E(U)$ is the *canonical frame*, mapping every point to the canonical basis and $f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})$.
+
+Suppose that we can find a frame $\epsilon_U=e_U f_U$ in each $U\in \mathfrak{U}$, with $f_U:U\rightarrow G$, such that $D \epsilon_U = 0$. Then, on any nonempty intersection $U\cap V$ with $U,V \in \mathfrak{U}$ we can consider the functions $h_{UV}=f_V^{-1} g_{UV} f_U$ so that 
+
+$$
+\epsilon_U = e_U f_U= e_V g_{UV} f_U= e_V f_V f_V^{-1} g_{UV} f_U=\epsilon_V h_{UV}
+$$
+
+and thus
+
+$$
+0 = D \epsilon_U = D(\epsilon_V h_{UV})= D(\epsilon_V) h_{UV} + \epsilon_V dh_{UV}.
+$$
+
+Therefore, we have $dh_{UV}=0$, so $h_{UV}$ is locally constant. Moreover,
+
+$$
+\epsilon_W = \epsilon_V h_{VW} = \epsilon_U h_{UV} h_{VW},
+$$
+
+so $h$ satisfies the cocycle condition and thus it defines a local system based in $\mathfrak{U}$.
+
+Let us see why we can find such a frame. We want
+
+$$
+0= D\epsilon_U = D(e_U f_U) = D(e_U) f_U + e_U df_U = e_U (A_U f_U + df_U).
+$$
+
+That is, we want to find $f_U$ a solution to the differential equation
+
+$$
+df_U + A_Uf_U =0.
+$$
+
+If we call $\alpha= df_U + A_U f_U$, the integrability condition of this equation is $\alpha \wedge d\alpha = 0$. Now,
+
+$$
+d\alpha = dA_U f_U - A_U \wedge df_U = F_{A_U} f_U - A_U \wedge A_U f_U - A_U \wedge df_U=-A_U \wedge \alpha,
+$$
+
+so $\alpha \wedge d\alpha = 0$. [?????]
+
+Now, suppose that $f$ is a gauge transformation between two flat connections $D_1$ and $D_2$. [See that it is eq to a locally constant gauge transf. to see that we have a fully faithful functor].
+
+[Mejor si consigo encontrar t. gauge f tal que h_{UV}=f_U g_{UV} f_V^{-1}]
+
+Finally, if $h$ is a $G$-local system based in $\mathfrak{U}$, then we can consider frames $\epsilon_U \in \Gamma_E(U)$ for every $U\in \mathfrak{U}$ such that $\epsilon_U = \epsilon_V h_{UV}$ on the nonempty overlaps $U\cap V$ and define the $A_U$ so that $\epsilon_U A_U=0$. If we write $\epsilon_U = e_U f_U$, we have
+
+$$
+D^2(e_U)=D^2(\epsilon_U f_U)= D( D\epsilon_U f_U + \epsilon_U df_U)= D(\epsilon_U df_U)=D\epsilon_U \wedge df_U =0.
+$$
+
+------
+
+[Take me to the blog index](https://guillegran.github.io/blog/indice.html)
+
+[Take me home](https://guillegran.github.io)
+

@@ -1,0 +1,463 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Flat connections and the fundamental group},
+            pdfauthor={Guillermo Gallego},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Flat connections and the fundamental group}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Guillermo Gallego}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{July 1, 2020}
+
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{amscd, amsmath}
+
+\begin{document}
+\maketitle
+
+In this post we are going to study the correspondence between flat
+connections and representations of the fundamental group, sometimes
+called the ``Riemann-Hilbert correspondence''. This is a very rich
+result in that it draws together several fields of Mathematics and leads
+to new interesting problems like the study of certain moduli spaces or
+the relationship to Yang-Mills equation. Moreover, this correspondence
+is the first step to fully understand another correspondence known as
+the Nonabelian Hodge Theorem.
+
+There are several ways of proving this correspondence. One is through
+holonomy, and it is maybe the more straightforward since it directly
+relates flat connections with representations of the fundamental group.
+In this post however, given that in my last post {[}CITAR{]} we already
+gave a correspondence between representations of the fundamental group
+and covering spaces, we are going to prove the correspondence by
+relating flat connections to covering spaces (also called \emph{local
+systems} in this context).
+
+With this point of view, a general ``global'' proof of the
+correspondence can be given by using the Frobenius theorem. We are going
+to sketch this proof, but I prefer to study in detail the proof for
+matrix groups, which is more simple and straightforward, and maybe fits
+better with the ``cocycle approach'' that I have been mantaining in my
+previous posts.
+
+\section{Principal bundles and local
+systems}\label{principal-bundles-and-local-systems}
+
+During all this post we will be using the notions from my post on
+Torsors and Cocycles {[}CITAR{]}, and also we will make use of the
+correspondence between covering spaces and representations that I gave
+in my previous post {[}CITAR{]}.
+
+Let me recall that for \(X\) a topological space and \(\mathcal{G}\) a
+sheaf of groups over \(X\), a \(\mathcal{G}\) torsor is a sheaf of sets
+on \(X\) with nonempty stalks which is endowed with a free and
+transitive action of \(\mathcal{G}\). What we saw in my post about
+Torsors and cocycles {[}CITAR{]} is that the functor that sends every
+\(\mathcal{G}\)-torsor to its set of transition functions gives an
+equivalence of categories between the category of \(\mathcal{G}\) torsor
+and the action groupoid \([Z^1(X,\mathcal{G}),C^0(X,\mathcal{G})]\),
+where these two sets denote the sets of equivalence classes by
+refinement of pairs \((\mathfrak{U},f)\), with \(\mathfrak{U}\) an open
+cover of \(X\) and \(f\) a Čech \(1\)-cocycle (a Čech \(0\)-cochain,
+respectively).
+
+For our purposes, we will fix now once and for all \(X\) a smooth
+manifold and \(G\) a Lie group, and consider the sheaves \(G\), which
+maps any open set \(U\subset X\) to the group \(C^\infty(U,G)\) of
+\(G\)-valued smooth functions, and \(\underline{G}\), which maps any
+open set \(U\subset X\) to the group of locally constant functions
+\(U\rightarrow G\).
+
+We will call a \(G\)-torsor on \(X\) a \emph{principal \(G\)-bundle}
+over \(X\), and we will call a \(\underline{G}\)-torsor on \(X\) a
+\emph{\(G\)-local system} over \(X\).
+
+Recall that in my previous post {[}CITAR{]} we called elements of
+\(Z^1(\mathfrak{U},\underline{G})\) by the name of
+\(\mathfrak{U}\)-based \(G\)-covering spaces. Therefore, a \(G\)-local
+system is an equivalence class by refinement of \(G\)-coverings. In that
+post we also proved the \emph{monodromy theorem} which said that the
+groupoid
+\([Z^1(\mathfrak{U},\underline{G}),C^0(\mathfrak{U},\underline{G})]\)
+was equivalent to the groupoid \([\mathrm{Hom}(\pi_1(X,x_0),G),G]\) of
+\(G\)-representations of the fundamental groupo with the conjugation
+action, which we called the \emph{Betti groupoid}, \(\mathfrak{U}\)
+being an open cover satisfying certain ``good'' topological conditions.
+Since we are on a smooth manifold, every open cover can be refined to
+one that is ``good'' in that sense, and thus we get an equivalence
+between the category of \(G\)-local systems and the Betti groupoid.
+
+The purpose of this post is to prove that the category of \(G\)-local
+systems is equivalent to another ``differential geometric'' category,
+the category of \emph{flat bundles}. As a consequence, this equivalence
+will yield an equivalence between this category of flat bundles and the
+Betti groupoid.
+
+\section{Vector bundles}\label{vector-bundles}
+
+We will start by proving this equivalence for vector bundles, so we
+better define what these are.
+
+Consider the \emph{sheaf of smooth complex-valued functions}
+\(C^\infty_X\) on \(X\) sending every open set \(U\subset X\) to the set
+\(C^\infty(X,\mathbb{C})\). A \emph{sheaf of \(C^\infty_X\) modules} is
+a sheaf of abelian groups \(E\) on \(X\) such that, on any
+\(U\subset X\), the group \(E(U)\) is a \(C^\infty_X(U)\)-module and
+such that the restriction homomorphisms \(E(V) \rightarrow E(U)\) are
+\(C^\infty_X(U)\)-linear.
+
+A \emph{complex vector bundle of rank \(n\) on \(X\)} is a locally free
+sheaf \(E\) of \(C^\infty_X\) modules. This means that there exists an
+open cover \(\mathfrak{U}\) of \(X\) and isomorphisms
+\(\varphi_U: E|_U \rightarrow C^\infty_X|_U ^n\) for every \(U \in X\).
+The pair \((\mathfrak{U},\varphi)\), with
+\(\varphi=\{\varphi_U\}_{U\in \mathfrak{U}}\) is called a
+\emph{trivialization} of \(E\).
+
+To any rank \(n\) complex vector bundle \(E\), fixing a trivialization
+\((\mathfrak{U},\varphi)\), we can associate its set of transition
+functions \(g_{UV}:U \cap V \rightarrow \mathrm{GL}(n,\mathbb{C})\),
+defined as
+
+\[
+g_{UV}=\varphi_V|_{U\cap V} \circ \varphi_U^{-1}|_{U\cap V},
+\]
+
+for \(U,V \in \mathfrak{U}\), \(U\cap V \neq \varnothing\). Clearly the
+\(g_{UV}\) define a cocycle, so we get a map
+
+\[
+\{ \text{Rank $n$ vector bundles} \} \longrightarrow Z^1(\mathfrak{U},\mathrm{GL}(n,\mathbb{C})).
+\]
+
+A \emph{gauge transformation} of a vector bundle \(E\) is a
+\(C^\infty_X\)-linear sheaf automorphism \(\xi:E\rightarrow E\). Fixing
+a trivialization \((\mathfrak{U},\varphi)\), to any gauge transformation
+\(\xi\) we can associate the element
+\(f\in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\) defined as
+
+\[
+f_U=\varphi_U \circ \xi|_U \circ \varphi_U^{-1},
+\]
+
+for \(U\in \mathfrak{U}\).
+
+Thus, if we denote by \(\mathbf{Vect}_n\) the category whose objects are
+vector bundles on \(X\) of rank \(n\) and where morphisms are given by
+gauge transformations, by making a choice of trivialization on any
+vector bundle, we have defined a functor
+
+\[
+\mathbf{Vect}_n \longrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))].
+\]
+
+This functor is fully faithful. Fix \(E\) is a vector bundle and we fix
+\((\mathfrak{U},\varphi)\) a trivialization of \(E\). Clearly, the map
+\(\xi\mapsto f\), with \(f\) defined as above gives a bijection between
+gauge transformations and elements of
+\(C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\).
+
+This functor is essentially surjective. Let \((\mathfrak{U},g)\), with
+\(g \in Z^1(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\) be a pair
+representing an element of \(Z^1(X,\mathrm{GL}(n,\mathbb{C}))\). The way
+to recover now the vector bundle is similar to how we recovered a torsor
+from a cocycle. Define the presheaf
+
+\[
+E(U)= \coprod_{V \in \mathfrak{U}} C^\infty_X(U\cap V)^n / \sim,
+\]
+
+where \(f \in C^\infty_X(U\cap V)^n\) and
+\(f' \in C^\infty_X(U\cap V')^n\), with \(V\cap V'\) are related by
+\(\sim\) if
+
+\[
+f|_{U\cap V \cap V'} = g_{V V'} f'|_{U\cap V \cap V'}.
+\]
+
+This presheaf verifies the sheaf condition by construction and it is
+clearly locally free of rank \(n\). If \((\mathfrak{V},\varphi)\) is any
+trivialization of \(E\), then it is easy to check that, after passing to
+a common refinement, its transition functions are on the same orbit as
+the refinement of the cocycle \(g\) by a \(0\)-cochain.
+
+Therefore, the category \(\mathbf{Vect}_n\) is equivalent to that of
+\(\mathrm{GL}(n,\mathbb{C})\)-torsors (that is, principal
+\(\mathrm{GL}(n,\mathbb{C})\)-bundles).
+
+\section{Connections in vector
+bundles}\label{connections-in-vector-bundles}
+
+Let \(E\) be a vector bundle and consider the bundles \(\Omega^k_X\)
+consisting on complex-valued smooth differential \(k\)-forms on \(X\).
+For example, \(\Omega^1_X\) is the \emph{cotangent bundle} of \(X\)
+(actually, it is the sheaf of sections of the cotangent bundle, but we
+are already regarding bundles as locally free sheaves).
+
+\textbf{Definition}. A \emph{connection} \(D\) on \(E\) is a
+\(\mathbb{C}\)-linear operator
+
+\[
+D: E \rightarrow E \otimes \Omega^1_X
+\]
+
+such that
+
+\[
+D(fs) = sdf + f Ds,
+\]
+
+for \(f\in C^\infty_X(U)\) and \(s\in E(U)\), for every open subset
+\(U\subset X\).
+
+Let \(D\) be a connection on a vector bundle \(E\) and take an open set
+\(U\in \mathfrak{U}\) in some trivialization \((\mathfrak{U},\varphi)\)
+of \(E\). We define a \emph{frame of \(E\) in \(U\)} to be a basis
+\(\{e_1,...,e_n\}\) of \(E(U)\), given that it is a free
+\(C^\infty_X(U)\)-module. For any \(e_i\) of the frame, the connection
+acts as
+
+\[
+D e_i = \sum_j e_j A^j_i,
+\]
+
+for \(A^j_i \in \Omega^1_X(U)\). Using matrix notation, regarding
+\(e=(e_i)\) as a row vector and \(A=(A^j_i)\) as a square matrix, we get
+
+\[
+De= eA.
+\]
+
+Now, given any other section \(s\in E(U)\), we can write
+\(s=\sum_i s^i e_i\), for \(s^i \in C^\infty_X(U)\) and we have
+
+\[
+D s = \sum_i (d s^i e_i + s^i D e_i) = \sum_i ds^i e_i + s^i e_j A^i_j  = (d+A) s.
+\]
+
+The matrix \(A\) is called the \emph{connection \(1\)-form} of \(D\) on
+\(U\).
+
+\textbf{Definition}. Let \(D\) be a connection on a vector bundle \(E\).
+We define the \emph{curvature} of \(D\) as the operator
+
+\[
+D^2: E \rightarrow E \otimes \Omega^2_X.
+\]
+
+The curvature is a \(C^\infty_X\)-linear map since
+
+\[
+D^2(fs)=D(sdf + fDs)=Ds \wedge df + df \wedge Ds + f D^2 s= fD^2 s,
+\]
+
+for \(s\in E(U)\) and \(f \in C^\infty_X(U)\).
+
+Locally, in some trivializing open set, we have
+
+\[
+D^2(e)=D(eA) = De \wedge A + edA = e(A\wedge A + dA)=e F_A,
+\]
+
+for \(F_A= dA + A\wedge A\) a matrix of \(2\)-forms which we call the
+\emph{curvature \(2\)-form}.
+
+Fix \(E\) a vector bundle and consider the group \(\mathcal{G}_E\) of
+gauge transformations of \(E\) and the set \(\mathcal{A}_E\) of all
+connections on \(E\). We have a natural action of \(\mathcal{G}_E\) on
+\(\mathcal{A}_E\) by conjugation: if \(s\in E(U)\),
+
+\[
+(\xi \cdot D) (s) = \xi \circ D \circ \xi^{-1}.
+\]
+
+Now, take \(U\in \mathfrak{U}\) for \((\mathfrak{U},\varphi)\) some
+trivialization and \(f_U= \varphi_U \circ \xi|_U \circ \varphi_U^{-1}\).
+If we choose the local frame \(e\) as the inverse image through
+\(\varphi_U\) of the canonical basis and we consider \(A\) the
+connection 1-form of \(D\) in this frame we have
+
+\[
+e (\xi \cdot A) = (\xi \cdot D) (e) = \xi D(\xi^{-1}(e)) = \xi D(ef_U^{-1}) = \xi (De f_U^{-1} + e df_U^{-1}) = e(f_U A f_U^{-1}  + f_U df_U^{-1}),
+\]
+
+so
+
+\[
+\xi \cdot A =f_U A f_U^{-1}  + f_U df_U^{-1}.
+\]
+
+The curvature of the gauge-transformed connection now is
+
+\[
+(\xi \cdot D)^2= \xi \circ D \circ \xi^{-1} \circ \xi \circ D \circ \xi^{-1} = \xi \circ D^2 \circ \xi^{-1}.
+\]
+
+Thus, in the frame defined above,
+
+\begin{align*}
+e F_{\xi \cdot A} &= \xi(D^2(\xi^{-1}(e))) = D^2(e f_U^{-1}) f_U = D(D(e) f_U^{-1} + e df_U^{-1}) f_U \\
+&= (D^2(e) f_U^{-1} - D(e) \wedge df_U^{-1} + D(e) \wedge df_U^{-1} ) f_U =  D^2(e) = e F_A.
+\end{align*}
+
+\section{Flat connections}\label{flat-connections}
+
+\textbf{Definition}. We say that a connection \(D\) on a vector bundle
+\(E\) is flat if its curvature vanishes, that is, \(D^2=0\). A
+\emph{flat vector bundle} is a pair \((E,D)\), where \(E\) is a vector
+bundle and \(D\) is a flat connection on \(D\).
+
+If we denote by \(\mathcal{F}_E\) the set of flat connections on a
+vector bundle \(E\), the formulas above show that the action of the
+group of gauge transformations \(\mathcal{G}_E\) on \(\mathcal{A}_E\)
+descends to an action on \(\mathcal{F}_E\). And in consequence the
+functor relating vector bundles and principal
+\(\mathrm{GL}(n,\mathbb{C})\)-bundles descends to a functor
+
+\[
+\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
+\]
+
+where \(\mathbf{FlatVect}_n\) denotes the category whose objects are
+flat vector bundles of rank \(n\) and its morphisms are gauge
+transformations. The category \(\mathbf{FlatVect}_n\) is clearly a
+groupoid and it is also called the \emph{de Rham groupoid}. The set of
+equivalence classes of this category is called the \emph{de Rham moduli
+set} \(\mathcal{M}_{\text{de Rham}}\).
+
+We can now state and prove the main theorem of this post:
+
+\textbf{Theorem}. The functor we just gave factors through the inclusion
+of local systems in principal bundles
+
+\[
+[Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C}))}] \hookrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
+\]
+
+and the resulting functor
+
+\[
+\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C})})],
+\]
+
+is an equivalence of categories. In particular, we get a bijection
+\(\mathcal{M}_{\text{de Rham}} \cong \mathcal{M}_{\text{Betti}}\)
+between the de Rham and the Betti moduli sets.
+
+Since this is all a bit messy, let us state precisely what we are going
+to prove:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Provided any vector bundle \(E\), with a trivialization
+  \((\mathfrak{U},\varphi)\) and a flat connection \(D\) on \(E\), we
+  have to find locally constant functions
+  \(h_{UV}:U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})\), for
+  \(U,V \in \mathfrak{U}\) and \(U\cap V \neq \varnothing\) and
+  functions \(f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})\) for
+  \(U\in \mathfrak{U}\) such that \[
+  h_{UV}=f_U g_{UV} f_V^{-1},
+  \] where \(g_{UV}\) are the transition functions of \(E\) in the
+  trivialization \((\mathfrak{U},\varphi)\). Moreover, we have to prove
+  that \(g_{UV}\) and \(g_{UV}'\) are related by some \(0\)-cochain
+  \(f \in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\) if and only if
+  the corresponding \(h_{UV}\) and \(h_{UV}'\) are related by some
+  \(0\)-cochain
+  \(\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})\).
+  This accounts for the factorization and for being fully faithful.
+\item
+  Given any pair \((\mathfrak{U},h)\), with
+  \(h\in Z^1(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})\), we
+  have to construct a vector bundle \(E\) over \(X\) and a flat
+  connection \(D\) on \(E\) such that the transition functions of \(E\)
+  are given precisely by \(h\). This would show that the resulting
+  functor is essentially surjective.
+\end{enumerate}
+
+Let us start by proving 1 by finding the mentioned locally constant
+functions \(h_{UV}\). Suppose that we could find, for every
+\(U\in \mathfrak{U}\), a frame
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\href{https://guillegran.github.io/blog/indice.html}{Take me to the blog
+index}
+
+\href{https://guillegran.github.io}{Take me home}
+
+\end{document}

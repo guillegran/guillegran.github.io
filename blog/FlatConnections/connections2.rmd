@@ -176,43 +176,86 @@ e F_{\xi \cdot A} &= \xi(D^2(\xi^{-1}(e))) = D^2(e f_U^{-1}) f_U = D(D(e) f_U^{-
 \end{align*}
 
 # Flat connections
-**Definition**. We say that a connection $D$ on a vector bundle $E$ is flat if its curvature vanishes, that is, $D^2=0$. A *flat vector bundle* is a pair $(E,D)$, where $E$ is a vector bundle and $D$ is a flat connection on $D$.
+**Definition**. We say that a connection $D$ on a vector bundle $E$ is flat if its curvature vanishes, that is, $D^2=0$.
 
-If we denote by $\mathcal{F}_E$ the set of flat connections on a vector bundle $E$, the formulas above show that the action of the group of gauge transformations $\mathcal{G}_E$ on $\mathcal{A}_E$ descends to an action on $\mathcal{F}_E$. And in consequence the functor relating vector bundles and principal $\mathrm{GL}(n,\mathbb{C})$-bundles descends to a functor
-
-$$
-\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
-$$
-
-where $\mathbf{FlatVect}_n$ denotes the category whose objects are flat vector bundles of rank $n$ and its morphisms are gauge transformations. The category $\mathbf{FlatVect}_n$ is clearly a groupoid and it is also called the *de Rham groupoid*. The set of equivalence classes of this category is called the *de Rham moduli set* $\mathcal{M}_{\text{de Rham}}$.
+If we denote by $\mathcal{F}_E$ the set of flat connections on a vector bundle $E$, the formulas above show that the action of the group of gauge transformations $\mathcal{G}_E$ on $\mathcal{A}_E$ descends to an action on $\mathcal{F}_E$. 
 
 We can now state and prove the main theorem of this post:
 
-**Theorem**. The functor we just gave factors through the inclusion of local systems in principal bundles
+**Theorem**. Fix $E$ a vector bundle over $X$. There is an equivalence of groupoids
 
 $$
-[Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C}))}] \hookrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
+[\mathcal{F}_E,\mathcal{G}_E] \longrightarrow [Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C})})].
 $$
 
-and the resulting functor
+*Proof*. More precisely, we want to prove the following.
+
+1. Provided any flat connection $D$ on $E$, we have to find an open cover $\mathfrak{U}$ of $X$ and locally constant functions $h_{UV}:U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})$, for $U,V \in \mathfrak{U}$ and $U\cap V \neq \varnothing$. This allows us to define the functor at the level of objects.
+
+2. If we denote by $\mathrm{Hom}(D_1,D_2)$ the set of gauge transformations between two flat connections $D_1$ and $D_2$ and by $\mathrm{Hom}(h_1,h_2)$ the set of $0$-cochains relating the two corresponding cocycles $h_1$ and $h_2$. We want to give a bijection $\mathrm{Hom}(D_1,D_2) \rightarrow \mathrm{Hom}(h_1,h_2)$.  
+
+3. Given any pair $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$, we have to construct a flat connection $D$ on $E$ such that the corresponding cocycle $h'$ is equivalent to $h$. 
+
+In order to prove 1 we have to find the mentioned locally constant functions $h_{UV}$. Choose $(\mathfrak{U},\varphi)$ a trivialization of $E$. Suppose that we could find, for every $U\in \mathfrak{U}$, a frame $\epsilon_U$ of $E$ in $U$ such that $D \epsilon_U = 0$. Consider as above the frame $e_U$ of $E$ in $U$ defined as the inverse image through $\varphi_U$ of the canonical basis. We have that $e_U$ and $\epsilon_U$ are related by some matrix-valued function $f_U:U \rightarrow \mathrm{GL}(n,\mathbb{C})$, so that $\epsilon_U = e_U f_U$. 
+
+Therefore, if we consider in a nonempty overlap $U\cap V$ the cocycle $h_{UV}= f_V^{-1} g_{UV} f_U$, we have
 
 $$
-\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C})})],
+0 = D \epsilon_U = D (e_U f_U) = D (e_V g_{UV} f_U) = D(\epsilon_V f_V^{-1} g_{UV} f_U) = D(\epsilon_V h_{UV}) = D \epsilon_V h_{UV} + \epsilon_V dh_{UV},
 $$
 
-is an equivalence of categories. In particular, we get a bijection $\mathcal{M}_{\text{de Rham}} \cong \mathcal{M}_{\text{Betti}}$ between the de Rham and the Betti moduli sets.
+so $dh_{UV}=0$ and $h_{UV}$ is locally constant.
 
-Since this is all a bit messy, let us state precisely what we are going to prove:
+It remains to see then why we can find such a frame $\epsilon_U$. By taking the frame $e_U$ as above, we want to find matrix-valued functions $f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})$ satisfying
 
-1. Provided any vector bundle $E$, with a trivialization $(\mathfrak{U},\varphi)$ and a flat connection $D$ on $E$, we have to find locally constant functions $h_{UV}:U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})$, for $U,V \in \mathfrak{U}$ and $U\cap V \neq \varnothing$ and functions $f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})$ for $U\in \mathfrak{U}$ such that 
 $$
-h_{UV}=f_U g_{UV} f_V^{-1},
+0= D\epsilon_U = D(e_U f_U) = D(e_U) f_U + e_U df_U = e_U (A_U f_U + df_U),
 $$
-where $g_{UV}$ are the transition functions of $E$ in the trivialization $(\mathfrak{U},\varphi)$. Moreover, we have to prove that $g_{UV}$ and $g_{UV}'$ are related by some $0$-cochain $f \in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))$ if and only if the corresponding $h_{UV}$ and $h_{UV}'$ are related by some $0$-cochain $\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})$. This accounts for the factorization and for being fully faithful.
 
-2. Given any pair $(\mathfrak{U},h)$, with $h\in Z^1(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})$, we have to construct a vector bundle $E$ over $X$ and a flat connection $D$ on $E$ such that the transition functions of $E$ are given precisely by $h$. This would show that the resulting functor is essentially surjective.
+where $A_U$ is the connection $1$-form in the frame $e_U$.
 
-Let us start by proving 1 by finding the mentioned locally constant functions $h_{UV}$. Suppose that we could find, for every $U\in \mathfrak{U}$, a frame 
+That is, we want to find $f_U$ solutions to the differential equation
+
+$$
+df_U + A_U f_U = 0.
+$$
+
+[DUDOSO] If we call $\alpha= df_U + A_U f_U$, the integrability condition of this equation is $\alpha \wedge d\alpha = 0$. Now,
+
+$$
+d\alpha = dA_U f_U - A_U \wedge df_U = F_{A_U} f_U - A_U \wedge A_U f_U - A_U \wedge df_U=-A_U \wedge \alpha,
+$$
+
+so $\alpha \wedge d\alpha = 0$. [?????] 
+
+Let us prove 3 now. Take $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$. It is clear that we can construct (for example, by an inductive process) a frame $\epsilon_U$ on every $U\in \mathfrak{U}$ so that $\epsilon_U = \epsilon_V h_{UV}$ on the nonempty intersections $U\cap V$. Define now the connection $D$ so that $D\epsilon_U = 0$. Now, the locally constant cocycle corresponding to this connection is precisely $h$.
+
+Finally, let us see the proof of 2. Choose a trivialization $(\mathfrak{U},\varphi)$ of $E$ and fix $x_U$ a point on every connected component of every $U\in \mathfrak{U}$. Given any gauge transformation $\xi$, to which we associate a cochain $f\in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))$, we can define a cochain $\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})$ by choosing $\tilde{f}_U = f_U(x_U)$. This assignation restricts to a map
+
+$$
+\mathrm{Hom}(D_1,D_2) \rightarrow \mathrm{Hom}(h_1,h_2),
+$$
+
+which is trivially surjective, since $C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})}) \subset C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))$. 
+
+It remains to prove that this map is injective. Choose $\xi_1$ and $\xi_2$ such that $(\xi_1 \cdot D_1) = (\xi_2 \cdot D_1) = D_2$. Therefore, for $\xi=\xi_1^{-1} \circ \xi_2$, we have $(\xi \cdot D_1) = D_1$. Therefore, if $f$ is the $0$-cochain associated to $\xi$, we have, in $U\in \mathfrak{U}$,
+
+$$
+A_U = f_U A_U f_U^{-1} + f_U df_U^{-1}.
+$$
+
+Now, if the images of $\xi_1$ and $\xi_2$ coincide we have that $f_{1,U}(x_U) = f_{2,U}(x_U)$ for every $U\in \mathfrak{U}$, so $f_U(x_U) = I$, the identity matrix. Therefore,
+
+$$
+A_U (x_U ) = A_U(x_U) + df_U^{-1} (x_U),
+$$
+
+so $df_U^{-1}=0$ on $x_U$. Now, maybe by refining the covering $\mathfrak{U}$, we get $f_U = I$ and $f_{1,U} = f_{2,U}$.
+
+This finishes the proof of the theorem. $\blacksquare$
+
+
+
 
 ------
 

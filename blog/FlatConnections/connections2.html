@@ -418,30 +418,55 @@ e F_{\xi \cdot A} &amp;= \xi(D^2(\xi^{-1}(e))) = D^2(e f_U^{-1}) f_U = D(D(e) f_
 </div>
 <div id="flat-connections" class="section level1">
 <h1>Flat connections</h1>
-<p><strong>Definition</strong>. We say that a connection <span class="math inline">\(D\)</span> on a vector bundle <span class="math inline">\(E\)</span> is flat if its curvature vanishes, that is, <span class="math inline">\(D^2=0\)</span>. A <em>flat vector bundle</em> is a pair <span class="math inline">\((E,D)\)</span>, where <span class="math inline">\(E\)</span> is a vector bundle and <span class="math inline">\(D\)</span> is a flat connection on <span class="math inline">\(D\)</span>.</p>
-<p>If we denote by <span class="math inline">\(\mathcal{F}_E\)</span> the set of flat connections on a vector bundle <span class="math inline">\(E\)</span>, the formulas above show that the action of the group of gauge transformations <span class="math inline">\(\mathcal{G}_E\)</span> on <span class="math inline">\(\mathcal{A}_E\)</span> descends to an action on <span class="math inline">\(\mathcal{F}_E\)</span>. And in consequence the functor relating vector bundles and principal <span class="math inline">\(\mathrm{GL}(n,\mathbb{C})\)</span>-bundles descends to a functor</p>
-<p><span class="math display">\[
-\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{FlatVect}_n\)</span> denotes the category whose objects are flat vector bundles of rank <span class="math inline">\(n\)</span> and its morphisms are gauge transformations. The category <span class="math inline">\(\mathbf{FlatVect}_n\)</span> is clearly a groupoid and it is also called the <em>de Rham groupoid</em>. The set of equivalence classes of this category is called the <em>de Rham moduli set</em> <span class="math inline">\(\mathcal{M}_{\text{de Rham}}\)</span>.</p>
+<p><strong>Definition</strong>. We say that a connection <span class="math inline">\(D\)</span> on a vector bundle <span class="math inline">\(E\)</span> is flat if its curvature vanishes, that is, <span class="math inline">\(D^2=0\)</span>.</p>
+<p>If we denote by <span class="math inline">\(\mathcal{F}_E\)</span> the set of flat connections on a vector bundle <span class="math inline">\(E\)</span>, the formulas above show that the action of the group of gauge transformations <span class="math inline">\(\mathcal{G}_E\)</span> on <span class="math inline">\(\mathcal{A}_E\)</span> descends to an action on <span class="math inline">\(\mathcal{F}_E\)</span>.</p>
 <p>We can now state and prove the main theorem of this post:</p>
-<p><strong>Theorem</strong>. The functor we just gave factors through the inclusion of local systems in principal bundles</p>
+<p><strong>Theorem</strong>. Fix <span class="math inline">\(E\)</span> a vector bundle over <span class="math inline">\(X\)</span>. There is an equivalence of groupoids</p>
 <p><span class="math display">\[
-[Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C}))}] \hookrightarrow [Z^1(X,\mathrm{GL}(n,\mathbb{C})), C^0(X,\mathrm{GL}(n,\mathbb{C}))],
+[\mathcal{F}_E,\mathcal{G}_E] \longrightarrow [Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C})})].
 \]</span></p>
-<p>and the resulting functor</p>
-<p><span class="math display">\[
-\mathbf{FlatVect}_n \longrightarrow [Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})}), C^0(X,\underline{\mathrm{GL}(n,\mathbb{C})})],
-\]</span></p>
-<p>is an equivalence of categories. In particular, we get a bijection <span class="math inline">\(\mathcal{M}_{\text{de Rham}} \cong \mathcal{M}_{\text{Betti}}\)</span> between the de Rham and the Betti moduli sets.</p>
-<p>Since this is all a bit messy, let us state precisely what we are going to prove:</p>
+<p><em>Proof</em>. More precisely, we want to prove the following.</p>
 <ol style="list-style-type: decimal">
-<li><p>Provided any vector bundle <span class="math inline">\(E\)</span>, with a trivialization <span class="math inline">\((\mathfrak{U},\varphi)\)</span> and a flat connection <span class="math inline">\(D\)</span> on <span class="math inline">\(E\)</span>, we have to find locally constant functions <span class="math inline">\(h_{UV}:U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})\)</span>, for <span class="math inline">\(U,V \in \mathfrak{U}\)</span> and <span class="math inline">\(U\cap V \neq \varnothing\)</span> and functions <span class="math inline">\(f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})\)</span> for <span class="math inline">\(U\in \mathfrak{U}\)</span> such that <span class="math display">\[
-h_{UV}=f_U g_{UV} f_V^{-1},
-\]</span> where <span class="math inline">\(g_{UV}\)</span> are the transition functions of <span class="math inline">\(E\)</span> in the trivialization <span class="math inline">\((\mathfrak{U},\varphi)\)</span>. Moreover, we have to prove that <span class="math inline">\(g_{UV}\)</span> and <span class="math inline">\(g_{UV}'\)</span> are related by some <span class="math inline">\(0\)</span>-cochain <span class="math inline">\(f \in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\)</span> if and only if the corresponding <span class="math inline">\(h_{UV}\)</span> and <span class="math inline">\(h_{UV}'\)</span> are related by some <span class="math inline">\(0\)</span>-cochain <span class="math inline">\(\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})\)</span>. This accounts for the factorization and for being fully faithful.</p></li>
-<li><p>Given any pair <span class="math inline">\((\mathfrak{U},h)\)</span>, with <span class="math inline">\(h\in Z^1(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})\)</span>, we have to construct a vector bundle <span class="math inline">\(E\)</span> over <span class="math inline">\(X\)</span> and a flat connection <span class="math inline">\(D\)</span> on <span class="math inline">\(E\)</span> such that the transition functions of <span class="math inline">\(E\)</span> are given precisely by <span class="math inline">\(h\)</span>. This would show that the resulting functor is essentially surjective.</p></li>
+<li><p>Provided any flat connection <span class="math inline">\(D\)</span> on <span class="math inline">\(E\)</span>, we have to find an open cover <span class="math inline">\(\mathfrak{U}\)</span> of <span class="math inline">\(X\)</span> and locally constant functions <span class="math inline">\(h_{UV}:U\cap V \rightarrow \mathrm{GL}(n,\mathbb{C})\)</span>, for <span class="math inline">\(U,V \in \mathfrak{U}\)</span> and <span class="math inline">\(U\cap V \neq \varnothing\)</span>. This allows us to define the functor at the level of objects.</p></li>
+<li><p>If we denote by <span class="math inline">\(\mathrm{Hom}(D_1,D_2)\)</span> the set of gauge transformations between two flat connections <span class="math inline">\(D_1\)</span> and <span class="math inline">\(D_2\)</span> and by <span class="math inline">\(\mathrm{Hom}(h_1,h_2)\)</span> the set of <span class="math inline">\(0\)</span>-cochains relating the two corresponding cocycles <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span>. We want to give a bijection <span class="math inline">\(\mathrm{Hom}(D_1,D_2) \rightarrow \mathrm{Hom}(h_1,h_2)\)</span>.</p></li>
+<li><p>Given any pair <span class="math inline">\((\mathfrak{U},h)\)</span> representing an element of <span class="math inline">\(Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})\)</span>, we have to construct a flat connection <span class="math inline">\(D\)</span> on <span class="math inline">\(E\)</span> such that the corresponding cocycle <span class="math inline">\(h'\)</span> is equivalent to <span class="math inline">\(h\)</span>.</p></li>
 </ol>
-<p>Let us start by proving 1 by finding the mentioned locally constant functions <span class="math inline">\(h_{UV}\)</span>. Suppose that we could find, for every <span class="math inline">\(U\in \mathfrak{U}\)</span>, a frame</p>
+<p>In order to prove 1 we have to find the mentioned locally constant functions <span class="math inline">\(h_{UV}\)</span>. Choose <span class="math inline">\((\mathfrak{U},\varphi)\)</span> a trivialization of <span class="math inline">\(E\)</span>. Suppose that we could find, for every <span class="math inline">\(U\in \mathfrak{U}\)</span>, a frame <span class="math inline">\(\epsilon_U\)</span> of <span class="math inline">\(E\)</span> in <span class="math inline">\(U\)</span> such that <span class="math inline">\(D \epsilon_U = 0\)</span>. Consider as above the frame <span class="math inline">\(e_U\)</span> of <span class="math inline">\(E\)</span> in <span class="math inline">\(U\)</span> defined as the inverse image through <span class="math inline">\(\varphi_U\)</span> of the canonical basis. We have that <span class="math inline">\(e_U\)</span> and <span class="math inline">\(\epsilon_U\)</span> are related by some matrix-valued function <span class="math inline">\(f_U:U \rightarrow \mathrm{GL}(n,\mathbb{C})\)</span>, so that <span class="math inline">\(\epsilon_U = e_U f_U\)</span>.</p>
+<p>Therefore, if we consider in a nonempty overlap <span class="math inline">\(U\cap V\)</span> the cocycle <span class="math inline">\(h_{UV}= f_V^{-1} g_{UV} f_U\)</span>, we have</p>
+<p><span class="math display">\[
+0 = D \epsilon_U = D (e_U f_U) = D (e_V g_{UV} f_U) = D(\epsilon_V f_V^{-1} g_{UV} f_U) = D(\epsilon_V h_{UV}) = D \epsilon_V h_{UV} + \epsilon_V dh_{UV},
+\]</span></p>
+<p>so <span class="math inline">\(dh_{UV}=0\)</span> and <span class="math inline">\(h_{UV}\)</span> is locally constant.</p>
+<p>It remains to see then why we can find such a frame <span class="math inline">\(\epsilon_U\)</span>. By taking the frame <span class="math inline">\(e_U\)</span> as above, we want to find matrix-valued functions <span class="math inline">\(f_U: U \rightarrow \mathrm{GL}(n,\mathbb{C})\)</span> satisfying</p>
+<p><span class="math display">\[
+0= D\epsilon_U = D(e_U f_U) = D(e_U) f_U + e_U df_U = e_U (A_U f_U + df_U),
+\]</span></p>
+<p>where <span class="math inline">\(A_U\)</span> is the connection <span class="math inline">\(1\)</span>-form in the frame <span class="math inline">\(e_U\)</span>.</p>
+<p>That is, we want to find <span class="math inline">\(f_U\)</span> solutions to the differential equation</p>
+<p><span class="math display">\[
+df_U + A_U f_U = 0.
+\]</span></p>
+<p>[DUDOSO] If we call <span class="math inline">\(\alpha= df_U + A_U f_U\)</span>, the integrability condition of this equation is <span class="math inline">\(\alpha \wedge d\alpha = 0\)</span>. Now,</p>
+<p><span class="math display">\[
+d\alpha = dA_U f_U - A_U \wedge df_U = F_{A_U} f_U - A_U \wedge A_U f_U - A_U \wedge df_U=-A_U \wedge \alpha,
+\]</span></p>
+<p>so <span class="math inline">\(\alpha \wedge d\alpha = 0\)</span>. [?????]</p>
+<p>Let us prove 3 now. Take <span class="math inline">\((\mathfrak{U},h)\)</span> representing an element of <span class="math inline">\(Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})\)</span>. It is clear that we can construct (for example, by an inductive process) a frame <span class="math inline">\(\epsilon_U\)</span> on every <span class="math inline">\(U\in \mathfrak{U}\)</span> so that <span class="math inline">\(\epsilon_U = \epsilon_V h_{UV}\)</span> on the nonempty intersections <span class="math inline">\(U\cap V\)</span>. Define now the connection <span class="math inline">\(D\)</span> so that <span class="math inline">\(D\epsilon_U = 0\)</span>. Now, the locally constant cocycle corresponding to this connection is precisely <span class="math inline">\(h\)</span>.</p>
+<p>Finally, let us see the proof of 2. Choose a trivialization <span class="math inline">\((\mathfrak{U},\varphi)\)</span> of <span class="math inline">\(E\)</span> and fix <span class="math inline">\(x_U\)</span> a point on every connected component of every <span class="math inline">\(U\in \mathfrak{U}\)</span>. Given any gauge transformation <span class="math inline">\(\xi\)</span>, to which we associate a cochain <span class="math inline">\(f\in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\)</span>, we can define a cochain <span class="math inline">\(\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})\)</span> by choosing <span class="math inline">\(\tilde{f}_U = f_U(x_U)\)</span>. This assignation restricts to a map</p>
+<p><span class="math display">\[
+\mathrm{Hom}(D_1,D_2) \rightarrow \mathrm{Hom}(h_1,h_2),
+\]</span></p>
+<p>which is trivially surjective, since <span class="math inline">\(C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})}) \subset C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))\)</span>.</p>
+<p>It remains to prove that this map is injective. Choose <span class="math inline">\(\xi_1\)</span> and <span class="math inline">\(\xi_2\)</span> such that <span class="math inline">\((\xi_1 \cdot D_1) = (\xi_2 \cdot D_1) = D_2\)</span>. Therefore, for <span class="math inline">\(\xi=\xi_1^{-1} \circ \xi_2\)</span>, we have <span class="math inline">\((\xi \cdot D_1) = D_1\)</span>. Therefore, if <span class="math inline">\(f\)</span> is the <span class="math inline">\(0\)</span>-cochain associated to <span class="math inline">\(\xi\)</span>, we have, in <span class="math inline">\(U\in \mathfrak{U}\)</span>,</p>
+<p><span class="math display">\[
+A_U = f_U A_U f_U^{-1} + f_U df_U^{-1}.
+\]</span></p>
+<p>Now, if the images of <span class="math inline">\(\xi_1\)</span> and <span class="math inline">\(\xi_2\)</span> coincide we have that <span class="math inline">\(f_{1,U}(x_U) = f_{2,U}(x_U)\)</span> for every <span class="math inline">\(U\in \mathfrak{U}\)</span>, so <span class="math inline">\(f_U(x_U) = I\)</span>, the identity matrix. Therefore,</p>
+<p><span class="math display">\[
+A_U (x_U ) = A_U(x_U) + df_U^{-1} (x_U),
+\]</span></p>
+<p>so <span class="math inline">\(df_U^{-1}=0\)</span> on <span class="math inline">\(x_U\)</span>. Now, maybe by refining the covering <span class="math inline">\(\mathfrak{U}\)</span>, we get <span class="math inline">\(f_U = I\)</span> and <span class="math inline">\(f_{1,U} = f_{2,U}\)</span>.</p>
+<p>This finishes the proof of the theorem. <span class="math inline">\(\blacksquare\)</span></p>
 <hr />
 <p><a href="https://guillegran.github.io/blog/indice.html">Take me to the blog index</a></p>
 <p><a href="https://guillegran.github.io">Take me home</a></p>

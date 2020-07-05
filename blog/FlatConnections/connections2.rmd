@@ -16,9 +16,73 @@ output:
 
 In this post we are going to study the correspondence between flat connections and representations of the fundamental group, sometimes called the "Riemann-Hilbert correspondence". This is a very rich result in that it draws together several fields of Mathematics and leads to new interesting problems like the study of certain moduli spaces or the relations with Yang-Mills equations. Moreover, this correspondence is the first step to fully understand another correspondence known as the Nonabelian Hodge Theorem.
 
-There are several ways of proving this correspondence. One is through holonomy, and it is maybe the more straightforward since it directly relates flat connections with representations of the fundamental group. In this post however, given that in my [last post](https://guillegallego.xyz/blog/Monodromy/monodromy.html) we already gave a correspondence between representations of the fundamental group and covering spaces, we are going to prove the correspondence by relating flat connections to covering spaces (also called *local systems* in this context). 
+ In my [last post](https://guillegallego.xyz/blog/Monodromy/monodromy.html) we already gave a correspondence between representations of the fundamental group and covering spaces, so we are going to prove the correspondence by relating flat connections to covering spaces (also called *local systems* in this context). 
 
-With this point of view, a general "global" proof of the correspondence can be given by using the Frobenius theorem. We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which is more simple and straightforward, and maybe fits better with the "cocycle approach" that I have been mantaining in my previous posts.
+With this point of view, a general "global" proof of the correspondence can be given by using the geometric statement of the Frobenius theorem. We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which is more simple and straightforward, and maybe fits better with the "cocycle approach" that I have been maintaining in my previous posts.
+
+# The Frobenius theorem
+As with many other results in Mathematics, the main fact that lies behind this correspondence is an existence theorem for solutions of a differential equation. In differential geometry, one of the most common "existence theorems" is the integrability theorem of Frobenius. 
+
+The most elementary, yet complete version of the Frobenius theorem (at least from the local point of view) is the following, which I like to call the "analysts version" of Frobenius (rather, it is the "classical version" of the theorem):
+
+**Theorem**. *Let $U\times V \subset \mathbb{R}^m \times \mathbb{R}^n$ be open, where $U$ is a neighborhood of $0\in \mathbb{R}^m$, and let $F_i: U \times V \rightarrow \mathbb{R}^n$ be $C^\infty$ functions, for $i=1,...,m$. Then for every $x\in V$, there exists one and only one smooth function*
+
+$$
+\alpha: W\rightarrow V,
+$$
+*defined in a neighborhood $W$ of $0$ in $\mathbb{R}^n$, satisfying*
+
+\begin{align*}
+\alpha(0) &=x \\
+\frac{\partial \alpha}{\partial t^i} (t) &= F_i (t,\alpha(t)), \text{ for all } t\in W,
+\end{align*}
+
+*if and only if there is a neighborhood of $(0,x) \in U \times V$ on which*
+
+$$
+\frac{\partial F_j}{\partial t^i} - \frac{\partial F_i}{\partial t^j} + \sum_{k=1}^n \frac{\partial F_j}{\partial x^k} F_i^k -\sum_{k=1}^n \frac{\partial F_i}{\partial x^k} F_j^k = 0,
+$$
+
+*for $i,j = 1,...,m$.*
+
+We say that this last condition is the *integrability condition* for the PDE above. The proof of this theorem is written in the Dark Tongue of Analysis, which I will not utter here. As many other results, this theorem is based in the existence theorem for ODEs. You can read the proof in [Spivak's wonderful book](http://strangebeautiful.com/other-texts/spivak-intro-diff-geom-v1-3ed.pdf) (Theorem 1 in Chapter 6).
+
+The "geometers version" (or rather, the "modern version") of the Frobenius theorem is stated in the language of distributions. A distribution over some manifold $M$ of dimension $n$ is simply a rank $k$ subbundle $D \subset TM$, for $k<n$. We say that a distribution $D$ is *involutive* if, for any two sections of it (that is, for any two vector fields $X,Y$ that lie in $D$) their Lie bracket $[X,Y]$ also lies in $D$. On the other hand, we say that a distribution is *integrable* if there exists some submanifold $N \subset M$ such that, for any point $x\in N$, $T_xN = D_x$. In that case, we say that $N$ is an *integral manifold* of $D$.
+
+The theorem of Frobenius in this geometric context states that any distribution is involutive if and only if it is integrable.
+
+We can now use the classical version to sketch a proof of this fact. We can work locally, so suppose that $M=\mathbb{R}^{m+n}$ and that our distribution has rank $m$. We can see our distribution as $m$ linearly independent vector fields $X_1,...,X_m$ on $\mathbb{R}^{m+n}$ and, by an appropriate choice of coordinates $(t,x)$, we can write these fields as
+
+$$
+X_i= \frac{\partial}{\partial t^i} + \sum_{k=1}^n X_i^k \frac{\partial}{\partial x^k}.
+$$
+
+A rather tedious computation yields
+
+$$
+[X_i,X_j] = \left( \frac{\partial X_j^s}{\partial t^i} - \frac{\partial X_i^s}{\partial t^j} + \sum_{k=1}^n X_i^k \frac{\partial X_j^s}{\partial x^k} - \sum_{k=1}^n X_j^k \frac{\partial X_i^s}{\partial x^k}  \right) \frac{\partial}{\partial x^s}.
+$$
+Therefore, the distribution is involutive if and only if, for every $s=1,...,n$, we have
+
+$$
+\frac{\partial X_j^s}{\partial t^i} - \frac{\partial X_i^s}{\partial t^j} + \sum_{k=1}^n X_i^k \frac{\partial X_j^s}{\partial x^k} - \sum_{k=1}^n X_j^k \frac{\partial X_i^s}{\partial x^k}=0.
+$$
+
+Does this look familiar? 
+
+By writing $F_i = \sum_{s=1}^n X_i^s \frac{\partial}{\partial x^s}$, we have that the above expression is the integrability condition for the PDE
+
+$$
+\frac{\partial \alpha}{\partial t^i} (t) = F_i(t,\alpha(t))
+$$
+
+for $\alpha: U \rightarrow \mathbb{R}^n$ and some open set $U\subset \mathbb{R}^m$. The set of points $N=\{(t,\alpha(t)) \in \mathbb{R}^{m+n} : t \in U\}$ forms a smooth submanifold of $\mathbb{R}^{m+n}$ with tangent vectors
+
+$$
+\left. \frac{\partial}{\partial t^i} \right|_t = \left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + \frac{\partial \alpha}{\partial t^i} (t) =\left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + F_i(t,\alpha(t)) = X_i.
+$$
+
+Therefore, $N$ is an integral manifold of our distribution.
 
 # Principal bundles and local systems
 During all this post we will be using the notions from my [post on torsors and cocycles](https://guillegallego.xyz/blog/Torsors/torsors.html), and also we will make use of the correspondence between covering spaces and representations that I gave in my [last post](https://guillegallego.xyz/blog/Monodromy/monodromy.html).
@@ -225,19 +289,43 @@ $$
 
 where $A_U$ is the connection $1$-form in the frame $e_U$.
 
-That is, we want to find $f_U$ solutions to the differential equation
+That is, our problems is reduced to that of finding solutions $f$ to the differential equation
 
 $$
-df_U + A_U f_U = 0.
+df + A f = 0.
 $$
 
-[DUDOSO] If we call $\alpha= df_U + A_U f_U$, the integrability condition of this equation is $\alpha \wedge d\alpha = 0$. Now,
+We are going to solve this using the "classical form" of the Frobenius theorem. If we denote by $x^\nu$ the coordinates in $X$, we have $A= \sum_\nu A_{\nu} dx^\nu$ and $d f = \sum_\nu \partial_\nu f dx^\nu$. Our differential equation then becomes the following PDE:
 
 $$
-d\alpha = dA_U f_U - A_U \wedge df_U = F_{A_U} f_U - A_U \wedge A_U f_U - A_U \wedge df_U=-A_U \wedge \alpha,
+\partial_\nu f(x) +f(x) A_{\nu}(x) = 0.
 $$
 
-so $\alpha \wedge d\alpha = 0$. [?????] 
+Now, if we write
+
+$$
+F_{\nu}(x,y) = - y A_{\nu} (x),
+$$
+
+we can regard our equation as
+
+$$
+\frac{\partial f}{\partial x^\nu} = F_{\nu} (x, f(x)).
+$$
+
+This is a PDE of the kind that appears in the Frobenius theorem, so the integrability condition is
+
+$$
+0=\partial_{\nu} F_\mu - \partial_\mu F_\nu + \sum_k \partial_{y^k} F_\mu F^k_{\nu} - \sum_k \partial_{y^k} F_\nu F^k_{\mu} .
+$$
+
+But this means precisely
+
+$$
+0 = \partial_\nu A_\mu - \partial_\mu A_\nu - \sum_k  A_{k,\mu} A^k_\nu+ \sum_k  A_{k,\nu} A^k_\mu,
+$$
+
+which the $dx^\nu \wedge dx^\mu$ component of the form $F_A=dA + A \wedge A$. Since by assumption the connection is flat, the integrability condition is met and solutions exist.
 
 Let us prove 3 now. Take $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$. As above, from $(\mathfrak{U},h)$ we can recover a vector bundle $E_h$ whose transition functions are given precisely by $h$. The connection 1-form $A_U=0$ in any $U \in \mathfrak{U}$ defines a connection on $E_h$ which is trivially flat.
 
@@ -355,13 +443,9 @@ $$
 
 As before, we see that the curvature $F_A$ vanishes if and only if the distribution $T_A P$ is involutive.
 
-The correspondence with local systems is now easy. Clearly, if we regard any $G$-covering space $Y\rightarrow X$ as a principal $G$-bundle, we can define in it the trivial connection since $TY \cong TX$. On the other hand, the [Frobenius theorem](https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)) says that any involutive distribution is integrable. Therefore, if $A$ is a flat connection (that is, if $F_A=0$) on some principal $G$-bundle $P$, then the distribution $T_A P$ is integrable. What this integrability property means is that there exists some smooth submanifold $Y \hookrightarrow P$ with $T_A P _y = T_y Y$ for every $y \in P$.
+The correspondence with local systems is now easy. Clearly, if we regard any $G$-covering space $Y\rightarrow X$ as a principal $G$-bundle, we can define in it the trivial connection since $TY \cong TX$. On the other hand, the Frobenius theorem says that any involutive distribution is integrable. Therefore, if $A$ is a flat connection (that is, if $F_A=0$) on some principal $G$-bundle $P$, then the distribution $T_A P$ is integrable. Recall that this means that there exists some smooth submanifold $Y \hookrightarrow P$ with $T_A P _y = T_y Y$ for every $y \in P$.
 
 Now, on every point we have $T_y P= T_F P_y \oplus T_{p(y)} X$, and thus $T_y Y \cong T_{p(y)} X$. By the inverse function theorem, we have that $p|_Y$ gives a local diffeomorphism between $Y$ and $X$. This implies that $Y \rightarrow X$ is a $G$-covering space of $X$.
-
-
-
-
 
 ------
 

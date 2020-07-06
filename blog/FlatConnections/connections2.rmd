@@ -465,7 +465,7 @@ $$
 \mathbf{Flat}(G) \longrightarrow [Z^1(X,\underline{G}), C^0(X,\underline{G})].
 $$
 
-Here of course $\mathbf{Flat}(G)$ denotes the category whose objects are *flat $G$-bundles*, that is, pairs $(P,A)$, with $P$ a principal $G$-bundle and $A$ a flat connection on $P$; and whose morphisms are given by gauge transformations (which we have not defined in the most general case, although it can be done easily). As above, we call $\mathbf{Flat}(G)$ the *de Rham groupoid* and $\mathcal{M}_{dR}(G)$ its set of equivalence classes is the *de Rham moduli set*. The equivalence above in particular gives a bijection with the Betti moduli space:
+Here of course $\mathbf{Flat}(G)$ denotes the category whose objects are *flat $G$-bundles*, that is, pairs $(P,A)$, with $P$ a principal $G$-bundle and $A$ a flat connection on $P$; and whose morphisms are given by gauge transformations (which we have not defined in the most general case, although it can be done easily). As above, we call $\mathbf{Flat}(G)$ the *de Rham groupoid* and $\mathcal{M}_{dR}(G)$ its set of equivalence classes is the *de Rham moduli set*. The equivalence above in particular gives a bijection with the Betti moduli set:
 
 $$
 \mathcal{M}_{dR}(G) \cong \mathcal{M}_{B}(G).

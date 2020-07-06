@@ -1,7 +1,7 @@
 ---
 title: "Flat connections and the fundamental group"
 author: "Guillermo Gallego"
-date: "July 4, 2020"
+date: "July 6, 2020"
 output:
   html_document: 
     toc: true
@@ -14,11 +14,15 @@ output:
        in_header: ../headers.tex
 ---
 
-In this post we are going to study the correspondence between flat connections and representations of the fundamental group, sometimes called the "Riemann-Hilbert correspondence". This is a very rich result in that it draws together several fields of Mathematics and leads to new interesting problems like the study of certain moduli spaces or the relations with Yang-Mills equations. Moreover, this correspondence is the first step to fully understand another correspondence known as the Nonabelian Hodge Theorem.
+In this post we are going to study the well known beautiful correspondence that exists between flat connections and representations of the fundamental group, sometimes called the "Riemann-Hilbert correspondence". This is a very rich result in that it draws together several fields of Mathematics and leads to new interesting problems like the study of certain moduli spaces or the relations with Yang-Mills equations. Moreover, this correspondence is the first step to fully understand another very interesting correspondence known as the Nonabelian Hodge Theorem.
+
+Writing this post has been challenging for me, I thought it would take me just a couple of days and it turns out I needed a whole week (and it is shorter than the previous one!). Luckily, this process has helped get a deeper understanding of the things I already knew and also learn a lot of new things. For example, now I understand way better the Frobenius theorem, gauge transformations, and the relationship between connections in vector bundles and connections in principal bundles. 
+
+As usual, most of this material is well known and found elsewhere, although I think this topic in particular is not very well explained in the common references. I hope that this post helps people understand all this much better, as it has helped me writing it.
 
  In my [last post](https://guillegallego.xyz/blog/Monodromy/monodromy.html) we already gave a correspondence between representations of the fundamental group and covering spaces, so we are going to prove the correspondence by relating flat connections to covering spaces (also called *local systems* in this context). 
 
-With this point of view, a general "global" proof of the correspondence can be given by using the geometric statement of the Frobenius theorem. We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which is more simple and straightforward, and maybe fits better with the "cocycle approach" that I have been maintaining in my previous posts.
+With this point of view, a general proof of the correspondence can be given by using the Frobenius theorem. We are going to sketch this proof, but I prefer to study in detail the proof for matrix groups, which uses a more "classical version" of Frobenius, is more explicit, and maybe fits better with the "cocycle approach" that I have been maintaining in my previous posts.
 
 # The Frobenius theorem
 As with many other results in Mathematics, the main fact that lies behind this correspondence is an existence theorem for solutions of a differential equation. In differential geometry, one of the most common "existence theorems" is the integrability theorem of Frobenius. 
@@ -49,6 +53,12 @@ We say that this last condition is the *integrability condition* for the PDE abo
 
 The "geometers version" (or rather, the "modern version") of the Frobenius theorem is stated in the language of distributions. A distribution over some manifold $M$ of dimension $n$ is simply a rank $k$ subbundle $D \subset TM$, for $k<n$. We say that a distribution $D$ is *involutive* if, for any two sections of it (that is, for any two vector fields $X,Y$ that lie in $D$) their Lie bracket $[X,Y]$ also lies in $D$. On the other hand, we say that a distribution is *integrable* if there exists some submanifold $N \subset M$ such that, for any point $x\in N$, $T_xN = D_x$. In that case, we say that $N$ is an *integral manifold* of $D$.
 
+Here you can see an example of a non-integrable distribution in $\mathbb{R}^3$ (this is also the secret handshake of the contact geometers at your department):
+
+<center>
+![](contacto.png){#id .class width=50% height=50%}
+</center>
+
 The theorem of Frobenius in this geometric context states that any distribution is involutive if and only if it is integrable.
 
 We can now use the classical version to sketch a proof of this fact. We can work locally, so suppose that $M=\mathbb{R}^{m+n}$ and that our distribution has rank $m$. We can see our distribution as $m$ linearly independent vector fields $X_1,...,X_m$ on $\mathbb{R}^{m+n}$ and, by an appropriate choice of coordinates $(t,x)$, we can write these fields as
@@ -76,10 +86,10 @@ $$
 \frac{\partial \alpha}{\partial t^i} (t) = F_i(t,\alpha(t))
 $$
 
-for $\alpha: U \rightarrow \mathbb{R}^n$ and some open set $U\subset \mathbb{R}^m$. The set of points $N=\{(t,\alpha(t)) \in \mathbb{R}^{m+n} : t \in U\}$ forms a smooth submanifold of $\mathbb{R}^{m+n}$ with tangent vectors
+for $\alpha: U \rightarrow \mathbb{R}^n$ and some open set $U\subset \mathbb{R}^m$. If we call $\varphi=(\mathrm{id},\alpha):U \rightarrow U\times \mathbb{R}^n$, the set of points $N=\varphi(U)=\{(t,\alpha(t)) \in \mathbb{R}^{m+n} : t \in U\}$ forms a smooth submanifold of $\mathbb{R}^{m+n}$ with tangent vectors
 
 $$
-\left. \frac{\partial}{\partial t^i} \right|_t = \left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + \frac{\partial \alpha}{\partial t^i} (t) =\left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + F_i(t,\alpha(t)) = X_i.
+\varphi_* \left( \left. \frac{\partial}{\partial t^i} \right|_t \right) = \left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + \frac{\partial \alpha}{\partial t^i} (t) =\left. \frac{\partial}{\partial t^i} \right|_{(t,\alpha(t))} + F_i(t,\alpha(t)) = X_i.
 $$
 
 Therefore, $N$ is an integral manifold of our distribution.
@@ -87,7 +97,7 @@ Therefore, $N$ is an integral manifold of our distribution.
 # Principal bundles and local systems
 During all this post we will be using the notions from my [post on torsors and cocycles](https://guillegallego.xyz/blog/Torsors/torsors.html), and also we will make use of the correspondence between covering spaces and representations that I gave in my [last post](https://guillegallego.xyz/blog/Monodromy/monodromy.html).
 
-Let me recall that for $X$ a topological space and $\mathcal{G}$ a sheaf of groups over $X$, a $\mathcal{G}$ torsor is a sheaf of sets on $X$ with nonempty stalks which is endowed with a free and transitive action of $\mathcal{G}$. What we saw in my [post on torsors and cocycles](https://guillegallego.xyz/blog/Torsors/torsors.html) is that the functor that sends every $\mathcal{G}$-torsor to its set of transition functions gives an equivalence of categories between the category of $\mathcal{G}$ torsor and the action groupoid $[Z^1(X,\mathcal{G}),C^0(X,\mathcal{G})]$, where these two sets denote the sets of equivalence classes by refinement of pairs $(\mathfrak{U},f)$, with $\mathfrak{U}$ an open cover of $X$ and $f$ a Čech $1$-cocycle (a Čech $0$-cochain, respectively).
+Let me recall that for $X$ a topological space and $\mathcal{G}$ a sheaf of groups over $X$, a $\mathcal{G}$ torsor is a sheaf of sets on $X$ with nonempty stalks which is endowed with a free and transitive action of $\mathcal{G}$. What we saw in my [post on torsors and cocycles](https://guillegallego.xyz/blog/Torsors/torsors.html) is that the functor that sends every $\mathcal{G}$-torsor to its set of transition functions gives an equivalence of categories between the category of $\mathcal{G}$-torsors and the action groupoid $[Z^1(X,\mathcal{G}),C^0(X,\mathcal{G})]$, where these two sets denote the sets of equivalence classes by refinement of pairs $(\mathfrak{U},f)$, with $\mathfrak{U}$ an open cover of $X$ and $f$ a Čech $1$-cocycle (a Čech $0$-cochain, respectively).
 
 For our purposes, we will fix now once and for all $X$ a smooth manifold and $G$ a Lie group, and consider the sheaves $G$, which maps any open set $U\subset X$ to the group $C^\infty(U,G)$ of $G$-valued smooth functions, and $\underline{G}$, which maps any open set $U\subset X$ to the group of locally constant functions $U\rightarrow G$.
 
@@ -100,7 +110,7 @@ The purpose of this post is to prove that the category of $G$-local systems is e
 # Vector bundles
 We will start by proving this equivalence for vector bundles, so we better define what these are.
 
-Consider the *sheaf of smooth complex-valued functions* $C^\infty_X$ on $X$ sending every open set $U\subset X$ to the set $C^\infty(X,\mathbb{C})$. A *sheaf of $C^\infty_X$ modules* is a sheaf of abelian groups $E$ on $X$ such that, on any $U\subset X$, the group $E(U)$ is a $C^\infty_X(U)$-module and such that the restriction homomorphisms $E(V) \rightarrow E(U)$ are $C^\infty_X(U)$-linear.
+Consider the *sheaf of smooth complex-valued functions* $C^\infty_X$ on $X$ sending every open set $U\subset X$ to the set $C^\infty(U,\mathbb{C})$. A *sheaf of $C^\infty_X$-modules* is a sheaf of abelian groups $E$ on $X$ such that, on any $U\subset X$, the group $E(U)$ is a $C^\infty_X(U)$-module and such that the restriction homomorphisms $E(V) \rightarrow E(U)$ are $C^\infty_X(U)$-linear.
 
 A *complex vector bundle of rank $n$ on $X$* is a locally free sheaf $E$ of $C^\infty_X$ modules. This means that there exist an open cover $\mathfrak{U}$ of $X$ and isomorphisms $\varphi_U: E|_U \rightarrow C^\infty_X|_U ^n$ for every $U \in X$. The pair $(\mathfrak{U},\varphi)$, with $\varphi=\{\varphi_U\}_{U\in \mathfrak{U}}$ is called a *trivialization* of $E$.
 
@@ -144,7 +154,7 @@ $$
 f|_{U\cap V \cap V'} = g_{V V'} f'|_{U\cap V \cap V'}.
 $$
 
-This presheaf verifies the sheaf condition by construction and it is clearly locally free of rank $n$. If $(\mathfrak{V},\varphi)$ is any trivialization of $E_g$, then it is easy to check that, after passing to a common refinement, its transition functions are on the same orbit as the refinement of the cocycle $g$ by a $0$-cochain.
+This presheaf verifies the sheaf condition by construction and it is clearly locally free of rank $n$. If $(\mathfrak{V},\varphi)$ is any trivialization of $E_g$, then it is easy to check that, after passing to a common refinement, its transition functions are on the same orbit by a $0$-cochain as the refinement of the cocycle $g$.
 
 Therefore, the category $\mathbf{Vect}_n$ is equivalent to that of $\mathrm{GL}(n,\mathbb{C})$-torsors (that is, principal $\mathrm{GL}(n,\mathbb{C})$-bundles).
 
@@ -180,7 +190,7 @@ $$
 Now, given any other section $s\in E(U)$, we can write $s=\sum_i s^i e_i$, for $s^i \in C^\infty_X(U)$ and we have
 
 $$
-D s = \sum_i (d s^i e_i + s^i D e_i) = \sum_i ds^i e_i + s^i e_j A^i_j  = (d+A) s.
+D s = \sum_i (d s^i e_i + s^i D e_i) = \sum_i (ds^i e_i + s^i e_j A^i_j)  = (d+A) s.
 $$
 
 The matrix $A$ is called the *connection $1$-form* of $D$ on $U$.
@@ -215,9 +225,9 @@ $$
 
 Now, take trivializations $(\mathfrak{U},\varphi_1)$ and $(\mathfrak{U},\varphi_2)$ of $E_1$ and $E_2$ and $f_U= \varphi_{2,U} \circ \xi|_U \circ \varphi_{1,U}^{-1}$. Choose now local frames $e_1$ and $e_2$ of $E_1$ and $E_2$, respectively, on $U$, such that their images through their respective trivializations yield the canonical basis. Consider $A_1$ the connection $1$-form of $D$ in the frame $e_1$. If $A_2$ denotes the connection $1$-form of $(\xi \cdot D)$ in the frame $e_2$, we have
 
-$$
-e_2 A_2 = (\xi \cdot D) (e_2) = \xi D(\xi^{-1}(e_2)) = \xi D(e_1 f_U^{-1}) = \xi (De_1 f_U^{-1} + e_1 df_U^{-1}) = e_2(f_U A_1 f_U^{-1}  + f_U df_U^{-1}),
-$$
+\begin{align*}
+e_2 A_2 & = (\xi \cdot D) (e_2) = \xi D(\xi^{-1}(e_2)) = \xi D(e_1 f_U^{-1}) \\ & = \xi (De_1 f_U^{-1} + e_1 df_U^{-1}) = e_2(f_U A_1 f_U^{-1}  + f_U df_U^{-1}),
+\end{align*}
 
 so 
 
@@ -269,7 +279,7 @@ In particular, this gives a bijection $\mathcal{M}_{dR}(\mathrm{GL}(n,\mathbb{C}
 
 2. If we denote by $\mathrm{Hom}((E_1,D_1),(E_2,D_2))$ the set of gauge transformations between two flat bundles $(E_1,D_1)$ and $(E_2,D_2)$ and by $\mathrm{Hom}(h_1,h_2)$ the set of $0$-cochains relating the two corresponding cocycles $h_1$ and $h_2$, we want to give a bijection $\mathrm{Hom}(D_1,D_2) \rightarrow \mathrm{Hom}(h_1,h_2)$. This would define the functor at the level of morphisms as well as prove that it is fully faithful.
 
-3. Given any pair $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$, we have to construct a flat vector bundle $(E,D)$ such that the corresponding cocycle $h'$ is equivalent to $h$. This will show that the functor is essentially surjective.
+3. Given any pair $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$, we have to construct a flat vector bundle $(E_h,D_h)$ such that the corresponding cocycle $h'$ is equivalent to $h$. This will show that the functor is essentially surjective.
 
 In order to prove 1 we have to find the mentioned locally constant functions $h_{UV}$. Choose $(\mathfrak{U},\varphi)$ a trivialization of $E$. Suppose that we could find, for every $U\in \mathfrak{U}$, a frame $\epsilon_U$ of $E$ in $U$ such that $D \epsilon_U = 0$. Consider as above the frame $e_U$ of $E$ in $U$ defined as the inverse image through $\varphi_U$ of the canonical basis. We have that $e_U$ and $\epsilon_U$ are related by some matrix-valued function $f_U:U \rightarrow \mathrm{GL}(n,\mathbb{C})$, so that $\epsilon_U = e_U f_U$. 
 
@@ -289,7 +299,7 @@ $$
 
 where $A_U$ is the connection $1$-form in the frame $e_U$.
 
-That is, our problems is reduced to that of finding solutions $f$ to the differential equation
+That is, our problem is reduced to that of finding solutions $f$ to the differential equation
 
 $$
 df + A f = 0.
@@ -325,11 +335,11 @@ $$
 0 = \partial_\nu A_\mu - \partial_\mu A_\nu - \sum_k  A_{k,\mu} A^k_\nu+ \sum_k  A_{k,\nu} A^k_\mu,
 $$
 
-which the $dx^\nu \wedge dx^\mu$ component of the form $F_A=dA + A \wedge A$. Since by assumption the connection is flat, the integrability condition is met and solutions exist.
+which the $dx^\nu \wedge dx^\mu$ component of the form $F_A=dA + A \wedge A$. Since by assumption the connection is flat, the integrability condition is met and solutions exist around any point.
 
 Let us prove 3 now. Take $(\mathfrak{U},h)$ representing an element of $Z^1(X,\underline{\mathrm{GL}(n,\mathbb{C})})$. As above, from $(\mathfrak{U},h)$ we can recover a vector bundle $E_h$ whose transition functions are given precisely by $h$. The connection 1-form $A_U=0$ in any $U \in \mathfrak{U}$ defines a connection on $E_h$ which is trivially flat.
 
-Finally, let us see the proof of 2. Choose trivializations $(\mathfrak{U},\varphi_1)$ and $(\mathfrak{U},\varphi_2)$ of $E_1$ and $E_2$ with the same trivializing cover. Assume that every $U\in \mathfrak{U}$ is connected and fix $x_U$ a point on every $U$. Given any gauge transformation $\xi$, to which we associate a cochain $f\in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))$, we can define a cochain $\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})$ by choosing $\tilde{f}_U = f_U(x_U)$. This assignation yields a map
+Finally, let us see the proof of 2. Choose trivializations $(\mathfrak{U},\varphi_1)$ and $(\mathfrak{U},\varphi_2)$ of $E_1$ and $E_2$ with the same trivializing cover. Assume that every $U\in \mathfrak{U}$ is connected and choose $x_U$ a point in every $U$. Given any gauge transformation $\xi$, to which we associate a cochain $f\in C^0(\mathfrak{U},\mathrm{GL}(n,\mathbb{C}))$, we can define a cochain $\tilde{f} \in C^0(\mathfrak{U},\underline{\mathrm{GL}(n,\mathbb{C})})$ by choosing $\tilde{f}_U = f_U(x_U)$. This assignation yields a map
 
 $$
 \mathrm{Hom}((E_1,D_1),(E_2,D_2)) \rightarrow \mathrm{Hom}(h_1,h_2),
@@ -356,7 +366,7 @@ This finishes the proof of the theorem. $\blacksquare$
 # The correspondence for matrix groups
 We have established the correspondence between $G$-flat bundles and $G$-representations of the fundamental group for $G=\mathrm{GL}(n,\mathbb{C})$. We are going to sketch now some of the ideas underlying this same correspondence for a general Lie group $G$. Let us start by considering *groups of complex matrices*, that is, Lie groups $G$ acting on $\mathbb{C}^n$ for some $n$ by multiplication, so that $G\subset \mathrm{GL}(n,\mathbb{C})$.
 
-If $G$ is a group of complex matrices, then the equivalence between rank $n$ vector bundles and principal $\mathrm{GL}(n,\mathbb{C})$-bundles descends to an equivalence between principal $G$-bundles and some rank $n$ vector bundles *with extra structure* with gauge transformations respecting that structure.
+If $G$ is a group of complex matrices, then the equivalence between rank $n$ vector bundles and principal $\mathrm{GL}(n,\mathbb{C})$-bundles descends to an equivalence between principal $G$-bundles and some rank $n$ vector bundles *with extra structure*, with gauge transformations respecting that structure.
 
 For example, suppose that $G=\mathrm{U}(n)$, the group of $n\times n$ complex matrices $A$ such that $A^\dagger A=I$, where $I$ denotes the identity matrix and $\dagger$ stands for taking transpose and complex-conjugating the entries. These matrices are called *unitary matrices* and $\mathrm{U}(n)$ is the *unitary group*. The unitary matrices are precisely those which preserve the canonical Hermitian product of $\mathbb{C}^n$:
 
@@ -364,7 +374,7 @@ $$
 (x_1,...,x_n) \cdot (y_1,...,y_n) = \bar{x}_1 y_1 +...+ \bar{x}_n y_n.
 $$
 
-Recall that a *Hermitian product* in a complex vector space $V$ is a mapping $h:V\times V \rightarrow \mathbb{C}$ which is linear on the second component and anti-linear on the first (that is, $h(\lambda u,v) = \bar{\lambda} h(u,v)$), definite positive and such that $h(u,v) = \bar{h(v,u)}$. A *Hermitian structure* on a complex vector bundle $E$ is a smoothly varying Hermitian product $h_x$ on each $E_x$. A pair $(E,h)$ where $E$ is a complex vector bundle and $h$ is a Hermitian structure on $E$ is called a *Hermitian vector bundle*.
+Recall that a *Hermitian product* in a complex vector space $V$ is a mapping $h:V\times V \rightarrow \mathbb{C}$ which is linear on the second component and anti-linear on the first (that is, $h(\lambda u,v) = \bar{\lambda} h(u,v)$), definite positive and such that $h(u,v) = \overline{h(v,u)}$. A *Hermitian structure* on a complex vector bundle $E$ is a smoothly varying Hermitian product $h_x$ on each $E_x$. A pair $(E,h)$ where $E$ is a complex vector bundle and $h$ is a Hermitian structure on $E$ is called a *Hermitian vector bundle*.
 
 If $E$ is the vector bundle associated to a principal $\mathrm{U}(n)$-bundle, since the transition functions are unitary, $E$ will have a canonical Hermitian structure $h$ associated to it. On the other hand, if we consider only gauge transformations that respect Hermitian metrics, we get a category $\mathbf{HermVect}_n$ of Hermitian vector bundles of rank $n$ and an equivalence of categories
 
@@ -381,9 +391,9 @@ $$
 The same arguments work for other matrix groups like $\mathrm{O}(n)$ (with Riemannian metrics), for example.
 
 # Connections in principal bundles
-Finally, we are going to generalize the correspondence to the setting of a principal $G$-bundle with a general Lie group $G$. In order to do this we are going to leave the "cocycle approach" and work in a more "global" approach, which means that I am going to work with the usual "topological" definitions of principal $G$-bundle and vector bundle. Since I do not want to repeat things that very well known and appear on every textbook, I refer the reader to Wikipedia for these definitions.
+Finally, we are going to generalize the correspondence to the setting of a principal $G$-bundle with a general Lie group $G$. In order to do this we are going to leave the "cocycle approach" and work in a more "global" approach, which means that I am going to work with the usual "topological" definitions of principal $G$-bundle and vector bundle. Since I do not want to repeat things that very well known and appear in every textbook, I refer the reader to Wikipedia for these definitions.
 
-Principal $G$-bundles and vector bundles as we know them (that is, as $G$-torsors or as locally free sheaves, respectively) are recovered from the topological definitions by considering its sheaves of sections. The equivalence is completed if we use the usual procedure, that we have already described several times, of "gluing" with transition functions.
+Principal $G$-bundles and vector bundles as we know them (that is, as $G$-torsors or as locally free sheaves, respectively) are recovered from the topological definitions by considering their sheaves of sections. The equivalence is completed if we use the usual procedure, that we have already described several times, of "gluing" with transition functions.
 
 Just to make everything clear, in this new approach we change our notation: if we refer to a vector bundle $E$, we mean the topological space, while its sheaf of sections will be denoted by $\Gamma_E$.
 
@@ -427,13 +437,13 @@ Therefore, $\Omega(\xi,\eta) = 0$ if and only if $[\xi,\eta] \in \ker \omega$. T
 
 We are now going to generalize the same ideas to principal bundles. Consider $p:P\rightarrow X$ a principal $G$-bundle.
 
-The differential of the map $p$ induces a morphism in the tangent bundles $p_*: TP \rightarrow TX$, let us call $T_F P =\ker p_*$ the *tangent bundle along the fibres*. A *connection* $A$ on $P$ is a $G$-equivariant splitting of the following exact sequence of vector bundles on $P$
+The differential of the map $p$ induces a morphism in the tangent bundles $p_*: TP \rightarrow TX$. Now, let us call $T_F P =\ker p_*$ the *tangent bundle along the fibres* or "vertical" bundle. A *connection* $A$ on $P$ is a $G$-equivariant splitting of the following exact sequence of vector bundles on $P$
 
 $$
 0 \rightarrow T_F P \rightarrow TP \rightarrow p^*TX \rightarrow 0.
 $$
 
-That is, a connection $A$ defines a distribution $T_A P$ such that $TP\cong T_F P  \oplus T_A P$. Being $G$-equivariant means means that the splitting is preserved by the natural action of $G$ in the exact sequence. A connection $A$ is associated to a map $\omega_A: TP \rightarrow T_F P$, so that $T_A P = \ker \omega_A$.
+That is, a connection $A$ defines a "horizontal" distribution $T_A P$ such that $TP\cong T_F P  \oplus T_A P$. Being $G$-equivariant means means that the splitting is preserved by the natural action of $G$ in the exact sequence. A connection $A$ is associated to a map $\omega_A: TP \rightarrow T_F P$, so that $T_A P = \ker \omega_A$.
 
 The map $\omega_A$ can be seen also as a $T_F P$-valued $1$-form on $P$. We define the curvature of $A$ to be the $2$-form
 
@@ -445,7 +455,23 @@ As before, we see that the curvature $F_A$ vanishes if and only if the distribut
 
 The correspondence with local systems is now easy. Clearly, if we regard any $G$-covering space $Y\rightarrow X$ as a principal $G$-bundle, we can define in it the trivial connection since $TY \cong TX$. On the other hand, the Frobenius theorem says that any involutive distribution is integrable. Therefore, if $A$ is a flat connection (that is, if $F_A=0$) on some principal $G$-bundle $P$, then the distribution $T_A P$ is integrable. Recall that this means that there exists some smooth submanifold $Y \hookrightarrow P$ with $T_A P _y = T_y Y$ for every $y \in P$.
 
-Now, on every point we have $T_y P= T_F P_y \oplus T_{p(y)} X$, and thus $T_y Y \cong T_{p(y)} X$. By the inverse function theorem, we have that $p|_Y$ gives a local diffeomorphism between $Y$ and $X$. This implies that $Y \rightarrow X$ is a $G$-covering space of $X$.
+Now, over every point we have $T_y P= T_F P_y \oplus T_{p(y)} X$, and thus $T_y Y \cong T_{p(y)} X$. By the inverse function theorem, we have that $p|_Y$ gives a local diffeomorphism between $Y$ and $X$. This implies that $Y \rightarrow X$ is a $G$-covering space of $X$.
+
+Finishing the correspondence by figuring out how it should work at the level of gauge transformations is left as a funny exercise to the reader.
+
+Summing up, we have shown that there exists an equivalence of categories between flat bundles and local systems:
+
+$$
+\mathbf{Flat}(G) \longrightarrow [Z^1(X,\underline{G}), C^0(X,\underline{G})].
+$$
+
+Here of course $\mathbf{Flat}(G)$ denotes the category whose objects are *flat $G$-bundles*, that is, pairs $(P,A)$, with $P$ a principal $G$-bundle and $A$ a flat connection on $P$; and whose morphisms are given by gauge transformations (which we have not defined in the most general case, although it can be done easily). As above, we call $\mathbf{Flat}(G)$ the *de Rham groupoid* and $\mathcal{M}_{dR}(G)$ its set of equivalence classes is the *de Rham moduli set*. The equivalence above in particular gives a bijection with the Betti moduli space:
+
+$$
+\mathcal{M}_{dR}(G) \cong \mathcal{M}_{B}(G).
+$$
+
+Each of these two sets can be in fact endowed with different topological structures and thus deserve the name of moduli *spaces*, rather than just sets. In that context, the above bijection can be in fact promoted to a homeomorphism. Moreover, the natural geometric structure in these spaces is that of an [*orbifold*](https://en.wikipedia.org/wiki/Orbifold) and the homeomorphism is in fact an isomorphism of orbifolds (in particular, it is a diffeomorphism at the smooth points). Finally, in some special cases where analytic structures are involved, the moduli spaces have themselves the structure of analytic space, and the bijection gives an analytic isomorphism. More on this maybe in another post.
 
 ------
 

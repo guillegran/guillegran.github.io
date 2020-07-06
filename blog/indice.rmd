@@ -6,6 +6,8 @@ output:
 ---
 By [Guillermo Gallego](https://guillegran.github.io)
 
++ July 6, 2020. [Flat connections and the fundamental group](FlatConnections/connections2.html) ([PDF version](FlatConnections/connections2.pdf))
+
 + June 14, 2020. [The cocycle approach to algebraic topology](Monodromy/monodromy.html) ([PDF version](Monodromy/monodromy.pdf))
 
 + May 9, 2020. [Torsors and cocycles](Torsors/torsors.html) ([PDF version](Torsors/torsors.pdf))

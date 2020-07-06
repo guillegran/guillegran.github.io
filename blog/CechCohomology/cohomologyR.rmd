@@ -311,6 +311,8 @@ Special thanks to Aitor Iribar for pointing out that a statement in the first ve
 
 ------
 
+[Read it in PDF](cohomologyR.pdf)
+
 [Take me to the blog index](https://guillegran.github.io/blog/indice.html)
 
 [Take me home](https://guillegran.github.io)

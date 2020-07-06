@@ -363,6 +363,35 @@ so $df_U^{-1}=0$ on $x_U$. Now, maybe by refining the covering $\mathfrak{U}$, w
 
 This finishes the proof of the theorem. $\blacksquare$
 
+# The correspondence as a de Rham theorem
+You might be wondering why is it that we called the category of flat bundles the de Rham groupoid. This comes from considering the rank $1$ vector bundle $E=C^\infty_X$. A connection on this vector bundle is simply an operator $D=C^\infty_X \rightarrow \Omega^1_X$ of the form $D=d+A$, for $A \in \Omega^1(X)$ a $1$-form on $X$. 
+Moreover, the connection $D$ is flat if and only if $F_A=dA=0$, since $A\wedge A$ is always $0$. Thus, flat connections on $C^\infty_X$ are identified with closed $1$-forms.
+
+Any other $1$-form $A'$ lies in the same orbit under gauge transformations if it exists some nonzero function $f\in C^\infty(X,\mathbb{C}^*)$ such that
+
+$$
+A' = A + f^{-1} df.
+$$
+
+If we write $f=e^g$ for some function $g\in C^\infty(X,\mathbb{C})$, we have that $A'=A+dg$. Therefore, gauge equivalence classes of flat connections on $C^\infty_X$ are simply (complex-valued) de Rham cohomology classes on $X$. 
+
+It is easy to check, via Chern-Weil theory (see Chapter I, Section 1, in my [Master's Thesis](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf), that all complex rank $1$ vector bundles are isomorphic, and thus that the set of gauge equivalence classes of flat connections on $C^\infty_X$ is simply the (complex) de Rham cohomology set $\mathcal{M}_{dR}(\mathbb{C}^*)$. What we have just shown is that this set is in bijection with the de Rham cohomology group $H^1_{dR}(X,\mathbb{C})$.
+
+The correspondence between flat connections and local systems gives a bijection between $\mathcal{M}_{dR}(\mathbb{C}^*)$ and the Betti moduli set $\mathcal{M}_B(\mathbb{C}^*)$, which in this case is
+
+$$
+\mathrm{Hom}(\pi_1(X),\mathbb{C}^*),
+$$
+
+since $\mathbb{C}^*$ is abelian and the conjugation action is trivial. This set is easily shown to be in bijection with the singular cohomology group $H^1(X,\mathbb{C})$. Therefore, our correspondence in this case is just the de Rham theorem (for degree $1$ cohomology):
+
+$$
+H^1_{dR}(X,\mathbb{C}) \cong H^1(X,\mathbb{C}).
+$$
+
+In the general case, the correspondence between flat connections and local systems can be seen as a "Nonabelian de Rham theorem".
+
+
 # The correspondence for matrix groups
 We have established the correspondence between $G$-flat bundles and $G$-representations of the fundamental group for $G=\mathrm{GL}(n,\mathbb{C})$. We are going to sketch now some of the ideas underlying this same correspondence for a general Lie group $G$. Let us start by considering *groups of complex matrices*, that is, Lie groups $G$ acting on $\mathbb{C}^n$ for some $n$ by multiplication, so that $G\subset \mathrm{GL}(n,\mathbb{C})$.
 
@@ -474,6 +503,8 @@ $$
 Each of these two sets can be in fact endowed with different topological structures and thus deserve the name of moduli *spaces*, rather than just sets. In that context, the above bijection can be in fact promoted to a homeomorphism. Moreover, the natural geometric structure in these spaces is that of an [*orbifold*](https://en.wikipedia.org/wiki/Orbifold) and the homeomorphism is in fact an isomorphism of orbifolds (in particular, it is a diffeomorphism at the smooth points). Finally, in some special cases where analytic structures are involved, the moduli spaces have themselves the structure of analytic space, and the bijection gives an analytic isomorphism. More on this maybe in another post.
 
 ------
+
+[Read it in PDF](connections2.pdf)
 
 [Take me to the blog index](https://guillegran.github.io/blog/indice.html)
 

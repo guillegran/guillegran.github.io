@@ -546,6 +546,25 @@ A_U (x_U ) = A_U(x_U) + df_U^{-1} (x_U),
 <p>so <span class="math inline">\(df_U^{-1}=0\)</span> on <span class="math inline">\(x_U\)</span>. Now, maybe by refining the covering <span class="math inline">\(\mathfrak{U}\)</span>, we get <span class="math inline">\(f_U = I\)</span> and <span class="math inline">\(f_{1,U} = f_{2,U}\)</span>.</p>
 <p>This finishes the proof of the theorem. <span class="math inline">\(\blacksquare\)</span></p>
 </div>
+<div id="the-correspondence-as-a-de-rham-theorem" class="section level1">
+<h1>The correspondence as a de Rham theorem</h1>
+<p>You might be wondering why is it that we called the category of flat bundles the de Rham groupoid. This comes from considering the rank <span class="math inline">\(1\)</span> vector bundle <span class="math inline">\(E=C^\infty_X\)</span>. A connection on this vector bundle is simply an operator <span class="math inline">\(D=C^\infty_X \rightarrow \Omega^1_X\)</span> of the form <span class="math inline">\(D=d+A\)</span>, for <span class="math inline">\(A \in \Omega^1(X)\)</span> a <span class="math inline">\(1\)</span>-form on <span class="math inline">\(X\)</span>. Moreover, the connection <span class="math inline">\(D\)</span> is flat if and only if <span class="math inline">\(F_A=dA=0\)</span>, since <span class="math inline">\(A\wedge A\)</span> is always <span class="math inline">\(0\)</span>. Thus, flat connections on <span class="math inline">\(C^\infty_X\)</span> are identified with closed <span class="math inline">\(1\)</span>-forms.</p>
+<p>Any other <span class="math inline">\(1\)</span>-form <span class="math inline">\(A'\)</span> lies in the same orbit under gauge transformations if it exists some nonzero function <span class="math inline">\(f\in C^\infty(X,\mathbb{C}^*)\)</span> such that</p>
+<p><span class="math display">\[
+A' = A + f^{-1} df.
+\]</span></p>
+<p>If we write <span class="math inline">\(f=e^g\)</span> for some function <span class="math inline">\(g\in C^\infty(X,\mathbb{C})\)</span>, we have that <span class="math inline">\(A'=A+dg\)</span>. Therefore, gauge equivalence classes of flat connections on <span class="math inline">\(C^\infty_X\)</span> are simply (complex-valued) de Rham cohomology classes on <span class="math inline">\(X\)</span>.</p>
+<p>It is easy to check, via Chern-Weil theory (see Chapter I, Section 1, in my <a href="https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf">Master’s Thesis</a>, that all complex rank <span class="math inline">\(1\)</span> vector bundles are isomorphic, and thus that the set of gauge equivalence classes of flat connections on <span class="math inline">\(C^\infty_X\)</span> is simply the (complex) de Rham cohomology set <span class="math inline">\(\mathcal{M}_{dR}(\mathbb{C}^*)\)</span>. What we have just shown is that this set is in bijection with the de Rham cohomology group <span class="math inline">\(H^1_{dR}(X,\mathbb{C})\)</span>.</p>
+<p>The correspondence between flat connections and local systems gives a bijection between <span class="math inline">\(\mathcal{M}_{dR}(\mathbb{C}^*)\)</span> and the Betti moduli set <span class="math inline">\(\mathcal{M}_B(\mathbb{C}^*)\)</span>, which in this case is</p>
+<p><span class="math display">\[
+\mathrm{Hom}(\pi_1(X),\mathbb{C}^*),
+\]</span></p>
+<p>since <span class="math inline">\(\mathbb{C}^*\)</span> is abelian and the conjugation action is trivial. This set is easily shown to be in bijection with the singular cohomology group <span class="math inline">\(H^1(X,\mathbb{C})\)</span>. Therefore, our correspondence in this case is just the de Rham theorem (for degree <span class="math inline">\(1\)</span> cohomology):</p>
+<p><span class="math display">\[
+H^1_{dR}(X,\mathbb{C}) \cong H^1(X,\mathbb{C}).
+\]</span></p>
+<p>In the general case, the correspondence between flat connections and local systems can be seen as a “Nonabelian de Rham theorem”.</p>
+</div>
 <div id="the-correspondence-for-matrix-groups" class="section level1">
 <h1>The correspondence for matrix groups</h1>
 <p>We have established the correspondence between <span class="math inline">\(G\)</span>-flat bundles and <span class="math inline">\(G\)</span>-representations of the fundamental group for <span class="math inline">\(G=\mathrm{GL}(n,\mathbb{C})\)</span>. We are going to sketch now some of the ideas underlying this same correspondence for a general Lie group <span class="math inline">\(G\)</span>. Let us start by considering <em>groups of complex matrices</em>, that is, Lie groups <span class="math inline">\(G\)</span> acting on <span class="math inline">\(\mathbb{C}^n\)</span> for some <span class="math inline">\(n\)</span> by multiplication, so that <span class="math inline">\(G\subset \mathrm{GL}(n,\mathbb{C})\)</span>.</p>
@@ -619,6 +638,7 @@ F_A = d \omega + \omega \wedge \omega.
 \]</span></p>
 <p>Each of these two sets can be in fact endowed with different topological structures and thus deserve the name of moduli <em>spaces</em>, rather than just sets. In that context, the above bijection can be in fact promoted to a homeomorphism. Moreover, the natural geometric structure in these spaces is that of an <a href="https://en.wikipedia.org/wiki/Orbifold"><em>orbifold</em></a> and the homeomorphism is in fact an isomorphism of orbifolds (in particular, it is a diffeomorphism at the smooth points). Finally, in some special cases where analytic structures are involved, the moduli spaces have themselves the structure of analytic space, and the bijection gives an analytic isomorphism. More on this maybe in another post.</p>
 <hr />
+<p><a href="connections2.pdf">Read it in PDF</a></p>
 <p><a href="https://guillegran.github.io/blog/indice.html">Take me to the blog index</a></p>
 <p><a href="https://guillegran.github.io">Take me home</a></p>
 </div>

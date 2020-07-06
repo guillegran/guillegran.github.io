@@ -183,6 +183,8 @@ We conclude from this that the obstruction for defining spin structures n $X$ wi
 
 ------
 
+[Read it in PDF](torsors.pdf)
+
 [Take me to the blog index](https://guillegran.github.io/blog/indice.html)
 
 [Take me home](https://guillegran.github.io)

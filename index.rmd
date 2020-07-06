@@ -11,6 +11,7 @@ guillegallegosanchez@gmail.com
 
 ### About me
 
+
 # ![](guitarra.jpg){#id .class width=50% height=50%}
 
 <br>
@@ -54,7 +55,7 @@ Here you can read [my math blog](blog/indice.html).
 
 	+ **Mathematical Subject Classification**: 14D20, 14D21, 14H60
 	  
-	+ [Text](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf)
+	+ [Text](files/guillermoTFM.pdf)
 	 
 	+ [Slides](files/spectral.pdf)
 
@@ -66,7 +67,7 @@ Here you can read [my math blog](blog/indice.html).
 
 	+ **Mathematical Subject Classification**: 37J05, 37J35, 53D05, 58A05, 70H05
 
-	+ [Text](https://github.com/guillegran/TFGMates/raw/master/guillermoTFG.pdf) (in Spanish)
+	+ [Text](files/guillermoTFG.pdf) (in Spanish)
 	 
 	+ [Slides](files/simplectica.pdf) (in Spanish)
 
@@ -74,23 +75,19 @@ Here you can read [my math blog](blog/indice.html).
 
 	+ **Abstract**: This piece of work is an introduction to the theory of Integrable and Superintegrable Systems in Classical Mechanics. More precisely, we study the Tremblay--Turbiner--Winternitz Hamiltonian, proving its superintegrability, treating it in several coordinate systems and discussing its generalization to constant curvature spaces.
 
-	+ [Text](https://github.com/guillegran/TFGFisica/raw/master/TFGGuillermo.pdf) (in Spanish)
+	+ [Text](files/TFGGuillermo.pdf) (in Spanish)
 	 
-	+ [Slides](https://github.com/guillegran/TFGFisica/raw/master/presentacion/ttw.pdf) (in Spanish)
+	+ [Slides](files/ttw.pdf) (in Spanish)
 
 ### Teaching
 + *Data Science* Bootcamp at [NEOLAND](https://www.neoland.es/data-science-bootcamp). Summer 2019. [More info](neoland.html)
 
 + Mini-course on *Symplectic Geometry in Classical Mechanics* at the [SEMF Summer School](http://www.semf.org.es/escueladeverano/). 9-13 July 2018. [More info](valencia.html)
 
-### Lecture notes
+### Notes
 + [Notes](files/fibrados.pdf) on *Principal Bundles* (in Spanish). [Slides](files/presentacion169.pdf) (in Spanish)
 
 + Notes on *Hodge Theory* (in Spanish). [File 1](files/hodge.pdf), [File 2](files/Picard.pdf)
-
-+ [Notes](https://github.com/guillegran/ToAl/raw/master/toal.pdf) on *Algebraic Topology* (under construction, in Spanish) 
-
-+ [Notes](https://github.com/guillegran/Variedades/raw/master/variedades.pdf) on *Smooth Manifolds* (under construction, in Spanish)
 
 ### Talks
 + *Classification of Compact Surfaces*. Dedekind's Army Seminar. 28 February 2018. [Link](https://dedekindsarmy.github.io/surfaces.html), [Video](https://www.youtube.com/watch?v=coeSyMiKp2Q) (in Spanish)

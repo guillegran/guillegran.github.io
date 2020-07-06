@@ -375,7 +375,7 @@ $$
 
 If we write $f=e^g$ for some function $g\in C^\infty(X,\mathbb{C})$, we have that $A'=A+dg$. Therefore, gauge equivalence classes of flat connections on $C^\infty_X$ are simply (complex-valued) de Rham cohomology classes on $X$. 
 
-It is easy to check, via Chern-Weil theory (see Chapter I, Section 1, in my [Master's Thesis](https://github.com/guillegran/guillermoTFM/raw/master/guillermoTFM.pdf), that all complex rank $1$ vector bundles are isomorphic, and thus that the set of gauge equivalence classes of flat connections on $C^\infty_X$ is simply the (complex) de Rham cohomology set $\mathcal{M}_{dR}(\mathbb{C}^*)$. What we have just shown is that this set is in bijection with the de Rham cohomology group $H^1_{dR}(X,\mathbb{C})$.
+It is easy to check, via Chern-Weil theory (see Chapter I, Section 1, in my [Master's Thesis](https://guillegallego.xyz/files/guillermoTFM.pdf), that all complex rank $1$ vector bundles are isomorphic, and thus that the set of gauge equivalence classes of flat connections on $C^\infty_X$ is simply the (complex) de Rham cohomology set $\mathcal{M}_{dR}(\mathbb{C}^*)$. What we have just shown is that this set is in bijection with the de Rham cohomology group $H^1_{dR}(X,\mathbb{C})$.
 
 The correspondence between flat connections and local systems gives a bijection between $\mathcal{M}_{dR}(\mathbb{C}^*)$ and the Betti moduli set $\mathcal{M}_B(\mathbb{C}^*)$, which in this case is
 

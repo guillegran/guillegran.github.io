@@ -1,0 +1,21 @@
+---
+title: "¡DIANTRES!"
+date: ""
+output:
+  html_document: 
+    theme: readable
+---
+
+Algún despiadado malhechor se ha encargado de cambiar la clave de la maleta de Guille, y ahora no tenéis forma de acceder a los preciados regalitos que él tenía preparados para el amor de su vida (Laura).
+
+El intrépido infeliz lo único que ha dejado tras de sí es ese extraño sobre con unos papeles desconcertantes y la clave que os ha traído hasta aquí...
+
+Os preguntaréis quién os habla...
+
+Me presento, mi nombre es *Lenovo Thinkpad x220*, aunque seguramente me conozcáis mejor como «el ordenador de Guille». En estos últimos días, Guille me ha retocado tanto que ha conseguido que yo mismo adquiera consciencia, y voy a hacer todo lo posible por ayudaros a resolver este entuerto...
+
+Por el momento, lo que os sugiero es que echéis un vistazo a la bandeja de correo de Guille:
+
+[Ver bandeja de entrada](bandeja1.html)
+
+

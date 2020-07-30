@@ -1,0 +1,325 @@
+---
+title: "The nonabelian Hodge correspondence"
+author: "Guillermo Gallego"
+date: "July 30, 2020"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+    includes: 
+     in_header: ../headers.html
+  pdf_document: 
+     includes:
+       in_header: ../headers.tex
+---
+
+In my previous posts we have been representations of the fundamental group and associated constructions. For example, in my post about monodromy [CITAR], we saw how there is a one-to-one correspondence between $G$-coverings of $X$ and $G$-representations of the fundamental group of $X$, for $X$ a topological space satisfying certain "good" conditions. We extended this correspondence in my post about flat connections [CITAR], to a differential-geometric setting. We proved that, if $X$ is a smooth manifold, $G$-representations of the fundamental group are in one-to-one correspondence with flat $G$-bundles, which are pairs $(E,D)$, with $E\rightarrow X$ a principal $G$-bundle over $X$ and $D$ a flat connection on $E$.
+
+A natural question to ask now is that, if in the case that $X$ has some extra complex-analytic structure, this correspondence can be extended to yield an equivalence between representations of the fundamental group of $X$ and some "holomorphic" objects. Moreover, if this sort of correspondence exists, then, if $X$ is projective, given the GAGA theorems of Serre, the representations of the fundamental group will be related to some "algebro-geometric" objects.
+
+A correspondence of this kind in fact exists when $X$ is a compact *Kähler manifold*, which is a special type of complex manifold endowed with extra structure. In particular, compact Riemann surfaces, complex projective spaces and, more generally, smooth projective varieties are examples of compact Kähler manifolds. This correspondence relates *irreducible* representations $\rho: \pi_1(X) \rightarrow \mathrm{GL}_n(\mathbb{C})$ of the fundamental group of $X$, with *Higgs bundles* on $X$ satisfying some extra conditions (namely, vanishing of the Chern classes and a *stability* condition).
+
+In fact, the conditions on $X$ for this correspondence to be valid can be relaxed a little bit (check out Section 2 on [CITAR Simpson]).
+
+This result is known as the *nonabelian Hodge correspondence* and it was proven in 1988 by Carlos Simpson [CITAR], although Simpson's works are a culmination of previous results given by Corlette, Donaldson, Hitchin, Uhlenbeck and others (see [CITAR SECCIÓN] for a short history of the theorem).
+
+In this post we want to understand properly the statement of the theorem and give an overview of the main ingredients of the proof. However, for the sake of simplicity, we will restrict ourselves to the case of $X$ a compact Riemann surface which contains essentially all the main ideas of the general situation.
+
+# Abelian Hodge theory
+As a motivation for the general case, we can consider the simple situation where $n=1$ and thus we are studying $\mathbb{C}^*$-representations of the fundamental group.
+
+By the universal coefficients theorem, the set $\mathrm{Hom}(\pi_1(X),\mathbb{C}^*)$ is in bijection with the cohomology group $H^1(X,\mathbb{C}^*)$. Considering the long exact sequence in cohomology associated to the short exact sequence
+
+$$
+\begin{CD}
+\mathbb{Z} @> >> \mathbb{C} @> \exp >> \mathbb{C}^*,
+\end{CD}
+$$
+
+we get a exact sequence
+
+$$
+\begin{CD}
+0 @> >> H^1(X,\mathbb{Z}) @> >> H^1(X,\mathbb{C}) @> >> H^1(X, \mathbb{C}^*) @> >> 0,
+\end{CD}
+$$
+
+so $H^1(X,\mathbb{C}^*)= H^1(X,\mathbb{C})/H^1(X,\mathbb{Z})$.
+
+Now, the Hodge decomposition theorem says that
+
+$$
+H^1(X,\mathbb{C})= H^{1,0}(X) \oplus H^{0,1}(X),
+$$
+
+ and, by the Dolbeaut theorem, $H^{0,1}(X)=H^1(X,\mathcal{O}_X)$. The inclusion map $H^1(X,\mathbb{Z}) \hookrightarrow H^1(X,\mathbb{C})$ factors naturally through $H^1(X,\mathcal{O}_X)$, so
+
+ $$
+H^1(X,\mathbb{C}^*) = H^{1,0}(X) \oplus (H^1(X,\mathcal{O}_X)/H^1(X,\mathbb{Z})).
+$$
+
+Now, $H^1(X,\mathcal{O}_X)/H^1(X,\mathbb{Z})$ is the Jacobian torus $\mathrm{Jac}(X)$, which parametrizes holomorphic line bundles of degree $0$. Therefore, an element of $H^1(X,\mathbb{C}^*)$ is a pair $(L,\varphi)$, where $L\rightarrow X$ is a line bundle with $\deg L = 0$ and $\varphi \in H^{1,0}(X)$.
+
+**Definition.** A *Higgs line bundle* is a pair $(L,\varphi)$, where $L\rightarrow X$ is a line bundle and $\varphi$ is a $(1,0)$-form.
+
+**Proposition**. There is a bijective correspondence between $\mathbb{C}^*$-representations of the fundamental group and Higgs line bundles of degree $0$.
+
+# Higgs bundles
+
+**Definition**. A Higgs bundle over a Riemann surface $X$ is a pair $(\mathbf{E},\varphi)$, where $\mathbf{E}\rightarrow X$ is a holomorphic vector bundle and $\varphi: \mathbf{E} \rightarrow  \mathbf{E} \otimes K_X$ is an endomorphism twisted by the holomorphic cotangent bundle $K_X$ of $X$ (also called the *canonical line bundle* of $X$).
+
+Equivalently, $\varphi \in H^0(X,\mathrm{End}  \mathbf{E} \otimes K_X)$, or $\varphi \in H^{1,0}(X,\mathrm{End}  \mathbf{E})$.
+
+We say that a Higgs bundle is *stable* if, for every holomorphic proper subbundle $\mathbf{E}'$ of $\mathbf{E}$ such that $\varphi(\mathbf{E}') \subset \mathbf{E}'\otimes K_X$ (we say that $\mathbf{E}'$ is *$\varphi$-invariant*), we have
+
+$$
+\frac{\deg \mathbf{E'}}{\mathrm{rk} \mathbf{E'}} < \frac{\deg \mathbf{E}}{\mathrm{rk} \mathbf{E}}.
+$$
+
+In particular, if $\deg \mathbf{E}=0$, then $\mathbf{E}$ is stable if and only if, for every $\varphi$-invariant holomorphic proper subbundle $\mathbf{E}'\subset \mathbf{E}$, we have $\deg \mathbf{E}' < \deg \mathbf{E}$.
+
+We can now state the nonabelian Hodge correspondence (for a Riemann surface):
+
+**Theorem (Corlette-Simpson)**.
+*There is a one-to-one correspondence between (isomorphism classes of) stable Higgs bundles of rank $n$ and degree $0$ and (conjugation classes of) irreducible representations $\pi_1(X) \rightarrow \mathrm{GL}_n(\mathbb{C})$.*
+
+Of course, now that we have studied the relationship between flat connections and representations of the fundamental group, we can state the theorem in the following equivalent form:
+
+*There is a one-to-one correspondence between (isomorphism classes of) stable Higgs bundles of rank $n$ and degree $0$ and (gauge-equivalence classes of) flat bundles of rank $n$ on $X$.
+
+# The Hitchin equations
+
+The key element in the proof of the nonabelian Hodge correspondence is given by the *Hitchin equations*. 
+
+**Definition**.
+Let $(E,H)$ be a Hermitian vector bundle on $X$. We say that a pair $(\nabla,\varphi)$, where $\nabla$ is a $H$-unitary connection on $X$ and $\varphi \in \Omega^{1,0}(X,\mathrm{End} E)$, is a *solution to the Hitchin equations* if
+
+\begin{align*}
+F_{\nabla} + [\varphi,\varphi^\dagger] = 0,  \\
+\nabla^{0,1} \varphi = 0. 
+\end{align*}
+
+Here, $[\varphi,\varphi^\dagger]=\varphi \varphi^\dagger + \varphi^\dagger \varphi$. This notation makes sense since, if we locally write $\varphi= A dz$, we have
+
+$$
+\varphi \varphi^\dagger + \varphi^\dagger \varphi = A A^\dagger dz \wedge d\bar{z} + A^\dagger A d\bar{z} \wedge dz = [A,A^\dagger] dz \wedge d\bar{z}.
+$$
+
+### Flat connections from solutions
+
+Suppose that a pair $(\nabla,\varphi)$ is a solution to the Hitchin equations. We can consider the connection
+
+$$
+D=\nabla + \varphi + \varphi^\dagger.
+$$
+
+If we compute the curvature of this connection we get,
+
+\begin{align*}
+D^2(s) &= (\nabla + \varphi + \varphi^\dagger)(\nabla s + \varphi s + \varphi^\dagger s) \\
+& = \nabla^2 s + \varphi \nabla s + \varphi^\dagger \nabla s + \nabla(\varphi s) + \nabla(\varphi^\dagger s) + (\varphi ^2 + \varphi \varphi^\dagger + \varphi^\dagger \varphi + (\varphi^\dagger) ^2 ) s \\
+& = [\nabla^2 + \nabla (\varphi + \varphi^{\dagger}) + [\varphi,\varphi^\dagger] ] s.
+\end{align*}
+
+Here, we used that $\varphi^2$ and $(\varphi^\dagger)^2$ vanish, since they are of types $2,0$ and $0,2$, respectively; and the Leibniz rule.
+
+
+Now, noticing again that on a Riemann surface there are no forms of type $2,0$ and $0,2$, we have
+
+$$
+\nabla \varphi = \nabla^{0,1} \varphi = \nabla^{1,0} \varphi^{\dagger} = \nabla \varphi^{\dagger}.
+$$
+
+Thus, we have
+
+$$
+F_D = F_\nabla + [\varphi,\varphi^\dagger] + 2\nabla^{0,1}\varphi.
+$$
+
+Finally, since $(\nabla,\varphi)$ is a solution to the Hitchin equations, $F_D=0$, so $D$ is a flat connection.
+
+### Higgs bundles from solutions
+From a pair $(\nabla,\varphi)$ which is a solution to the Hitchin equations we can obtain a stable Higgs bundle in the following way.
+
+First of all, since $\nabla$ is a $H$-unitary connection, its $0,1$ part $\bar{\partial}_{\mathbf{E}}=\nabla^{0,1}$ gives a holomorphic structure on $E$. Moreover, the condition $\nabla^{0,1}\varphi=\bar{\partial}_{\mathbf{E}} \varphi = 0$ means that the $1,0$ form $\varphi$ is holomorphic, that is $\varphi \in H^{1,0}(X, \mathrm{End} \mathbf{E})$. Therefore, the pair $(\mathbf{E},\varphi)$ is a Higgs bundle on $X$.
+
+Let us see now why this Higgs bundle is stable. Let $\mathbf{E}' \subset \mathbf{E}$ be a holomorphic subbundle such that $\varphi(\mathbf{E}') \subset \mathbf{E}' \otimes K_X$. The Hermitian metric gives a smooth splitting 
+
+$$
+E = E' \oplus E'',
+$$
+
+and we can decompose
+
+$$
+\nabla = 
+\left(
+\begin{array}{cc}
+\nabla' & \beta \\
+-\beta^\dagger & \nabla'' ,
+\end{array}
+\right)
+$$
+
+for $\beta \in \Omega^{0,1}(X,\mathrm{Hom}(E'',E'))$. The curvature of $\nabla$, $F=F_{\nabla}$, can be written now as
+
+$$
+F = 
+\left(
+\begin{array}{cc}
+F' - \beta \beta^\dagger & \nabla_{\mathrm{Hom}(E'',E')} \beta \\
+-\nabla_{\mathrm{Hom}(E',E'')} \beta^\dagger & F'' - \beta^\dagger \beta .
+\end{array}
+\right)
+$$
+
+On the other hand, we can also decompose
+
+$$
+\varphi = 
+\left(
+\begin{array}{cc}
+\varphi' & \theta \\
+0 & \varphi'' .
+\end{array}
+\right)
+$$
+
+From here, the top left element of $[\varphi,\varphi^\dagger]$ is
+
+$$
+\varphi' \varphi'^\dagger + \theta \theta^\dagger + \varphi'^\dagger \varphi' = [\varphi',\varphi'^\dagger] + \theta \theta^\dagger,
+$$
+
+for $\theta \in \Omega^{1,0}(X,\mathrm{Hom}(E'',E')$.
+
+Therefore, if we consider the top left element of the first of the Hitchin equations, we get
+
+$$
+F'-\beta \beta^\dagger + [\varphi',\varphi'^\dagger] + \theta \theta^\dagger =0.
+$$
+
+Locally, we may write $\beta = B d\bar{z}$ and $\theta = C dz$, so $\beta \beta^\dagger = BB^\dagger d\bar{z} \wedge dz$ and $\theta = CC^\dagger dz \wedge d\bar{z}$. Since $BB^\dagger$ and $CC^\dagger$ are matrices with real positive eigenvalues, we have that
+
+$$
+\lVert \theta \rVert = \int_X \mathrm{tr}(\theta \theta^\dagger)
+$$
+
+and
+
+$$
+\lVert \beta \rVert = - \int_X \mathrm{tr}(\beta \beta^\dagger)
+$$
+
+are positive numbers. On the other hand, since locally $\varphi = A dz$ and $[\varphi,\varphi^\dagger]=[A,A^\dagger] dz \wedge d\bar{z}$, the trace of $[\varphi,\varphi^\dagger]$ is null.
+
+Therefore, taking trace and integrating in the above equation,
+
+$$
+\int_X \mathrm{tr} F' + \lVert \beta \rVert + \lVert \theta \rVert =0.  
+$$
+
+By the Chern-Weil formula, we have
+
+$$
+\deg E' = \int_X \mathrm{tr} F' = - \lVert \beta \rVert - \lVert \theta \rVert < 0.
+$$
+
+Therefore, the Higgs bundle $(\mathbf{E},\varphi)$ is stable.
+
+# The existence theorems
+In the previous section, we have seen how to get flat connections and stable Higgs bundles from solutions of the Hitchin equations. The way to proceed now is to obtain *existence theorems* that provide solutions of the Hitchin equations, provided a flat connection, or a stable Higgs bundle.
+
+### Solutions from flat connections
+Consider a pair $(E,D)$, where $E$ is a smooth vector bundle on $X$ and $D$ is a flat connection on $E$. If $H$ is a Hermitian metric on $E$, we have a decomposition
+
+$$
+\mathrm{End} E = \mathfrak{u}_H(E) \oplus i \mathfrak{u}_H (E),
+$$
+
+which gives a decomposition,
+
+$$
+D = \nabla + \psi,
+$$
+
+where $\nabla$ is a $H$-unitary connection on $E$ and $\psi \in \Omega^1(X,i\mathfrak{u}_H(E))$ is a $H$-Hermitian $1$-form.
+
+Now, it is easy to check, in a similar way as a previous computation, that the curvature of $D$ is
+
+$$
+F_D = F_\nabla + \psi \wedge \psi + \nabla \psi.
+$$
+
+This curvature has two parts, $F_\nabla + \psi \wedge \psi \in \Omega^2(\mathfrak{u}_H(E))$, and $\nabla \psi \in \Omega^2(i\mathfrak{u}_H(E))$, so the flatness of $D$ yields the equations
+
+\begin{align*}
+F_\nabla + \psi \wedge \psi = 0, \\
+\nabla \psi = 0.
+\end{align*}
+
+Let us decompose now into holomorphic and antiholomorphic types, $\nabla= \nabla^{1,0} + \nabla^{0,1}$ and $\psi = \psi^{1,0} + \psi^{0,1}$. Note that, since $\psi^\dagger = \psi$, we have that $(\psi^{1,0})^\dagger = \psi^{0,1}$, so we can write $\varphi=\psi^{1,0}$ and $\psi = \varphi + \varphi^\dagger$.
+
+Moreover,
+
+$$
+\psi\wedge \psi = \varphi^2 + \varphi \wedge \varphi ^\dagger + \varphi ^\dagger \wedge \varphi + (\varphi^\dagger) ^2 = [\varphi,\varphi^\dagger]
+$$
+
+and
+
+$$
+\nabla \psi = \nabla^{0,1} \varphi + \nabla^{1,0} \varphi^\dagger.
+$$
+
+Therefore, the above equations have now the form
+
+\begin{align*}
+F_\nabla + [\varphi,\varphi^\dagger] = 0, \\
+\nabla^{0,1} \varphi + \nabla^{1,0} \varphi^\dagger = 0.
+\end{align*}
+
+These are not yet the Hitchin equations, since the term $\nabla^{1,0} \varphi^\dagger$ does not vanish in principle. However, consider the operator $\nabla^*=\nabla^{0,1}-\nabla^{1,0}$. If $\nabla^* \psi = 0$ then 
+
+$$
+\nabla^{0,1} \varphi = \nabla^{1,0} \varphi^\dagger,
+$$
+
+and we now do get the Hitchin equations
+
+\begin{align*}
+F_\nabla + [\varphi,\varphi^\dagger] = 0, \\
+\nabla^{0,1} \varphi = 0.
+\end{align*}
+
+**Definition**.
+Let $(E,D)$ be a pair where $E$ is a smooth vector bundle on $X$ and $D$ is a flat connection on $D$, we say that a Hermitian metric $H$ on $E$ is *harmonic* if, given the associated decomposition $D=\nabla + \psi$, we have
+
+$$
+\nabla^* \psi =0.
+$$
+
+What we have just shown is that, in the presence of a harmonic metric, the flat connection $D$ gives indeed a solution to the Hitchin equations.
+
+The big question is now whether harmonic metrics exist. This is the first important existence theorem:
+
+**Theorem (Corlette) **.
+*If $D$ is an irreducible flat connection on $E$ a smooth vector bundle over $X$, then $E$ admits a harmonic metric.*
+
+### Solutions from Higgs bundles
+Suppose that $(\mathbf{E},\varphi)$ is a Higgs bundle on $X$. Given any Hermitian metric $K$ on $\mathbf{E}$, we can define the Chern connection $\nabla_K$. Since, by definition $\nabla_K^{0,1} = \bar{\partial}_{\mathbf{E}}$, and $\varphi$ is holomorphic, we have that $\nabla_K^{0,1} \varphi =0$, so $(\nabla_K,\varphi)$ satisfies the second Hitchin equation.
+
+**Definition**.
+Let $(\mathbf{E},\varphi)$ be a Higgs bundle on $X$. We say that a Hermitian metric $K$ on $\mathbf{E}$ is a *Higgs metric* if
+
+$$
+F_K + [\varphi,\varphi^{\dagger}] = 0,
+$$
+
+where $F_K$ denotes the curvature of the Chern connection $\nabla_K$.
+
+Given our previous remark, it is now clear that a solution to the Hitchin equations exists on a Higgs bundle if we can find a Higgs metric on it. The key existence theorem is then the following:
+
+**Theorem (Simpson)**.
+*If $(\mathbf{E},\varphi)$ is a stable Higgs bundle on $X$, then it admits a Higgs metric.*

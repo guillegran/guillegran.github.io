@@ -1,0 +1,46 @@
+---
+title: My research plan
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+## Description of the plan
+The main objective of this Thesis is the study of the moduli space of pairs $(E,\varphi)$, where $E$ is a holomorphic vector bundle over a compact Riemann surface $X$ and $\varphi:E \rightarrow E \otimes V$ is an endomorphism of $E$ "twisted" by another holomorphic vector bundle $V$, with an additional "integrability condition" $\varphi \wedge \varphi = 0$. These objects are a generalization of *Higgs bundles*, introducted originally by Nigel Hitchin in his [seminal paper](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-55.1.59) of 1987. A Higgs bundle is a pair like the one we just defined with $V=K_X$ the cotangent bundle of the Riemann surface $X$.
+
+Originally, these became interesting objects to look at since the moduli space of *stable* Higgs bundles is a *hyperkähler manifold* that parametrizes, up to gauge equivalence, the solutions to the *Hitchin equations* (a dimensional reduction of the self-duality equations), as Hitchin proved in his aforementioned paper of 1987. In the next year [Carlos Simpson](https://faculty.math.illinois.edu/~dowdall/talk_resources--GEAR2012/Bradlow/some_resources/I.7-Simpson.pdf) generalized Higgs bundles to the contexts of higher-dimensional compact Kähler manifolds and proved a similar correspondence. This kind of corrrespondence between stable objects and solutions to differential equations is known as a *Hitchin--Kobayashi correspondence*. Other examples of this kind of correspondence are the theorems of [Narasimhan--Seshadri](https://www.jstor.org/stable/1970710?seq=1) (revisited by [Atiyah--Bott](http://www.math.toronto.edu/mgualt/Morse%20Theory/Atiyah-Bott.pdf) and [Donaldson](https://projecteuclid.org/download/pdf_1/euclid.jdg/1214437664)) and of [Donaldson](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-50.1.1)--[Uhlenbeck--Yau](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.3160390714), that are themselves particular cases of the result for Higgs bundles. This correspondence, complemented with theorems of [Simon Donaldson](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-55.1.127) and [Kevin Corlette](https://projecteuclid.org/download/pdf_1/euclid.jdg/1214442469), gives a diffeomorphism between the moduli space of stable Higgs bundles and that of *reductive* representations of the fundamental group of $X$ in the general linear group. This is known as the *nonabelian Hodge correspondence*.
+
+Another interesting aspect about the moduli space $M$ of stable Higgs bundles is that it admits a fibration by Abelian varieties. More precisely, there exists some map from $M$ to a complex vector space $B$ such that, to a generic element $b\in B$ we can associate a *spectral curve*, which is a ramified covering of $X$ whose Jacobian variety is in bijection with the fibre of $b$.
+This fibration, known as the *Hitchin map*, was studied originally by Hitchin, another [celebrated paper](https://projecteuclid.org/euclid.dmj/1077305506) of 1987. Similar results were found by [Beauville--Narasimhan--Ramanan](https://math.unice.fr/~beauvill/pubs/bnr.pdf) in the more general case in which the twisting bundle $V$ is a line bundle, with some extra conditions. A generalization of the Hitchin map was also briefly described by [Simpson](http://www.numdam.org/article/PMIHES_1994__80__5_0.pdf) in 1994, and has been very recently deeply studied in a [paper](https://arxiv.org/pdf/1905.04741.pdf) by Ngô Bao Châu and Tsao-Hsien Chen.
+
+The general theory developed until now shows how it is possible to describe properly an stability condition, a moduli space, a Hitchin--Kobayashi correspondence and a Hitchin map for the objects we want to consider, as I already explored in my [Master's Thesis](https://guillegallego.xyz/files/guillermoTFM.pdf). In this piece of work I already started studying the fibres of the Hitchin map for this situation. In order to complete this study, we want to use the new ideas developed recently by Ngô and Chen, given the resemblance of our problem with the problem of Higgs bundles over higher-dimensional manifolds, to the point that the local theory and the "universal" theory is completely analogous.
+
+Last but not least, in order to give real geometric interest to our problem, we will try to look for situations coming from differential geometry or from theoretical physics where these objects are relevant. Some of these situations are already known, for example, my Master's Thesis was originally motivated by the study of the *generalized Hitchin equations* made by [Dan Xie and Kazuya Yonekura](https://arxiv.org/pdf/1310.0467.pdf) in the context of supersymmetric gauge thoeries. On the other hand, similar objects appear naturally in the study of [critical loci](https://arxiv.org/pdf/1712.09928.pdf) of the Hitchin map for Higgs bundles and also y the study of the [Nahm equations](https://arxiv.org/pdf/1708.08812.pdf) as Hitchin explored in recent papers. Finally, it is interesting to consider the particular case where the twisting bundle $V$ is equal to the direct sum of two line bundles $L_1$ y $L_2$, with the property that $L_1L_2=K_X$, since in this case the total space of $V$ is a Calabi--Yau 3-fold, suggesting connections with the theory of [Donaldson--Thomas](https://en.wikipedia.org/wiki/Donaldson%E2%80%93Thomas_theory).
+
+## Objectives
+
+### General objectives
++ Study the moduli space of pairs $(E,\varphi)$, with $E$ a holomorphic vector bundle over a compact Riemann surface and $\varphi$ an endomorphism of $E$ "twisted" by another holomorphic vector bundle $V$.
+
++ Study particular examples of these objects that appear naturally in situations coming from the study of problems in differential geometry or in gauge theory and obtain results for those situations applying the general theory previously developed.
+
+### Specific objectives
++ Give an estability condition and an algebraic construction of the moduli space of these pairs. 
+
++ Give equations analogous to that of Hitchin and explicitly prove a Hithcin--Kobayashi correspondence for these kind of pairs.
+
++ Define a Hitchin map in this context, find its image and study its fibres, in particular:
+	+ Show that these fibres are non-empty.
+	+ Obtain spectral covers (that is, spectral curves), and obtain conditions for these curves to be integral and/or smooth schemes.
+
++ Study how can we apply the general theory previously developed to examples of these objects that may appear naturally in some known cases. For example:
+	+ In the context of supersymmetric gauge theories $\mathcal{N}=1$, as has been explored by Xie and Yonekura.
+	+ In the study of the critical loci of the Hitchin system. 
+	+ In the study of Nahm's equations. 
+
++ Explore the relationship with Dondaldson-Thomas theory. 
+
+----
+[Take me home](https://guillegran.github.io)

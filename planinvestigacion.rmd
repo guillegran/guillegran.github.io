@@ -1,0 +1,45 @@
+---
+title: Mi plan de investigación
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+## Descripción del plan
+El objetivo principal de esta Tesis Doctoral consiste en el estudio del espacio de móduli de pares $(E,\varphi)$, donde $E$ es un fibrado vectorial holomorfo sobre una superficie de Riemann compacta $X$ y $\varphi:E \rightarrow E \otimes V$ es un endomorfismo de $E$ "torcido" por otro fibrado vectorial holomorfo $V$, con una "condición de integrabilidad" adicional $\varphi \wedge \varphi = 0$. Estos objetos son una generalización de los *fibrados de Higgs*, introducidos originalmente por Nigel Hitchin en su [artículo seminal](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-55.1.59) de 1987. Un fibrado de Higgs es un par como el que acabamos de definir con $V=K_X$ el fibrado cotangente de la superficie de Riemann $X$.
+
+Originalmente, el interés de estos objetos radica en que el espacio de móduli de fibrados de Higgs *estables* es una variedad *hiperkähleriana* que parametriza, módulo equivalencia gauge, las soluciones de las *ecuaciones de Hitchin* (una reducción dimensional de las ecuaciones de auto-dualidad), tal y como demostró originalmente Hitchin en el artículo de 1987 ya mencionado. Al año siguiente, [Carlos Simpson](https://faculty.math.illinois.edu/~dowdall/talk_resources--GEAR2012/Bradlow/some_resources/I.7-Simpson.pdf) generalizó los fibrados de Higgs al contexto de las variedades kählerianas compactas de dimensión superior y demostró una correspondencia análoga. Este tipo de correspondencia entre objetos estables y soluciones a unas ecuaciones diferenciales se conoce como una *correspondencia de Hitchin--Kobayashi*. Otros ejemplos de este tipo de correspondencia son los teoremas de [Narasimhan--Seshadri](https://www.jstor.org/stable/1970710?seq=1) (reinterpretado por [Atiyah--Bott](http://www.math.toronto.edu/mgualt/Morse%20Theory/Atiyah-Bott.pdf) y [Donaldson](https://projecteuclid.org/download/pdf_1/euclid.jdg/1214437664)) y de [Donaldson](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-50.1.1)--[Uhlenbeck--Yau](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpa.3160390714), que a su vez son casos particulares del resultado para fibrados de Higgs. Esta correspondencia, complementada con teoremas de [Simon Donaldson](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s3-55.1.127) y de [Kevin Corlette](https://projecteuclid.org/download/pdf_1/euclid.jdg/1214442469), da un difeomorfismo entre el espacio de móduli de los fibrados de Higgs estables y el espacio de móduli de las representaciones reductivas del grupo fundamental en el grupo general lineal, constituyendo lo que se conoce como la *correspondencia de Hodge no-abeliana*.
+
+Otro aspecto interesante del espacio de móduli $M$ de fibrados de Higgs estables es que admite una fibración por variedades abelianas. Concretamente, existe una aplicación de $M$ a un espacio vectorial $B$ de modo que a un elemento genérico $b\in B$ se le puede asociar una *curva espectral*, que es un recubrimiento ramificado de $X$ tal que su variedad jacobiana está en biyección con la fibra de $b$. Esta fibración, que se conoce como la *aplicación de Hitchin*, fue estudiada originalmente por Hitchin, en otro [célebre artículo](https://projecteuclid.org/euclid.dmj/1077305506) de 1987. Resultados análogos fueron obtenidos por [Beauville--Narasimhan--Ramanan](https://math.unice.fr/~beauvill/pubs/bnr.pdf) en el caso más general en el que el fibrado $V$ por el que se tuerce es un fibrado de línea, con ciertas condiciones. Una generalización de la aplicación de Hitchin fue también descrita brevemente por [Simpson](http://www.numdam.org/article/PMIHES_1994__80__5_0.pdf) en 1994, y ha sido estudiada en profundidad muy recientemente en un [artículo](https://arxiv.org/pdf/1905.04741.pdf) de Ngô Bao Châu y Tsao-Hsien Chen.
+
+La teoría general desarrollada hasta nuestros días muestra cómo es posible describir adecuadamente una condición de estabilidad, un espacio de móduli, una correspondencia de Hitchin--Kobayashi y una aplicación de Hitchin para los objetos que nos incumben a nosotros, tal y como ya exploré en mi [Trabajo de Fin de Máster](https://guillegallego.xyz/files/guillermoTFM.pdf). Ya en este trabajo realicé una pequeña incursión en el estudio de las fibras de la aplicación de Hitchin para esta situación. Para completar este estudio se plantea utilizar las nuevas ideas desarrolladas recientemente por Ngô y Chen, dada la similitud de nuestro problema con el problema de fibrados de Higgs en dimensión superior, hasta el punto de que la teoría local y la teoría "universal" es completamente análoga.
+
+Por último, para dotar de auténtico interés geométrico a nuestro problema trataremos de buscar situaciones provenientes de la geometría diferencial o de la física teórica donde estos objetos tomen relevancia. Algunas de estas situaciones ya son conocidas, por ejemplo, mi Trabajo de Fin de Máster estaba originalmente motivado por el estudio de las *ecuaciones de Hitchin generalizadas* realizado por [Dan Xie y Kazuya Yonekura](https://arxiv.org/pdf/1310.0467.pdf) en el contexto de las teorías gauge supersimétricas. Por otra parte, objetos similares aparecen naturalmente en el estudio de los [lugares críticos](https://arxiv.org/pdf/1712.09928.pdf) de la aplicación de Hitchin para fibrados de Higgs y también en el estudio de las [ecuaciones de Nahm](https://arxiv.org/pdf/1708.08812.pdf) tal y como ha explorado Hitchin en artículos recientes. Finalmente, es interesante el caso particular en el que el fibrado $V$ que tuerce es igual a la suma directa de dos fibrados de línea $L_1$ y $L_2$, con la propiedad de que $L_1L_2=K_X$, ya que en este caso el espacio total de $V$ es una 3-variedad de Calabi--Yau, lo que sugiere conexiones con la [teoría de Donaldson--Thomas](https://en.wikipedia.org/wiki/Donaldson%E2%80%93Thomas_theory).
+
+## Objetivos
+
+### Objetivos generales
++ Estudiar el espacio de móduli de los pares $(E,\varphi)$, con $E$ un fibrado vectorial holomorfo sobre una superficie de Riemann $X$ y $\varphi$ un endomorfismo de $E$ "torcido" por otro fibrado vectorial holomorfo $V$.
+
++ Estudiar ejemplos particulares de estos objetos que aparezcan naturalmente en situaciones provenientes del estudio de problemas en Geometría Diferencial o en Teorías Gauge y obtener resultados para estas situaciones aplicando la teoría general previamente desarrollada.
+
+### Objetivos específicos
++ Dar una condición de estabilidad y una construcción algebraica explícita del espacio de móduli de estos pares.
+
++ Dar unas ecuaciones análogas a las de Hitchin y demostrar explícitamente una correspondencia de Hitchin--Kobayashi para este tipo de pares.
+
++ Definir una aplicación de Hitchin en este contexto, hallar su imagen, y estudiar sus fibras, en particular:
+	+ Demostrar que estas fibras son no vacías.
+	+ Obtener recubrimientos espectrales (es decir, curvas espectrales), y obtener condiciones para que estas curvas sean esquemas íntegros y/o lisos.
+
++ Estudiar cómo aparecen y aplicar la teoría general previamente desarrollada a ejemplos estos objetos que surjan de forma natural algunos de los casos ya conocidos, a saber:
+	+ En el contexto de teorías gauge supersimétricas $\mathcal{N}=1$, tal y como han explorado Xie y Yonekura.
+	+ En el estudio de los lugares críticos del sistema de Hitchin.
+	+ El el estudio de las ecuaciones de Nahm.
+
++ Explorar las relaciones con la teoría de Donaldson-Thomas.
+
+----
+[Take me home](https://guillegran.github.io)

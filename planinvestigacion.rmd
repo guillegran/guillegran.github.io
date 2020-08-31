@@ -5,6 +5,7 @@ output:
     toc: true
     toc_float: true
     theme: readable
+  pdf_document: default
 ---
 
 ## Descripción del plan
@@ -42,4 +43,7 @@ Por último, para dotar de auténtico interés geométrico a nuestro problema tr
 + Explorar las relaciones con la teoría de Donaldson-Thomas.
 
 ----
+
+[Léelo en PDF](planinvestigacion.pdf)
+
 [Take me home](https://guillegran.github.io)
